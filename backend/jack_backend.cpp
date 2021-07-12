@@ -30,13 +30,13 @@
 using namespace JackMix;
 
 JackBackend::JackBackend( GuiServer_Interface* g ) : BackendInterface( g ) {
-	//qDebug() << "JackBackend::JackBackend()";
+	qDebug() << "JackBackend::JackBackend()";
 	client = ::jack_client_open( "JackMix", JackNoStartServer, NULL );
 	if ( client ) {
 		midi_port = ::jack_port_register(client, "Control",
 		                                 JACK_DEFAULT_MIDI_TYPE, JackPortIsInput, 0);
 		::jack_set_process_callback( client, JackMix::process, this );
-		//qDebug() << "JackBackend::JackBackend() activate";
+		qDebug() << "JackBackend::JackBackend() activate";
 		::jack_activate( client );
 		set_interp_len(::jack_get_sample_rate(client));
 	}
@@ -44,10 +44,10 @@ JackBackend::JackBackend( GuiServer_Interface* g ) : BackendInterface( g ) {
 		qWarning() << "\n No jack-connection! :(\n\n";
 		gui->message( "No Jack-connection :-(", "<qt><p>Sorry, I couldn't connect to Jack. This probably means that <b>no jackd is running</b>. Please start it and try JackMix again.</p><p>If you don't know what I am talking about, then JackMix might not be the program you want...</p></qt>" );
 	}
-	//qDebug() << "JackBackend::JackBackend() finished";
+	qDebug() << "JackBackend::JackBackend() finished";
 }
 JackBackend::~JackBackend() {
-	//qDebug() << "JackBackend::~JackBackend()";
+	qDebug() << "JackBackend::~JackBackend()";
 	if ( client ) {
 		/*qDebug() << " return code" <<*/ ::jack_deactivate( client );
 		/*qDebug() << " return code" <<*/ ::jack_client_close( client );
@@ -56,7 +56,7 @@ JackBackend::~JackBackend() {
 
 bool JackBackend::addOutput( QString name ) {
 	if ( client ) {
-		//qDebug() << "JackBackend::addOutput(" << name << ")";
+		qDebug() << "JackBackend::addOutput(" << name << ")";
 		/*
 		 * We need to register inputs by creating entries
                  * in the involumes hash if the interpolation functions
@@ -76,7 +76,7 @@ bool JackBackend::addOutput( QString name ) {
 }
 bool JackBackend::addInput( QString name ) {
 	if ( client ) {
-		//qDebug() << "JackBackend::addInput(" << name << ")";
+		qDebug() << "JackBackend::addInput(" << name << ")";
 		
 		/* Register the input port (see above) */
 		involumes[name];
@@ -90,7 +90,7 @@ bool JackBackend::addInput( QString name ) {
 }
 
 bool JackBackend::removeOutput( QString name ) {
-	//qDebug() << "JackBackend::removeOutput(" << name << ")";
+	qDebug() << "JackBackend::removeOutput(" << name << ")";
 	if ( client && out_ports.find( name ) != out_ports.end() )
 		jack_port_unregister( client, out_ports[ name ] );
 	out_ports.remove( name );
@@ -98,7 +98,7 @@ bool JackBackend::removeOutput( QString name ) {
 	return true;
 }
 bool JackBackend::removeInput( QString name ) {
-	//qDebug() << "JackBackend::removeInput(" << name << ")";
+	qDebug() << "JackBackend::removeInput(" << name << ")";
 	if ( client && in_ports.find( name ) != in_ports.end() )
 		jack_port_unregister( client, in_ports[ name ] );
 	in_ports.remove( name );
@@ -173,7 +173,7 @@ bool JackBackend::rename(portsmap &map, QStringList &lst, const QString old_name
 				int pos;
 				if ((pos = lst.indexOf(old_name)) >= 0)
 					lst[pos] = new_name;
-				//qDebug()<<"JackBackend::rename -- list now"<<lst;
+				qDebug()<<"JackBackend::rename -- list now"<<lst;
 			}			
 		}
 	}
@@ -183,7 +183,7 @@ bool JackBackend::rename(portsmap &map, QStringList &lst, const QString old_name
 
 
 void JackBackend::setVolume(QString channel, QString output, float volume) {
-	//qDebug() << "JackBackend::setVolume( " << channel << ", " << output << ", " << volume << " )";
+	qDebug() << "JackBackend::setVolume( " << channel << ", " << output << ", " << volume << " )";
 	if ( channel == output ) {
 		// addInput or addOutput will have created uninitialised FaderState entries,
                 // so we can use that in the following test.
@@ -193,7 +193,7 @@ void JackBackend::setVolume(QString channel, QString output, float volume) {
 			setOutVolume(channel, volume);
 	} else {
  		if (!volumes[channel].contains(output)) {
-			//qDebug() << "Creating new FaderState. interp_len = " << interp_len;
+			qDebug() << "Creating new FaderState. interp_len = " << interp_len;
  			volumes[channel].insert(output, FaderState(volume, this));
 		} else
 			volumes[channel][output] = volume;
@@ -201,7 +201,7 @@ void JackBackend::setVolume(QString channel, QString output, float volume) {
 }
 
 JackBackend::FaderState& JackBackend::getMatrixVolume( QString channel, QString output ) {
-	//qDebug() << "JackBackend::getVolume(" << channel << ", " << output << ");
+	qDebug() << "JackBackend::getVolume(" << channel << ", " << output << ");
 	static JackBackend::FaderState invalid(-1, nullptr); // no likee - somebody might change it. FIXME
 	
 	if ( channel == output ) {
@@ -225,10 +225,10 @@ JackBackend::FaderState& JackBackend::getMatrixVolume( QString channel, QString 
 }
 
 void JackBackend::setOutVolume( QString ch, float n ) {
-	//qDebug() << "JackBackend::setOutVolume(QString " << ch << ", float " << n << " )";
+	qDebug() << "JackBackend::setOutVolume(QString " << ch << ", float " << n << " )";
 	
 	if (outvolumes[ch].p == nullptr) { // need to construct a new Faderstate
-		//qDebug() << "New output FaderState, volume = " << n;
+		qDebug() << "New output FaderState, volume = " << n;
 		outvolumes.insert(ch, FaderState(n, this));
 	} else {                           // update the existing one
 		outvolumes[ch] = n;
@@ -240,10 +240,10 @@ JackBackend::FaderState& JackBackend::getOutVolume( QString ch ) {
 }
 
 void JackBackend::setInVolume( QString ch, float n ) {
-	//qDebug() << "JackBackend::setInVolume(QString " << ch << ", float " << n << " )";
+	qDebug() << "JackBackend::setInVolume(QString " << ch << ", float " << n << " )";
 	
 	if (involumes[ch].p == nullptr) { // need to construct a new Faderstate
-		//qDebug() << "New input FaderState, volume = " << n;
+		qDebug() << "New input FaderState, volume = " << n;
 		involumes.insert(ch, FaderState(n, this));
 	} else {                          // update the existing one
 		involumes[ch] = n;
@@ -251,7 +251,7 @@ void JackBackend::setInVolume( QString ch, float n ) {
 }
 
 JackBackend::FaderState&  JackBackend::getInVolume( QString ch ) {
-	//qDebug() << "JackBackend::getInVolume(QString " << ch << " )";
+	qDebug() << "JackBackend::getInVolume(QString " << ch << " )";
 	return involumes[ch];
 }
 
@@ -262,7 +262,7 @@ void JackBackend::send_signal(const ::jack_midi_data_t b1,
 
 
 int JackMix::process( jack_nframes_t nframes, void* arg ) {
-	//qDebug() << "JackMix::process( jack_nframes_t " << nframes << ", void* )";
+	qDebug() << "JackMix::process( jack_nframes_t " << nframes << ", void* )";
 	JackMix::JackBackend* backend = static_cast<JackMix::JackBackend*>( arg );
 
 	// Deal with MIDI events

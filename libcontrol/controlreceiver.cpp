@@ -37,7 +37,7 @@ ControlReceiver::~ControlReceiver() {
 }
 
 void ControlReceiver::controlEvent(int param, int value) {
-	//qDebug() << "ControlReceiver::controlEvent: parameter " << param << ", value " << value;
+	qDebug() << "ControlReceiver::controlEvent: parameter " << param << ", value " << value;
 }
 
 

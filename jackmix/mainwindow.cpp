@@ -60,7 +60,7 @@ using namespace JackMix;
 using namespace JackMix::MixingMatrix;
 
 MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBackend( new GUI::GraphicalGuiServer( this ) ) ), _autofillscheduled( true ) {
-	//qDebug() << "MainWindow::MainWindow(" << p << ")";
+	qDebug() << "MainWindow::MainWindow(" << p << ")";
 	init();
 
 	QStringList ins;
@@ -90,10 +90,10 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
 	_autofillscheduled = false;
 	scheduleAutoFill();
 
-	//qDebug() << "MainWindow::MainWindow() finished...";
+	qDebug() << "MainWindow::MainWindow() finished...";
 }
 MainWindow::MainWindow( QString filename, QWidget* p ) : QMainWindow( p ), _backend( new JackBackend( new GUI::GraphicalGuiServer( this ) ) ), _autofillscheduled( true ) {
-	//qDebug() << "MainWindow::MainWindow(" << filename << "," << p << ")";
+	qDebug() << "MainWindow::MainWindow(" << filename << "," << p << ")";
 	init();
 
 	openFile( filename );
@@ -108,7 +108,7 @@ MainWindow::MainWindow( QString filename, QWidget* p ) : QMainWindow( p ), _back
 
 	//_lashclient->setJackName( "JackMix" );
 
-	//qDebug() << "MainWindow::MainWindow() finished...";
+	qDebug() << "MainWindow::MainWindow() finished...";
 }
 
 void MainWindow::init() {
@@ -218,13 +218,13 @@ void MainWindow::init() {
 }
 
 MainWindow::~MainWindow() {
-	//qDebug() << "MainWindow::~MainWindow()";
+	qDebug() << "MainWindow::~MainWindow()";
 	delete midiControlSender;
 	delete _backend;
 }
 
 void MainWindow::closeEvent( QCloseEvent* e ) {
-	//qDebug() << "MainWindow::closeEvent( QCloseEvent " << e << " )";
+	qDebug() << "MainWindow::closeEvent( QCloseEvent " << e << " )";
 	e->accept();
 }
 
@@ -234,7 +234,7 @@ void MainWindow::openFile() {
 }
 
 void MainWindow::openFile( QString path ) {
-	//qDebug() << "MainWindow::openFile(" << path << ")";
+	qDebug() << "MainWindow::openFile(" << path << ")";
 	if ( path.isEmpty() )
 		return;
 
@@ -310,36 +310,36 @@ void MainWindow::openFile( QString path ) {
 
 	_autofillscheduled = save_autofillscheduled;
 	scheduleAutoFill();
-	//qDebug() << "MainWindow::openFile() finished";
+	qDebug() << "MainWindow::openFile() finished";
 }
 
 void MainWindow::updateAutoFilledMidiParams(MixingMatrix::Widget *w) {
 	QHash<QString,QString> *mphash(0);           // Iterate over the right midi parameter set
-	//qDebug() << "Autofill is complete. for widget" << w;
+	qDebug() << "Autofill is complete. for widget" << w;
 	if (w == _inputswidget) {
-		//qDebug("(inputs widget)");
+		qDebug("(inputs widget)");
 		mphash = &_inputmps;
 	} else if (w == _outputswidget) {
-		//qDebug("(outputs widget)");
+		qDebug("(outputs widget)");
 		mphash = &_outputmps;
 	} else if (w == _mixerwidget) {
-		//qDebug("(mixer widget)");
+		qDebug("(mixer widget)");
 		mphash = &_mixermps;
-	} else { //qDebug("(UNKNOWN widget)");
+	} else { qDebug("(UNKNOWN widget)");
         }
 
-	//qDebug("Setting %d MIDI control parameters.", mphash->size());
+	qDebug("Setting %d MIDI control parameters.", mphash->size());
 	QMutableHashIterator<QString,QString> mpiter(*mphash);
 	while (mpiter.hasNext()) {
 		mpiter.next();
 		QString name = mpiter.key();
 		const QStringList posn(name.split(","));
-		//qDebug() << "posn=" << posn;
+		qDebug() << "posn=" << posn;
 		Element *el(w->getResponsible(posn[0], posn[1]));
 		if (el) {
 			const QStringList params( (mpiter.value()).split(",") );
 			QList<int> pv;
-			//qDebug()<<name<<" has parameters "<<params;
+			qDebug()<<name<<" has parameters "<<params;
 			for (int p = 0; p < params.size(); p++)
 				pv.append(params[p].toInt());
 			el->update_midi_parameters(pv);
@@ -371,12 +371,12 @@ void MainWindow::saveFile( QString path ) {
 	QStringList ins = _backend->inchannels();
 	QStringList outs = _backend->outchannels();
 
-	//qDebug() << "Saving file. Using ins/outs lists: " << ins << outs;
+	qDebug() << "Saving file. Using ins/outs lists: " << ins << outs;
 	QString xml = "<jackmix version=\"" JACKMIX_FILE_FORMAT_VERSION "\"><ins>";
 	foreach( QString in, ins ) {
 		xml += QString( "<channel name=\"%1\" volume=\"%2\" midi=\"" )
 			.arg( in ).arg( _backend->getVolume( in,in ) );
-		//qDebug()<<" Responsible element for " << in << ": " << _inputswidget->getResponsible(in, in);
+		qDebug()<<" Responsible element for " << in << ": " << _inputswidget->getResponsible(in, in);
 		const QList<int> &mp = _inputswidget->getResponsible(in,in)->midiParameters();
 		// I'm going to use a loop to make it clear ordering is important
 		// (actually, foreach maitains ordering of a QList in Qt 4.8, but this might change
@@ -545,7 +545,7 @@ void MainWindow::renameInput() {
 	tmp->show();
 }
 void MainWindow::renameInput( QStringList names ) {
-	//qDebug() << "Change input channel names: " << names;
+	qDebug() << "Change input channel names: " << names;
 	while (names.length() > 0) {
 		QString old_name(names.takeFirst());
 		QString new_name(names.takeFirst());
@@ -567,7 +567,7 @@ void MainWindow::renameInput( QStringList names ) {
 		}
 		// Final sanity check: do the rename if the old name exists already
 		if (_inputswidget->getResponsible(old_name, old_name)) {
-			//qDebug() << "Now changing " << old_name << " to " << new_name
+			qDebug() << "Now changing " << old_name << " to " << new_name
 			//         << " in " << _backend->inchannels();
 			_backend->renameInput(old_name, new_name);
 			_inputswidget->renamechannels(old_name, new_name);
@@ -588,7 +588,7 @@ void MainWindow::renameOutput() {
 	tmp->show();
 }
 void MainWindow::renameOutput( QStringList names ) {
-	//qDebug() << "Change output channel names: " << names;
+	qDebug() << "Change output channel names: " << names;
 	while (names.length() > 0) {
 		QString old_name(names.takeFirst());
 		QString new_name(names.takeFirst());
@@ -610,7 +610,7 @@ void MainWindow::renameOutput( QStringList names ) {
 		}
 		// Final sanity check: do the rename if the old name exists already
 		if (_outputswidget->getResponsible(old_name, old_name)) {
-			//qDebug() << "Now changing " << old_name << " to " << new_name
+			qDebug() << "Now changing " << old_name << " to " << new_name
 			//         << " in" << _backend->outchannels();
 			_backend->renameOutput(old_name, new_name);
 			_outputswidget->renamechannels(old_name, new_name);
@@ -620,7 +620,7 @@ void MainWindow::renameOutput( QStringList names ) {
 }
 
 void MainWindow::removeInput() {
-	//qDebug( "MainWindow::removeInput()" );
+	qDebug( "MainWindow::removeInput()" );
 	JackMix::GUI::ChannelSelector *tmp =
 		new JackMix::GUI::ChannelSelector( "Delete Input channels",
 						   "Select the inputchannels for deletion:",
@@ -632,7 +632,7 @@ void MainWindow::removeInput() {
 	tmp->show();
 }
 void MainWindow::removeInput( QString n ) {
-	//qDebug( "MainWindow::removeInput( QString %s )", qPrintable( n ) );
+	qDebug( "MainWindow::removeInput( QString %s )", qPrintable( n ) );
 	if ( _backend->removeInput( n ) ) {
 		_inputswidget->removeinchannel( n );
 		_mixerwidget->removeinchannel( n );
@@ -640,7 +640,7 @@ void MainWindow::removeInput( QString n ) {
 	}
 }
 void MainWindow::removeOutput() {
-	//qDebug( "MainWindow::removeOutput()" );
+	qDebug( "MainWindow::removeOutput()" );
 	JackMix::GUI::ChannelSelector *tmp =
 		new JackMix::GUI::ChannelSelector( "Delete Outputchannels",
 						   "Select the outputchannels for deletion:",
@@ -651,7 +651,7 @@ void MainWindow::removeOutput() {
 	tmp->show();
 }
 void MainWindow::removeOutput( QString n ) {
-	//qDebug( "MainWindow::removeOutput( QString %s )", qPrintable( n ) );
+	qDebug( "MainWindow::removeOutput( QString %s )", qPrintable( n ) );
 	if ( _backend->removeOutput( n ) ) {
 		_outputswidget->removeoutchannel( n );
 		_mixerwidget->removeoutchannel( n );

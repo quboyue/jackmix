@@ -268,7 +268,7 @@ Q_OBJECT
 				}
 				
 			} else {
-				//qDebug() << "No interp. current = " << fs.current ;
+				qDebug() << "No interp. current = " << fs.current ;
 				for (size_t n {0}; n < nframes; n++) {
 					buf[n] *= fs.current;
 					max = qMax(max, buf[n]);
