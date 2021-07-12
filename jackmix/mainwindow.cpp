@@ -568,7 +568,7 @@ void MainWindow::renameInput( QStringList names ) {
 		// Final sanity check: do the rename if the old name exists already
 		if (_inputswidget->getResponsible(old_name, old_name)) {
 			qDebug() << "Now changing " << old_name << " to " << new_name
-			//         << " in " << _backend->inchannels();
+			        << " in " << _backend->inchannels();
 			_backend->renameInput(old_name, new_name);
 			_inputswidget->renamechannels(old_name, new_name);
 			_mixerwidget->renamechannels(old_name, new_name);
@@ -611,7 +611,7 @@ void MainWindow::renameOutput( QStringList names ) {
 		// Final sanity check: do the rename if the old name exists already
 		if (_outputswidget->getResponsible(old_name, old_name)) {
 			qDebug() << "Now changing " << old_name << " to " << new_name
-			//         << " in" << _backend->outchannels();
+			        << " in" << _backend->outchannels();
 			_backend->renameOutput(old_name, new_name);
 			_outputswidget->renamechannels(old_name, new_name);
 			_mixerwidget->renamechannels(old_name, new_name);

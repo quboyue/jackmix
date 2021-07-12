@@ -56,7 +56,7 @@ EditableChannelSelector::~EditableChannelSelector() {
 /// list content after choosing an alternative name to avoid duplications
 void EditableChannelSelector::update_channel_name(int which, QString revised) {
 	qDebug() << "EditableChannelSelector::update_channel_name(" << which
-	//         << ", " << revised << "): _channels =" << _channels;
+	         << ", " << revised << "): _channels =" << _channels;
 	_channels[which] = revised;
 	_list->item(which)->setText(revised);
 	_isEdited[which] = false;
