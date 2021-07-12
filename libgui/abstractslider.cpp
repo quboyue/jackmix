@@ -86,7 +86,7 @@ void AbstractSlider::showInput() {
 		_spinbox->setValue( _value );
 		_spinbox->setFrame( false );
 		connect( _spinbox, SIGNAL( editingFinished() ), this, SLOT( hideInput() ) );
-		qDebug() << iv << "=>" << ((static_cast<double>(iv))/127.0);
+		//qDebug() << iv << "=>" << ((static_cast<double>(iv))/127.0);
 
 		connect( _spinbox, SIGNAL( valueChanged( double ) ), this, SLOT( value( double ) ) );
 		connect( this, SIGNAL( valueChanged( double ) ), _spinbox, SLOT( setValue( double ) ) );
