@@ -536,7 +536,7 @@ QStringList Global::canCreate( int in, int out ) {
 
 bool Global::create( QString type, QStringList ins, QStringList outs, Widget* parent, const char* name ) {
 	qDebug( "Global::create( type = %s, ins = [%s], outs = [%s], parent = %p, name = %s )",
-        //        qPrintable( type ), qPrintable( ins.join( "," ) ), qPrintable( outs.join( "," ) ), parent, name );
+               qPrintable( type ), qPrintable( ins.join( "," ) ), qPrintable( outs.join( "," ) ), parent, name );
 	// Only AuxElements can be non-selectable (input and output pots).
 	Element* elem=0;
         int i;
