@@ -67,7 +67,7 @@ void PortListener::run()
 			} while (snd_seq_event_input_pending(seq_handle, 0) > 0);
 		}
 		
-		//qDebug() << "Tick";
+		qDebug() << "Tick";
 
 	}
 	

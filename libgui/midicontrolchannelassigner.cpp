@@ -86,16 +86,16 @@ MidiControlChannelAssigner::~MidiControlChannelAssigner() {
 }
 
 void MidiControlChannelAssigner::commit() {
-	//qDebug( "MidiControlChannelAssigner::commit()" );
+	qDebug( "MidiControlChannelAssigner::commit()" );
 	QList<int> values;
 	for (int i=0; i<_num_controls; i++)
 		values.append(_cchans[i]->value());
 	emit assignParameters( values );
 }
 void MidiControlChannelAssigner::commitnquit() {
-	//qDebug( "MidiControlChannelAssigner::commitnquit()" );
+	qDebug( "MidiControlChannelAssigner::commitnquit()" );
 	commit();
-	//qDebug( "Now quit..." );
+	qDebug( "Now quit..." );
 	done( 0 );
 }
 

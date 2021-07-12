@@ -55,7 +55,7 @@ EditableChannelSelector::~EditableChannelSelector() {
 /// A public method allowing an external agent to update the
 /// list content after choosing an alternative name to avoid duplications
 void EditableChannelSelector::update_channel_name(int which, QString revised) {
-	//qDebug() << "EditableChannelSelector::update_channel_name(" << which
+	qDebug() << "EditableChannelSelector::update_channel_name(" << which
 	//         << ", " << revised << "): _channels =" << _channels;
 	_channels[which] = revised;
 	_list->item(which)->setText(revised);
@@ -63,7 +63,7 @@ void EditableChannelSelector::update_channel_name(int which, QString revised) {
 }
 /// Handle user edits of list contents
 void EditableChannelSelector::register_changed_item(QListWidgetItem *wi) {
-	//qDebug() << "Item changed: " << _list->row(wi);
+	qDebug() << "Item changed: " << _list->row(wi);
 	int which = _list->row(wi);
 	_isEdited[which] = true;
 }
