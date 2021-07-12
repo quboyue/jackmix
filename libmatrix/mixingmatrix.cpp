@@ -123,7 +123,7 @@ Element* Widget::getResponsible( QString in, QString out ) const {
 }
 
 bool Widget::createControl( QStringList inchannels, QStringList outchannels ) {
-	qDebug( "Widget::createControl( QStringList '%s', QStringList '%s', %s)", qPrintable( inchannels.join( "," ) ), qPrintable( outchannels.join( "," ) ) );
+	//qDebug( "Widget::createControl( QStringList '%s', QStringList '%s', %s)", qPrintable( inchannels.join( "," ) ), qPrintable( outchannels.join( "," ) ) );
 
 	QStringList controls = Global::the()->canCreate( inchannels.size(), outchannels.size() );
 	if ( ! controls.isEmpty() ) {
