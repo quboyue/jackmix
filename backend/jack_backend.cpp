@@ -202,14 +202,17 @@ void JackBackend::setVolume(QString channel, QString output, float volume) {
 
 JackBackend::FaderState& JackBackend::getMatrixVolume( QString channel, QString output ) {
 	qDebug() << "JackBackend::getVolume(" << channel << ", " << output << ")";
+
 	static JackBackend::FaderState invalid(-1, nullptr); // no likee - somebody might change it. FIXME
-	
+
 	if ( channel == output ) {
 		if ( outvolumes.contains( channel ) )
 			return getOutVolume(channel);
 		if ( involumes.contains( channel ) )
 			return getInVolume(channel);
-	} else {
+	} 
+	else
+	{
 		if (!volumes[channel].contains(output) ){//|| volumes[channel][output].p == nullptr) {
                         qDebug() << "Inserting new FaderState in volumes.";
 			volumes[channel].insert(output, FaderState(0, this));
@@ -329,7 +332,7 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 
 	// Send any information about channel levels
 	backend->report();
-        
+	qDebug()<<"------------Jack Process end for one loop"
 	return 0;
 }
 
