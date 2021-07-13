@@ -205,7 +205,7 @@ void JackBackend::setVolume(QString channel, QString output, float volume) {
 }
 
 JackBackend::FaderState& JackBackend::getMatrixVolume( QString channel, QString output ) {
-	qDebug() << "	JackBackend::getVolume(" << channel << ", " << output << ")";
+	//qDebug() << "	JackBackend::getVolume(" << channel << ", " << output << ")";
 
 	static JackBackend::FaderState invalid(-1, nullptr); // no likee - somebody might change it. FIXME
 
@@ -259,7 +259,7 @@ void JackBackend::setInVolume( QString ch, float n ) {
 }
 
 JackBackend::FaderState&  JackBackend::getInVolume( QString ch ) {
-	qDebug() << "	JackBackend::getInVolume(QString " << ch << " )";
+	//qDebug() << "	JackBackend::getInVolume(QString " << ch << " )";
 	return involumes[ch];
 }
 
@@ -270,8 +270,8 @@ void JackBackend::send_signal(const ::jack_midi_data_t b1,
 
 
 int JackMix::process( jack_nframes_t nframes, void* arg ) {
-	qDebug() << "------------------------Jack Process Start for one loop";
-	qDebug() << "	JackMix::process( jack_nframes_t " << nframes << ", void* )";
+	//qDebug() << "------------------------Jack Process Start for one loop";
+	//qDebug() << "----JackMix::process( jack_nframes_t " << nframes << ", void* )";
 	JackMix::JackBackend* backend = static_cast<JackMix::JackBackend*>( arg );
 
 	// Deal with MIDI events
