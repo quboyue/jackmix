@@ -30,12 +30,15 @@
 using namespace JackMix;
 
 JackBackend::JackBackend( GuiServer_Interface* g ) : BackendInterface( g ) {
+	//函数主入口！！！
 	qDebug() << "JackBackend::JackBackend()";
 	client = ::jack_client_open( "JackMix", JackNoStartServer, NULL );
 	if ( client ) {
 		midi_port = ::jack_port_register(client, "Control",
 		                                 JACK_DEFAULT_MIDI_TYPE, JackPortIsInput, 0);
-		::jack_set_process_callback( client, JackMix::process, this );
+		
+		qDebug()<<"	jack_set_process_callback return"<< ::jack_set_process_callback(client, JackMix::process, this);
+
 		qDebug() << "JackBackend::JackBackend() activate";
 		::jack_activate( client );
 		set_interp_len(::jack_get_sample_rate(client));
@@ -48,7 +51,8 @@ JackBackend::JackBackend( GuiServer_Interface* g ) : BackendInterface( g ) {
 }
 JackBackend::~JackBackend() {
 	qDebug() << "JackBackend::~JackBackend()";
-	if ( client ) {
+	if ( client ) 
+	{
 		/*qDebug() << " return code" <<*/ ::jack_deactivate( client );
 		/*qDebug() << " return code" <<*/ ::jack_client_close( client );
 	}
