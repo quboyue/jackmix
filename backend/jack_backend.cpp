@@ -332,6 +332,7 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 
 	// Send any information about channel levels
 	backend->report();
+	qDebug()<<"------------Jack Process end for one loop"
 	qDebug() << "------------Jack Process end for one loop";
 	return 0;
 }
