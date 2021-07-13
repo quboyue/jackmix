@@ -271,7 +271,7 @@ void JackBackend::send_signal(const ::jack_midi_data_t b1,
 
 int JackMix::process( jack_nframes_t nframes, void* arg ) {
 	qDebug() << "------------------------Jack Process Start for one loop";
-	qDebug() << "	JackMix::process( jack_nframes_t " << nframes << ", void* )";
+	qDebug() << "----JackMix::process( jack_nframes_t " << nframes << ", void* )";
 	JackMix::JackBackend* backend = static_cast<JackMix::JackBackend*>( arg );
 
 	// Deal with MIDI events
