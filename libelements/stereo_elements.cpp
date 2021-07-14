@@ -77,10 +77,10 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 	, _balance_value( 0 )
 	, _volume_value( 0 )
 {
-	//qDebug( "Mono2StereoElement::Mono2StereoElement()" );
+	qDebug( "Mono2StereoElement::Mono2StereoElement()" );
 	double left = backend()->getVolume( _in[0], _out[0] );
 	double right = backend()->getVolume( _in[0], _out[1] );
-	//qDebug( " volumes: %f, %f", left, right );
+	qDebug( " volumes: %f, %f", left, right );
 	if ( left>right ) {
 		_volume_value = left;
 		_balance_value = right-left;
@@ -88,7 +88,7 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 		_volume_value = right;
 		_balance_value = right-left;
 	}
-	//qDebug( " values: %f, %f", _volume_value, _balance_value );
+	qDebug( " values: %f, %f", _volume_value, _balance_value );
 	QVBoxLayout* _layout = new QVBoxLayout( this );
 	_layout->setMargin( 0 );
 	_layout->setSpacing( 0 );
@@ -132,14 +132,14 @@ Mono2StereoElement::~Mono2StereoElement() {
 }
 
 void Mono2StereoElement::balance( double n ) {
-	//qDebug( "Mono2StereoElement::balance( double %f )", n );
+	qDebug( "Mono2StereoElement::balance( double %f )", n );
 	_balance_value = n;
 	calculateVolumes();
 	_balance->value( n );
 	emit valueChanged( this, QString( "balance" ) );
 }
 void Mono2StereoElement::volume( double n ) {
-	//qDebug( "Mono2StereoElement::volume( double %f )", n );
+	qDebug( "Mono2StereoElement::volume( double %f )", n );
 	_volume_value = n;
 	calculateVolumes();
 	_volume->value( n );
@@ -231,14 +231,14 @@ Stereo2StereoElement::~Stereo2StereoElement() {
 }
 
 void Stereo2StereoElement::balance( double n ) {
-	//qDebug( "Mono2StereoElement::balance( double %f )", n );
+	qDebug( "Mono2StereoElement::balance( double %f )", n );
 	_balance_value = n;
 	_balance_widget->value( n );
 	calculateVolumes();
 	emit valueChanged( this, QString( "balance" ) );
 }
 void Stereo2StereoElement::volume( double n ) {
-	//qDebug( "Mono2StereoElement::volume( double %f )", n );
+	qDebug( "Mono2StereoElement::volume( double %f )", n );
 	_volume_value = n;
 	_volume_widget->value( n );
 	calculateVolumes();

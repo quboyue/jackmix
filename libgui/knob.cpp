@@ -64,7 +64,7 @@ Knob::Knob( double v, double min, double max, int precision, double pagestep,
 }
 
 Knob::~Knob() {
-	//qDebug()<<"One less knob";
+	qDebug()<<"One less knob";
 }
 
 void Knob::value( double n, bool show_numeric ) {
@@ -78,7 +78,7 @@ void Knob::value( double n, bool show_numeric ) {
 }
 
 void Knob::setIndicatorColor(const QColor& c) {
-        //qDebug()<<c;
+        qDebug()<<c;
         _indicator = c;
         update();
 }
@@ -208,27 +208,27 @@ void Knob::paintEvent( QPaintEvent* ) {
 }
 
 void Knob::mouseEvent( QMouseEvent* ev ) {
-	//sqDebug() << "Knob::mouseEvent(" << ev << ")";
-	//qDebug() << " ev->x" << ev->x() << " ev->y" << ev->y();
+	qDebug() << "Knob::mouseEvent(" << ev << ")";
+	qDebug() << " ev->x" << ev->x() << " ev->y" << ev->y();
 	QPointF pos( ev->pos() );
 	QPointF middle( width()/2.0, height()/2.0 );
 	QPointF rpos( pos-middle );
 	if ( abs( rpos ) > 10 ) {
-		//qDebug() << " " << pos << " - " << middle << " = " << rpos;
-		//qDebug() << " length is" << abs( rpos );
+		qDebug() << " " << pos << " - " << middle << " = " << rpos;
+		qDebug() << " length is" << abs( rpos );
 		double alpha_sin = asin( rpos.y()/ abs( rpos ) )/M_PI*180;
-		//qDebug() << " asin(rpos)" << alpha_sin;
+		qDebug() << " asin(rpos)" << alpha_sin;
 		double alpha_cos = acos( rpos.x()/ abs( rpos ) )/M_PI*180;
-		//qDebug() << " acos(rpos)" << alpha_cos;
+		qDebug() << " acos(rpos)" << alpha_cos;
 		double alpha = alpha_cos * sgn( alpha_sin );
-		//qDebug() << " alpha" << alpha;
+		qDebug() << " alpha" << alpha;
 		alpha = degree( alpha + 240 );
 		if ( alpha > 330 )
 			alpha = 0;
 		alpha = qMin( alpha, 300.0 );
-		//qDebug() << " alpha" << alpha;
+		qDebug() << " alpha" << alpha;
 
-		//qDebug() << " value =" << alpha/300 << " ndbtodb =" << ndbtodb( alpha/300 );
+		qDebug() << " value =" << alpha/300 << " ndbtodb =" << ndbtodb( alpha/300 );
 		value( ndbtodb( alpha/300 ) );
 	}
 }

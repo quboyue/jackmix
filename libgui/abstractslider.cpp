@@ -97,8 +97,8 @@ void AbstractSlider::showInput() {
 }
 
 void AbstractSlider::contextMenuEvent( QContextMenuEvent* ev ) {
-	//qDebug() << "AbstractSlider ContextMenuEvent at " << ev->x() << " " << ev->y();
-	//qDebug() << "AbstractSlider::contextMenuEvent(" << ev << ") is accepted?" << ev->isAccepted();
+	qDebug() << "AbstractSlider ContextMenuEvent at " << ev->x() << " " << ev->y();
+	qDebug() << "AbstractSlider::contextMenuEvent(" << ev << ") is accepted?" << ev->isAccepted();
 	if ( _spinbox.isNull() )
 		showInput();
 	else
@@ -106,9 +106,12 @@ void AbstractSlider::contextMenuEvent( QContextMenuEvent* ev ) {
 }	
 
 void AbstractSlider::mousePressEvent( QMouseEvent* ev ) {
-	//qDebug() << "AbstractSlider::mousePressEvent(" << ev << ") is accepted?" << ev->isAccepted();
+	qDebug() << "AbstractSlider::mousePressEvent(" << ev << ") is accepted?" << ev->isAccepted();
 	if ( ev->button() == Qt::LeftButton) {
+		qDebug() << "AbstractSlider::mousePressEvent::ev->button()(" << ev->button();
+
 		if (ev->modifiers() == Qt::ShiftModifier) {
+
 			emit(select());
 			ev->accept();
 		} else if ( ev->modifiers() == (Qt::ShiftModifier | Qt::ControlModifier) ) {

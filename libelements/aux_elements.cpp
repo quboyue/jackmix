@@ -48,7 +48,7 @@ class AuxFactory : public JackMix::MixingMatrix::ElementFactory
 {
 public:
 	AuxFactory() : ElementFactory() {
-		//qDebug() << "AuxFactory::AuxFactory()";
+		qDebug() << "AuxFactory::AuxFactory()";
 		//globaldebug();
 	}
 	~AuxFactory() {}
@@ -101,7 +101,7 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	
 	midi_params.append(0);        // Initial MIDI paramater number
 	midi_delegates.append(_poti); //   for the potentiometer
-	//qDebug()<<"There are "<<midi_delegates.size()<<" Midi delegates";
+	qDebug()<<"There are "<<midi_delegates.size()<<" Midi delegates";
 
 	// Now construct the parameter setting menu
 	_cca = new JackMix::GUI::MidiControlChannelAssigner(QString("Set MIDI control parameter"),

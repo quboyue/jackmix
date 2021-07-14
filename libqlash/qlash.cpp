@@ -44,7 +44,7 @@ bool qLashClient::isConnected() {
 }
 
 void qLashClient::saveToDirFinalize( QString path ) {
-	//qDebug() << "qLashClient::saveToDirFinalize()";
+	qDebug() << "qLashClient::saveToDirFinalize()";
 	QFile file( QString( "%1/_qlashvalues" ).arg( path ) );
 	if ( file.open( QIODevice::WriteOnly ) ) {
 		QDataStream out( &file );
@@ -55,11 +55,11 @@ void qLashClient::saveToDirFinalize( QString path ) {
 	lash_send_event( _client, lash_event_new_with_type( LASH_Save_File ) );
 }
 void qLashClient::saveToConfigFinalize() {
-	//qDebug() << "qLashClient::saveToConfigFinalize()";
+	qDebug() << "qLashClient::saveToConfigFinalize()";
 	lash_send_event( _client, lash_event_new_with_type( LASH_Save_Data_Set ) );
 }
 void qLashClient::restoreFromDirFinalize( QString path ) {
-	//qDebug() << "qLashClient::restoreFromDirFinalize()";
+	qDebug() << "qLashClient::restoreFromDirFinalize()";
 	QFile file( QString( "%1/_qlashvalues" ).arg( path ) );
 	if ( file.open( QIODevice::ReadOnly ) ) {
 		QDataStream in( &file );
@@ -75,7 +75,7 @@ void qLashClient::restoreFromDirFinalize( QString path ) {
 	lash_send_event( _client, lash_event_new_with_type( LASH_Restore_File ) );
 }
 void qLashClient::restoreFromConfigFinalize() {
-	//qDebug() << "qLashClient::restoreFromConfigFinalize()";
+	qDebug() << "qLashClient::restoreFromConfigFinalize()";
 	lash_send_event( _client, lash_event_new_with_type( LASH_Restore_Data_Set ) );
 }
 
@@ -94,7 +94,7 @@ void qLashClient::setJackName( QString n ) {
 void qLashClient::timerEvent( QTimerEvent* ) {
 	while ( isConnected() && lash_get_pending_event_count( _client ) > 0 ) {
 		lash_event_t* event = lash_get_event( _client );
-		//qDebug() << "Have event of type" << lash_event_get_type( event );
+		qDebug() << "Have event of type" << lash_event_get_type( event );
 
 		switch ( lash_event_get_type( event ) ) {
 			case LASH_Client_Name:
@@ -107,25 +107,25 @@ void qLashClient::timerEvent( QTimerEvent* ) {
 				qDebug() << "Event: This clients Alsa-ID is:" << lash_event_get_string( event );
 				break;
 			case LASH_Save_File:
-				//qDebug() << "Event: Should save data into dir" << lash_event_get_string( event );
+				qDebug() << "Event: Should save data into dir" << lash_event_get_string( event );
 				emit saveToDir( lash_event_get_string( event ) );
 				emit saveValues();
 				saveToDirFinalize( lash_event_get_string( event ) );
 				break;
 			case LASH_Restore_File:
-				//qDebug() << "Event: Should restore data from dir" << lash_event_get_string( event );
+				qDebug() << "Event: Should restore data from dir" << lash_event_get_string( event );
 				emit restoreFromDir( lash_event_get_string( event ) );
 				restoreFromDirFinalize( lash_event_get_string( event ) );
 				emit restoreValues();
 				break;
 			case LASH_Save_Data_Set:
-				//qDebug() << "Event: Should save data in configs";
+				qDebug() << "Event: Should save data in configs";
 				emit saveToConfig();
 				//emit saveValues(); // The values are saved in their own file in the dir...
 				saveToConfigFinalize();
 				break;
 			case LASH_Restore_Data_Set:
-				//qDebug() << "Event: Should restore data from configs";
+				qDebug() << "Event: Should restore data from configs";
 				emit restoreFromConfig();
 				restoreFromConfigFinalize();
 				break;
