@@ -109,15 +109,22 @@ void AbstractSlider::mousePressEvent( QMouseEvent* ev ) {
 	qDebug() << "AbstractSlider::mousePressEvent(" << ev << ") is accepted?" << ev->isAccepted();
 	if ( ev->button() == Qt::LeftButton) {
 		qDebug() << "AbstractSlider::mousePressEvent::ev->button()(" << ev->button();
-
-		if (ev->modifiers() == Qt::ShiftModifier) {
-
+		
+		if (ev->modifiers() == Qt::ShiftModifier) 
+		{
+			qDebug() << "Qt::ShiftModifier ";
 			emit(select());
 			ev->accept();
-		} else if ( ev->modifiers() == (Qt::ShiftModifier | Qt::ControlModifier) ) {
+		} 
+		else if ( ev->modifiers() == (Qt::ShiftModifier | Qt::ControlModifier) ) 
+		{
+			qDebug() << "Qt::ShiftModifier | Qt::ControlModifier ";
 			emit(replace());
 			ev->accept();
-		} else {
+		} 
+		else 
+		{
+			qDebug() << "_nullclick.contains( ev->pos() ) ";
 			if ( _nullclick.contains( ev->pos() ) )
 				value( 0 );
 			else
