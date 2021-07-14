@@ -208,7 +208,7 @@ void Knob::paintEvent( QPaintEvent* ) {
 }
 
 void Knob::mouseEvent( QMouseEvent* ev ) {
-	//sqDebug() << "Knob::mouseEvent(" << ev << ")";
+	qDebug() << "Knob::mouseEvent(" << ev << ")";
 	qDebug() << " ev->x" << ev->x() << " ev->y" << ev->y();
 	QPointF pos( ev->pos() );
 	QPointF middle( width()/2.0, height()/2.0 );
