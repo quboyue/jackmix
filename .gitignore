@@ -26,3 +26,15 @@ libcontrol/controlsender_test
 libgui/channelselector_test
 libgui/midicontrolchannelassigner_test
 libgui/slider_test
+
+.vs/jackmix/v16/Browse.VC.db
+
+.vs/jackmix/v16/Browse.VC.db-shm
+
+.vs/jackmix/v16/Browse.VC.db-wal
+
+.vs/jackmix/v16/Browse.VC.opendb
+
+.vs/ProjectSettings.json
+
+.vs/slnx.sqlite
