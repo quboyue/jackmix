@@ -266,7 +266,8 @@ protected slots:
 	virtual void slot_simple_explode() { explode( this ); }
 	// Use this slot if you want a simple selection toggle
 	virtual void slot_simple_select() 
-	{ 
+	{
+
 		qDebug()<<"slot : slot_simple_select()"; 
 		select(!isSelected()); 
 	}
