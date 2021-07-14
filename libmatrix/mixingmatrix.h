@@ -268,6 +268,7 @@ protected slots:
 	virtual void slot_simple_select() 
 	{
 
+
 		qDebug()<<"slot : slot_simple_select()"; 
 		select(!isSelected()); 
 	}
