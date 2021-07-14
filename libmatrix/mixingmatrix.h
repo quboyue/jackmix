@@ -265,7 +265,7 @@ protected slots:
 	// Use this slot if you don't want to do something before explosion.
 	virtual void slot_simple_explode() { explode( this ); }
 	// Use this slot if you want a simple selection toggle
-	virtual void slot_simple_select() { select( !isSelected() ); }
+	virtual void slot_simple_select() { qDebug()<<"slot : slot_simple_select()"; select(!isSelected()); }
 	/** Receive and forward midi events (parameter, value pairs) to
 	 *  their associated sliders.
 	 */
