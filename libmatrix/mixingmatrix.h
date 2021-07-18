@@ -270,6 +270,7 @@ protected slots:
 
 
 		qDebug()<<"slot : slot_simple_select()"; 
+
 		select(!isSelected()); 
 	}
 	/** Receive and forward midi events (parameter, value pairs) to
