@@ -1,0 +1,7 @@
+<map id="JackMix::dB2VolCalc::amptodb" name="JackMix::dB2VolCalc::amptodb">
+<area shape="rect" id="node1" title=" " alt="" coords="233,108,380,149"/>
+<area shape="rect" id="node2" href="$db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ad80d29cac26d1f940a83d7651893d010" title="With ndb = normalized dB (between 0 and 1)" alt="" coords="22,5,169,47"/>
+<area shape="rect" id="node3" href="$df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="5,71,185,112"/>
+<area shape="rect" id="node4" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="13,137,178,193"/>
+<area shape="rect" id="node5" href="$de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="13,217,178,273"/>
+</map>

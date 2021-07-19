@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jackmix: configoption.cpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jackmix
+   &#160;<span id="projectnumber">v1.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_7c0bbce4cd396a4571ea5c6cec9a50e0.html">jackmix</a></li><li class="navelem"><a class="el" href="../../dir_25cec6d452541f07d11c957df3be294b.html">libcore</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">configoption.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/da3/configoption_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/df7/configoption_8h.html">configoption.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;configoption.moc&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#a505eea6a903d41471b414cdeacd23405">    7</a></span>&#160;<a class="code" href="../../d2/dd3/class_config_option.html#af946f863b3261f0e946f79b0db35ea8a">ConfigOption::ConfigOption</a>( QDataStream&amp; s, QObject* p ) : QObject( p )<span class="comment">/*, _value( s )*/</span>, _value( QVariant() ) {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">//  qDebug( &quot;ConfigOption::ConfigOption( QDataStream )&quot; );</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    s &gt;&gt; <a class="code" href="../../d2/dd3/class_config_option.html#a22857294e0722afee9c76cb2a046eb85">_name</a> &gt;&gt; <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="../../d2/dd3/class_config_option.html#a54b6d93d71d3760a410ec0e32888163b">_type</a> = <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.type();</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">//  qDebug( &quot; _name=%s, _value=%s&quot;, _name.toStdString().c_str(), _value.toString().toStdString().c_str() );</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="../../d2/dd3/class_config_option.html#a56fd56ab3c82cf618035d669135cdbe9">type</a>() == QVariant::Invalid ) {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">int</span> count;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        s &gt;&gt; count;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">//      qDebug( &quot;Found %i childs&quot;, count );</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i=0; i&lt;count; ++i )</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            <a class="code" href="../../d2/dd3/class_config_option.html#abb5ccd6fcb582aa6e9105ed3771f040e">addChild</a>( <span class="keyword">new</span> <a class="code" href="../../d2/dd3/class_config_option.html#af946f863b3261f0e946f79b0db35ea8a">ConfigOption</a>( s, <span class="keyword">this</span> ) );</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//      qDebug( &quot;I have now %i childs&quot;, _childs.count() );</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#a245eaa0221e19419e9957d60efb3d19f">   22</a></span>&#160;<a class="code" href="../../d2/dd3/class_config_option.html#a245eaa0221e19419e9957d60efb3d19f">ConfigOption::~ConfigOption</a>() {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    qDebug( <span class="stringliteral">&quot;(%s) ConfigOption::~ConfigOption()&quot;</span>, <a class="code" href="../../d2/dd3/class_config_option.html#a22857294e0722afee9c76cb2a046eb85">_name</a>.toStdString().c_str() );</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#ae5c19a9bfbefd9ef4b7372469b3109d5">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/dd3/class_config_option.html#ae5c19a9bfbefd9ef4b7372469b3109d5">ConfigOption::newChild</a>( QString n, QVariant v ) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="../../d2/dd3/class_config_option.html#a56fd56ab3c82cf618035d669135cdbe9">type</a>() == QVariant::Invalid )</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="../../d2/dd3/class_config_option.html#abb5ccd6fcb582aa6e9105ed3771f040e">addChild</a>( <span class="keyword">new</span> <a class="code" href="../../d2/dd3/class_config_option.html#af946f863b3261f0e946f79b0db35ea8a">ConfigOption</a>( n, v, <span class="keyword">this</span> ) );</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#a8e02904923f51a14c503b0d9726b3da8">   30</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/dd3/class_config_option.html#ae5c19a9bfbefd9ef4b7372469b3109d5">ConfigOption::newChild</a>( QString n, QVariant::Type t ) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//  qDebug( &quot;ConfigOption::newChild( QString %s, QVariant::Type %s )&quot;, n.toStdString().c_str(), QVariant::typeToName( t ) );</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="../../d2/dd3/class_config_option.html#a56fd56ab3c82cf618035d669135cdbe9">type</a>() == QVariant::Invalid )</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="../../d2/dd3/class_config_option.html#abb5ccd6fcb582aa6e9105ed3771f040e">addChild</a>( <span class="keyword">new</span> <a class="code" href="../../d2/dd3/class_config_option.html#af946f863b3261f0e946f79b0db35ea8a">ConfigOption</a>( n, t, <span class="keyword">this</span> ) );</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//  qDebug( &quot;New child has type %s \nI (%s) have now %i childs.&quot;, QVariant::typeToName( _childs[ n ]-&gt;type() ), _name.toStdString().c_str(), _childs.size() );</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#abb5ccd6fcb582aa6e9105ed3771f040e">   36</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/dd3/class_config_option.html#abb5ccd6fcb582aa6e9105ed3771f040e">ConfigOption::addChild</a>( <a class="code" href="../../d2/dd3/class_config_option.html">ConfigOption</a>* n ) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="../../d2/dd3/class_config_option.html#a54b6d93d71d3760a410ec0e32888163b">_type</a> == QVariant::Invalid )</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="../../d2/dd3/class_config_option.html#a9f8e55ee69dda350d5e1c76937798072">_childs</a>.append( n );</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#ad1dad1dc1462a0d8b598c9f1f96b583f">   40</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/dd3/class_config_option.html#ad1dad1dc1462a0d8b598c9f1f96b583f">ConfigOption::removeChild</a>( <a class="code" href="../../d2/dd3/class_config_option.html">ConfigOption</a>* <span class="comment">/*n*/</span> ) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../da/df7/configoption_8h.html#a8138b53b66b10d88bd61348f69074591">   41</a></span>&#160;<span class="comment">//  _childs.remove( n-&gt;_name ); // XXX</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#a26e90a985771078f3988fe89eb56f930">   44</a></span>&#160;<a class="code" href="../../d2/dd3/class_config_option.html">ConfigOption</a>* <a class="code" href="../../d2/dd3/class_config_option.html#a26e90a985771078f3988fe89eb56f930">ConfigOption::getOption</a>( QString n ) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">while</span> ( n[ 0 ]==QChar( <span class="charliteral">&#39;/&#39;</span> ) ) n.remove( 0,1 );</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//  qDebug( &quot;ConfigOption::getOption( QString %s )&quot;, n.toStdString().c_str() );</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> levels = n.count( <span class="stringliteral">&quot;/&quot;</span> ); <span class="comment">// + 1</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> ( n.section( <span class="stringliteral">&quot;/&quot;</span>,0,0 ) == <a class="code" href="../../d2/dd3/class_config_option.html#a22857294e0722afee9c76cb2a046eb85">_name</a> ) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// The first part is our name, go on...</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> ( levels == 0 )</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">this</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            QString tmp = n.section( <span class="stringliteral">&quot;/&quot;</span>, 1,levels );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="../../d2/dd3/class_config_option.html">ConfigOption</a>* ret = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">for</span> ( <a class="code" href="../../d2/dd3/class_config_option.html">ConfigOption</a>* it=<a class="code" href="../../d2/dd3/class_config_option.html#a9f8e55ee69dda350d5e1c76937798072">_childs</a>.first(); it &amp;&amp; ret == 0; it++ ) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                ret = it-&gt;<a class="code" href="../../d2/dd3/class_config_option.html#a26e90a985771078f3988fe89eb56f930">getOption</a>( tmp );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">else</span> <span class="comment">// first part isn&#39;t our name, return 0</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#ae85619f3a7cb3c04f73b43592ddecdbd">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/dd3/class_config_option.html#ae11b798cb974cdc76457d0dde444c86c">ConfigOption::value</a>( QVariant n ) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> _inupdate = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> ( !_inupdate &amp;&amp; <a class="code" href="../../d2/dd3/class_config_option.html#a56fd56ab3c82cf618035d669135cdbe9">type</a>() != QVariant::Invalid ) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> ( n.canConvert( <a class="code" href="../../d2/dd3/class_config_option.html#a56fd56ab3c82cf618035d669135cdbe9">type</a>() ) )</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a> = n;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        _inupdate = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        emit <a class="code" href="../../d2/dd3/class_config_option.html#a11852f851b07554584e6b330ec3250fd">changed</a>( <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a> );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.canConvert( QVariant::Int ) ) emit <a class="code" href="../../d2/dd3/class_config_option.html#a11852f851b07554584e6b330ec3250fd">changed</a>( <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.toInt() );</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.canConvert( QVariant::Double ) ) emit <a class="code" href="../../d2/dd3/class_config_option.html#a11852f851b07554584e6b330ec3250fd">changed</a>( <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.toDouble() );</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.canConvert( QVariant::String ) ) emit <a class="code" href="../../d2/dd3/class_config_option.html#a11852f851b07554584e6b330ec3250fd">changed</a>( <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.toString() );</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        _inupdate = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        qWarning( <span class="stringliteral">&quot;ConfigOption::value() Either in inupdate or wrong datatype! (_inupdate=%i,_type=%s[%s|%s])&quot;</span>, _inupdate, QVariant::typeToName( n.type() ), QVariant::typeToName( <a class="code" href="../../d2/dd3/class_config_option.html#a56fd56ab3c82cf618035d669135cdbe9">type</a>() ), QVariant::typeToName( <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.type() ) );</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#a885940f8c4b991fbeaecfd8268513845">   81</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/dd3/class_config_option.html#a885940f8c4b991fbeaecfd8268513845">ConfigOption::fromDataStream</a>( QDataStream&amp; s, <a class="code" href="../../d2/dd3/class_config_option.html#a92dd5d11f98713f693c705074e0f22dd">OverwriteMode</a> m ) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    QString new_name;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    QVariant new_value;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    s &gt;&gt; new_name &gt;&gt; new_value;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> ( m == <a class="code" href="../../d2/dd3/class_config_option.html#a92dd5d11f98713f693c705074e0f22dda48422c098bc5817a943f1272b27005be">Everything</a> ) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="../../d2/dd3/class_config_option.html#a22857294e0722afee9c76cb2a046eb85">_name</a> = new_name;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a> = new_value;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="../../d2/dd3/class_config_option.html#a54b6d93d71d3760a410ec0e32888163b">_type</a> = <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.type();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( m == <a class="code" href="../../d2/dd3/class_config_option.html#a92dd5d11f98713f693c705074e0f22dda3a1aef91017659fc338a1f9861f5f60f">ValuesandNew</a> &amp;&amp; new_name == <a class="code" href="../../d2/dd3/class_config_option.html#a22857294e0722afee9c76cb2a046eb85">_name</a> &amp;&amp; new_value.type() == <a class="code" href="../../d2/dd3/class_config_option.html#a54b6d93d71d3760a410ec0e32888163b">_type</a> ) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a> = new_value;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> childcount;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    s &gt;&gt; childcount;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">/* TODO</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">//X ConfigOption::operator QVariant( void ) {</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">//X     Q_ASSERT( _value.isValid() );</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">//X     return _value;</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">//X }</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#a9bddffba9a93654316d1032bc0a2bd7e">  103</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/dd3/class_config_option.html#ae63eca4297df8d006302d8a60915dc09">ConfigOption::debugPrint</a>( <span class="keywordtype">int</span> level ) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">//  std::cout &lt;&lt; &quot;ConfigOption::debugPrint( int &quot; &lt;&lt; level &lt;&lt; &quot; )&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">for</span> ( <span class="keywordtype">int</span> i=0; i&lt;level; ++i )</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot; + &quot;</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">//  std::cout &lt;&lt; _name.toStdString().c_str() &lt;&lt; &quot;(&quot; &lt;&lt; QVariant::typeToName( _type ) &lt;&lt; &quot;)&quot; &lt;&lt; std::endl;</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> ( <a class="code" href="../../d2/dd3/class_config_option.html#a56fd56ab3c82cf618035d669135cdbe9">type</a>() != QVariant::Invalid ) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        std::cout &lt;&lt; <a class="code" href="../../d2/dd3/class_config_option.html#a22857294e0722afee9c76cb2a046eb85">_name</a>.toStdString().c_str() &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; QVariant::typeToName( <a class="code" href="../../d2/dd3/class_config_option.html#a56fd56ab3c82cf618035d669135cdbe9">type</a>() ) &lt;&lt; <span class="stringliteral">&quot;) = &#39;&quot;</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> ( <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.canConvert( QVariant::String ) )</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            std::cout &lt;&lt; <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.toString().toStdString().c_str();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;[can&#39;t cast &quot;</span> &lt;&lt; QVariant::typeToName( <a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>.type() ) &lt;&lt; <span class="stringliteral">&quot; to string]&quot;</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        std::cout &lt;&lt; <a class="code" href="../../d2/dd3/class_config_option.html#a22857294e0722afee9c76cb2a046eb85">_name</a>.toStdString().c_str() &lt;&lt; <span class="stringliteral">&quot;(Invalid)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">for</span> ( <a class="code" href="../../d2/dd3/class_config_option.html">ConfigOption</a>* it = <a class="code" href="../../d2/dd3/class_config_option.html#a9f8e55ee69dda350d5e1c76937798072">_childs</a>.first(); it; it++ )</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            it-&gt;debugPrint( level + 1 );</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#adb6c8228772e5c63e50f6d6c85909e06">  122</a></span>&#160;QDataStream&amp; <a class="code" href="../../da/da3/configoption_8cpp.html#a4345ef6774fe74fe29208da41075ff69">operator&lt;&lt;</a>( QDataStream&amp; s, <a class="code" href="../../d2/dd3/class_config_option.html">ConfigOption</a>* c ) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    s &lt;&lt; c-&gt;<a class="code" href="../../d2/dd3/class_config_option.html#a22857294e0722afee9c76cb2a046eb85">_name</a> &lt;&lt; c-&gt;<a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> ( c-&gt;<a class="code" href="../../d2/dd3/class_config_option.html#a54b6d93d71d3760a410ec0e32888163b">_type</a> == QVariant::Invalid ) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        s &lt;&lt; c-&gt;<a class="code" href="../../d2/dd3/class_config_option.html#a285af4846a2ab5d2d46c0b3c2afcb66a">childrenCount</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">for</span> ( <a class="code" href="../../d2/dd3/class_config_option.html">ConfigOption</a>* it= c-&gt;<a class="code" href="../../d2/dd3/class_config_option.html#a9f8e55ee69dda350d5e1c76937798072">_childs</a>.first(); it; it++ )</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            s &lt;&lt; it;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="../../d2/dd3/class_config_option.html#a8138b53b66b10d88bd61348f69074591">  131</a></span>&#160;QDataStream&amp; <a class="code" href="../../da/da3/configoption_8cpp.html#aff3cfc331fd3767f2f27a35d5b4a01ed">operator&gt;&gt;</a>( QDataStream&amp; s, <a class="code" href="../../d2/dd3/class_config_option.html">ConfigOption</a>* c ) {</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#if 0</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    s &gt;&gt; c-&gt;<a class="code" href="../../d2/dd3/class_config_option.html#a22857294e0722afee9c76cb2a046eb85">_name</a> &gt;&gt; c-&gt;<a class="code" href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">_value</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordflow">if</span> ( c-&gt;<a class="code" href="../../d2/dd3/class_config_option.html#a54b6d93d71d3760a410ec0e32888163b">_type</a> == QVariant::Invalid ) {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordtype">int</span> count=0;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        s &gt;&gt; count;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="comment">// TODO</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">/*      for ( int i=0; i&lt;count; ++i ) {</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">            ConfigOption* tmp = new ConfigOption( &quot;&quot; );</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">            s &gt;&gt; tmp;</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">            c-&gt;addChild( tmp );</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment">        }*/</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        qDebug( <span class="stringliteral">&quot;Said to be %i childs&quot;</span>, count );</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;}</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="ttc" id="aclass_config_option_html"><div class="ttname"><a href="../../d2/dd3/class_config_option.html">ConfigOption</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00009">configoption.h:10</a></div></div>
+<div class="ttc" id="aclass_config_option_html_a11852f851b07554584e6b330ec3250fd"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a11852f851b07554584e6b330ec3250fd">ConfigOption::changed</a></div><div class="ttdeci">void changed(QVariant)</div></div>
+<div class="ttc" id="aclass_config_option_html_a22857294e0722afee9c76cb2a046eb85"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a22857294e0722afee9c76cb2a046eb85">ConfigOption::_name</a></div><div class="ttdeci">QString _name</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00059">configoption.h:59</a></div></div>
+<div class="ttc" id="aclass_config_option_html_a245eaa0221e19419e9957d60efb3d19f"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a245eaa0221e19419e9957d60efb3d19f">ConfigOption::~ConfigOption</a></div><div class="ttdeci">virtual ~ConfigOption()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da3/configoption_8cpp_source.html#l00022">configoption.cpp:22</a></div></div>
+<div class="ttc" id="aclass_config_option_html_a26e90a985771078f3988fe89eb56f930"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a26e90a985771078f3988fe89eb56f930">ConfigOption::getOption</a></div><div class="ttdeci">ConfigOption * getOption(QString)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da3/configoption_8cpp_source.html#l00044">configoption.cpp:44</a></div></div>
+<div class="ttc" id="aclass_config_option_html_a285af4846a2ab5d2d46c0b3c2afcb66a"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a285af4846a2ab5d2d46c0b3c2afcb66a">ConfigOption::childrenCount</a></div><div class="ttdeci">int childrenCount() const</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00031">configoption.h:31</a></div></div>
+<div class="ttc" id="aclass_config_option_html_a54b6d93d71d3760a410ec0e32888163b"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a54b6d93d71d3760a410ec0e32888163b">ConfigOption::_type</a></div><div class="ttdeci">QVariant::Type _type</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00058">configoption.h:58</a></div></div>
+<div class="ttc" id="aclass_config_option_html_a56fd56ab3c82cf618035d669135cdbe9"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a56fd56ab3c82cf618035d669135cdbe9">ConfigOption::type</a></div><div class="ttdeci">QVariant::Type type()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00014">configoption.h:14</a></div></div>
+<div class="ttc" id="aclass_config_option_html_a885940f8c4b991fbeaecfd8268513845"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a885940f8c4b991fbeaecfd8268513845">ConfigOption::fromDataStream</a></div><div class="ttdeci">void fromDataStream(QDataStream &amp;, OverwriteMode)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da3/configoption_8cpp_source.html#l00081">configoption.cpp:81</a></div></div>
+<div class="ttc" id="aclass_config_option_html_a92dd5d11f98713f693c705074e0f22dd"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a92dd5d11f98713f693c705074e0f22dd">ConfigOption::OverwriteMode</a></div><div class="ttdeci">OverwriteMode</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00013">configoption.h:13</a></div></div>
+<div class="ttc" id="aclass_config_option_html_a92dd5d11f98713f693c705074e0f22dda3a1aef91017659fc338a1f9861f5f60f"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a92dd5d11f98713f693c705074e0f22dda3a1aef91017659fc338a1f9861f5f60f">ConfigOption::ValuesandNew</a></div><div class="ttdeci">@ ValuesandNew</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00013">configoption.h:13</a></div></div>
+<div class="ttc" id="aclass_config_option_html_a92dd5d11f98713f693c705074e0f22dda48422c098bc5817a943f1272b27005be"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a92dd5d11f98713f693c705074e0f22dda48422c098bc5817a943f1272b27005be">ConfigOption::Everything</a></div><div class="ttdeci">@ Everything</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00013">configoption.h:13</a></div></div>
+<div class="ttc" id="aclass_config_option_html_a9f8e55ee69dda350d5e1c76937798072"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#a9f8e55ee69dda350d5e1c76937798072">ConfigOption::_childs</a></div><div class="ttdeci">ChildList _childs</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00062">configoption.h:62</a></div></div>
+<div class="ttc" id="aclass_config_option_html_abb5ccd6fcb582aa6e9105ed3771f040e"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#abb5ccd6fcb582aa6e9105ed3771f040e">ConfigOption::addChild</a></div><div class="ttdeci">void addChild(ConfigOption *)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da3/configoption_8cpp_source.html#l00036">configoption.cpp:36</a></div></div>
+<div class="ttc" id="aclass_config_option_html_ad1dad1dc1462a0d8b598c9f1f96b583f"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#ad1dad1dc1462a0d8b598c9f1f96b583f">ConfigOption::removeChild</a></div><div class="ttdeci">void removeChild(ConfigOption *)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da3/configoption_8cpp_source.html#l00040">configoption.cpp:40</a></div></div>
+<div class="ttc" id="aclass_config_option_html_ad8ff829719a1c2670d3f8e51d2e9e067"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#ad8ff829719a1c2670d3f8e51d2e9e067">ConfigOption::_value</a></div><div class="ttdeci">QVariant _value</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00060">configoption.h:60</a></div></div>
+<div class="ttc" id="aclass_config_option_html_ae11b798cb974cdc76457d0dde444c86c"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#ae11b798cb974cdc76457d0dde444c86c">ConfigOption::value</a></div><div class="ttdeci">QVariant value() const</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00035">configoption.h:35</a></div></div>
+<div class="ttc" id="aclass_config_option_html_ae5c19a9bfbefd9ef4b7372469b3109d5"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#ae5c19a9bfbefd9ef4b7372469b3109d5">ConfigOption::newChild</a></div><div class="ttdeci">void newChild(QString, QVariant)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da3/configoption_8cpp_source.html#l00026">configoption.cpp:26</a></div></div>
+<div class="ttc" id="aclass_config_option_html_ae63eca4297df8d006302d8a60915dc09"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#ae63eca4297df8d006302d8a60915dc09">ConfigOption::debugPrint</a></div><div class="ttdeci">void debugPrint()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00043">configoption.h:43</a></div></div>
+<div class="ttc" id="aclass_config_option_html_af946f863b3261f0e946f79b0db35ea8a"><div class="ttname"><a href="../../d2/dd3/class_config_option.html#af946f863b3261f0e946f79b0db35ea8a">ConfigOption::ConfigOption</a></div><div class="ttdeci">ConfigOption(QString n, QVariant::Type t=QVariant::Invalid, QObject *p=0)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df7/configoption_8h_source.html#l00015">configoption.h:15</a></div></div>
+<div class="ttc" id="aconfigoption_8cpp_html_a4345ef6774fe74fe29208da41075ff69"><div class="ttname"><a href="../../da/da3/configoption_8cpp.html#a4345ef6774fe74fe29208da41075ff69">operator&lt;&lt;</a></div><div class="ttdeci">QDataStream &amp; operator&lt;&lt;(QDataStream &amp;s, ConfigOption *c)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da3/configoption_8cpp_source.html#l00122">configoption.cpp:122</a></div></div>
+<div class="ttc" id="aconfigoption_8cpp_html_aff3cfc331fd3767f2f27a35d5b4a01ed"><div class="ttname"><a href="../../da/da3/configoption_8cpp.html#aff3cfc331fd3767f2f27a35d5b4a01ed">operator&gt;&gt;</a></div><div class="ttdeci">QDataStream &amp; operator&gt;&gt;(QDataStream &amp;s, ConfigOption *c)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/da3/configoption_8cpp_source.html#l00131">configoption.cpp:131</a></div></div>
+<div class="ttc" id="aconfigoption_8h_html"><div class="ttname"><a href="../../da/df7/configoption_8h.html">configoption.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

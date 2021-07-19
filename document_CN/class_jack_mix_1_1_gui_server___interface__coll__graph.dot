@@ -1,0 +1,7 @@
+digraph "JackMix::GuiServer_Interface"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{JackMix::GuiServer\l_Interface\n||+ message()\l+ messageYesNo()\l+ messageOkCancel()\l+ getDouble()\l+ getInt()\l+ getString()\l+ getItem()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Abstract interface for a GUI server."];
+}

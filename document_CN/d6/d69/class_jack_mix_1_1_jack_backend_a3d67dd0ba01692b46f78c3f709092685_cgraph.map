@@ -1,0 +1,6 @@
+<map id="JackMix::JackBackend::getVolume" name="JackMix::JackBackend::getVolume">
+<area shape="rect" id="node1" title="returns the volume of channel,output" alt="" coords="5,39,161,80"/>
+<area shape="rect" id="node2" href="$d6/d69/class_jack_mix_1_1_jack_backend.html#aa86634a1112e6955b954d3ea300cba1c" title=" " alt="" coords="209,39,365,80"/>
+<area shape="rect" id="node3" href="$d6/d69/class_jack_mix_1_1_jack_backend.html#afcb792163b9ad81046bf6df1fe245dd3" title=" " alt="" coords="413,5,569,47"/>
+<area shape="rect" id="node4" href="$d6/d69/class_jack_mix_1_1_jack_backend.html#a5553f61a36673abcbaa35d6880ba6de8" title=" " alt="" coords="413,71,569,112"/>
+</map>

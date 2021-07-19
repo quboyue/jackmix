@@ -1,0 +1,10 @@
+digraph "JackMix::BackendInterface::report_group"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="JackMix::BackendInterface\l::report_group",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::BackendInterface\l::report",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dc4/class_jack_mix_1_1_backend_interface.html#ab4f2e1f14c1704765e7384143e216e4b",tooltip=" "];
+}

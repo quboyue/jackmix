@@ -1,0 +1,6 @@
+<map id="JackMix::JackBackend" name="JackMix::JackBackend">
+<area shape="rect" id="node1" title=" " alt="" coords="31,653,187,1112"/>
+<area shape="rect" id="node2" href="$class_jack_mix_1_1_backend_interface.html" title="Abstract interface for backends." alt="" coords="19,248,198,604"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,57,76,134"/>
+<area shape="rect" id="node4" href="$class_jack_mix_1_1_gui_server___interface.html" title="Abstract interface for a GUI server." alt="" coords="101,5,253,185"/>
+</map>

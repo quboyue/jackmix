@@ -1,0 +1,2039 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jackmix: JackMix::MixingMatrix::Element类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jackmix
+   &#160;<span id="projectnumber">v1.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d7/d67/namespace_jack_mix.html">JackMix</a></li><li class="navelem"><a class="el" href="../../d5/d10/namespace_jack_mix_1_1_mixing_matrix.html">MixingMatrix</a></li><li class="navelem"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-slots">Protected 槽</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="#properties">属性</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../db/d72/class_jack_mix_1_1_mixing_matrix_1_1_element-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">JackMix::MixingMatrix::Element类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a>&gt;</code></p>
+<div class="dynheader">
+类 JackMix::MixingMatrix::Element 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d0/d4a/class_jack_mix_1_1_mixing_matrix_1_1_element__inherit__graph.png" border="0" usemap="#a_jack_mix_1_1_mixing_matrix_1_1_element_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_jack_mix_1_1_mixing_matrix_1_1_element_inherit__map" id="a_jack_mix_1_1_mixing_matrix_1_1_element_inherit__map">
+<area shape="rect" title=" " alt="" coords="177,175,388,809"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html" title=" " alt="" coords="5,945,171,1111"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html" title=" " alt="" coords="195,857,370,1199"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html" title=" " alt="" coords="395,857,576,1199"/>
+<area shape="rect" title=" " alt="" coords="183,27,252,105"/>
+<area shape="rect" href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html" title=" " alt="" coords="277,5,419,127"/>
+</map>
+</div>
+<div class="dynheader">
+JackMix::MixingMatrix::Element 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../df/d60/class_jack_mix_1_1_mixing_matrix_1_1_element__coll__graph.png" border="0" usemap="#a_jack_mix_1_1_mixing_matrix_1_1_element_coll__map" alt="Collaboration graph"/></div>
+<map name="a_jack_mix_1_1_mixing_matrix_1_1_element_coll__map" id="a_jack_mix_1_1_mixing_matrix_1_1_element_coll__map">
+<area shape="rect" title=" " alt="" coords="195,1159,405,1764"/>
+<area shape="rect" title=" " alt="" coords="5,387,75,465"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html" title=" " alt="" coords="69,667,251,1096"/>
+<area shape="rect" href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html" title=" " alt="" coords="275,821,418,942"/>
+<area shape="rect" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html" title=" " alt="" coords="443,777,656,986"/>
+<area shape="rect" title=" " alt="" coords="515,387,583,465"/>
+<area shape="rect" title=" " alt="" coords="109,387,177,465"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html" title="Abstract interface for backends" alt="" coords="201,248,380,604"/>
+<area shape="rect" title=" " alt="" coords="187,57,258,134"/>
+<area shape="rect" href="../../d7/d8b/class_jack_mix_1_1_gui_server___interface.html" title="Abstract interface for a GUI server" alt="" coords="283,5,435,185"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:a455afad3c029a88da9dd1fcc5b8b967b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a455afad3c029a88da9dd1fcc5b8b967b">select</a> (bool)</td></tr>
+<tr class="separator:a455afad3c029a88da9dd1fcc5b8b967b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89daa40b010eb2afc3cca9ce6d88daa6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a89daa40b010eb2afc3cca9ce6d88daa6">showMenu</a> ()</td></tr>
+<tr class="separator:a89daa40b010eb2afc3cca9ce6d88daa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f268e085f3fdcf34b6a9ec33a94ecc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a82f268e085f3fdcf34b6a9ec33a94ecc">update_midi_parameters</a> (QList&lt; int &gt; pv)</td></tr>
+<tr class="separator:a82f268e085f3fdcf34b6a9ec33a94ecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a3f35e794823cfa8b3ed41852c79b4186"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a3f35e794823cfa8b3ed41852c79b4186">replace</a> (<a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a> *)</td></tr>
+<tr class="separator:a3f35e794823cfa8b3ed41852c79b4186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcba8938103cee8d555f7560705c476e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#adcba8938103cee8d555f7560705c476e">explode</a> (<a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a> *)</td></tr>
+<tr class="separator:adcba8938103cee8d555f7560705c476e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af96465ccafb366828296c9882c685d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a6af96465ccafb366828296c9882c685d">valueChanged</a> (<a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a> *n, QString s)</td></tr>
+<tr class="separator:a6af96465ccafb366828296c9882c685d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6ad10badf7e7172fb45980eb7bb1589"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ad6ad10badf7e7172fb45980eb7bb1589">initComplete</a> ()</td></tr>
+<tr class="separator:ad6ad10badf7e7172fb45980eb7bb1589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a804d73cd8c8cbb0e281112390619d6cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a804d73cd8c8cbb0e281112390619d6cf">Element</a> (QStringList <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a85b44f974d9d35d39ca917bac58ec7a9">in</a>, QStringList <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a3aa5f54986c79df83b07ee552a8a3a55">out</a>, <a class="el" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html">Widget</a> *, const char *=0)</td></tr>
+<tr class="separator:a804d73cd8c8cbb0e281112390619d6cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78313cab1689e0d36f6b9db09f294443"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a78313cab1689e0d36f6b9db09f294443">~Element</a> ()</td></tr>
+<tr class="separator:a78313cab1689e0d36f6b9db09f294443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa896436131c3c0e50048f4a58e9dd1a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html">JackMix::BackendInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa896436131c3c0e50048f4a58e9dd1a4">backend</a> () const</td></tr>
+<tr class="separator:aa896436131c3c0e50048f4a58e9dd1a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a583d7f880bf1663a30d4049a7893ada3"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a583d7f880bf1663a30d4049a7893ada3">inchannels</a> () const =0</td></tr>
+<tr class="separator:a583d7f880bf1663a30d4049a7893ada3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb5a0e739b9dc874b2ede40703038d12"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#acb5a0e739b9dc874b2ede40703038d12">outchannels</a> () const =0</td></tr>
+<tr class="separator:acb5a0e739b9dc874b2ede40703038d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a459d956ee60c8c9a51abc9d3e28e595a"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a459d956ee60c8c9a51abc9d3e28e595a">in</a> () const</td></tr>
+<tr class="separator:a459d956ee60c8c9a51abc9d3e28e595a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf0b37cb498f45f436e31f605459bfb8"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#acf0b37cb498f45f436e31f605459bfb8">out</a> () const</td></tr>
+<tr class="separator:acf0b37cb498f45f436e31f605459bfb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a189e66d1d8897b2a82297d00a74cb2cd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a189e66d1d8897b2a82297d00a74cb2cd">isResponsible</a> (QString <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a85b44f974d9d35d39ca917bac58ec7a9">in</a>, QString <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a3aa5f54986c79df83b07ee552a8a3a55">out</a>)</td></tr>
+<tr class="separator:a189e66d1d8897b2a82297d00a74cb2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f0f9a320e3503be93df6b992887c8d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d">isSelected</a> () const</td></tr>
+<tr class="separator:a34f0f9a320e3503be93df6b992887c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f13c492b2a7b5145359ba34500c878d"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a9f13c492b2a7b5145359ba34500c878d">name</a> () const</td></tr>
+<tr class="separator:a9f13c492b2a7b5145359ba34500c878d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad871b385baab0801a44d9d0f42b19cd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ad871b385baab0801a44d9d0f42b19cd3">name</a> (QString n)</td></tr>
+<tr class="separator:ad871b385baab0801a44d9d0f42b19cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa872dc1eb2b64f09b15cc5b3b42b253b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa872dc1eb2b64f09b15cc5b3b42b253b">isSelected</a> (bool)</td></tr>
+<tr class="separator:aa872dc1eb2b64f09b15cc5b3b42b253b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9cb4bbb56d5f7cee13c6f88607ce2f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a7e9cb4bbb56d5f7cee13c6f88607ce2f">neighbors</a> () const</td></tr>
+<tr class="separator:a7e9cb4bbb56d5f7cee13c6f88607ce2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454bb971fd440c35ee81eff35cf643f2"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a454bb971fd440c35ee81eff35cf643f2">neighborsList</a> () const</td></tr>
+<tr class="separator:a454bb971fd440c35ee81eff35cf643f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c172e7d5c51cef27ce9524eb2607fd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa7c172e7d5c51cef27ce9524eb2607fd">followers</a> (int) const</td></tr>
+<tr class="separator:aa7c172e7d5c51cef27ce9524eb2607fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae96a63bac60878a340b7f5891ee97658"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae96a63bac60878a340b7f5891ee97658">followersList</a> () const</td></tr>
+<tr class="separator:ae96a63bac60878a340b7f5891ee97658"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f1d781c8fc1b7d7709fb94b874ccf9a"><td class="memItemLeft" align="right" valign="top">const QList&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a9f1d781c8fc1b7d7709fb94b874ccf9a">midiParameters</a> () const</td></tr>
+<tr class="separator:a9f1d781c8fc1b7d7709fb94b874ccf9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f5d256124b4eebcf7b5044bed210a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa1f5d256124b4eebcf7b5044bed210a8">invalidateRegistry</a> ()</td></tr>
+<tr class="separator:aa1f5d256124b4eebcf7b5044bed210a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c29842ca563766402e43f6228524896"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a1c29842ca563766402e43f6228524896">renamechannels</a> (QString old_name, QString new_name)</td></tr>
+<tr class="separator:a1c29842ca563766402e43f6228524896"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-slots"></a>
+Protected 槽</h2></td></tr>
+<tr class="memitem:abbd3cfaa82a63ad7b247fefac7b92e97"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#abbd3cfaa82a63ad7b247fefac7b92e97">slot_simple_replace</a> ()</td></tr>
+<tr class="separator:abbd3cfaa82a63ad7b247fefac7b92e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62d38b180085b2a1586dff9dca773ee7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a62d38b180085b2a1586dff9dca773ee7">slot_simple_explode</a> ()</td></tr>
+<tr class="separator:a62d38b180085b2a1586dff9dca773ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2ca2d009062e005c05435a24c15630e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae2ca2d009062e005c05435a24c15630e">slot_simple_select</a> ()</td></tr>
+<tr class="separator:ae2ca2d009062e005c05435a24c15630e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d76df33b687adf0a77424662ee8566a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a8d76df33b687adf0a77424662ee8566a">controlEvent</a> (int p, int v)</td></tr>
+<tr class="separator:a8d76df33b687adf0a77424662ee8566a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248e0cae3678aa4500f60eda39f90a36"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a248e0cae3678aa4500f60eda39f90a36">slot_assign_midi_parameters</a> ()</td></tr>
+<tr class="separator:a248e0cae3678aa4500f60eda39f90a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:ad5c5e138a232e8e7f637707d2de7af9d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html">Widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ad5c5e138a232e8e7f637707d2de7af9d">parent</a> ()</td></tr>
+<tr class="separator:ad5c5e138a232e8e7f637707d2de7af9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a003514960e2cb872c4641dde040cd639"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a003514960e2cb872c4641dde040cd639">menu</a> ()</td></tr>
+<tr class="separator:a003514960e2cb872c4641dde040cd639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f635cc3530ed7076d3bd6811c81099"><td class="memItemLeft" align="right" valign="top">QLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a83f635cc3530ed7076d3bd6811c81099">layout</a> ()</td></tr>
+<tr class="separator:a83f635cc3530ed7076d3bd6811c81099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e9de0c471b50c97bcf1b24f76c3244e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a5e9de0c471b50c97bcf1b24f76c3244e">contextMenuEvent</a> (QContextMenuEvent *)</td></tr>
+<tr class="separator:a5e9de0c471b50c97bcf1b24f76c3244e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:ae3e43d56e96e7fb5a1001d996ca9c56e"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae3e43d56e96e7fb5a1001d996ca9c56e">_menu</a></td></tr>
+<tr class="separator:ae3e43d56e96e7fb5a1001d996ca9c56e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28b68c468c86daa5d8fb42071e185054"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a28b68c468c86daa5d8fb42071e185054">disp_name</a></td></tr>
+<tr class="separator:a28b68c468c86daa5d8fb42071e185054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09b53e904c9ca0deaa7c9735acc2bd8b"><td class="memItemLeft" align="right" valign="top">QList&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a09b53e904c9ca0deaa7c9735acc2bd8b">midi_params</a></td></tr>
+<tr class="separator:a09b53e904c9ca0deaa7c9735acc2bd8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6f3b40da3690ad62d2e912ce82035c"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html">JackMix::GUI::AbstractSlider</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a7c6f3b40da3690ad62d2e912ce82035c">midi_delegates</a></td></tr>
+<tr class="separator:a7c6f3b40da3690ad62d2e912ce82035c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa67edb44fea4f6dfb6509b4d10b7ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html">JackMix::GUI::MidiControlChannelAssigner</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a2fa67edb44fea4f6dfb6509b4d10b7ac">_cca</a></td></tr>
+<tr class="separator:a2fa67edb44fea4f6dfb6509b4d10b7ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbbe7e41000880872154ed9200919a8a"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#acbbe7e41000880872154ed9200919a8a">_in</a></td></tr>
+<tr class="separator:acbbe7e41000880872154ed9200919a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a257b3615a4f4e711eb665bc4ced5dfe5"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a257b3615a4f4e711eb665bc4ced5dfe5">_out</a></td></tr>
+<tr class="separator:a257b3615a4f4e711eb665bc4ced5dfe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+属性</h2></td></tr>
+<tr class="memitem:a882dcd2a9fc2b0390d0c4acd6f6c62bb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a882dcd2a9fc2b0390d0c4acd6f6c62bb">selected</a></td></tr>
+<tr class="separator:a882dcd2a9fc2b0390d0c4acd6f6c62bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b44f974d9d35d39ca917bac58ec7a9"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a85b44f974d9d35d39ca917bac58ec7a9">in</a></td></tr>
+<tr class="separator:a85b44f974d9d35d39ca917bac58ec7a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa5f54986c79df83b07ee552a8a3a55"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a3aa5f54986c79df83b07ee552a8a3a55">out</a></td></tr>
+<tr class="separator:a3aa5f54986c79df83b07ee552a8a3a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4140983a683cde7101d41f3e368db7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aaa4140983a683cde7101d41f3e368db7">ins</a></td></tr>
+<tr class="separator:aaa4140983a683cde7101d41f3e368db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af401ff6d9525ecd44696238ccb7d095d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#af401ff6d9525ecd44696238ccb7d095d">outs</a></td></tr>
+<tr class="separator:af401ff6d9525ecd44696238ccb7d095d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584c211d21b7410f44a94ef59acc8aa0"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a584c211d21b7410f44a94ef59acc8aa0">name</a></td></tr>
+<tr class="separator:a584c211d21b7410f44a94ef59acc8aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a6239425e5e8096b094778e4f69d42ffb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a6239425e5e8096b094778e4f69d42ffb">lazyInit</a> ()</td></tr>
+<tr class="separator:a6239425e5e8096b094778e4f69d42ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a2a19cb7ae847c3f9d35dc5e9bdbb9f99"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a2a19cb7ae847c3f9d35dc5e9bdbb9f99">_selected</a></td></tr>
+<tr class="separator:a2a19cb7ae847c3f9d35dc5e9bdbb9f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e31a7ec61feca726c3591ff8031c00"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html">Widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a45e31a7ec61feca726c3591ff8031c00">_parent</a></td></tr>
+<tr class="separator:a45e31a7ec61feca726c3591ff8031c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_methods_class_jack_mix_1_1_midi_control_1_1_control_receiver"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_jack_mix_1_1_midi_control_1_1_control_receiver')"><img src="../../closed.png" alt="-"/>&#160;Private 成员函数 继承自 <a class="el" href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html">JackMix::MidiControl::ControlReceiver</a></td></tr>
+<tr class="memitem:a4c968e6f0c166efd998f5fef15dbdd9f inherit pub_methods_class_jack_mix_1_1_midi_control_1_1_control_receiver"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html#a4c968e6f0c166efd998f5fef15dbdd9f">ControlReceiver</a> (int parameter=-1)</td></tr>
+<tr class="separator:a4c968e6f0c166efd998f5fef15dbdd9f inherit pub_methods_class_jack_mix_1_1_midi_control_1_1_control_receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab32571e28bf9eb6a85912e4376809d0f inherit pub_methods_class_jack_mix_1_1_midi_control_1_1_control_receiver"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html#ab32571e28bf9eb6a85912e4376809d0f">~ControlReceiver</a> ()</td></tr>
+<tr class="separator:ab32571e28bf9eb6a85912e4376809d0f inherit pub_methods_class_jack_mix_1_1_midi_control_1_1_control_receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ca1271cdcb44173f93c4cae0b87ff52 inherit pub_methods_class_jack_mix_1_1_midi_control_1_1_control_receiver"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html#a0ca1271cdcb44173f93c4cae0b87ff52">controlEvent</a> (int param, int value)=0</td></tr>
+<tr class="separator:a0ca1271cdcb44173f93c4cae0b87ff52 inherit pub_methods_class_jack_mix_1_1_midi_control_1_1_control_receiver"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00151">151</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a804d73cd8c8cbb0e281112390619d6cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a804d73cd8c8cbb0e281112390619d6cf">&#9670;&nbsp;</a></span>Element()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JackMix::MixingMatrix::Element::Element </td>
+          <td>(</td>
+          <td class="paramtype">QStringList&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QStringList&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html">Widget</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>n</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the upper left corner in channelnames. And lists with the names of the channels to control. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00362">362</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a804d73cd8c8cbb0e281112390619d6cf_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a804d73cd8c8cbb0e281112390619d6cf_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a804d73cd8c8cbb0e281112390619d6cf_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a804d73cd8c8cbb0e281112390619d6cf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,169,157,211"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a8f370a6b31b12e404055f8ea9cef2c31" title=" " alt="" coords="205,136,368,177"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a6239425e5e8096b094778e4f69d42ffb" title=" " alt="" coords="211,201,363,243"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a0022ed77929422166f48332864708aae" title=" " alt="" coords="416,168,568,209"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#afc750652c0cd2b15645f9d754c222c56" title=" " alt="" coords="416,233,568,275"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a9cdbec08084ae67ce99e0c6ba13042ba" title=" " alt="" coords="616,168,768,209"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a6ba5b981fab5a3b39ff288ffcd6ac44c" title=" " alt="" coords="1027,55,1179,96"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#abcedc12ea03e50e6947cf7078d342b40" title=" " alt="" coords="616,328,768,369"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a67b6034767d1c61b66700b6736f5878a" title=" " alt="" coords="819,168,971,209"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a92ff201fafa9d2ea502e822b74187cbc" title="Create Controls" alt="" coords="1025,168,1181,209"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad80339b1fdb71f33e0bf6590f7a98caa" title=" " alt="" coords="1232,463,1400,504"/>
+<area shape="rect" href="../../d2/d2a/class_jack_mix_1_1_mixing_matrix_1_1_global.html#a81323abe4d4c8e25be303536874e8c57" title=" " alt="" coords="1240,299,1392,340"/>
+<area shape="rect" href="../../d2/d2a/class_jack_mix_1_1_mixing_matrix_1_1_global.html#a243af2be4659e31d3ff9ceafd7124004" title=" " alt="" coords="1240,364,1392,405"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a72b37fa0eea83af8a740c60d26ce9ab1" title=" " alt="" coords="1240,103,1392,144"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a928a0525d520886b79b953e1fb16afaf" title=" " alt="" coords="1240,168,1392,209"/>
+<area shape="rect" href="../../d2/d2a/class_jack_mix_1_1_mixing_matrix_1_1_global.html#aee256c8e85a27f0bbe623d910de0e5f0" title=" " alt="" coords="1240,233,1392,275"/>
+<area shape="rect" href="../../d2/d2a/class_jack_mix_1_1_mixing_matrix_1_1_global.html#a06e0b7ab4f37428a54e3a72e51b10d2d" title=" " alt="" coords="1463,233,1615,275"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#af3e4804872e60e46d93f0eb6bf253ef2" title=" " alt="" coords="1240,37,1392,79"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad68aba2252297af7a336ecc00610ff85" title="Layout" alt="" coords="1677,37,1853,79"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a0271798137df37ff09548b911e82842b" title=" " alt="" coords="1448,37,1629,79"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a5cc2abc4bb564ee3848876bf75278f7d" title=" " alt="" coords="1901,37,2053,79"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa7c172e7d5c51cef27ce9524eb2607fd" title=" " alt="" coords="819,496,971,537"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a7e9cb4bbb56d5f7cee13c6f88607ce2f" title=" " alt="" coords="1027,629,1179,671"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae96a63bac60878a340b7f5891ee97658" title=" " alt="" coords="816,369,973,411"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a454bb971fd440c35ee81eff35cf643f2" title=" " alt="" coords="1021,719,1184,760"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d" title=" " alt="" coords="1240,591,1392,632"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a911835db65b7f6a2cb364ad27ff5f96b" title=" " alt="" coords="1027,437,1179,479"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#acfc9ed57ec7cb83a8763536b83720f94" title=" " alt="" coords="1240,668,1392,709"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a78313cab1689e0d36f6b9db09f294443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78313cab1689e0d36f6b9db09f294443">&#9670;&nbsp;</a></span>~Element()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JackMix::MixingMatrix::Element::~Element </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00379">379</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a78313cab1689e0d36f6b9db09f294443_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a78313cab1689e0d36f6b9db09f294443_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a78313cab1689e0d36f6b9db09f294443_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a78313cab1689e0d36f6b9db09f294443_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,157,47"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a4f369c2e96d05bb0cbadb0c1e38383a1" title=" " alt="" coords="205,5,373,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa896436131c3c0e50048f4a58e9dd1a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa896436131c3c0e50048f4a58e9dd1a4">&#9670;&nbsp;</a></span>backend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html">JackMix::BackendInterface</a>* JackMix::MixingMatrix::Element::backend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00169">169</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa896436131c3c0e50048f4a58e9dd1a4_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa896436131c3c0e50048f4a58e9dd1a4_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa896436131c3c0e50048f4a58e9dd1a4_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa896436131c3c0e50048f4a58e9dd1a4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,157,47"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a05285a3f2e3cc7a6b337a98004544f7b" title=" " alt="" coords="205,5,357,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa896436131c3c0e50048f4a58e9dd1a4_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa896436131c3c0e50048f4a58e9dd1a4_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa896436131c3c0e50048f4a58e9dd1a4_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa896436131c3c0e50048f4a58e9dd1a4_icgraph">
+<area shape="rect" title=" " alt="" coords="660,192,812,233"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="219,5,399,47"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a634d1555deeb856b6779c3c874801ad4" title=" " alt="" coords="447,151,612,207"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="5,183,171,239"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#ac7d2c0bdd35b70303997ed441e6d27cd" title=" " alt="" coords="447,282,612,338"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#a3740dae7797cc6e332a707f9793686c8" title=" " alt="" coords="447,75,612,116"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="447,362,612,418"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5422a9e5c870f7289e44d633956d546f" title=" " alt="" coords="226,71,391,127"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a815dc54216fece3d08a5d3955571b1c0" title=" " alt="" coords="226,151,391,207"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a14099499871505a15fe58c62a2b5774e" title=" " alt="" coords="5,71,171,127"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a39cb181820910a4cfd78c9bf9683c5c8" title=" " alt="" coords="226,282,391,338"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#ae3b92d9806b95a540c22ea1e41e7c86a" title=" " alt="" coords="226,362,391,418"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5e9de0c471b50c97bcf1b24f76c3244e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e9de0c471b50c97bcf1b24f76c3244e">&#9670;&nbsp;</a></span>contextMenuEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::contextMenuEvent </td>
+          <td>(</td>
+          <td class="paramtype">QContextMenuEvent *&#160;</td>
+          <td class="paramname"><em>ev</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00456">456</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a5e9de0c471b50c97bcf1b24f76c3244e_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a5e9de0c471b50c97bcf1b24f76c3244e_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a5e9de0c471b50c97bcf1b24f76c3244e_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a5e9de0c471b50c97bcf1b24f76c3244e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,199,47"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a89daa40b010eb2afc3cca9ce6d88daa6" title=" " alt="" coords="247,5,399,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8d76df33b687adf0a77424662ee8566a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d76df33b687adf0a77424662ee8566a">&#9670;&nbsp;</a></span>controlEvent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::controlEvent </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>v</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Receive and forward midi events (parameter, value pairs) to their associated sliders. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00478">478</a> 行定义.</p>
+
+</div>
+</div>
+<a id="adcba8938103cee8d555f7560705c476e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcba8938103cee8d555f7560705c476e">&#9670;&nbsp;</a></span>explode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::explode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_adcba8938103cee8d555f7560705c476e_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_adcba8938103cee8d555f7560705c476e_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_adcba8938103cee8d555f7560705c476e_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_adcba8938103cee8d555f7560705c476e_icgraph">
+<area shape="rect" title=" " alt="" coords="419,61,571,102"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a62d38b180085b2a1586dff9dca773ee7" title=" " alt="" coords="219,20,371,76"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="5,85,171,141"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="5,5,171,61"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa7c172e7d5c51cef27ce9524eb2607fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7c172e7d5c51cef27ce9524eb2607fd">&#9670;&nbsp;</a></span>followers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JackMix::MixingMatrix::Element::followers </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>returns the number of following rows with the given number of selected items. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00434">434</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa7c172e7d5c51cef27ce9524eb2607fd_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa7c172e7d5c51cef27ce9524eb2607fd_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa7c172e7d5c51cef27ce9524eb2607fd_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa7c172e7d5c51cef27ce9524eb2607fd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,112,157,153"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad80339b1fdb71f33e0bf6590f7a98caa" title=" " alt="" coords="405,5,573,47"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d" title=" " alt="" coords="413,141,565,183"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a7e9cb4bbb56d5f7cee13c6f88607ce2f" title=" " alt="" coords="205,83,357,124"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a911835db65b7f6a2cb364ad27ff5f96b" title=" " alt="" coords="205,200,357,241"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#acfc9ed57ec7cb83a8763536b83720f94" title=" " alt="" coords="413,76,565,117"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa7c172e7d5c51cef27ce9524eb2607fd_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa7c172e7d5c51cef27ce9524eb2607fd_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa7c172e7d5c51cef27ce9524eb2607fd_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa7c172e7d5c51cef27ce9524eb2607fd_icgraph">
+<area shape="rect" title=" " alt="" coords="805,29,957,71"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#abcedc12ea03e50e6947cf7078d342b40" title=" " alt="" coords="605,29,757,71"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a0022ed77929422166f48332864708aae" title=" " alt="" coords="405,29,557,71"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a6239425e5e8096b094778e4f69d42ffb" title=" " alt="" coords="205,29,357,71"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a804d73cd8c8cbb0e281112390619d6cf" title=" " alt="" coords="5,29,157,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae96a63bac60878a340b7f5891ee97658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae96a63bac60878a340b7f5891ee97658">&#9670;&nbsp;</a></span>followersList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList JackMix::MixingMatrix::Element::followersList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00442">442</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae96a63bac60878a340b7f5891ee97658_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae96a63bac60878a340b7f5891ee97658_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae96a63bac60878a340b7f5891ee97658_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae96a63bac60878a340b7f5891ee97658_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,163,112"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad80339b1fdb71f33e0bf6590f7a98caa" title=" " alt="" coords="211,5,379,47"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d" title=" " alt="" coords="219,71,371,112"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a911835db65b7f6a2cb364ad27ff5f96b" title=" " alt="" coords="219,136,371,177"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae96a63bac60878a340b7f5891ee97658_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae96a63bac60878a340b7f5891ee97658_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae96a63bac60878a340b7f5891ee97658_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae96a63bac60878a340b7f5891ee97658_icgraph">
+<area shape="rect" title=" " alt="" coords="805,29,963,71"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#abcedc12ea03e50e6947cf7078d342b40" title=" " alt="" coords="605,29,757,71"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a0022ed77929422166f48332864708aae" title=" " alt="" coords="405,29,557,71"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a6239425e5e8096b094778e4f69d42ffb" title=" " alt="" coords="205,29,357,71"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a804d73cd8c8cbb0e281112390619d6cf" title=" " alt="" coords="5,29,157,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a459d956ee60c8c9a51abc9d3e28e595a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a459d956ee60c8c9a51abc9d3e28e595a">&#9670;&nbsp;</a></span>in()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList JackMix::MixingMatrix::Element::in </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00176">176</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a583d7f880bf1663a30d4049a7893ada3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a583d7f880bf1663a30d4049a7893ada3">&#9670;&nbsp;</a></span>inchannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int JackMix::MixingMatrix::Element::inchannels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a25d0f27f770cdbbc3019b097d54af4a6">JackMix::MixerElements::Stereo2StereoElement</a>, <a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#abd849e9f805ccb5b31853773545092a9">JackMix::MixerElements::Mono2StereoElement</a> , 以及 <a class="el" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ad21307ce17a37928e2e92149f024b0e1">JackMix::MixerElements::AuxElement</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ad6ad10badf7e7172fb45980eb7bb1589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6ad10badf7e7172fb45980eb7bb1589">&#9670;&nbsp;</a></span>initComplete</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::initComplete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Indicates completion of lazy initialisation </p>
+
+</div>
+</div>
+<a id="aa1f5d256124b4eebcf7b5044bed210a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1f5d256124b4eebcf7b5044bed210a8">&#9670;&nbsp;</a></span>invalidateRegistry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::invalidateRegistry </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Inform the <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a> the parent's dead so it doesn't try to deregister itself on destruction (otherwise there may be a segfault at closedown) </p>
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00207">207</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa1f5d256124b4eebcf7b5044bed210a8_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa1f5d256124b4eebcf7b5044bed210a8_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa1f5d256124b4eebcf7b5044bed210a8_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_aa1f5d256124b4eebcf7b5044bed210a8_icgraph">
+<area shape="rect" title=" " alt="" coords="205,5,392,47"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#af9f64ad32ace3823a3d29eeb7b3e833e" title=" " alt="" coords="5,5,157,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a189e66d1d8897b2a82297d00a74cb2cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a189e66d1d8897b2a82297d00a74cb2cd">&#9670;&nbsp;</a></span>isResponsible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool JackMix::MixingMatrix::Element::isResponsible </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00391">391</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a34f0f9a320e3503be93df6b992887c8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34f0f9a320e3503be93df6b992887c8d">&#9670;&nbsp;</a></span>isSelected() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool JackMix::MixingMatrix::Element::isSelected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00182">182</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a34f0f9a320e3503be93df6b992887c8d_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a34f0f9a320e3503be93df6b992887c8d_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a34f0f9a320e3503be93df6b992887c8d_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a34f0f9a320e3503be93df6b992887c8d_icgraph">
+<area shape="rect" title=" " alt="" coords="1249,207,1401,248"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa7c172e7d5c51cef27ce9524eb2607fd" title=" " alt="" coords="839,29,991,71"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae96a63bac60878a340b7f5891ee97658" title=" " alt="" coords="1044,177,1201,219"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a7e9cb4bbb56d5f7cee13c6f88607ce2f" title=" " alt="" coords="1047,88,1199,129"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a454bb971fd440c35ee81eff35cf643f2" title=" " alt="" coords="833,221,996,263"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a455afad3c029a88da9dd1fcc5b8b967b" title=" " alt="" coords="1047,345,1199,387"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae2ca2d009062e005c05435a24c15630e" title=" " alt="" coords="839,338,991,394"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#abcedc12ea03e50e6947cf7078d342b40" title=" " alt="" coords="619,113,771,155"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a0022ed77929422166f48332864708aae" title=" " alt="" coords="405,113,557,155"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a6239425e5e8096b094778e4f69d42ffb" title=" " alt="" coords="205,113,357,155"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a804d73cd8c8cbb0e281112390619d6cf" title=" " alt="" coords="5,113,157,155"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="605,365,785,407"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="613,277,778,333"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="613,449,778,505"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa872dc1eb2b64f09b15cc5b3b42b253b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa872dc1eb2b64f09b15cc5b3b42b253b">&#9670;&nbsp;</a></span>isSelected() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void JackMix::MixingMatrix::Element::isSelected </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Do the things you need to do in the subclasses when the selected state changes. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00191">191</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a83f635cc3530ed7076d3bd6811c81099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83f635cc3530ed7076d3bd6811c81099">&#9670;&nbsp;</a></span>layout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLayout* JackMix::MixingMatrix::Element::layout </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000001">待办事项:</a></b></dt><dd>the overall layout is needed for hide/show buttons per channel/element... </dd></dl>
+<p>The current parameter associated with each delegate. </p>
+
+</div>
+</div>
+<a id="a6239425e5e8096b094778e4f69d42ffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6239425e5e8096b094778e4f69d42ffb">&#9670;&nbsp;</a></span>lazyInit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::lazyInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00384">384</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6239425e5e8096b094778e4f69d42ffb_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6239425e5e8096b094778e4f69d42ffb_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6239425e5e8096b094778e4f69d42ffb_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6239425e5e8096b094778e4f69d42ffb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,201,157,243"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a0022ed77929422166f48332864708aae" title=" " alt="" coords="205,168,357,209"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#afc750652c0cd2b15645f9d754c222c56" title=" " alt="" coords="205,233,357,275"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a9cdbec08084ae67ce99e0c6ba13042ba" title=" " alt="" coords="405,168,557,209"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a6ba5b981fab5a3b39ff288ffcd6ac44c" title=" " alt="" coords="816,55,968,96"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#abcedc12ea03e50e6947cf7078d342b40" title=" " alt="" coords="405,328,557,369"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a67b6034767d1c61b66700b6736f5878a" title=" " alt="" coords="608,168,760,209"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a92ff201fafa9d2ea502e822b74187cbc" title="Create Controls" alt="" coords="814,168,970,209"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad80339b1fdb71f33e0bf6590f7a98caa" title=" " alt="" coords="1021,463,1189,504"/>
+<area shape="rect" href="../../d2/d2a/class_jack_mix_1_1_mixing_matrix_1_1_global.html#a81323abe4d4c8e25be303536874e8c57" title=" " alt="" coords="1029,299,1181,340"/>
+<area shape="rect" href="../../d2/d2a/class_jack_mix_1_1_mixing_matrix_1_1_global.html#a243af2be4659e31d3ff9ceafd7124004" title=" " alt="" coords="1029,364,1181,405"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a72b37fa0eea83af8a740c60d26ce9ab1" title=" " alt="" coords="1029,103,1181,144"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a928a0525d520886b79b953e1fb16afaf" title=" " alt="" coords="1029,168,1181,209"/>
+<area shape="rect" href="../../d2/d2a/class_jack_mix_1_1_mixing_matrix_1_1_global.html#aee256c8e85a27f0bbe623d910de0e5f0" title=" " alt="" coords="1029,233,1181,275"/>
+<area shape="rect" href="../../d2/d2a/class_jack_mix_1_1_mixing_matrix_1_1_global.html#a06e0b7ab4f37428a54e3a72e51b10d2d" title=" " alt="" coords="1252,233,1404,275"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#af3e4804872e60e46d93f0eb6bf253ef2" title=" " alt="" coords="1029,37,1181,79"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad68aba2252297af7a336ecc00610ff85" title="Layout" alt="" coords="1467,37,1643,79"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a0271798137df37ff09548b911e82842b" title=" " alt="" coords="1237,37,1419,79"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a5cc2abc4bb564ee3848876bf75278f7d" title=" " alt="" coords="1691,37,1843,79"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa7c172e7d5c51cef27ce9524eb2607fd" title=" " alt="" coords="608,496,760,537"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a7e9cb4bbb56d5f7cee13c6f88607ce2f" title=" " alt="" coords="816,629,968,671"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae96a63bac60878a340b7f5891ee97658" title=" " alt="" coords="605,369,763,411"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a454bb971fd440c35ee81eff35cf643f2" title=" " alt="" coords="811,719,973,760"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d" title=" " alt="" coords="1029,591,1181,632"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a911835db65b7f6a2cb364ad27ff5f96b" title=" " alt="" coords="816,437,968,479"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#acfc9ed57ec7cb83a8763536b83720f94" title=" " alt="" coords="1029,668,1181,709"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6239425e5e8096b094778e4f69d42ffb_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6239425e5e8096b094778e4f69d42ffb_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6239425e5e8096b094778e4f69d42ffb_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6239425e5e8096b094778e4f69d42ffb_icgraph">
+<area shape="rect" title=" " alt="" coords="205,5,357,47"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a804d73cd8c8cbb0e281112390619d6cf" title=" " alt="" coords="5,5,157,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a003514960e2cb872c4641dde040cd639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a003514960e2cb872c4641dde040cd639">&#9670;&nbsp;</a></span>menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenu* JackMix::MixingMatrix::Element::menu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00236">236</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a003514960e2cb872c4641dde040cd639_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a003514960e2cb872c4641dde040cd639_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a003514960e2cb872c4641dde040cd639_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a003514960e2cb872c4641dde040cd639_icgraph">
+<area shape="rect" title=" " alt="" coords="233,79,385,120"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="13,71,178,127"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="13,151,178,207"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9f1d781c8fc1b7d7709fb94b874ccf9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f1d781c8fc1b7d7709fb94b874ccf9a">&#9670;&nbsp;</a></span>midiParameters()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QList&lt; int &gt; &amp; JackMix::MixingMatrix::Element::midiParameters </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Allow others to see our controlling midi parameters (but not change them) </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00462">462</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a9f1d781c8fc1b7d7709fb94b874ccf9a_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a9f1d781c8fc1b7d7709fb94b874ccf9a_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a9f1d781c8fc1b7d7709fb94b874ccf9a_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a9f1d781c8fc1b7d7709fb94b874ccf9a_icgraph">
+<area shape="rect" title=" " alt="" coords="605,39,783,80"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a41072424350a8df09f3d59f95d7bb24a" title=" " alt="" coords="405,39,557,80"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title=" " alt="" coords="205,5,357,47"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#ae786a3a0501398a38d2c86af9ae6b5c0" title=" " alt="" coords="205,71,357,112"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a2022dfcfcd6eeba03aec9f1e6eb3ece0" title=" " alt="" coords="5,5,157,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9f13c492b2a7b5145359ba34500c878d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f13c492b2a7b5145359ba34500c878d">&#9670;&nbsp;</a></span>name() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString JackMix::MixingMatrix::Element::name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00184">184</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad871b385baab0801a44d9d0f42b19cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad871b385baab0801a44d9d0f42b19cd3">&#9670;&nbsp;</a></span>name() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::name </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00185">185</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7e9cb4bbb56d5f7cee13c6f88607ce2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9cb4bbb56d5f7cee13c6f88607ce2f">&#9670;&nbsp;</a></span>neighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JackMix::MixingMatrix::Element::neighbors </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>returns the number of selected neighbors </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00418">418</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a7e9cb4bbb56d5f7cee13c6f88607ce2f_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a7e9cb4bbb56d5f7cee13c6f88607ce2f_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a7e9cb4bbb56d5f7cee13c6f88607ce2f_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a7e9cb4bbb56d5f7cee13c6f88607ce2f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,157,112"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad80339b1fdb71f33e0bf6590f7a98caa" title=" " alt="" coords="205,5,373,47"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d" title=" " alt="" coords="213,71,365,112"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#acfc9ed57ec7cb83a8763536b83720f94" title=" " alt="" coords="213,136,365,177"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a7e9cb4bbb56d5f7cee13c6f88607ce2f_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a7e9cb4bbb56d5f7cee13c6f88607ce2f_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a7e9cb4bbb56d5f7cee13c6f88607ce2f_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a7e9cb4bbb56d5f7cee13c6f88607ce2f_icgraph">
+<area shape="rect" title=" " alt="" coords="1005,59,1157,100"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa7c172e7d5c51cef27ce9524eb2607fd" title=" " alt="" coords="805,29,957,71"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#abcedc12ea03e50e6947cf7078d342b40" title=" " alt="" coords="605,59,757,100"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a0022ed77929422166f48332864708aae" title=" " alt="" coords="405,59,557,100"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a6239425e5e8096b094778e4f69d42ffb" title=" " alt="" coords="205,59,357,100"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a804d73cd8c8cbb0e281112390619d6cf" title=" " alt="" coords="5,59,157,100"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a454bb971fd440c35ee81eff35cf643f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454bb971fd440c35ee81eff35cf643f2">&#9670;&nbsp;</a></span>neighborsList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList JackMix::MixingMatrix::Element::neighborsList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The inchannels of the neighbors </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00424">424</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a454bb971fd440c35ee81eff35cf643f2_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a454bb971fd440c35ee81eff35cf643f2_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a454bb971fd440c35ee81eff35cf643f2_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a454bb971fd440c35ee81eff35cf643f2_cgraph">
+<area shape="rect" title=" " alt="" coords="5,71,168,112"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad80339b1fdb71f33e0bf6590f7a98caa" title=" " alt="" coords="216,5,384,47"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d" title=" " alt="" coords="224,71,376,112"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#acfc9ed57ec7cb83a8763536b83720f94" title=" " alt="" coords="224,136,376,177"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a454bb971fd440c35ee81eff35cf643f2_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a454bb971fd440c35ee81eff35cf643f2_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a454bb971fd440c35ee81eff35cf643f2_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a454bb971fd440c35ee81eff35cf643f2_icgraph">
+<area shape="rect" title=" " alt="" coords="805,29,968,71"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#abcedc12ea03e50e6947cf7078d342b40" title=" " alt="" coords="605,29,757,71"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a0022ed77929422166f48332864708aae" title=" " alt="" coords="405,29,557,71"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a6239425e5e8096b094778e4f69d42ffb" title=" " alt="" coords="205,29,357,71"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a804d73cd8c8cbb0e281112390619d6cf" title=" " alt="" coords="5,29,157,71"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acf0b37cb498f45f436e31f605459bfb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf0b37cb498f45f436e31f605459bfb8">&#9670;&nbsp;</a></span>out()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList JackMix::MixingMatrix::Element::out </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00177">177</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acb5a0e739b9dc874b2ede40703038d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb5a0e739b9dc874b2ede40703038d12">&#9670;&nbsp;</a></span>outchannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual int JackMix::MixingMatrix::Element::outchannels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>在 <a class="el" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a6ba68b076bbcde58d58e9cd3d6a8730b">JackMix::MixerElements::Stereo2StereoElement</a>, <a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a0d8ebf3525b0ae5c872800fe2f5dbd21">JackMix::MixerElements::Mono2StereoElement</a> , 以及 <a class="el" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac3f97a487231d7f747ba62b61de66b98">JackMix::MixerElements::AuxElement</a> 内被实现.</p>
+
+</div>
+</div>
+<a id="ad5c5e138a232e8e7f637707d2de7af9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5c5e138a232e8e7f637707d2de7af9d">&#9670;&nbsp;</a></span>parent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html">Widget</a>* JackMix::MixingMatrix::Element::parent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00233">233</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1c29842ca563766402e43f6228524896"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c29842ca563766402e43f6228524896">&#9670;&nbsp;</a></span>renamechannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::renamechannels </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>old_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>new_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Replace all occurances of the old channel name with the new one in both the input and output channel lists </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00491">491</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a1c29842ca563766402e43f6228524896_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a1c29842ca563766402e43f6228524896_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a1c29842ca563766402e43f6228524896_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a1c29842ca563766402e43f6228524896_icgraph">
+<area shape="rect" title=" " alt="" coords="428,39,609,80"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a5414b1ec38930e572b415e8a4ab60e1f" title=" " alt="" coords="205,39,380,80"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a1259faaca7b2316d9b8b5db3db267d6c" title=" " alt="" coords="5,5,157,47"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a0ba81e8ee3c85fad9783adf60ed60868" title=" " alt="" coords="5,71,157,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3f35e794823cfa8b3ed41852c79b4186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f35e794823cfa8b3ed41852c79b4186">&#9670;&nbsp;</a></span>replace</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::replace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a3f35e794823cfa8b3ed41852c79b4186_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a3f35e794823cfa8b3ed41852c79b4186_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a3f35e794823cfa8b3ed41852c79b4186_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a3f35e794823cfa8b3ed41852c79b4186_icgraph">
+<area shape="rect" title=" " alt="" coords="433,100,585,141"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="13,75,178,131"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#abbd3cfaa82a63ad7b247fefac7b92e97" title=" " alt="" coords="233,59,385,115"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="13,162,178,218"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a455afad3c029a88da9dd1fcc5b8b967b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a455afad3c029a88da9dd1fcc5b8b967b">&#9670;&nbsp;</a></span>select</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::select </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00397">397</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a455afad3c029a88da9dd1fcc5b8b967b_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a455afad3c029a88da9dd1fcc5b8b967b_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a455afad3c029a88da9dd1fcc5b8b967b_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a455afad3c029a88da9dd1fcc5b8b967b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,157,47"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d" title=" " alt="" coords="205,5,357,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a455afad3c029a88da9dd1fcc5b8b967b_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a455afad3c029a88da9dd1fcc5b8b967b_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a455afad3c029a88da9dd1fcc5b8b967b_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a455afad3c029a88da9dd1fcc5b8b967b_icgraph">
+<area shape="rect" title=" " alt="" coords="433,100,585,141"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="13,75,178,131"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae2ca2d009062e005c05435a24c15630e" title=" " alt="" coords="233,59,385,115"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="13,162,178,218"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a89daa40b010eb2afc3cca9ce6d88daa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89daa40b010eb2afc3cca9ce6d88daa6">&#9670;&nbsp;</a></span>showMenu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::showMenu </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00453">453</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a89daa40b010eb2afc3cca9ce6d88daa6_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a89daa40b010eb2afc3cca9ce6d88daa6_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a89daa40b010eb2afc3cca9ce6d88daa6_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a89daa40b010eb2afc3cca9ce6d88daa6_icgraph">
+<area shape="rect" title=" " alt="" coords="247,5,399,47"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a5e9de0c471b50c97bcf1b24f76c3244e" title=" " alt="" coords="5,5,199,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a248e0cae3678aa4500f60eda39f90a36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248e0cae3678aa4500f60eda39f90a36">&#9670;&nbsp;</a></span>slot_assign_midi_parameters</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void JackMix::MixingMatrix::Element::slot_assign_midi_parameters </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Show the midi parameter selection menu </p>
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00281">281</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a248e0cae3678aa4500f60eda39f90a36_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a248e0cae3678aa4500f60eda39f90a36_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a248e0cae3678aa4500f60eda39f90a36_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a248e0cae3678aa4500f60eda39f90a36_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,157,61"/>
+<area shape="rect" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#ac1586cb0ac05b67660b28322ba46d968" title=" " alt="" coords="205,13,440,54"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a248e0cae3678aa4500f60eda39f90a36_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a248e0cae3678aa4500f60eda39f90a36_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a248e0cae3678aa4500f60eda39f90a36_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a248e0cae3678aa4500f60eda39f90a36_icgraph">
+<area shape="rect" title=" " alt="" coords="233,71,385,127"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="13,71,178,127"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="13,151,178,207"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a62d38b180085b2a1586dff9dca773ee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62d38b180085b2a1586dff9dca773ee7">&#9670;&nbsp;</a></span>slot_simple_explode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void JackMix::MixingMatrix::Element::slot_simple_explode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00266">266</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a62d38b180085b2a1586dff9dca773ee7_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a62d38b180085b2a1586dff9dca773ee7_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a62d38b180085b2a1586dff9dca773ee7_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a62d38b180085b2a1586dff9dca773ee7_icgraph">
+<area shape="rect" title=" " alt="" coords="219,45,371,101"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="5,5,171,61"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="5,85,171,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abbd3cfaa82a63ad7b247fefac7b92e97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbd3cfaa82a63ad7b247fefac7b92e97">&#9670;&nbsp;</a></span>slot_simple_replace</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void JackMix::MixingMatrix::Element::slot_simple_replace </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00264">264</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_abbd3cfaa82a63ad7b247fefac7b92e97_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_abbd3cfaa82a63ad7b247fefac7b92e97_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_abbd3cfaa82a63ad7b247fefac7b92e97_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_abbd3cfaa82a63ad7b247fefac7b92e97_icgraph">
+<area shape="rect" title=" " alt="" coords="233,71,385,127"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="13,71,178,127"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="13,151,178,207"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae2ca2d009062e005c05435a24c15630e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2ca2d009062e005c05435a24c15630e">&#9670;&nbsp;</a></span>slot_simple_select</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void JackMix::MixingMatrix::Element::slot_simple_select </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00268">268</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae2ca2d009062e005c05435a24c15630e_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae2ca2d009062e005c05435a24c15630e_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae2ca2d009062e005c05435a24c15630e_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae2ca2d009062e005c05435a24c15630e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,157,61"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d" title=" " alt="" coords="405,13,557,54"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a455afad3c029a88da9dd1fcc5b8b967b" title=" " alt="" coords="205,42,357,83"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae2ca2d009062e005c05435a24c15630e_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae2ca2d009062e005c05435a24c15630e_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae2ca2d009062e005c05435a24c15630e_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_ae2ca2d009062e005c05435a24c15630e_icgraph">
+<area shape="rect" title=" " alt="" coords="233,71,385,127"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="13,71,178,127"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="13,151,178,207"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a82f268e085f3fdcf34b6a9ec33a94ecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f268e085f3fdcf34b6a9ec33a94ecc">&#9670;&nbsp;</a></span>update_midi_parameters</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::update_midi_parameters </td>
+          <td>(</td>
+          <td class="paramtype">QList&lt; int &gt;&#160;</td>
+          <td class="paramname"><em>pv</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Receive a signal, typically from the MIDI parameter selection dialogue to change re-subscribe the sliders in this element to new MIDI parameters. Also called directly to update the parameters after loading a saved control layout. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a> 第 <a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html#l00464">464</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a82f268e085f3fdcf34b6a9ec33a94ecc_cgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a82f268e085f3fdcf34b6a9ec33a94ecc_cgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a82f268e085f3fdcf34b6a9ec33a94ecc_cgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a82f268e085f3fdcf34b6a9ec33a94ecc_cgraph">
+<area shape="rect" title=" " alt="" coords="5,27,161,83"/>
+<area shape="rect" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a11bb2cac34c9a170306749d52676025c" title=" " alt="" coords="209,5,385,47"/>
+<area shape="rect" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ae5dc1b69ad333d3d16a54859658111df" title=" " alt="" coords="433,35,624,76"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a82f268e085f3fdcf34b6a9ec33a94ecc_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a82f268e085f3fdcf34b6a9ec33a94ecc_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a82f268e085f3fdcf34b6a9ec33a94ecc_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a82f268e085f3fdcf34b6a9ec33a94ecc_icgraph">
+<area shape="rect" title=" " alt="" coords="649,111,805,167"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="413,5,593,47"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="421,71,586,127"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="421,151,586,207"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a1fdd236b2dbd0a6924ce874396c60dfc" title=" " alt="" coords="405,232,601,273"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title=" " alt="" coords="205,232,357,273"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a2022dfcfcd6eeba03aec9f1e6eb3ece0" title=" " alt="" coords="5,232,157,273"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6af96465ccafb366828296c9882c685d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6af96465ccafb366828296c9882c685d">&#9670;&nbsp;</a></span>valueChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixingMatrix::Element::valueChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6af96465ccafb366828296c9882c685d_icgraph.png" border="0" usemap="#ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6af96465ccafb366828296c9882c685d_icgraph" alt=""/></div>
+<map name="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6af96465ccafb366828296c9882c685d_icgraph" id="ad9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element_a6af96465ccafb366828296c9882c685d_icgraph">
+<area shape="rect" title=" " alt="" coords="447,209,613,251"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="219,5,399,47"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5422a9e5c870f7289e44d633956d546f" title=" " alt="" coords="226,122,391,178"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="5,57,171,113"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a39cb181820910a4cfd78c9bf9683c5c8" title=" " alt="" coords="226,202,391,258"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="226,282,391,338"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a815dc54216fece3d08a5d3955571b1c0" title=" " alt="" coords="226,362,391,418"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#ae3b92d9806b95a540c22ea1e41e7c86a" title=" " alt="" coords="226,442,391,498"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a14099499871505a15fe58c62a2b5774e" title=" " alt="" coords="5,137,171,193"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a2fa67edb44fea4f6dfb6509b4d10b7ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fa67edb44fea4f6dfb6509b4d10b7ac">&#9670;&nbsp;</a></span>_cca</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html">JackMix::GUI::MidiControlChannelAssigner</a>* JackMix::MixingMatrix::Element::_cca</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Dialogue to allow midi parameters to be associated with each delegate </p>
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00257">257</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acbbe7e41000880872154ed9200919a8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbbe7e41000880872154ed9200919a8a">&#9670;&nbsp;</a></span>_in</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList JackMix::MixingMatrix::Element::_in</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00260">260</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae3e43d56e96e7fb5a1001d996ca9c56e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3e43d56e96e7fb5a1001d996ca9c56e">&#9670;&nbsp;</a></span>_menu</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMenu* JackMix::MixingMatrix::Element::_menu</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The contextmenu of the <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a>. Should be filled by the client </p>
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00235">235</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a257b3615a4f4e711eb665bc4ced5dfe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a257b3615a4f4e711eb665bc4ced5dfe5">&#9670;&nbsp;</a></span>_out</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList JackMix::MixingMatrix::Element::_out</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00260">260</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a45e31a7ec61feca726c3591ff8031c00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45e31a7ec61feca726c3591ff8031c00">&#9670;&nbsp;</a></span>_parent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html">Widget</a>* JackMix::MixingMatrix::Element::_parent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00287">287</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2a19cb7ae847c3f9d35dc5e9bdbb9f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a19cb7ae847c3f9d35dc5e9bdbb9f99">&#9670;&nbsp;</a></span>_selected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool JackMix::MixingMatrix::Element::_selected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00286">286</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a28b68c468c86daa5d8fb42071e185054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28b68c468c86daa5d8fb42071e185054">&#9670;&nbsp;</a></span>disp_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QLabel* JackMix::MixingMatrix::Element::disp_name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>If the derrived class has a label, this is it. Used to change text if an input or output channel is renamed </p>
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00245">245</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7c6f3b40da3690ad62d2e912ce82035c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c6f3b40da3690ad62d2e912ce82035c">&#9670;&nbsp;</a></span>midi_delegates</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;<a class="el" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html">JackMix::GUI::AbstractSlider</a>*&gt; JackMix::MixingMatrix::Element::midi_delegates</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>A list of sliders which have a setMidiValue(int) member function, ordered to correspond with the parameter array midi_params. Would typically be initialised in a derived class's constructor with:</p>
+<p>midi_delegates &lt;&lt; slider1 &lt;&lt; slider2 etc. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00255">255</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a09b53e904c9ca0deaa7c9735acc2bd8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09b53e904c9ca0deaa7c9735acc2bd8b">&#9670;&nbsp;</a></span>midi_params</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QList&lt;int&gt; JackMix::MixingMatrix::Element::midi_params</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00247">247</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">属性说明</h2>
+<a id="a85b44f974d9d35d39ca917bac58ec7a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b44f974d9d35d39ca917bac58ec7a9">&#9670;&nbsp;</a></span>in</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList JackMix::MixingMatrix::Element::in</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00147">147</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aaa4140983a683cde7101d41f3e368db7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa4140983a683cde7101d41f3e368db7">&#9670;&nbsp;</a></span>ins</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JackMix::MixingMatrix::Element::ins</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00147">147</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a584c211d21b7410f44a94ef59acc8aa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584c211d21b7410f44a94ef59acc8aa0">&#9670;&nbsp;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString JackMix::MixingMatrix::Element::name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00147">147</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a3aa5f54986c79df83b07ee552a8a3a55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aa5f54986c79df83b07ee552a8a3a55">&#9670;&nbsp;</a></span>out</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QStringList JackMix::MixingMatrix::Element::out</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00147">147</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af401ff6d9525ecd44696238ccb7d095d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af401ff6d9525ecd44696238ccb7d095d">&#9670;&nbsp;</a></span>outs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JackMix::MixingMatrix::Element::outs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00147">147</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a882dcd2a9fc2b0390d0c4acd6f6c62bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a882dcd2a9fc2b0390d0c4acd6f6c62bb">&#9670;&nbsp;</a></span>selected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool JackMix::MixingMatrix::Element::selected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a> 第 <a class="el" href="../../d2/d51/mixingmatrix_8h_source.html#l00147">147</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="../../d2/d51/mixingmatrix_8h_source.html">mixingmatrix.h</a></li>
+<li><a class="el" href="../../d6/dc8/mixingmatrix_8cpp_source.html">mixingmatrix.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

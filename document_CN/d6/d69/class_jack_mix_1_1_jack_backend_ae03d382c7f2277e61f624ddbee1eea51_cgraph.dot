@@ -1,0 +1,14 @@
+digraph "JackMix::JackBackend::JackBackend"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="JackMix::JackBackend\l::JackBackend",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Initializes the connection"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::GuiServer\l_Interface::message",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d8b/class_jack_mix_1_1_gui_server___interface.html#a68c90d20b933df289b252332f4dd5de9",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="JackMix::process",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d67/namespace_jack_mix.html#a44b0e7b7b769e23e7321c8b9745fc69d",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="JackMix::BackendInterface\l::set_interp_len",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dc4/class_jack_mix_1_1_backend_interface.html#a5d066dde4507c0f0cea50a21d73a60ac",tooltip=" "];
+}

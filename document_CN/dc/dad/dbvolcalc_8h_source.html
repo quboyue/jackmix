@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jackmix: dbvolcalc.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jackmix
+   &#160;<span id="projectnumber">v1.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_7c0bbce4cd396a4571ea5c6cec9a50e0.html">jackmix</a></li><li class="navelem"><a class="el" href="../../dir_25cec6d452541f07d11c957df3be294b.html">libcore</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">dbvolcalc.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/dad/dbvolcalc_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">    Copyright 2004 - 2007 Arnold Krille &lt;arnold@arnoldarts.de&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">    This library is free software; you can redistribute it and/or</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">    modify it under the terms of the GNU Library General Public</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">    License as published by the Free Software Foundation;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">    version 2 of the License.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">    This library is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">    Library General Public License for more details.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">    You should have received a copy of the GNU Library General Public License</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">    along with this library; see the file COPYING.LIB.  If not, write to</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">    Boston, MA 02111-1307, USA.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#ifndef JACKMIX_DB2VOL_CALC_H</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define JACKMIX_DB2VOL_CALC_H</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d7/d67/namespace_jack_mix.html">JackMix</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html">dB2VolCalc</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#aee06bfcea7143925bee176ece5147729">   30</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#aee06bfcea7143925bee176ece5147729">_base</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ae64c45bbfb2931ac40e9fc122098c13c">   32</a></span>&#160;    <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ae64c45bbfb2931ac40e9fc122098c13c">dB2VolCalc</a>( <span class="keywordtype">double</span> _dbmin, <span class="keywordtype">double</span> _dbmax )</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      : <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#aee06bfcea7143925bee176ece5147729">_base</a>( 6/log10( double(2) ) ) <span class="comment">// Depends on what you measure: intensity(10), pressure(20), old artscontrol(6/lg2 (near 20))</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      , <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac79cf9728d5ff2dc8520ae3d1ba6a05a">dbmax</a>( _dbmax )</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      , <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a>( _dbmin )</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac79cf9728d5ff2dc8520ae3d1ba6a05a">   38</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac79cf9728d5ff2dc8520ae3d1ba6a05a">dbmax</a>, <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ace43d45b7606f1edd115853c406a1dc2">   51</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ace43d45b7606f1edd115853c406a1dc2">amptodb</a>( <span class="keywordtype">double</span> p ) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">double</span> db = <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#aee06bfcea7143925bee176ece5147729">_base</a>*log10( p );</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span> ( db &lt; <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a> ) db = <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">if</span> ( db &gt; <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac79cf9728d5ff2dc8520ae3d1ba6a05a">dbmax</a> ) db = <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac79cf9728d5ff2dc8520ae3d1ba6a05a">dbmax</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> db;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6">   57</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6">dbtoamp</a>( <span class="keywordtype">double</span> db ) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">double</span> amp = pow( 10, db/<a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#aee06bfcea7143925bee176ece5147729">_base</a> );</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> ( db &lt;= <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a> ) amp = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> amp;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ad80d29cac26d1f940a83d7651893d010">   63</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ad80d29cac26d1f940a83d7651893d010">amptondb</a>( <span class="keywordtype">double</span> p ) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span>  <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac7b464a40f3460592eedcf3fa62f97d6">dbtondb</a>( <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ace43d45b7606f1edd115853c406a1dc2">amptodb</a>( p ) ); <span class="comment">//- dbmin ) / ( dbmax - dbmin );</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a79f073f66dbcdad14ca5feba5659b65b">   66</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a79f073f66dbcdad14ca5feba5659b65b">ndbtoamp</a>( <span class="keywordtype">double</span> ndb ) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6">dbtoamp</a>( ndb * ( <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac79cf9728d5ff2dc8520ae3d1ba6a05a">dbmax</a> - <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a> ) + <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a> );</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac7b464a40f3460592eedcf3fa62f97d6">   70</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac7b464a40f3460592eedcf3fa62f97d6">dbtondb</a>( <span class="keywordtype">double</span> db ) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> ( db - <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a> )/( <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac79cf9728d5ff2dc8520ae3d1ba6a05a">dbmax</a> - <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a> );</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a91acfefb3cb2839b73ae2dc6e314e7b4">   74</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a91acfefb3cb2839b73ae2dc6e314e7b4">dbtovol</a>( <span class="keywordtype">double</span> db ) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> ( db -<a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a> )/( 0-<a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a> );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac0a0b745881d7b8b21f9493937a84c6a">   78</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac0a0b745881d7b8b21f9493937a84c6a">ndbtodb</a>( <span class="keywordtype">double</span> ndb ) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> ( ndb * ( <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac79cf9728d5ff2dc8520ae3d1ba6a05a">dbmax</a>-<a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a> ) +<a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a> );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// vim: sw=4 ts=4</span></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html">JackMix::dB2VolCalc</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00028">dbvolcalc.h:28</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html_a070883843e269f1715c49ab2dc0a6ab2"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">JackMix::dB2VolCalc::dbmin</a></div><div class="ttdeci">double dbmin</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00038">dbvolcalc.h:38</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html_a79f073f66dbcdad14ca5feba5659b65b"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a79f073f66dbcdad14ca5feba5659b65b">JackMix::dB2VolCalc::ndbtoamp</a></div><div class="ttdeci">double ndbtoamp(double ndb)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00066">dbvolcalc.h:66</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html_a91acfefb3cb2839b73ae2dc6e314e7b4"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a91acfefb3cb2839b73ae2dc6e314e7b4">JackMix::dB2VolCalc::dbtovol</a></div><div class="ttdeci">double dbtovol(double db)</div><div class="ttdoc">Normalizes a volume to a logarithmic value between 0 and 1.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00074">dbvolcalc.h:74</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html_ab09e5523dba91f6046e43799e35067f6"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6">JackMix::dB2VolCalc::dbtoamp</a></div><div class="ttdeci">double dbtoamp(double db)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00057">dbvolcalc.h:57</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html_ac0a0b745881d7b8b21f9493937a84c6a"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac0a0b745881d7b8b21f9493937a84c6a">JackMix::dB2VolCalc::ndbtodb</a></div><div class="ttdeci">double ndbtodb(double ndb)</div><div class="ttdoc">Unnormalizes a dezibel value.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00078">dbvolcalc.h:78</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html_ac79cf9728d5ff2dc8520ae3d1ba6a05a"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac79cf9728d5ff2dc8520ae3d1ba6a05a">JackMix::dB2VolCalc::dbmax</a></div><div class="ttdeci">double dbmax</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00038">dbvolcalc.h:38</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html_ac7b464a40f3460592eedcf3fa62f97d6"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac7b464a40f3460592eedcf3fa62f97d6">JackMix::dB2VolCalc::dbtondb</a></div><div class="ttdeci">double dbtondb(double db)</div><div class="ttdoc">Normalizes a dezibel value.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00070">dbvolcalc.h:70</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html_ace43d45b7606f1edd115853c406a1dc2"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ace43d45b7606f1edd115853c406a1dc2">JackMix::dB2VolCalc::amptodb</a></div><div class="ttdeci">double amptodb(double p)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00051">dbvolcalc.h:51</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html_ad80d29cac26d1f940a83d7651893d010"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ad80d29cac26d1f940a83d7651893d010">JackMix::dB2VolCalc::amptondb</a></div><div class="ttdeci">double amptondb(double p)</div><div class="ttdoc">With ndb = normalized dB (between 0 and 1)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00063">dbvolcalc.h:63</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html_ae64c45bbfb2931ac40e9fc122098c13c"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ae64c45bbfb2931ac40e9fc122098c13c">JackMix::dB2VolCalc::dB2VolCalc</a></div><div class="ttdeci">dB2VolCalc(double _dbmin, double _dbmax)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00032">dbvolcalc.h:32</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html_aee06bfcea7143925bee176ece5147729"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#aee06bfcea7143925bee176ece5147729">JackMix::dB2VolCalc::_base</a></div><div class="ttdeci">double _base</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00030">dbvolcalc.h:30</a></div></div>
+<div class="ttc" id="anamespace_jack_mix_html"><div class="ttname"><a href="../../d7/d67/namespace_jack_mix.html">JackMix</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d15/jack__backend_8h_source.html#l00042">jack_backend.h:42</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

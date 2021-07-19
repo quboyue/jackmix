@@ -1,0 +1,12 @@
+digraph "JackMix::GUI::AbstractSlider::setNormalisedValue"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="JackMix::GUI::AbstractSlider\l::setNormalisedValue",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::GUI::AbstractSlider\l::setMidiValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ad69ac1228a5cf73ea4ef412d271520ce",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ControlledSlider::control\lEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dfc/class_controlled_slider.html#aa155a087a19d1eeb0766ca8e78847cf2",tooltip=" "];
+}

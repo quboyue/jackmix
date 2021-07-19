@@ -1,0 +1,1489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jackmix: JackMix::BackendInterface类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jackmix
+   &#160;<span id="projectnumber">v1.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d7/d67/namespace_jack_mix.html">JackMix</a></li><li class="navelem"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html">BackendInterface</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pro-methods">Protected 成员函数</a> &#124;
+<a href="#pro-attribs">Protected 属性</a> &#124;
+<a href="#pro-static-attribs">静态 Protected 属性</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="../../d6/d9e/class_jack_mix_1_1_backend_interface-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">JackMix::BackendInterface类 参考<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Abstract interface for backends  
+ <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a>&gt;</code></p>
+<div class="dynheader">
+类 JackMix::BackendInterface 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/d47/class_jack_mix_1_1_backend_interface__inherit__graph.png" border="0" usemap="#a_jack_mix_1_1_backend_interface_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_jack_mix_1_1_backend_interface_inherit__map" id="a_jack_mix_1_1_backend_interface_inherit__map">
+<area shape="rect" title="Abstract interface for backends" alt="" coords="5,131,184,501"/>
+<area shape="rect" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html" title=" " alt="" coords="17,549,173,1008"/>
+<area shape="rect" title=" " alt="" coords="59,5,130,83"/>
+</map>
+</div>
+<div class="dynheader">
+JackMix::BackendInterface 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/dfa/class_jack_mix_1_1_backend_interface__coll__graph.png" border="0" usemap="#a_jack_mix_1_1_backend_interface_coll__map" alt="Collaboration graph"/></div>
+<map name="a_jack_mix_1_1_backend_interface_coll__map" id="a_jack_mix_1_1_backend_interface_coll__map">
+<area shape="rect" title="Abstract interface for backends" alt="" coords="19,248,198,604"/>
+<area shape="rect" title=" " alt="" coords="5,57,76,134"/>
+<area shape="rect" href="../../d7/d8b/class_jack_mix_1_1_gui_server___interface.html" title="Abstract interface for a GUI server" alt="" coords="101,5,253,185"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db2/struct_jack_mix_1_1_backend_interface_1_1_fader_state.html">FaderState</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">State of a fader (including interpolation)  <a href="../../d9/db2/struct_jack_mix_1_1_backend_interface_1_1_fader_state.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d89/struct_jack_mix_1_1_backend_interface_1_1_stats.html">Stats</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a2563bbe2221b0fe54742df8ebc17409a"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a2563bbe2221b0fe54742df8ebc17409a">Level</a> { <a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a2563bbe2221b0fe54742df8ebc17409aa7089bab642bf7605d1647345952fe3fb">none</a>
+, <a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a2563bbe2221b0fe54742df8ebc17409aa14668e9e5403ef1f800953fe7013b362">nominal</a>
+, <a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a2563bbe2221b0fe54742df8ebc17409aa3f1ee06f23c143a5c16d0f719f55a710">high</a>
+, <a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a2563bbe2221b0fe54742df8ebc17409aa3b25ff06ce9404e5783b8a2c188c67fc">too_high</a>
+ }</td></tr>
+<tr class="separator:a2563bbe2221b0fe54742df8ebc17409a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fed24bd497ec15c81332c26b0e649c7"><td class="memItemLeft" align="right" valign="top">typedef QMap&lt; QString, <a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a2563bbe2221b0fe54742df8ebc17409a">Level</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a6fed24bd497ec15c81332c26b0e649c7">levels_t</a></td></tr>
+<tr class="separator:a6fed24bd497ec15c81332c26b0e649c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:aeeaf6c991463c7ec6f68b78466ab3281"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aeeaf6c991463c7ec6f68b78466ab3281">inputLevelsChanged</a> (<a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a6fed24bd497ec15c81332c26b0e649c7">JackMix::BackendInterface::levels_t</a>)</td></tr>
+<tr class="separator:aeeaf6c991463c7ec6f68b78466ab3281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57c433c4def5e3d10d9780a350e4499a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a57c433c4def5e3d10d9780a350e4499a">outputLevelsChanged</a> (<a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a6fed24bd497ec15c81332c26b0e649c7">JackMix::BackendInterface::levels_t</a>)</td></tr>
+<tr class="separator:a57c433c4def5e3d10d9780a350e4499a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e23b2a1c0c0d1da0cf3dc95f1d761e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#af6e23b2a1c0c0d1da0cf3dc95f1d761e">cc_message</a> (int ch, int val)</td></tr>
+<tr class="separator:af6e23b2a1c0c0d1da0cf3dc95f1d761e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a1e4f8fd00159c65ec96b6acbccb0a7a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a1e4f8fd00159c65ec96b6acbccb0a7a1">BackendInterface</a> (<a class="el" href="../../d7/d8b/class_jack_mix_1_1_gui_server___interface.html">GuiServer_Interface</a> *)</td></tr>
+<tr class="separator:a1e4f8fd00159c65ec96b6acbccb0a7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18aad8df558601858a59ee5aa1080458"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a18aad8df558601858a59ee5aa1080458">~BackendInterface</a> ()</td></tr>
+<tr class="separator:a18aad8df558601858a59ee5aa1080458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07163d7434cb8dcf0da00910c66a636e"><td class="memItemLeft" align="right" valign="top">virtual const QStringList &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a07163d7434cb8dcf0da00910c66a636e">outchannels</a> () const =0</td></tr>
+<tr class="memdesc:a07163d7434cb8dcf0da00910c66a636e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current list of output channels.  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a07163d7434cb8dcf0da00910c66a636e">更多...</a><br /></td></tr>
+<tr class="separator:a07163d7434cb8dcf0da00910c66a636e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a242d0cebafac64a381b5df0bd021c631"><td class="memItemLeft" align="right" valign="top">virtual const QStringList &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a242d0cebafac64a381b5df0bd021c631">inchannels</a> () const =0</td></tr>
+<tr class="memdesc:a242d0cebafac64a381b5df0bd021c631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current list of input channels.  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a242d0cebafac64a381b5df0bd021c631">更多...</a><br /></td></tr>
+<tr class="separator:a242d0cebafac64a381b5df0bd021c631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea7bf918863db16210d5ded864759f5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aaea7bf918863db16210d5ded864759f5">setVolume</a> (QString, QString, float)=0</td></tr>
+<tr class="memdesc:aaea7bf918863db16210d5ded864759f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the volume of the named node.  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aaea7bf918863db16210d5ded864759f5">更多...</a><br /></td></tr>
+<tr class="separator:aaea7bf918863db16210d5ded864759f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81f4fd9c3ec3fa1cfeb9630b636c2282"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a81f4fd9c3ec3fa1cfeb9630b636c2282">getVolume</a> (QString, QString)=0</td></tr>
+<tr class="memdesc:a81f4fd9c3ec3fa1cfeb9630b636c2282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the volume of the named node.  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a81f4fd9c3ec3fa1cfeb9630b636c2282">更多...</a><br /></td></tr>
+<tr class="separator:a81f4fd9c3ec3fa1cfeb9630b636c2282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a107241ba1acc607ac70b53c616517f6d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a107241ba1acc607ac70b53c616517f6d">addOutput</a> (QString)=0</td></tr>
+<tr class="memdesc:a107241ba1acc607ac70b53c616517f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a channel and return true on success.  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a107241ba1acc607ac70b53c616517f6d">更多...</a><br /></td></tr>
+<tr class="separator:a107241ba1acc607ac70b53c616517f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a243820067354fda85cb31ce79761ee"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a1a243820067354fda85cb31ce79761ee">addInput</a> (QString name)=0</td></tr>
+<tr class="memdesc:a1a243820067354fda85cb31ce79761ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a channel and return true on success.  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a1a243820067354fda85cb31ce79761ee">更多...</a><br /></td></tr>
+<tr class="separator:a1a243820067354fda85cb31ce79761ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f467619372334a9d4bb92dc51265c1"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a77f467619372334a9d4bb92dc51265c1">renameInput</a> (const QString, const QString)=0</td></tr>
+<tr class="memdesc:a77f467619372334a9d4bb92dc51265c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rename the output.  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a77f467619372334a9d4bb92dc51265c1">更多...</a><br /></td></tr>
+<tr class="separator:a77f467619372334a9d4bb92dc51265c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a096649e3179e357dc8ce9e70780b0407"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a096649e3179e357dc8ce9e70780b0407">renameOutput</a> (const QString, const QString)=0</td></tr>
+<tr class="memdesc:a096649e3179e357dc8ce9e70780b0407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rename the output.  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a096649e3179e357dc8ce9e70780b0407">更多...</a><br /></td></tr>
+<tr class="separator:a096649e3179e357dc8ce9e70780b0407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97e3dd583417cc48be12cbc2e4f9b36c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a97e3dd583417cc48be12cbc2e4f9b36c">removeOutput</a> (QString)=0</td></tr>
+<tr class="memdesc:a97e3dd583417cc48be12cbc2e4f9b36c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a channel and return true on success.  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a97e3dd583417cc48be12cbc2e4f9b36c">更多...</a><br /></td></tr>
+<tr class="separator:a97e3dd583417cc48be12cbc2e4f9b36c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e6b817d4c07328f8869940f9095326c"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a5e6b817d4c07328f8869940f9095326c">removeInput</a> (QString)=0</td></tr>
+<tr class="memdesc:a5e6b817d4c07328f8869940f9095326c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a channel and return true on success.  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a5e6b817d4c07328f8869940f9095326c">更多...</a><br /></td></tr>
+<tr class="separator:a5e6b817d4c07328f8869940f9095326c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a333a570ed50d41f7771b52530ab16671"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a333a570ed50d41f7771b52530ab16671">newInputLevel</a> (QString which, float maxSignal)</td></tr>
+<tr class="separator:a333a570ed50d41f7771b52530ab16671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63ac4976fc15cce1487234170b3213d5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a63ac4976fc15cce1487234170b3213d5">newOutputLevel</a> (QString which, float maxSignal)</td></tr>
+<tr class="separator:a63ac4976fc15cce1487234170b3213d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3f3c0fc886b03206f9edc79f6b6015"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a2563bbe2221b0fe54742df8ebc17409a">Level</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aaa3f3c0fc886b03206f9edc79f6b6015">signalToLevel</a> (float sig) const</td></tr>
+<tr class="separator:aaa3f3c0fc886b03206f9edc79f6b6015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f2e1f14c1704765e7384143e216e4b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#ab4f2e1f14c1704765e7384143e216e4b">report</a> ()</td></tr>
+<tr class="separator:ab4f2e1f14c1704765e7384143e216e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected 成员函数</h2></td></tr>
+<tr class="memitem:a5d066dde4507c0f0cea50a21d73a60ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a5d066dde4507c0f0cea50a21d73a60ac">set_interp_len</a> (float sr)</td></tr>
+<tr class="separator:a5d066dde4507c0f0cea50a21d73a60ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa5c56d1734926d49595e21dd478150"><td class="memTemplParams" colspan="2">template&lt;typename SampT &gt; </td></tr>
+<tr class="memitem:abfa5c56d1734926d49595e21dd478150"><td class="memTemplItemLeft" align="right" valign="top">SampT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#abfa5c56d1734926d49595e21dd478150">interp_fader</a> (SampT *buf, const size_t nframes, <a class="el" href="../../d9/db2/struct_jack_mix_1_1_backend_interface_1_1_fader_state.html">FaderState</a> &amp;fs)</td></tr>
+<tr class="memdesc:abfa5c56d1734926d49595e21dd478150"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform interpolated volume scaling.  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#abfa5c56d1734926d49595e21dd478150">更多...</a><br /></td></tr>
+<tr class="separator:abfa5c56d1734926d49595e21dd478150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdf705b0bbee2b73ab2b1d6b561992d6"><td class="memTemplParams" colspan="2">template&lt;typename SampT &gt; </td></tr>
+<tr class="memitem:acdf705b0bbee2b73ab2b1d6b561992d6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#acdf705b0bbee2b73ab2b1d6b561992d6">interp_fader</a> (SampT *outbuf, const SampT *inbuf, const size_t nframes, <a class="el" href="../../d9/db2/struct_jack_mix_1_1_backend_interface_1_1_fader_state.html">FaderState</a> &amp;fs)</td></tr>
+<tr class="memdesc:acdf705b0bbee2b73ab2b1d6b561992d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add samples from one buffer to another with interplolated scaling  <a href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#acdf705b0bbee2b73ab2b1d6b561992d6">更多...</a><br /></td></tr>
+<tr class="separator:acdf705b0bbee2b73ab2b1d6b561992d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected 属性</h2></td></tr>
+<tr class="memitem:ab878a873ecf37a081b05f24d6e718f0a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d8b/class_jack_mix_1_1_gui_server___interface.html">GuiServer_Interface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#ab878a873ecf37a081b05f24d6e718f0a">gui</a></td></tr>
+<tr class="separator:ab878a873ecf37a081b05f24d6e718f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebaf17a89e1b54810c37664cdddfcc64"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aebaf17a89e1b54810c37664cdddfcc64">interp_len</a></td></tr>
+<tr class="separator:aebaf17a89e1b54810c37664cdddfcc64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
+静态 Protected 属性</h2></td></tr>
+<tr class="memitem:a0c90bd25501eb5d94ed029ddfd36518f"><td class="memItemLeft" align="right" valign="top">constexpr static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a0c90bd25501eb5d94ed029ddfd36518f">interp_time</a> {.08}</td></tr>
+<tr class="separator:a0c90bd25501eb5d94ed029ddfd36518f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a4f7e5868425b65f39a21fa3b6ddb3773"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a4f7e5868425b65f39a21fa3b6ddb3773">testSlot</a> (<a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a6fed24bd497ec15c81332c26b0e649c7">JackMix::BackendInterface::levels_t</a>)</td></tr>
+<tr class="separator:a4f7e5868425b65f39a21fa3b6ddb3773"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:ae76608b10dfd3499016f7da4320ecbf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#ae76608b10dfd3499016f7da4320ecbf6">newLevel</a> (<a class="el" href="../../df/d89/struct_jack_mix_1_1_backend_interface_1_1_stats.html">Stats</a> &amp;s, float maxSignal)</td></tr>
+<tr class="separator:ae76608b10dfd3499016f7da4320ecbf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0133ed40ee994f2616765a68b0df6a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aa0133ed40ee994f2616765a68b0df6a0">report_group</a> (int which, <a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a6fed24bd497ec15c81332c26b0e649c7">levels_t</a> &amp;result)</td></tr>
+<tr class="separator:aa0133ed40ee994f2616765a68b0df6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aae0f18564a427d0cacdfea84ac01e931"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, <a class="el" href="../../df/d89/struct_jack_mix_1_1_backend_interface_1_1_stats.html">Stats</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aae0f18564a427d0cacdfea84ac01e931">stats</a> [2]</td></tr>
+<tr class="separator:aae0f18564a427d0cacdfea84ac01e931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:a16563cdaacd30a3d7818c7f666b512f8"><td class="memItemLeft" align="right" valign="top">static const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a16563cdaacd30a3d7818c7f666b512f8">threshold</a> [] = {0, 0.00316, 0.12589, 0.50119}</td></tr>
+<tr class="separator:a16563cdaacd30a3d7818c7f666b512f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Abstract interface for backends </p>
+<p>A backend has to implement this functions... </p>
+
+<p class="definition">在文件 <a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a> 第 <a class="el" href="../../d9/d30/backend__interface_8h_source.html#l00043">43</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a6fed24bd497ec15c81332c26b0e649c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fed24bd497ec15c81332c26b0e649c7">&#9670;&nbsp;</a></span>levels_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef QMap&lt;QString,<a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a2563bbe2221b0fe54742df8ebc17409a">Level</a>&gt; <a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a6fed24bd497ec15c81332c26b0e649c7">JackMix::BackendInterface::levels_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a> 第 <a class="el" href="../../d9/d30/backend__interface_8h_source.html#l00130">130</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员枚举类型说明</h2>
+<a id="a2563bbe2221b0fe54742df8ebc17409a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2563bbe2221b0fe54742df8ebc17409a">&#9670;&nbsp;</a></span>Level</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a2563bbe2221b0fe54742df8ebc17409a">JackMix::BackendInterface::Level</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a2563bbe2221b0fe54742df8ebc17409aa7089bab642bf7605d1647345952fe3fb"></a>none&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2563bbe2221b0fe54742df8ebc17409aa14668e9e5403ef1f800953fe7013b362"></a>nominal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2563bbe2221b0fe54742df8ebc17409aa3f1ee06f23c143a5c16d0f719f55a710"></a>high&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2563bbe2221b0fe54742df8ebc17409aa3b25ff06ce9404e5783b8a2c188c67fc"></a>too_high&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a> 第 <a class="el" href="../../d9/d30/backend__interface_8h_source.html#l00128">128</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a1e4f8fd00159c65ec96b6acbccb0a7a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e4f8fd00159c65ec96b6acbccb0a7a1">&#9670;&nbsp;</a></span>BackendInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">JackMix::BackendInterface::BackendInterface </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d8b/class_jack_mix_1_1_gui_server___interface.html">GuiServer_Interface</a> *&#160;</td>
+          <td class="paramname"><em>g</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html">backend_interface.cpp</a> 第 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a18aad8df558601858a59ee5aa1080458"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18aad8df558601858a59ee5aa1080458">&#9670;&nbsp;</a></span>~BackendInterface()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JackMix::BackendInterface::~BackendInterface </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html">backend_interface.cpp</a> 第 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html#l00034">34</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a1a243820067354fda85cb31ce79761ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a243820067354fda85cb31ce79761ee">&#9670;&nbsp;</a></span>addInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool JackMix::BackendInterface::addInput </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a channel and return true on success. </p>
+<p>If the actual backend doesn't support adding and removing, thats okay. Just return false.. </p>
+
+<p>在 <a class="el" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#a616064b67d3454763209e0089c1f0445">JackMix::JackBackend</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a1a243820067354fda85cb31ce79761ee_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a1a243820067354fda85cb31ce79761ee_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a1a243820067354fda85cb31ce79761ee_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a1a243820067354fda85cb31ce79761ee_icgraph">
+<area shape="rect" title="Add a channel and return true on success." alt="" coords="205,5,384,47"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a6d858d7c136f951a40db5b4b1be531d1" title=" " alt="" coords="5,5,157,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a107241ba1acc607ac70b53c616517f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a107241ba1acc607ac70b53c616517f6d">&#9670;&nbsp;</a></span>addOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool JackMix::BackendInterface::addOutput </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a channel and return true on success. </p>
+<p>If the actual backend doesn't support adding and removing, thats okay. Just return false.. </p>
+
+<p>在 <a class="el" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#ae13a9fcdd53472a5e167122cba874beb">JackMix::JackBackend</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a107241ba1acc607ac70b53c616517f6d_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a107241ba1acc607ac70b53c616517f6d_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a107241ba1acc607ac70b53c616517f6d_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a107241ba1acc607ac70b53c616517f6d_icgraph">
+<area shape="rect" title="Add a channel and return true on success." alt="" coords="205,5,384,47"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a50d58bfd9a840ce60cebfe13d714f3b2" title=" " alt="" coords="5,5,157,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af6e23b2a1c0c0d1da0cf3dc95f1d761e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e23b2a1c0c0d1da0cf3dc95f1d761e">&#9670;&nbsp;</a></span>cc_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::BackendInterface::cc_message </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>ch</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_af6e23b2a1c0c0d1da0cf3dc95f1d761e_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_af6e23b2a1c0c0d1da0cf3dc95f1d761e_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_af6e23b2a1c0c0d1da0cf3dc95f1d761e_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_af6e23b2a1c0c0d1da0cf3dc95f1d761e_icgraph">
+<area shape="rect" title=" " alt="" coords="209,5,388,47"/>
+<area shape="rect" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#acad7d892fc24325de89d660a656c9a28" title=" " alt="" coords="5,5,161,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a81f4fd9c3ec3fa1cfeb9630b636c2282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81f4fd9c3ec3fa1cfeb9630b636c2282">&#9670;&nbsp;</a></span>getVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float JackMix::BackendInterface::getVolume </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the volume of the named node. </p>
+
+<p>在 <a class="el" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#a3d67dd0ba01692b46f78c3f709092685">JackMix::JackBackend</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a81f4fd9c3ec3fa1cfeb9630b636c2282_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a81f4fd9c3ec3fa1cfeb9630b636c2282_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a81f4fd9c3ec3fa1cfeb9630b636c2282_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a81f4fd9c3ec3fa1cfeb9630b636c2282_icgraph">
+<area shape="rect" title="Set the volume of the named node." alt="" coords="619,86,797,127"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="405,5,571,61"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a41072424350a8df09f3d59f95d7bb24a" title=" " alt="" coords="412,86,564,127"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="405,152,571,208"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title=" " alt="" coords="205,54,357,95"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#ae786a3a0501398a38d2c86af9ae6b5c0" title=" " alt="" coords="205,119,357,161"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a2022dfcfcd6eeba03aec9f1e6eb3ece0" title=" " alt="" coords="5,54,157,95"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a242d0cebafac64a381b5df0bd021c631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a242d0cebafac64a381b5df0bd021c631">&#9670;&nbsp;</a></span>inchannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const QStringList&amp; JackMix::BackendInterface::inchannels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the current list of input channels. </p>
+
+<p>在 <a class="el" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#a61166f9bd40b7027797f3b80687384d8">JackMix::JackBackend</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a242d0cebafac64a381b5df0bd021c631_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a242d0cebafac64a381b5df0bd021c631_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a242d0cebafac64a381b5df0bd021c631_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a242d0cebafac64a381b5df0bd021c631_icgraph">
+<area shape="rect" title="Return the current list of input channels." alt="" coords="605,180,784,221"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a6d858d7c136f951a40db5b4b1be531d1" title=" " alt="" coords="405,5,557,47"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a50d58bfd9a840ce60cebfe13d714f3b2" title=" " alt="" coords="405,71,557,112"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a2022dfcfcd6eeba03aec9f1e6eb3ece0" title=" " alt="" coords="5,211,157,252"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#ab67a8002596d073eb1460fb06eeaff66" title=" " alt="" coords="205,200,357,241"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#ae4aebaf048e8ed0667643b30037f462a" title=" " alt="" coords="405,239,557,280"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a7397bb2741168008eaca65cc7b6e283f" title=" " alt="" coords="405,304,557,345"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a41072424350a8df09f3d59f95d7bb24a" title=" " alt="" coords="405,369,557,411"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title=" " alt="" coords="205,291,357,332"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#ae786a3a0501398a38d2c86af9ae6b5c0" title=" " alt="" coords="205,369,357,411"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aeeaf6c991463c7ec6f68b78466ab3281"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeeaf6c991463c7ec6f68b78466ab3281">&#9670;&nbsp;</a></span>inputLevelsChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::BackendInterface::inputLevelsChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a6fed24bd497ec15c81332c26b0e649c7">JackMix::BackendInterface::levels_t</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_aeeaf6c991463c7ec6f68b78466ab3281_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_aeeaf6c991463c7ec6f68b78466ab3281_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_aeeaf6c991463c7ec6f68b78466ab3281_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_aeeaf6c991463c7ec6f68b78466ab3281_icgraph">
+<area shape="rect" title=" " alt="" coords="232,5,411,47"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#ab4f2e1f14c1704765e7384143e216e4b" title=" " alt="" coords="5,5,184,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abfa5c56d1734926d49595e21dd478150"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa5c56d1734926d49595e21dd478150">&#9670;&nbsp;</a></span>interp_fader() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename SampT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SampT JackMix::BackendInterface::interp_fader </td>
+          <td>(</td>
+          <td class="paramtype">SampT *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>nframes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/db2/struct_jack_mix_1_1_backend_interface_1_1_fader_state.html">FaderState</a> &amp;&#160;</td>
+          <td class="paramname"><em>fs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Perform interpolated volume scaling. </p>
+<p>The volume interpolation is controlled by the parameter fs, a <a class="el" href="../../d9/db2/struct_jack_mix_1_1_backend_interface_1_1_fader_state.html" title="State of a fader (including interpolation)">FaderState</a> reference. The current field of fs is updated accordingly.</p>
+<p>If fs.num_steps == 0, no interpolation takes place.</p>
+<p>This assumes samples are stored in a buffer which can be subscripted via [] and that they are all multiplied by a constant which changes continuously througout the length of the buffer. If that isn't true for the backend implementing this interface, it will have to provide its own code. You can't have virtual templates.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>A pointer to a buffer of samples to process </td></tr>
+    <tr><td class="paramname">nframes</td><td>Number of frames (= samples) in the buffer </td></tr>
+    <tr><td class="paramname">fs</td><td>A <a class="el" href="../../d9/db2/struct_jack_mix_1_1_backend_interface_1_1_fader_state.html" title="State of a fader (including interpolation)">FaderState</a> to control the fading </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>Maximum sample value in the buffer </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a> 第 <a class="el" href="../../d9/d30/backend__interface_8h_source.html#l00250">250</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acdf705b0bbee2b73ab2b1d6b561992d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdf705b0bbee2b73ab2b1d6b561992d6">&#9670;&nbsp;</a></span>interp_fader() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename SampT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::BackendInterface::interp_fader </td>
+          <td>(</td>
+          <td class="paramtype">SampT *&#160;</td>
+          <td class="paramname"><em>outbuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const SampT *&#160;</td>
+          <td class="paramname"><em>inbuf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>nframes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/db2/struct_jack_mix_1_1_backend_interface_1_1_fader_state.html">FaderState</a> &amp;&#160;</td>
+          <td class="paramname"><em>fs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add samples from one buffer to another with interplolated scaling </p>
+<p>An overload of the in-place version of the template which leaves the input buffer unchanged but adds its data into the output buffer with interpolated scaling. Unlike the in-place version, the maximum value in the target buffer is not returned. This is because it is anticipated that the caller will mix a number of input buffers into the output by repeatedly calling this function, and since the maximum value is meaningless until that process is complete, it is simply a waste of computational effort.</p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#abfa5c56d1734926d49595e21dd478150" title="Perform interpolated volume scaling.">interp_fader(SampT* buf, const size_t nframes, FaderState&amp; fs)</a></dd></dl>
+<p>Similar assumptions about sample ordering and storage are made.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outbuf</td><td>Where to store result samples </td></tr>
+    <tr><td class="paramname">inbuf</td><td>Whence to read input samples </td></tr>
+    <tr><td class="paramname">nframes</td><td>Number of frames (= samples) in the buffer </td></tr>
+    <tr><td class="paramname">fs</td><td>A <a class="el" href="../../d9/db2/struct_jack_mix_1_1_backend_interface_1_1_fader_state.html" title="State of a fader (including interpolation)">FaderState</a> to control the fading </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a> 第 <a class="el" href="../../d9/d30/backend__interface_8h_source.html#l00302">302</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a333a570ed50d41f7771b52530ab16671"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a333a570ed50d41f7771b52530ab16671">&#9670;&nbsp;</a></span>newInputLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::BackendInterface::newInputLevel </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>which</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>maxSignal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html">backend_interface.cpp</a> 第 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html#l00060">60</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a333a570ed50d41f7771b52530ab16671_cgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a333a570ed50d41f7771b52530ab16671_cgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a333a570ed50d41f7771b52530ab16671_cgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a333a570ed50d41f7771b52530ab16671_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#ae76608b10dfd3499016f7da4320ecbf6" title=" " alt="" coords="232,5,411,47"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aaa3f3c0fc886b03206f9edc79f6b6015" title=" " alt="" coords="459,5,637,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae76608b10dfd3499016f7da4320ecbf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae76608b10dfd3499016f7da4320ecbf6">&#9670;&nbsp;</a></span>newLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::BackendInterface::newLevel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d89/struct_jack_mix_1_1_backend_interface_1_1_stats.html">Stats</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>maxSignal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html">backend_interface.cpp</a> 第 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html#l00048">48</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_ae76608b10dfd3499016f7da4320ecbf6_cgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_ae76608b10dfd3499016f7da4320ecbf6_cgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_ae76608b10dfd3499016f7da4320ecbf6_cgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_ae76608b10dfd3499016f7da4320ecbf6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aaa3f3c0fc886b03206f9edc79f6b6015" title=" " alt="" coords="232,5,411,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_ae76608b10dfd3499016f7da4320ecbf6_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_ae76608b10dfd3499016f7da4320ecbf6_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_ae76608b10dfd3499016f7da4320ecbf6_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_ae76608b10dfd3499016f7da4320ecbf6_icgraph">
+<area shape="rect" title=" " alt="" coords="232,39,411,80"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a333a570ed50d41f7771b52530ab16671" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a63ac4976fc15cce1487234170b3213d5" title=" " alt="" coords="5,71,184,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a63ac4976fc15cce1487234170b3213d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63ac4976fc15cce1487234170b3213d5">&#9670;&nbsp;</a></span>newOutputLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::BackendInterface::newOutputLevel </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>which</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>maxSignal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html">backend_interface.cpp</a> 第 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html#l00065">65</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a63ac4976fc15cce1487234170b3213d5_cgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a63ac4976fc15cce1487234170b3213d5_cgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a63ac4976fc15cce1487234170b3213d5_cgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a63ac4976fc15cce1487234170b3213d5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#ae76608b10dfd3499016f7da4320ecbf6" title=" " alt="" coords="232,5,411,47"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aaa3f3c0fc886b03206f9edc79f6b6015" title=" " alt="" coords="459,5,637,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a07163d7434cb8dcf0da00910c66a636e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07163d7434cb8dcf0da00910c66a636e">&#9670;&nbsp;</a></span>outchannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const QStringList&amp; JackMix::BackendInterface::outchannels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the current list of output channels. </p>
+
+<p>在 <a class="el" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#aeb2fb28115f653ecd3e8de8a0dc0994f">JackMix::JackBackend</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a07163d7434cb8dcf0da00910c66a636e_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a07163d7434cb8dcf0da00910c66a636e_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a07163d7434cb8dcf0da00910c66a636e_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a07163d7434cb8dcf0da00910c66a636e_icgraph">
+<area shape="rect" title="Return the current list of output channels." alt="" coords="605,180,784,221"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a6d858d7c136f951a40db5b4b1be531d1" title=" " alt="" coords="405,5,557,47"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a50d58bfd9a840ce60cebfe13d714f3b2" title=" " alt="" coords="405,71,557,112"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a2022dfcfcd6eeba03aec9f1e6eb3ece0" title=" " alt="" coords="5,211,157,252"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#ab67a8002596d073eb1460fb06eeaff66" title=" " alt="" coords="205,200,357,241"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a373caf44583c3b875dc2a743a210decb" title=" " alt="" coords="405,239,557,280"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a4187f603c364a341ef105fefecbd9200" title=" " alt="" coords="405,304,557,345"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a41072424350a8df09f3d59f95d7bb24a" title=" " alt="" coords="405,369,557,411"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title=" " alt="" coords="205,291,357,332"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#ae786a3a0501398a38d2c86af9ae6b5c0" title=" " alt="" coords="205,369,357,411"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a57c433c4def5e3d10d9780a350e4499a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57c433c4def5e3d10d9780a350e4499a">&#9670;&nbsp;</a></span>outputLevelsChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::BackendInterface::outputLevelsChanged </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a6fed24bd497ec15c81332c26b0e649c7">JackMix::BackendInterface::levels_t</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a57c433c4def5e3d10d9780a350e4499a_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a57c433c4def5e3d10d9780a350e4499a_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a57c433c4def5e3d10d9780a350e4499a_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a57c433c4def5e3d10d9780a350e4499a_icgraph">
+<area shape="rect" title=" " alt="" coords="232,5,411,47"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#ab4f2e1f14c1704765e7384143e216e4b" title=" " alt="" coords="5,5,184,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5e6b817d4c07328f8869940f9095326c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e6b817d4c07328f8869940f9095326c">&#9670;&nbsp;</a></span>removeInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool JackMix::BackendInterface::removeInput </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove a channel and return true on success. </p>
+<p>If the actual backend doesn't support adding and removing, thats okay. Just return false.. </p>
+
+<p>在 <a class="el" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#adb49d2aef3d7053981d7be5386694bad">JackMix::JackBackend</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a5e6b817d4c07328f8869940f9095326c_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a5e6b817d4c07328f8869940f9095326c_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a5e6b817d4c07328f8869940f9095326c_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a5e6b817d4c07328f8869940f9095326c_icgraph">
+<area shape="rect" title="Remove a channel and return true on success." alt="" coords="205,5,384,47"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a096e5b053bf57c5664a147f206af6e5a" title=" " alt="" coords="5,5,157,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a97e3dd583417cc48be12cbc2e4f9b36c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97e3dd583417cc48be12cbc2e4f9b36c">&#9670;&nbsp;</a></span>removeOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool JackMix::BackendInterface::removeOutput </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove a channel and return true on success. </p>
+<p>If the actual backend doesn't support adding and removing, thats okay. Just return false.. </p>
+
+<p>在 <a class="el" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#a9d7520d70230cd07beae4478956a7aef">JackMix::JackBackend</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a97e3dd583417cc48be12cbc2e4f9b36c_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a97e3dd583417cc48be12cbc2e4f9b36c_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a97e3dd583417cc48be12cbc2e4f9b36c_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a97e3dd583417cc48be12cbc2e4f9b36c_icgraph">
+<area shape="rect" title="Remove a channel and return true on success." alt="" coords="205,5,384,47"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#aa36722156e1b41f960dca917d55c4506" title=" " alt="" coords="5,5,157,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a77f467619372334a9d4bb92dc51265c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77f467619372334a9d4bb92dc51265c1">&#9670;&nbsp;</a></span>renameInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool JackMix::BackendInterface::renameInput </td>
+          <td>(</td>
+          <td class="paramtype">const&#160;</td>
+          <td class="paramname"><em>QString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const&#160;</td>
+          <td class="paramname"><em>QString</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rename the output. </p>
+<p>The output channel is renamed, checking first that the give name is not already associated with another output. </p>
+
+<p>在 <a class="el" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#ac3205f5fe96ce7053b86d262c32b83fe">JackMix::JackBackend</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a77f467619372334a9d4bb92dc51265c1_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a77f467619372334a9d4bb92dc51265c1_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a77f467619372334a9d4bb92dc51265c1_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a77f467619372334a9d4bb92dc51265c1_icgraph">
+<area shape="rect" title="Rename the output." alt="" coords="205,5,384,47"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a1259faaca7b2316d9b8b5db3db267d6c" title=" " alt="" coords="5,5,157,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a096649e3179e357dc8ce9e70780b0407"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a096649e3179e357dc8ce9e70780b0407">&#9670;&nbsp;</a></span>renameOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool JackMix::BackendInterface::renameOutput </td>
+          <td>(</td>
+          <td class="paramtype">const&#160;</td>
+          <td class="paramname"><em>QString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const&#160;</td>
+          <td class="paramname"><em>QString</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rename the output. </p>
+<p>The output channel is renamed, checking first that the give name is not already associated with another output. </p>
+
+<p>在 <a class="el" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#ac2e55f8678852b69be933fcabb3c6341">JackMix::JackBackend</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a096649e3179e357dc8ce9e70780b0407_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a096649e3179e357dc8ce9e70780b0407_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a096649e3179e357dc8ce9e70780b0407_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a096649e3179e357dc8ce9e70780b0407_icgraph">
+<area shape="rect" title="Rename the output." alt="" coords="205,5,384,47"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#a0ba81e8ee3c85fad9783adf60ed60868" title=" " alt="" coords="5,5,157,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab4f2e1f14c1704765e7384143e216e4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f2e1f14c1704765e7384143e216e4b">&#9670;&nbsp;</a></span>report()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::BackendInterface::report </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html">backend_interface.cpp</a> 第 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html#l00087">87</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_ab4f2e1f14c1704765e7384143e216e4b_cgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_ab4f2e1f14c1704765e7384143e216e4b_cgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_ab4f2e1f14c1704765e7384143e216e4b_cgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_ab4f2e1f14c1704765e7384143e216e4b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aa0133ed40ee994f2616765a68b0df6a0" title=" " alt="" coords="232,5,411,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa0133ed40ee994f2616765a68b0df6a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0133ed40ee994f2616765a68b0df6a0">&#9670;&nbsp;</a></span>report_group()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::BackendInterface::report_group </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>which</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a6fed24bd497ec15c81332c26b0e649c7">levels_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html">backend_interface.cpp</a> 第 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html#l00075">75</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_aa0133ed40ee994f2616765a68b0df6a0_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_aa0133ed40ee994f2616765a68b0df6a0_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_aa0133ed40ee994f2616765a68b0df6a0_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_aa0133ed40ee994f2616765a68b0df6a0_icgraph">
+<area shape="rect" title=" " alt="" coords="232,5,411,47"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#ab4f2e1f14c1704765e7384143e216e4b" title=" " alt="" coords="5,5,184,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5d066dde4507c0f0cea50a21d73a60ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d066dde4507c0f0cea50a21d73a60ac">&#9670;&nbsp;</a></span>set_interp_len()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::BackendInterface::set_interp_len </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>sr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set the fader interpolation length in samples</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sr</td><td>Sample rate </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html">backend_interface.cpp</a> 第 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html#l00070">70</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_a5d066dde4507c0f0cea50a21d73a60ac_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_a5d066dde4507c0f0cea50a21d73a60ac_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_a5d066dde4507c0f0cea50a21d73a60ac_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_a5d066dde4507c0f0cea50a21d73a60ac_icgraph">
+<area shape="rect" title=" " alt="" coords="209,39,388,80"/>
+<area shape="rect" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#ae03d382c7f2277e61f624ddbee1eea51" title="Initializes the connection" alt="" coords="5,5,161,47"/>
+<area shape="rect" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#aa5076dd41ec2cb22805e767ddaf51a8a" title=" " alt="" coords="5,71,161,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaea7bf918863db16210d5ded864759f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaea7bf918863db16210d5ded864759f5">&#9670;&nbsp;</a></span>setVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void JackMix::BackendInterface::setVolume </td>
+          <td>(</td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the volume of the named node. </p>
+
+<p>在 <a class="el" href="../../d6/d69/class_jack_mix_1_1_jack_backend.html#a3d8f8320b9bb8eb02fac77f8d16a504b">JackMix::JackBackend</a> 内被实现.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_aaea7bf918863db16210d5ded864759f5_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_aaea7bf918863db16210d5ded864759f5_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_aaea7bf918863db16210d5ded864759f5_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_aaea7bf918863db16210d5ded864759f5_icgraph">
+<area shape="rect" title="Set the volume of the named node." alt="" coords="660,326,839,367"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a634d1555deeb856b6779c3c874801ad4" title=" " alt="" coords="447,125,612,181"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#ac7d2c0bdd35b70303997ed441e6d27cd" title=" " alt="" coords="447,245,612,301"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#a3740dae7797cc6e332a707f9793686c8" title=" " alt="" coords="447,326,612,367"/>
+<area shape="rect" href="../../df/d8c/class_jack_mix_1_1_main_window.html#ab67a8002596d073eb1460fb06eeaff66" title=" " alt="" coords="453,391,605,433"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="447,457,612,513"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5422a9e5c870f7289e44d633956d546f" title=" " alt="" coords="226,45,391,101"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a815dc54216fece3d08a5d3955571b1c0" title=" " alt="" coords="226,125,391,181"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="5,5,171,61"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a14099499871505a15fe58c62a2b5774e" title=" " alt="" coords="5,85,171,141"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a39cb181820910a4cfd78c9bf9683c5c8" title=" " alt="" coords="226,205,391,261"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#ae3b92d9806b95a540c22ea1e41e7c86a" title=" " alt="" coords="226,285,391,341"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="219,366,399,407"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaa3f3c0fc886b03206f9edc79f6b6015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa3f3c0fc886b03206f9edc79f6b6015">&#9670;&nbsp;</a></span>signalToLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a2563bbe2221b0fe54742df8ebc17409a">BackendInterface::Level</a> JackMix::BackendInterface::signalToLevel </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>sig</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html">backend_interface.cpp</a> 第 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html#l00040">40</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/dc4/class_jack_mix_1_1_backend_interface_aaa3f3c0fc886b03206f9edc79f6b6015_icgraph.png" border="0" usemap="#ade/dc4/class_jack_mix_1_1_backend_interface_aaa3f3c0fc886b03206f9edc79f6b6015_icgraph" alt=""/></div>
+<map name="ade/dc4/class_jack_mix_1_1_backend_interface_aaa3f3c0fc886b03206f9edc79f6b6015_icgraph" id="ade/dc4/class_jack_mix_1_1_backend_interface_aaa3f3c0fc886b03206f9edc79f6b6015_icgraph">
+<area shape="rect" title=" " alt="" coords="459,39,637,80"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#ae76608b10dfd3499016f7da4320ecbf6" title=" " alt="" coords="232,39,411,80"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a333a570ed50d41f7771b52530ab16671" title=" " alt="" coords="5,5,184,47"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a63ac4976fc15cce1487234170b3213d5" title=" " alt="" coords="5,71,184,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4f7e5868425b65f39a21fa3b6ddb3773"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f7e5868425b65f39a21fa3b6ddb3773">&#9670;&nbsp;</a></span>testSlot</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::BackendInterface::testSlot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a6fed24bd497ec15c81332c26b0e649c7">JackMix::BackendInterface::levels_t</a>&#160;</td>
+          <td class="paramname"><em>changed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html">backend_interface.cpp</a> 第 <a class="el" href="../../d1/d47/backend__interface_8cpp_source.html#l00106">106</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="ab878a873ecf37a081b05f24d6e718f0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab878a873ecf37a081b05f24d6e718f0a">&#9670;&nbsp;</a></span>gui</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d8b/class_jack_mix_1_1_gui_server___interface.html">GuiServer_Interface</a>* JackMix::BackendInterface::gui</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a> 第 <a class="el" href="../../d9/d30/backend__interface_8h_source.html#l00160">160</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aebaf17a89e1b54810c37664cdddfcc64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebaf17a89e1b54810c37664cdddfcc64">&#9670;&nbsp;</a></span>interp_len</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int JackMix::BackendInterface::interp_len</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Fader iterpolation length in samples. It is initialised by the class implementing this interface based on the interp_time and the backend's sample rate, probably by calling the utility function set_interp_len </p>
+
+<p class="definition">在文件 <a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a> 第 <a class="el" href="../../d9/d30/backend__interface_8h_source.html#l00169">169</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0c90bd25501eb5d94ed029ddfd36518f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c90bd25501eb5d94ed029ddfd36518f">&#9670;&nbsp;</a></span>interp_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr static float JackMix::BackendInterface::interp_time {.08}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>How long a fader change takes to execute (for de-zipping) </p>
+
+<p class="definition">在文件 <a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a> 第 <a class="el" href="../../d9/d30/backend__interface_8h_source.html#l00163">163</a> 行定义.</p>
+
+</div>
+</div>
+<a id="aae0f18564a427d0cacdfea84ac01e931"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae0f18564a427d0cacdfea84ac01e931">&#9670;&nbsp;</a></span>stats</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QMap&lt;QString, <a class="el" href="../../df/d89/struct_jack_mix_1_1_backend_interface_1_1_stats.html">Stats</a>&gt; JackMix::BackendInterface::stats[2]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a> 第 <a class="el" href="../../d9/d30/backend__interface_8h_source.html#l00150">150</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a16563cdaacd30a3d7818c7f666b512f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16563cdaacd30a3d7818c7f666b512f8">&#9670;&nbsp;</a></span>threshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float JackMix::BackendInterface::threshold = {0, 0.00316, 0.12589, 0.50119}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a> 第 <a class="el" href="../../d9/d30/backend__interface_8h_source.html#l00155">155</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="../../d9/d30/backend__interface_8h_source.html">backend_interface.h</a></li>
+<li><a class="el" href="../../d1/d47/backend__interface_8cpp_source.html">backend_interface.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

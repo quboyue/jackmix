@@ -1,0 +1,4 @@
+<map id="JackMix::BackendInterface::removeInput" name="JackMix::BackendInterface::removeInput">
+<area shape="rect" id="node1" title="Remove a channel and return true on success." alt="" coords="205,5,384,47"/>
+<area shape="rect" id="node2" href="$df/d8c/class_jack_mix_1_1_main_window.html#a096e5b053bf57c5664a147f206af6e5a" title=" " alt="" coords="5,5,157,47"/>
+</map>

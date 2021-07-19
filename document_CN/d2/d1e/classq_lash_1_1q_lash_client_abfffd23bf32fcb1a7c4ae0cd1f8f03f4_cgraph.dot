@@ -1,0 +1,18 @@
+digraph "qLash::qLashClient::timerEvent"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="qLash::qLashClient\l::timerEvent",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="qLash::qLashClient\l::isConnected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d1e/classq_lash_1_1q_lash_client.html#ac772de14da1907fe0657c813bd73767e",tooltip="Connected to LASH?"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="qLash::qLashClient\l::restoreFromConfigFinalize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d1e/classq_lash_1_1q_lash_client.html#a9db90810a5f077c39b8d42fcaf4b4ecd",tooltip="Restoring from config finished"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="qLash::qLashClient\l::restoreFromDirFinalize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d1e/classq_lash_1_1q_lash_client.html#a648917f40fc32a2de73c8cd091484f65",tooltip="Restoring from dir finished"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="qLash::qLashClient\l::saveToConfigFinalize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d1e/classq_lash_1_1q_lash_client.html#a5a1e2a36989b31afc9fb25ae83e2a523",tooltip="Finalize saving to config finished"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="qLash::qLashClient\l::saveToDirFinalize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d1e/classq_lash_1_1q_lash_client.html#a3fd6348cab9704c542c28ca687bee49c",tooltip="Saving to dir finished"];
+}

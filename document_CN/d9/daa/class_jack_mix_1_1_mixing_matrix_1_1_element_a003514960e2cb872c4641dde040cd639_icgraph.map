@@ -1,0 +1,6 @@
+<map id="JackMix::MixingMatrix::Element::menu" name="JackMix::MixingMatrix::Element::menu">
+<area shape="rect" id="node1" title=" " alt="" coords="233,79,385,120"/>
+<area shape="rect" id="node2" href="$df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="5,5,185,47"/>
+<area shape="rect" id="node3" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="13,71,178,127"/>
+<area shape="rect" id="node4" href="$de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="13,151,178,207"/>
+</map>

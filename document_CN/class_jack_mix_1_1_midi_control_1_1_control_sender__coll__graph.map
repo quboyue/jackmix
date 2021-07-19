@@ -1,0 +1,6 @@
+<map id="JackMix::MidiControl::ControlSender" name="JackMix::MidiControl::ControlSender">
+<area shape="rect" id="node1" title=" " alt="" coords="6,360,161,584"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,176,76,253"/>
+<area shape="rect" id="node3" href="$class_jack_mix_1_1_midi_control_1_1_port_listener.html" title=" " alt="" coords="100,132,243,297"/>
+<area shape="rect" id="node4" title=" " alt="" coords="136,5,207,83"/>
+</map>

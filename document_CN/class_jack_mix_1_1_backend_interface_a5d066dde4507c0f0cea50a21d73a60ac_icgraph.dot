@@ -1,0 +1,12 @@
+digraph "JackMix::BackendInterface::set_interp_len"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="JackMix::BackendInterface\l::set_interp_len",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::JackBackend\l::JackBackend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_jack_mix_1_1_jack_backend.html#ae03d382c7f2277e61f624ddbee1eea51",tooltip="Initializes the connection."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="JackMix::JackBackend\l::new_srate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_jack_mix_1_1_jack_backend.html#aa5076dd41ec2cb22805e767ddaf51a8a",tooltip=" "];
+}

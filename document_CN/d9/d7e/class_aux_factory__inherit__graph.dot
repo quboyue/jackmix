@@ -1,0 +1,9 @@
+digraph "AuxFactory"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{AuxFactory\n||+ AuxFactory()\l+ ~AuxFactory()\l+ canCreate()\l+ canCreate()\l+ create()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The Factory for creating this things..."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{JackMix::MixingMatrix\l::ElementFactory\n||+ ElementFactory()\l+ ~ElementFactory()\l+ canCreate()\l+ canCreate()\l+ create()\l+ globaldebug()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dd5/class_jack_mix_1_1_mixing_matrix_1_1_element_factory.html",tooltip=" "];
+}

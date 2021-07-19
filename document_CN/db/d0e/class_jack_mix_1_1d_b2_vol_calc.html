@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jackmix: JackMix::dB2VolCalc类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jackmix
+   &#160;<span id="projectnumber">v1.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d7/d67/namespace_jack_mix.html">JackMix</a></li><li class="navelem"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html">dB2VolCalc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-attribs">Public 属性</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../da/ddf/class_jack_mix_1_1d_b2_vol_calc-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">JackMix::dB2VolCalc类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a>&gt;</code></p>
+<div class="dynheader">
+类 JackMix::dB2VolCalc 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d9/de2/class_jack_mix_1_1d_b2_vol_calc__inherit__graph.png" border="0" usemap="#a_jack_mix_1_1d_b2_vol_calc_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_jack_mix_1_1d_b2_vol_calc_inherit__map" id="a_jack_mix_1_1d_b2_vol_calc_inherit__map">
+<area shape="rect" title=" " alt="" coords="383,5,529,215"/>
+<area shape="rect" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html" title=" " alt="" coords="61,263,251,619"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html" title=" " alt="" coords="276,358,441,523"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html" title=" " alt="" coords="466,270,641,611"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html" title=" " alt="" coords="665,270,847,611"/>
+<area shape="rect" href="../../d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html" title=" " alt="" coords="5,667,144,891"/>
+<area shape="rect" href="../../d3/d47/class_jack_mix_1_1_g_u_i_1_1_slider.html" title=" " alt="" coords="168,689,309,869"/>
+<area shape="rect" href="../../d5/dfc/class_controlled_slider.html" title=" " alt="" coords="168,939,309,1045"/>
+</map>
+</div>
+<div class="dynheader">
+JackMix::dB2VolCalc 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d1/da7/class_jack_mix_1_1d_b2_vol_calc__coll__graph.png" border="0" usemap="#a_jack_mix_1_1d_b2_vol_calc_coll__map" alt="Collaboration graph"/></div>
+<map name="a_jack_mix_1_1d_b2_vol_calc_coll__map" id="a_jack_mix_1_1d_b2_vol_calc_coll__map">
+<area shape="rect" title=" " alt="" coords="5,5,152,215"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae64c45bbfb2931ac40e9fc122098c13c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ae64c45bbfb2931ac40e9fc122098c13c">dB2VolCalc</a> (double _dbmin, double _dbmax)</td></tr>
+<tr class="separator:ae64c45bbfb2931ac40e9fc122098c13c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace43d45b7606f1edd115853c406a1dc2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ace43d45b7606f1edd115853c406a1dc2">amptodb</a> (double p)</td></tr>
+<tr class="separator:ace43d45b7606f1edd115853c406a1dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab09e5523dba91f6046e43799e35067f6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6">dbtoamp</a> (double db)</td></tr>
+<tr class="separator:ab09e5523dba91f6046e43799e35067f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad80d29cac26d1f940a83d7651893d010"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ad80d29cac26d1f940a83d7651893d010">amptondb</a> (double p)</td></tr>
+<tr class="memdesc:ad80d29cac26d1f940a83d7651893d010"><td class="mdescLeft">&#160;</td><td class="mdescRight">With ndb = normalized dB (between 0 and 1)  <a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ad80d29cac26d1f940a83d7651893d010">更多...</a><br /></td></tr>
+<tr class="separator:ad80d29cac26d1f940a83d7651893d010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79f073f66dbcdad14ca5feba5659b65b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a79f073f66dbcdad14ca5feba5659b65b">ndbtoamp</a> (double ndb)</td></tr>
+<tr class="separator:a79f073f66dbcdad14ca5feba5659b65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b464a40f3460592eedcf3fa62f97d6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac7b464a40f3460592eedcf3fa62f97d6">dbtondb</a> (double db)</td></tr>
+<tr class="memdesc:ac7b464a40f3460592eedcf3fa62f97d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes a dezibel value.  <a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac7b464a40f3460592eedcf3fa62f97d6">更多...</a><br /></td></tr>
+<tr class="separator:ac7b464a40f3460592eedcf3fa62f97d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91acfefb3cb2839b73ae2dc6e314e7b4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a91acfefb3cb2839b73ae2dc6e314e7b4">dbtovol</a> (double db)</td></tr>
+<tr class="memdesc:a91acfefb3cb2839b73ae2dc6e314e7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes a volume to a logarithmic value between 0 and 1.  <a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a91acfefb3cb2839b73ae2dc6e314e7b4">更多...</a><br /></td></tr>
+<tr class="separator:a91acfefb3cb2839b73ae2dc6e314e7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a0b745881d7b8b21f9493937a84c6a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac0a0b745881d7b8b21f9493937a84c6a">ndbtodb</a> (double ndb)</td></tr>
+<tr class="memdesc:ac0a0b745881d7b8b21f9493937a84c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unnormalizes a dezibel value.  <a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac0a0b745881d7b8b21f9493937a84c6a">更多...</a><br /></td></tr>
+<tr class="separator:ac0a0b745881d7b8b21f9493937a84c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public 属性</h2></td></tr>
+<tr class="memitem:ac79cf9728d5ff2dc8520ae3d1ba6a05a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac79cf9728d5ff2dc8520ae3d1ba6a05a">dbmax</a></td></tr>
+<tr class="separator:ac79cf9728d5ff2dc8520ae3d1ba6a05a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a070883843e269f1715c49ab2dc0a6ab2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a></td></tr>
+<tr class="separator:a070883843e269f1715c49ab2dc0a6ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:aee06bfcea7143925bee176ece5147729"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#aee06bfcea7143925bee176ece5147729">_base</a></td></tr>
+<tr class="separator:aee06bfcea7143925bee176ece5147729"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock">
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00028">28</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ae64c45bbfb2931ac40e9fc122098c13c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae64c45bbfb2931ac40e9fc122098c13c">&#9670;&nbsp;</a></span>dB2VolCalc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">JackMix::dB2VolCalc::dB2VolCalc </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>_dbmin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>_dbmax</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00032">32</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="ace43d45b7606f1edd115853c406a1dc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace43d45b7606f1edd115853c406a1dc2">&#9670;&nbsp;</a></span>amptodb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::dB2VolCalc::amptodb </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Logarithmic/decimal valuation: p = ampfactor ( linear ) db = dezibel ( logarithmic ) p = 10^( d/10 ) db = 10*lg( p )</p>
+<p>artscontrol was using db = 6/ln( 2 ) * ln( p ) which would be db = 6/lg( 2 ) * lg( p ) </p>
+
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00051">51</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc_ace43d45b7606f1edd115853c406a1dc2_icgraph.png" border="0" usemap="#adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ace43d45b7606f1edd115853c406a1dc2_icgraph" alt=""/></div>
+<map name="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ace43d45b7606f1edd115853c406a1dc2_icgraph" id="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ace43d45b7606f1edd115853c406a1dc2_icgraph">
+<area shape="rect" title=" " alt="" coords="233,108,380,149"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ad80d29cac26d1f940a83d7651893d010" title="With ndb = normalized dB (between 0 and 1)" alt="" coords="22,5,169,47"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="5,71,185,112"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="13,137,178,193"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="13,217,178,273"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad80d29cac26d1f940a83d7651893d010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad80d29cac26d1f940a83d7651893d010">&#9670;&nbsp;</a></span>amptondb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::dB2VolCalc::amptondb </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>With ndb = normalized dB (between 0 and 1) </p>
+
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00063">63</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc_ad80d29cac26d1f940a83d7651893d010_cgraph.png" border="0" usemap="#adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ad80d29cac26d1f940a83d7651893d010_cgraph" alt=""/></div>
+<map name="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ad80d29cac26d1f940a83d7651893d010_cgraph" id="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ad80d29cac26d1f940a83d7651893d010_cgraph">
+<area shape="rect" title="With ndb = normalized dB (between 0 and 1)" alt="" coords="5,39,152,80"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ace43d45b7606f1edd115853c406a1dc2" title=" " alt="" coords="200,5,347,47"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac7b464a40f3460592eedcf3fa62f97d6" title="Normalizes a dezibel value." alt="" coords="200,71,347,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab09e5523dba91f6046e43799e35067f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab09e5523dba91f6046e43799e35067f6">&#9670;&nbsp;</a></span>dbtoamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::dB2VolCalc::dbtoamp </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>db</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00057">57</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc_ab09e5523dba91f6046e43799e35067f6_icgraph.png" border="0" usemap="#adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ab09e5523dba91f6046e43799e35067f6_icgraph" alt=""/></div>
+<map name="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ab09e5523dba91f6046e43799e35067f6_icgraph" id="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ab09e5523dba91f6046e43799e35067f6_icgraph">
+<area shape="rect" title=" " alt="" coords="660,290,807,331"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a634d1555deeb856b6779c3c874801ad4" title=" " alt="" coords="447,125,612,181"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#ac7d2c0bdd35b70303997ed441e6d27cd" title=" " alt="" coords="447,245,612,301"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#a3740dae7797cc6e332a707f9793686c8" title=" " alt="" coords="447,326,612,367"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a79f073f66dbcdad14ca5feba5659b65b" title=" " alt="" coords="456,391,603,433"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5422a9e5c870f7289e44d633956d546f" title=" " alt="" coords="226,45,391,101"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a815dc54216fece3d08a5d3955571b1c0" title=" " alt="" coords="226,125,391,181"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="5,5,171,61"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a14099499871505a15fe58c62a2b5774e" title=" " alt="" coords="5,85,171,141"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a39cb181820910a4cfd78c9bf9683c5c8" title=" " alt="" coords="226,205,391,261"/>
+<area shape="rect" href="../../de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#ae3b92d9806b95a540c22ea1e41e7c86a" title=" " alt="" coords="226,285,391,341"/>
+<area shape="rect" href="../../df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="219,366,399,407"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac7b464a40f3460592eedcf3fa62f97d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7b464a40f3460592eedcf3fa62f97d6">&#9670;&nbsp;</a></span>dbtondb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::dB2VolCalc::dbtondb </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>db</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Normalizes a dezibel value. </p>
+
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00070">70</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc_ac7b464a40f3460592eedcf3fa62f97d6_icgraph.png" border="0" usemap="#adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ac7b464a40f3460592eedcf3fa62f97d6_icgraph" alt=""/></div>
+<map name="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ac7b464a40f3460592eedcf3fa62f97d6_icgraph" id="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ac7b464a40f3460592eedcf3fa62f97d6_icgraph">
+<area shape="rect" title="Normalizes a dezibel value." alt="" coords="200,71,347,112"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ad80d29cac26d1f940a83d7651893d010" title="With ndb = normalized dB (between 0 and 1)" alt="" coords="5,5,152,47"/>
+<area shape="rect" href="../../d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html#ac1bfb7d79326c7cf83bacc7d4d7a7cbc" title=" " alt="" coords="9,71,148,112"/>
+<area shape="rect" href="../../d3/d47/class_jack_mix_1_1_g_u_i_1_1_slider.html#a24a984f3dbd33746939383e2ecc0b751" title=" " alt="" coords="8,136,149,177"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a91acfefb3cb2839b73ae2dc6e314e7b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91acfefb3cb2839b73ae2dc6e314e7b4">&#9670;&nbsp;</a></span>dbtovol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::dB2VolCalc::dbtovol </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>db</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Normalizes a volume to a logarithmic value between 0 and 1. </p>
+
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a79f073f66dbcdad14ca5feba5659b65b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79f073f66dbcdad14ca5feba5659b65b">&#9670;&nbsp;</a></span>ndbtoamp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::dB2VolCalc::ndbtoamp </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ndb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00066">66</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc_a79f073f66dbcdad14ca5feba5659b65b_cgraph.png" border="0" usemap="#adb/d0e/class_jack_mix_1_1d_b2_vol_calc_a79f073f66dbcdad14ca5feba5659b65b_cgraph" alt=""/></div>
+<map name="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_a79f073f66dbcdad14ca5feba5659b65b_cgraph" id="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_a79f073f66dbcdad14ca5feba5659b65b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,152,47"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6" title=" " alt="" coords="200,5,347,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac0a0b745881d7b8b21f9493937a84c6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0a0b745881d7b8b21f9493937a84c6a">&#9670;&nbsp;</a></span>ndbtodb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::dB2VolCalc::ndbtodb </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ndb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Unnormalizes a dezibel value. </p>
+
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00078">78</a> 行定义.</p>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc_ac0a0b745881d7b8b21f9493937a84c6a_icgraph.png" border="0" usemap="#adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ac0a0b745881d7b8b21f9493937a84c6a_icgraph" alt=""/></div>
+<map name="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ac0a0b745881d7b8b21f9493937a84c6a_icgraph" id="adb/d0e/class_jack_mix_1_1d_b2_vol_calc_ac0a0b745881d7b8b21f9493937a84c6a_icgraph">
+<area shape="rect" title="Unnormalizes a dezibel value." alt="" coords="195,39,341,80"/>
+<area shape="rect" href="../../d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html#a07c3ab854cf88d174d1cdac18cb64012" title=" " alt="" coords="7,5,145,47"/>
+<area shape="rect" href="../../d3/d47/class_jack_mix_1_1_g_u_i_1_1_slider.html#a3747a8728bd38924d550fd17ba916aad" title=" " alt="" coords="5,71,147,112"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aee06bfcea7143925bee176ece5147729"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee06bfcea7143925bee176ece5147729">&#9670;&nbsp;</a></span>_base</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::dB2VolCalc::_base</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac79cf9728d5ff2dc8520ae3d1ba6a05a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac79cf9728d5ff2dc8520ae3d1ba6a05a">&#9670;&nbsp;</a></span>dbmax</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::dB2VolCalc::dbmax</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a070883843e269f1715c49ab2dc0a6ab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a070883843e269f1715c49ab2dc0a6ab2">&#9670;&nbsp;</a></span>dbmin</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::dB2VolCalc::dbmin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a> 第 <a class="el" href="../../dc/dad/dbvolcalc_8h_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="../../dc/dad/dbvolcalc_8h_source.html">dbvolcalc.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,15 @@
+digraph "JackMix::MixingMatrix::Widget::sizeHint"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="JackMix::MixingMatrix\l::Widget::sizeHint",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::MixingMatrix\l::Widget::minimumSizeHint",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a0271798137df37ff09548b911e82842b",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="JackMix::MixingMatrix\l::Widget::smallestElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad68aba2252297af7a336ecc00610ff85",tooltip="Layout"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="JackMix::MixingMatrix\l::Widget::elements",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a5cc2abc4bb564ee3848876bf75278f7d",tooltip=" "];
+  Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

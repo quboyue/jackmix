@@ -1,0 +1,11 @@
+<map id="JackMix::MixerElements::Mono2StereoElement::set_panorama" name="JackMix::MixerElements::Mono2StereoElement::set_panorama">
+<area shape="rect" id="node1" title=" " alt="" coords="5,130,171,186"/>
+<area shape="rect" id="node2" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5422a9e5c870f7289e44d633956d546f" title=" " alt="" coords="219,130,384,186"/>
+<area shape="rect" id="node3" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a634d1555deeb856b6779c3c874801ad4" title=" " alt="" coords="432,78,597,134"/>
+<area shape="rect" id="node8" href="$d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html#a53a631299876ad218e327c0528c44403" title=" " alt="" coords="445,173,584,215"/>
+<area shape="rect" id="node4" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa896436131c3c0e50048f4a58e9dd1a4" title=" " alt="" coords="665,5,817,47"/>
+<area shape="rect" id="node6" href="$db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6" title=" " alt="" coords="667,71,814,112"/>
+<area shape="rect" id="node7" href="$de/dc4/class_jack_mix_1_1_backend_interface.html#aaea7bf918863db16210d5ded864759f5" title="Set the volume of the named node." alt="" coords="651,136,830,177"/>
+<area shape="rect" id="node5" href="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a05285a3f2e3cc7a6b337a98004544f7b" title=" " alt="" coords="884,5,1036,47"/>
+<area shape="rect" id="node9" href="$d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abc8dde461708358bc1fbc8cd2cb4ab64" title=" " alt="" coords="645,201,836,243"/>
+</map>

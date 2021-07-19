@@ -1,0 +1,23 @@
+digraph "mixingmatrix.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="mixingmatrix.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="mainwindow.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/dd9/mainwindow_8cpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="aux_elements.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/db2/aux__elements_8cpp.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="aux_elements.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d9e/aux__elements_8h.html",tooltip=" "];
+  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="mixingmatrix.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/dc8/mixingmatrix_8cpp.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="stereo_elements.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/df4/stereo__elements_8h.html",tooltip=" "];
+  Node6 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="stereo_elements.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d65/stereo__elements_8cpp.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

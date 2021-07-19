@@ -1,0 +1,10 @@
+<map id="JackMix::dB2VolCalc" name="JackMix::dB2VolCalc">
+<area shape="rect" id="node1" title=" " alt="" coords="383,5,529,215"/>
+<area shape="rect" id="node2" href="$d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html" title=" " alt="" coords="61,263,251,619"/>
+<area shape="rect" id="node6" href="$df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html" title=" " alt="" coords="276,358,441,523"/>
+<area shape="rect" id="node7" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html" title=" " alt="" coords="466,270,641,611"/>
+<area shape="rect" id="node8" href="$de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html" title=" " alt="" coords="665,270,847,611"/>
+<area shape="rect" id="node3" href="$d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html" title=" " alt="" coords="5,667,144,891"/>
+<area shape="rect" id="node4" href="$d3/d47/class_jack_mix_1_1_g_u_i_1_1_slider.html" title=" " alt="" coords="168,689,309,869"/>
+<area shape="rect" id="node5" href="$d5/dfc/class_controlled_slider.html" title=" " alt="" coords="168,939,309,1045"/>
+</map>

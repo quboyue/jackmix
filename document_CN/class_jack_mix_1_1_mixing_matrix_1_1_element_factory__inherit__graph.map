@@ -1,0 +1,5 @@
+<map id="JackMix::MixingMatrix::ElementFactory" name="JackMix::MixingMatrix::ElementFactory">
+<area shape="rect" id="node1" title=" " alt="" coords="63,5,215,171"/>
+<area shape="rect" id="node2" href="$class_aux_factory.html" title="The Factory for creating this things..." alt="" coords="5,219,123,355"/>
+<area shape="rect" id="node3" href="$class_stereo_factory.html" title="The Factory for creating this things..." alt="" coords="147,219,279,355"/>
+</map>

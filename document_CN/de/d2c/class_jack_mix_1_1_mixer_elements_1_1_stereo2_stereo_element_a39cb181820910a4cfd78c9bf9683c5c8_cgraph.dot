@@ -1,0 +1,22 @@
+digraph "JackMix::MixerElements::Stereo2StereoElement::balance"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="JackMix::MixerElements\l::Stereo2StereoElement\l::balance",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::MixerElements\l::Stereo2StereoElement\l::calculateVolumes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#ac7d2c0bdd35b70303997ed441e6d27cd",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="JackMix::MixingMatrix\l::Element::backend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa896436131c3c0e50048f4a58e9dd1a4",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="JackMix::MixingMatrix\l::Widget::backend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a05285a3f2e3cc7a6b337a98004544f7b",tooltip=" "];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="JackMix::dB2VolCalc\l::dbtoamp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6",tooltip=" "];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="JackMix::BackendInterface\l::setVolume",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dc4/class_jack_mix_1_1_backend_interface.html#aaea7bf918863db16210d5ded864759f5",tooltip="Set the volume of the named node."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="JackMix::GUI::Slider\l::value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d47/class_jack_mix_1_1_g_u_i_1_1_slider.html#a9ed5edd784d112578f8677110371d96f",tooltip=" "];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="JackMix::GUI::AbstractSlider\l::value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abc8dde461708358bc1fbc8cd2cb4ab64",tooltip=" "];
+}

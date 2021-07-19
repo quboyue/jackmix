@@ -1,0 +1,12 @@
+digraph "JackMix::JackBackend::rename"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="JackMix::JackBackend\l::rename",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::JackBackend\l::renameInput",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d69/class_jack_mix_1_1_jack_backend.html#a0d99f2bd8cf6a61a8610583f96c3bdc6",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="JackMix::JackBackend\l::renameOutput",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d69/class_jack_mix_1_1_jack_backend.html#a91041e09686c6e4d0c7cef5845082641",tooltip=" "];
+}

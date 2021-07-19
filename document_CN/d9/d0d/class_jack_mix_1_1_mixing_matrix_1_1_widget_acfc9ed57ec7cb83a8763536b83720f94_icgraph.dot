@@ -1,0 +1,27 @@
+digraph "JackMix::MixingMatrix::Widget::nextIn"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="JackMix::MixingMatrix\l::Widget::nextIn",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::MixingMatrix\l::Element::neighbors",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a7e9cb4bbb56d5f7cee13c6f88607ce2f",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="JackMix::MixingMatrix\l::Element::followers",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa7c172e7d5c51cef27ce9524eb2607fd",tooltip=" "];
+  Node3 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="JackMix::MixingMatrix\l::Widget::replace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#abcedc12ea03e50e6947cf7078d342b40",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="JackMix::MixingMatrix\l::Widget::addElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a0022ed77929422166f48332864708aae",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="JackMix::MixingMatrix\l::Element::lazyInit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a6239425e5e8096b094778e4f69d42ffb",tooltip=" "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="JackMix::MixingMatrix\l::Element::Element",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a804d73cd8c8cbb0e281112390619d6cf",tooltip=" "];
+  Node2 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="JackMix::MixingMatrix\l::Element::neighborsList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a454bb971fd440c35ee81eff35cf643f2",tooltip=" "];
+  Node8 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

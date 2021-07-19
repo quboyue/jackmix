@@ -1,0 +1,6 @@
+<map id="JackMix::MixingMatrix::Widget::removeinchannel" name="JackMix::MixingMatrix::Widget::removeinchannel">
+<area shape="rect" id="node1" title="Remove input/output channels" alt="" coords="405,39,580,80"/>
+<area shape="rect" id="node2" href="$df/d8c/class_jack_mix_1_1_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title=" " alt="" coords="205,5,357,47"/>
+<area shape="rect" id="node4" href="$df/d8c/class_jack_mix_1_1_main_window.html#a096e5b053bf57c5664a147f206af6e5a" title=" " alt="" coords="205,71,357,112"/>
+<area shape="rect" id="node3" href="$df/d8c/class_jack_mix_1_1_main_window.html#a2022dfcfcd6eeba03aec9f1e6eb3ece0" title=" " alt="" coords="5,5,157,47"/>
+</map>

@@ -1,0 +1,10 @@
+digraph "qLash::qLashClient::qLashClient"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="qLash::qLashClient\l::qLashClient",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Construct a LASH-connection."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="qLash::qLashClient\l::isConnected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classq_lash_1_1q_lash_client.html#ac772de14da1907fe0657c813bd73767e",tooltip="Connected to LASH?"];
+}

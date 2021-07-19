@@ -1,0 +1,20 @@
+digraph "JackMix::MainWindow::saveLash"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="JackMix::MainWindow\l::saveLash",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::MainWindow\l::saveFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d8c/class_jack_mix_1_1_main_window.html#a41072424350a8df09f3d59f95d7bb24a",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="JackMix::MixingMatrix\l::Widget::getResponsible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad80339b1fdb71f33e0bf6590f7a98caa",tooltip=" "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="JackMix::BackendInterface\l::getVolume",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dc4/class_jack_mix_1_1_backend_interface.html#a81f4fd9c3ec3fa1cfeb9630b636c2282",tooltip="Set the volume of the named node."];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="JackMix::BackendInterface\l::inchannels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dc4/class_jack_mix_1_1_backend_interface.html#a242d0cebafac64a381b5df0bd021c631",tooltip="Return the current list of input channels."];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="JackMix::MixingMatrix\l::Element::midiParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a9f1d781c8fc1b7d7709fb94b874ccf9a",tooltip=" "];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="JackMix::BackendInterface\l::outchannels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dc4/class_jack_mix_1_1_backend_interface.html#a07163d7434cb8dcf0da00910c66a636e",tooltip="Return the current list of output channels."];
+}

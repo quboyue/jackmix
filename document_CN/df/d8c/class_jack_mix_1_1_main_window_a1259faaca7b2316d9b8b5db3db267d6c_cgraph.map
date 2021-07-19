@@ -1,0 +1,8 @@
+<map id="JackMix::MainWindow::renameInput" name="JackMix::MainWindow::renameInput">
+<area shape="rect" id="node1" title=" " alt="" coords="5,68,157,109"/>
+<area shape="rect" id="node2" href="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad80339b1fdb71f33e0bf6590f7a98caa" title=" " alt="" coords="439,5,607,47"/>
+<area shape="rect" id="node3" href="$de/dc4/class_jack_mix_1_1_backend_interface.html#a242d0cebafac64a381b5df0bd021c631" title="Return the current list of input channels." alt="" coords="205,35,384,76"/>
+<area shape="rect" id="node4" href="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a5414b1ec38930e572b415e8a4ab60e1f" title=" " alt="" coords="207,100,382,141"/>
+<area shape="rect" id="node6" href="$de/dc4/class_jack_mix_1_1_backend_interface.html#a77f467619372334a9d4bb92dc51265c1" title="Rename the output." alt="" coords="205,165,384,207"/>
+<area shape="rect" id="node5" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a1c29842ca563766402e43f6228524896" title=" " alt="" coords="432,100,613,141"/>
+</map>

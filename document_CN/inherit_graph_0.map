@@ -1,0 +1,9 @@
+<map id="类继承关系图" name="类继承关系图">
+<area shape="rect" id="node1" title=" " alt="" coords="5,115,76,141"/>
+<area shape="rect" id="node2" href="$d2/dd3/class_config_option.html" title=" " alt="" coords="165,5,261,32"/>
+<area shape="rect" id="node3" href="$de/dc4/class_jack_mix_1_1_backend_interface.html" title="Abstract interface for backends" alt="" coords="124,56,303,83"/>
+<area shape="rect" id="node5" href="$df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html" title=" " alt="" coords="142,107,285,149"/>
+<area shape="rect" id="node6" href="$de/d5f/class_update_filter.html" title="Stops an internal signal being sent outside if there is already a signal relayed from the outside to ..." alt="" coords="167,173,259,200"/>
+<area shape="rect" id="node7" href="$d2/d1e/classq_lash_1_1q_lash_client.html" title="LASH frontend for Qt4" alt="" coords="147,224,280,251"/>
+<area shape="rect" id="node4" href="$d6/d69/class_jack_mix_1_1_jack_backend.html" title=" " alt="" coords="351,56,507,83"/>
+</map>

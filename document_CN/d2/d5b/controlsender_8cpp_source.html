@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jackmix: controlsender.cpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jackmix
+   &#160;<span id="projectnumber">v1.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_7c0bbce4cd396a4571ea5c6cec9a50e0.html">jackmix</a></li><li class="navelem"><a class="el" href="../../dir_70c6907c7d9efce41bc35cc3013ec340.html">libcontrol</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">controlsender.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d5b/controlsender_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">    Copyright 2013 Nick Bailey &lt;nick@n-ism.org&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">    This library is free software; you can redistribute it and/or</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">    modify it under the terms of the GNU Library General Public</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">    License as published by the Free Software Foundation;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">    version 2 of the License.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">    This library is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">    Library General Public License for more details.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">    You should have received a copy of the GNU Library General Public License</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">    along with this library; see the file COPYING.LIB.  If not, write to</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">    Boston, MA 02111-1307, USA.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;QtCore/QtDebug&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;QtCore/QString&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;alsa/asoundlib.h&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/db1/controlsender_8h.html">controlsender.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;controlsender.moc&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/d7a/controlreceiver_8h.html">controlreceiver.h</a>&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d7/d67/namespace_jack_mix.html">JackMix</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span>MidiControl {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#ac273cd1672967add27ef6943b355d886">   36</a></span>&#160;<a class="code" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#ac273cd1672967add27ef6943b355d886">PortListener::PortListener</a>(snd_seq_t *handle, <span class="keywordtype">int</span> <span class="keywordtype">id</span>) :</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    port_id(id), seq_handle(handle)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a01e667bc494afc5981ebf06d079251cd">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a01e667bc494afc5981ebf06d079251cd">PortListener::run</a>()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> npfd = snd_seq_poll_descriptors_count(<a class="code" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a7b1f87632080427ba33f0998efd731e1">seq_handle</a>, POLLIN);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Using C style memory allocation for communication with the kernel-level MIDI system</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">struct </span>pollfd *pfd = (<span class="keyword">struct </span>pollfd *)alloca(npfd * <span class="keyword">sizeof</span>(<span class="keyword">struct</span> pollfd));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    snd_seq_poll_descriptors(<a class="code" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a7b1f87632080427ba33f0998efd731e1">seq_handle</a>, pfd, npfd, POLLIN);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    snd_seq_event_t *ev;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">int</span> param;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> value;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a77dc8dd9c9ad741aa3a4295c9c404984">running</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a77dc8dd9c9ad741aa3a4295c9c404984">running</a>) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// *ix system calls are uninterruptable, so we&#39;ll pop back into</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// user-space every 200ms or so</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (poll(pfd, npfd, 200) &gt; 0) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">do</span> {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                snd_seq_event_input(<a class="code" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a7b1f87632080427ba33f0998efd731e1">seq_handle</a>, &amp;ev);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">if</span> (ev -&gt; type == SND_SEQ_EVENT_CONTROLLER) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    param = ev-&gt;data.control.param;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    value = ev-&gt;data.control.value;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    emit <a class="code" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a601748dd98b1b0cf32106e1a692c4c6e">message</a>(param, value);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                snd_seq_free_event(ev);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            } <span class="keywordflow">while</span> (snd_seq_event_input_pending(<a class="code" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a7b1f87632080427ba33f0998efd731e1">seq_handle</a>, 0) &gt; 0);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        qDebug() &lt;&lt; <span class="stringliteral">&quot;Tick&quot;</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    exit(0);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#abc10b6d69d6451905143d2e7bcb3a988">   77</a></span>&#160;<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#abc10b6d69d6451905143d2e7bcb3a988">ControlSender::ControlSender</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* port_name) </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    : have_alsa_seq {false}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    , port_listener {nullptr}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> ((<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ad35d02c367200e62a13c49946f712596">have_alsa_seq</a> = snd_seq_open(&amp;<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#aaecbb2d6d50af93c42dbdfb2832952ea">seq_handle</a>, <span class="stringliteral">&quot;default&quot;</span>, SND_SEQ_OPEN_DUPLEX, 0)) == 0) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// Name the client</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        snd_seq_set_client_name(<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#aaecbb2d6d50af93c42dbdfb2832952ea">seq_handle</a>, port_name);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// Open one input port</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> ((<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a41b7d8245e022702a64c5dd8100a62dd">port_id</a> = snd_seq_create_simple_port(<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#aaecbb2d6d50af93c42dbdfb2832952ea">seq_handle</a>, <span class="stringliteral">&quot;Control Input&quot;</span>,</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                            SND_SEQ_PORT_CAP_WRITE | SND_SEQ_PORT_CAP_SUBS_WRITE,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                            SND_SEQ_PORT_TYPE_APPLICATION)) &lt; 0)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="../../de/de9/class_jack_mix_1_1_midi_control_1_1_midi_control_exception.html">MidiControlException</a>(<span class="stringliteral">&quot;Can&#39;t open MIDI port&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a59d2e70404b56c410d732ee7e1317c55">port_listener</a> = <span class="keyword">new</span> <a class="code" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html">JackMix::MidiControl::PortListener</a>(<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#aaecbb2d6d50af93c42dbdfb2832952ea">seq_handle</a>, <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a41b7d8245e022702a64c5dd8100a62dd">port_id</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a59d2e70404b56c410d732ee7e1317c55">port_listener</a>-&gt;start();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        connect (<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a59d2e70404b56c410d732ee7e1317c55">port_listener</a>, SIGNAL(message(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>)), <span class="keyword">this</span>, SLOT(<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ab31ed1dad9c1fe0c62799febee07f6f1">despatch_message</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>)) );</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#aaecbb2d6d50af93c42dbdfb2832952ea">seq_handle</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a3b41f3f032ff6734af2c7914a19089ab">   99</a></span>&#160;<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a3b41f3f032ff6734af2c7914a19089ab">ControlSender::~ControlSender</a>() {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// close down the port listner thread</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a59d2e70404b56c410d732ee7e1317c55">port_listener</a>-&gt;<a class="code" href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a1d7c54c59283f870112bb8ea3ad797b5">quit</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a59d2e70404b56c410d732ee7e1317c55">port_listener</a>-&gt;wait();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// then close the MIDI port</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ad35d02c367200e62a13c49946f712596">have_alsa_seq</a>) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        snd_seq_delete_simple_port(<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#aaecbb2d6d50af93c42dbdfb2832952ea">seq_handle</a>, <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a41b7d8245e022702a64c5dd8100a62dd">port_id</a>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        snd_seq_close(<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#aaecbb2d6d50af93c42dbdfb2832952ea">seq_handle</a>);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;QList&lt;ControlReceiver*&gt; <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a88f4573a2c1517d2dacfdb8458a677f5">ControlSender::dtab</a>[maxMidiParam];</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a11bb2cac34c9a170306749d52676025c">  112</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a11bb2cac34c9a170306749d52676025c">ControlSender::subscribe</a>(<a class="code" href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html">ControlReceiver</a> *receiver, <span class="keywordtype">int</span> parameter) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">if</span> (parameter &gt;= 0 &amp;&amp; parameter &lt; <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#af31f39e2e03090e231f096d34c448b2b">maxMidiParam</a>) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ae5dc1b69ad333d3d16a54859658111df">unsubscribe</a>(receiver, parameter);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a88f4573a2c1517d2dacfdb8458a677f5">dtab</a>[parameter].append(receiver);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ae5dc1b69ad333d3d16a54859658111df">  119</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ae5dc1b69ad333d3d16a54859658111df">ControlSender::unsubscribe</a>(<a class="code" href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html">ControlReceiver</a> *receiver) {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// remove receiver from all routing table entries</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#af31f39e2e03090e231f096d34c448b2b">maxMidiParam</a>; i++)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ae5dc1b69ad333d3d16a54859658111df">unsubscribe</a>(receiver, i);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a0b1c71374866432e9e6a486e611a3c22">  124</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ae5dc1b69ad333d3d16a54859658111df">ControlSender::unsubscribe</a>(<a class="code" href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html">ControlReceiver</a> *receiver, <span class="keywordtype">int</span> parameter) {</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (parameter &gt; 0 &amp;&amp; parameter &lt; <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#af31f39e2e03090e231f096d34c448b2b">maxMidiParam</a>)  <span class="comment">// remove all occurances from this routing entry</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a88f4573a2c1517d2dacfdb8458a677f5">dtab</a>[parameter].removeAll(receiver);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ab31ed1dad9c1fe0c62799febee07f6f1">  129</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ab31ed1dad9c1fe0c62799febee07f6f1">ControlSender::despatch_message</a>(<span class="keywordtype">int</span> param, <span class="keywordtype">int</span> val) {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    QListIterator&lt;ControlReceiver*&gt; iterator(<a class="code" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a88f4573a2c1517d2dacfdb8458a677f5">dtab</a>[param]);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">while</span> (iterator.hasNext())</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        iterator.next()-&gt;controlEvent(param, val);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;};</div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_receiver_html"><div class="ttname"><a href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html">JackMix::MidiControl::ControlReceiver</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d7a/controlreceiver_8h_source.html#l00028">controlreceiver.h:28</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_sender_html_a11bb2cac34c9a170306749d52676025c"><div class="ttname"><a href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a11bb2cac34c9a170306749d52676025c">JackMix::MidiControl::ControlSender::subscribe</a></div><div class="ttdeci">static void subscribe(ControlReceiver *receiver, int parameter)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d5b/controlsender_8cpp_source.html#l00112">controlsender.cpp:112</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_sender_html_a3b41f3f032ff6734af2c7914a19089ab"><div class="ttname"><a href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a3b41f3f032ff6734af2c7914a19089ab">JackMix::MidiControl::ControlSender::~ControlSender</a></div><div class="ttdeci">~ControlSender()</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d5b/controlsender_8cpp_source.html#l00099">controlsender.cpp:99</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_sender_html_a41b7d8245e022702a64c5dd8100a62dd"><div class="ttname"><a href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a41b7d8245e022702a64c5dd8100a62dd">JackMix::MidiControl::ControlSender::port_id</a></div><div class="ttdeci">int port_id</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/controlsender_8h_source.html#l00096">controlsender.h:96</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_sender_html_a59d2e70404b56c410d732ee7e1317c55"><div class="ttname"><a href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a59d2e70404b56c410d732ee7e1317c55">JackMix::MidiControl::ControlSender::port_listener</a></div><div class="ttdeci">PortListener * port_listener</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/controlsender_8h_source.html#l00109">controlsender.h:109</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_sender_html_a88f4573a2c1517d2dacfdb8458a677f5"><div class="ttname"><a href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a88f4573a2c1517d2dacfdb8458a677f5">JackMix::MidiControl::ControlSender::dtab</a></div><div class="ttdeci">static QList&lt; ControlReceiver * &gt; dtab[maxMidiParam]</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/controlsender_8h_source.html#l00103">controlsender.h:103</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_sender_html_aaecbb2d6d50af93c42dbdfb2832952ea"><div class="ttname"><a href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#aaecbb2d6d50af93c42dbdfb2832952ea">JackMix::MidiControl::ControlSender::seq_handle</a></div><div class="ttdeci">snd_seq_t * seq_handle</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/controlsender_8h_source.html#l00097">controlsender.h:97</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_sender_html_ab31ed1dad9c1fe0c62799febee07f6f1"><div class="ttname"><a href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ab31ed1dad9c1fe0c62799febee07f6f1">JackMix::MidiControl::ControlSender::despatch_message</a></div><div class="ttdeci">void despatch_message(int ch, int val)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d5b/controlsender_8cpp_source.html#l00129">controlsender.cpp:129</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_sender_html_abc10b6d69d6451905143d2e7bcb3a988"><div class="ttname"><a href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#abc10b6d69d6451905143d2e7bcb3a988">JackMix::MidiControl::ControlSender::ControlSender</a></div><div class="ttdeci">ControlSender(const char *port_name)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d5b/controlsender_8cpp_source.html#l00077">controlsender.cpp:77</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_sender_html_ad35d02c367200e62a13c49946f712596"><div class="ttname"><a href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ad35d02c367200e62a13c49946f712596">JackMix::MidiControl::ControlSender::have_alsa_seq</a></div><div class="ttdeci">bool have_alsa_seq</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/controlsender_8h_source.html#l00093">controlsender.h:93</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_sender_html_ae5dc1b69ad333d3d16a54859658111df"><div class="ttname"><a href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ae5dc1b69ad333d3d16a54859658111df">JackMix::MidiControl::ControlSender::unsubscribe</a></div><div class="ttdeci">static void unsubscribe(ControlReceiver *receiver)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d5b/controlsender_8cpp_source.html#l00119">controlsender.cpp:119</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_control_sender_html_af31f39e2e03090e231f096d34c448b2b"><div class="ttname"><a href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#af31f39e2e03090e231f096d34c448b2b">JackMix::MidiControl::ControlSender::maxMidiParam</a></div><div class="ttdeci">static const int maxMidiParam</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/controlsender_8h_source.html#l00098">controlsender.h:98</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_midi_control_exception_html"><div class="ttname"><a href="../../de/de9/class_jack_mix_1_1_midi_control_1_1_midi_control_exception.html">JackMix::MidiControl::MidiControlException</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/controlsender_8h_source.html#l00061">controlsender.h:61</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_port_listener_html"><div class="ttname"><a href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html">JackMix::MidiControl::PortListener</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/controlsender_8h_source.html#l00117">controlsender.h:117</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_port_listener_html_a01e667bc494afc5981ebf06d079251cd"><div class="ttname"><a href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a01e667bc494afc5981ebf06d079251cd">JackMix::MidiControl::PortListener::run</a></div><div class="ttdeci">virtual void run()</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d5b/controlsender_8cpp_source.html#l00042">controlsender.cpp:42</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_port_listener_html_a1d7c54c59283f870112bb8ea3ad797b5"><div class="ttname"><a href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a1d7c54c59283f870112bb8ea3ad797b5">JackMix::MidiControl::PortListener::quit</a></div><div class="ttdeci">void quit(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/controlsender_8h_source.html#l00123">controlsender.h:123</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_port_listener_html_a601748dd98b1b0cf32106e1a692c4c6e"><div class="ttname"><a href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a601748dd98b1b0cf32106e1a692c4c6e">JackMix::MidiControl::PortListener::message</a></div><div class="ttdeci">void message(int param, int val)</div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_port_listener_html_a77dc8dd9c9ad741aa3a4295c9c404984"><div class="ttname"><a href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a77dc8dd9c9ad741aa3a4295c9c404984">JackMix::MidiControl::PortListener::running</a></div><div class="ttdeci">bool running</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/controlsender_8h_source.html#l00134">controlsender.h:134</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_port_listener_html_a7b1f87632080427ba33f0998efd731e1"><div class="ttname"><a href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#a7b1f87632080427ba33f0998efd731e1">JackMix::MidiControl::PortListener::seq_handle</a></div><div class="ttdeci">snd_seq_t * seq_handle</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/db1/controlsender_8h_source.html#l00138">controlsender.h:138</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_midi_control_1_1_port_listener_html_ac273cd1672967add27ef6943b355d886"><div class="ttname"><a href="../../dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html#ac273cd1672967add27ef6943b355d886">JackMix::MidiControl::PortListener::PortListener</a></div><div class="ttdeci">PortListener(snd_seq_t *handle, int id)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d5b/controlsender_8cpp_source.html#l00036">controlsender.cpp:36</a></div></div>
+<div class="ttc" id="acontrolreceiver_8h_html"><div class="ttname"><a href="../../d2/d7a/controlreceiver_8h.html">controlreceiver.h</a></div></div>
+<div class="ttc" id="acontrolsender_8h_html"><div class="ttname"><a href="../../d8/db1/controlsender_8h.html">controlsender.h</a></div></div>
+<div class="ttc" id="anamespace_jack_mix_html"><div class="ttname"><a href="../../d7/d67/namespace_jack_mix.html">JackMix</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d15/jack__backend_8h_source.html#l00042">jack_backend.h:42</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<map id="JackMix::GUI::AbstractSlider" name="JackMix::GUI::AbstractSlider">
+<area shape="rect" id="node1" title=" " alt="" coords="61,263,251,619"/>
+<area shape="rect" id="node4" href="$class_jack_mix_1_1_g_u_i_1_1_knob.html" title=" " alt="" coords="5,667,144,891"/>
+<area shape="rect" id="node5" href="$class_jack_mix_1_1_g_u_i_1_1_slider.html" title=" " alt="" coords="168,689,309,869"/>
+<area shape="rect" id="node2" title=" " alt="" coords="53,71,126,149"/>
+<area shape="rect" id="node3" href="$class_jack_mix_1_1d_b2_vol_calc.html" title=" " alt="" coords="151,5,297,215"/>
+<area shape="rect" id="node6" href="$class_controlled_slider.html" title=" " alt="" coords="168,939,309,1045"/>
+</map>

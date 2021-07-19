@@ -1,0 +1,19 @@
+<map id="JackMix::MixerElements::Stereo2StereoElement::Stereo2StereoElement" name="JackMix::MixerElements::Stereo2StereoElement::Stereo2StereoElement">
+<area shape="rect" id="node1" title=" " alt="" coords="5,341,171,397"/>
+<area shape="rect" id="node2" href="$db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ace43d45b7606f1edd115853c406a1dc2" title=" " alt="" coords="235,5,381,47"/>
+<area shape="rect" id="node3" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa896436131c3c0e50048f4a58e9dd1a4" title=" " alt="" coords="232,71,384,112"/>
+<area shape="rect" id="node5" href="$de/dc4/class_jack_mix_1_1_backend_interface.html#a81f4fd9c3ec3fa1cfeb9630b636c2282" title="Set the volume of the named node." alt="" coords="219,136,397,177"/>
+<area shape="rect" id="node6" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a003514960e2cb872c4641dde040cd639" title=" " alt="" coords="232,201,384,243"/>
+<area shape="rect" id="node7" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a455afad3c029a88da9dd1fcc5b8b967b" title=" " alt="" coords="487,573,639,615"/>
+<area shape="rect" id="node9" href="$de/dc4/class_jack_mix_1_1_backend_interface.html#aaea7bf918863db16210d5ded864759f5" title="Set the volume of the named node." alt="" coords="219,348,397,389"/>
+<area shape="rect" id="node10" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a248e0cae3678aa4500f60eda39f90a36" title=" " alt="" coords="232,267,384,323"/>
+<area shape="rect" id="node12" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a62d38b180085b2a1586dff9dca773ee7" title=" " alt="" coords="232,465,384,521"/>
+<area shape="rect" id="node13" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#abbd3cfaa82a63ad7b247fefac7b92e97" title=" " alt="" coords="232,545,384,601"/>
+<area shape="rect" id="node14" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae2ca2d009062e005c05435a24c15630e" title=" " alt="" coords="232,625,384,681"/>
+<area shape="rect" id="node15" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a82f268e085f3fdcf34b6a9ec33a94ecc" title=" " alt="" coords="230,705,386,761"/>
+<area shape="rect" id="node4" href="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a05285a3f2e3cc7a6b337a98004544f7b" title=" " alt="" coords="487,71,639,112"/>
+<area shape="rect" id="node8" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d" title=" " alt="" coords="747,617,899,659"/>
+<area shape="rect" id="node11" href="$d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#ac1586cb0ac05b67660b28322ba46d968" title=" " alt="" coords="445,275,680,316"/>
+<area shape="rect" id="node16" href="$df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a11bb2cac34c9a170306749d52676025c" title=" " alt="" coords="475,693,651,735"/>
+<area shape="rect" id="node17" href="$df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ae5dc1b69ad333d3d16a54859658111df" title=" " alt="" coords="728,709,919,751"/>
+</map>

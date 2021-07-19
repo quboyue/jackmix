@@ -1,0 +1,7 @@
+<map id="JackMix::MainWindow::updateAutoFilledMidiParams" name="JackMix::MainWindow::updateAutoFilledMidiParams">
+<area shape="rect" id="node1" title=" " alt="" coords="5,43,201,84"/>
+<area shape="rect" id="node2" href="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad80339b1fdb71f33e0bf6590f7a98caa" title=" " alt="" coords="249,5,417,47"/>
+<area shape="rect" id="node3" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a82f268e085f3fdcf34b6a9ec33a94ecc" title=" " alt="" coords="255,71,411,127"/>
+<area shape="rect" id="node4" href="$df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a11bb2cac34c9a170306749d52676025c" title=" " alt="" coords="465,49,641,91"/>
+<area shape="rect" id="node5" href="$df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ae5dc1b69ad333d3d16a54859658111df" title=" " alt="" coords="689,79,880,120"/>
+</map>

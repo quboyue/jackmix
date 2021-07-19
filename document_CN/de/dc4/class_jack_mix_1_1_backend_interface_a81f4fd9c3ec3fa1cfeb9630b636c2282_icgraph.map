@@ -1,0 +1,9 @@
+<map id="JackMix::BackendInterface::getVolume" name="JackMix::BackendInterface::getVolume">
+<area shape="rect" id="node1" title="Set the volume of the named node." alt="" coords="619,86,797,127"/>
+<area shape="rect" id="node2" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="405,5,571,61"/>
+<area shape="rect" id="node3" href="$df/d8c/class_jack_mix_1_1_main_window.html#a41072424350a8df09f3d59f95d7bb24a" title=" " alt="" coords="412,86,564,127"/>
+<area shape="rect" id="node7" href="$de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="405,152,571,208"/>
+<area shape="rect" id="node4" href="$df/d8c/class_jack_mix_1_1_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952" title=" " alt="" coords="205,54,357,95"/>
+<area shape="rect" id="node6" href="$df/d8c/class_jack_mix_1_1_main_window.html#ae786a3a0501398a38d2c86af9ae6b5c0" title=" " alt="" coords="205,119,357,161"/>
+<area shape="rect" id="node5" href="$df/d8c/class_jack_mix_1_1_main_window.html#a2022dfcfcd6eeba03aec9f1e6eb3ece0" title=" " alt="" coords="5,54,157,95"/>
+</map>

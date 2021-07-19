@@ -1,0 +1,4 @@
+<map id="JackMix::BackendInterface::addOutput" name="JackMix::BackendInterface::addOutput">
+<area shape="rect" id="node1" title="Add a channel and return true on success." alt="" coords="205,5,384,47"/>
+<area shape="rect" id="node2" href="$df/d8c/class_jack_mix_1_1_main_window.html#a50d58bfd9a840ce60cebfe13d714f3b2" title=" " alt="" coords="5,5,157,47"/>
+</map>

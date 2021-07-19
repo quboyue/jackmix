@@ -1,0 +1,29 @@
+digraph "JackMix::MidiControl::ControlSender::unsubscribe"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="JackMix::MidiControl\l::ControlSender::unsubscribe",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::MidiControl\l::ControlSender::subscribe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a11bb2cac34c9a170306749d52676025c",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="JackMix::MidiControl\l::ControlReceiver::ControlReceiver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html#a4c968e6f0c166efd998f5fef15dbdd9f",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="JackMix::MixingMatrix\l::Element::update_midi\l_parameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a82f268e085f3fdcf34b6a9ec33a94ecc",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="JackMix::MixerElements\l::AuxElement::AuxElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc",tooltip=" "];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="JackMix::MixerElements\l::Mono2StereoElement::\lMono2StereoElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8",tooltip=" "];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="JackMix::MixerElements\l::Stereo2StereoElement\l::Stereo2StereoElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed",tooltip=" "];
+  Node4 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="JackMix::MainWindow\l::updateAutoFilledMidiParams",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d8c/class_jack_mix_1_1_main_window.html#a1fdd236b2dbd0a6924ce874396c60dfc",tooltip=" "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="JackMix::MainWindow\l::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d8c/class_jack_mix_1_1_main_window.html#a671e7e5b0a3a7a3fb1cf44c5c8377952",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="JackMix::MainWindow\l::MainWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d8c/class_jack_mix_1_1_main_window.html#a2022dfcfcd6eeba03aec9f1e6eb3ece0",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="JackMix::MidiControl\l::ControlReceiver::~Control\lReceiver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html#ab32571e28bf9eb6a85912e4376809d0f",tooltip=" "];
+}

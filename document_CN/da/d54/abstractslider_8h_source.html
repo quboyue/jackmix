@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jackmix: abstractslider.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jackmix
+   &#160;<span id="projectnumber">v1.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_7c0bbce4cd396a4571ea5c6cec9a50e0.html">jackmix</a></li><li class="navelem"><a class="el" href="../../dir_ce52b5846c29bdd7bdc71d544c3994c8.html">libgui</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">abstractslider.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/d54/abstractslider_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">    Copyright 2007 Arnold Krille &lt;arnold@arnoldarts.de&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">    Modified to permit control via MIDI by Nick Bailey &lt;nick@n-ism.org&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">    Released as version 0.5.0 (et seq.) copyright 2013.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">    </span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">    This library is free software; you can redistribute it and/or</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">    modify it under the terms of the GNU Library General Public</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">    License as published by the Free Software Foundation;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">    version 2 of the License.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">    This library is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">    Library General Public License for more details.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">    You should have received a copy of the GNU Library General Public License</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">    along with this library. If not, write to the Free Software Foundation,</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment">    Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef ABSTRACTSLIDER_H</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define ABSTRACTSLIDER_H</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;QtWidgets/QWidget&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;QtCore/QPointer&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/dad/dbvolcalc_8h.html">dbvolcalc.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">class </span>QDoubleSpinBox;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d7/d67/namespace_jack_mix.html">JackMix</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span>GUI {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html">AbstractSlider</a> : <span class="keyword">public</span> QWidget, <span class="keyword">public</span> <a class="code" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html">dB2VolCalc</a></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;Q_OBJECT</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#aa50e659bded393ec33d5f5a89539bf65">AbstractSlider</a>( <span class="keywordtype">double</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abc8dde461708358bc1fbc8cd2cb4ab64">value</a>, <span class="keywordtype">double</span> min, <span class="keywordtype">double</span> max, <span class="keywordtype">int</span> precision, <span class="keywordtype">double</span> pagestep, QWidget*, QString valuestring );</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a96192649d052faea2ca1e132a16d9e37">~AbstractSlider</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abc8dde461708358bc1fbc8cd2cb4ab64">value</a>(<span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Abstract class has no timed auxilliary displays, so ignore second argument if supplied</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a6f89e6feec06072c0358b09e54399b34">   46</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a6f89e6feec06072c0358b09e54399b34">value</a>(<span class="keywordtype">double</span> n, <span class="keywordtype">bool</span>) { <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a6f89e6feec06072c0358b09e54399b34">value</a>(n); };</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abc8dde461708358bc1fbc8cd2cb4ab64">   47</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abc8dde461708358bc1fbc8cd2cb4ab64">value</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a318530353c62d030615565b325a320ee">_value</a>; };</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a01cd23ddc07f202b2e1a8dcb46af44df">setNormalisedValue</a>(<span class="keywordtype">double</span>, <span class="keywordtype">bool</span> show_numeric=<span class="keyword">true</span>); <span class="comment">//&lt;! Set the slider position in the range (0.0, 1.0)</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ad69ac1228a5cf73ea4ef412d271520ce">setMidiValue</a>(<span class="keywordtype">int</span>);                                  <span class="comment">//&lt;! Set the slider position in the range [0, 127]</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;signals:</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a65b79e978373b4f95732447ffea3aba3">   53</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a65b79e978373b4f95732447ffea3aba3">valueChanged</a>( <span class="keywordtype">double</span> );</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ac1ca4ebcd2e6d5f7865c0857ef4727ef">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ac1ca4ebcd2e6d5f7865c0857ef4727ef">select</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ad4cd2a085d37e2e06c4a6972d6d951f9">   65</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ad4cd2a085d37e2e06c4a6972d6d951f9">replace</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ac91c14a879ad5f713c026c79a9d9b302">   70</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ac91c14a879ad5f713c026c79a9d9b302">explode</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a92dc32d7f79c894cab29c9789b872899">hideInput</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a9a0c846f699e7bfac2a98bc18e232136">showInput</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ab9b486cb2094b03498bce93bb1590394">mousePressEvent</a>( QMouseEvent* );</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a121942fb014a239f5deed620bec20c9e">mouseMoveEvent</a>( QMouseEvent* );</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#af3ba807bc6919f6274408bc96cd9dda5">wheelEvent</a>( QWheelEvent* );</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a821ae3d8da2cb904270807191a1eec13">contextMenuEvent</a>( QContextMenuEvent* );</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a26016323bc17cbb0322f42e3b9953d89">   84</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a26016323bc17cbb0322f42e3b9953d89">mouseEvent</a>( QMouseEvent* ) =0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a318530353c62d030615565b325a320ee">   87</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a318530353c62d030615565b325a320ee">_value</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a0c076dd68c332aa4ca103dbcdcbee9e8">   88</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a0c076dd68c332aa4ca103dbcdcbee9e8">_value_inupdate</a>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a18d74b42fcb1b74487ffa0a5dd0be0db">   89</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a18d74b42fcb1b74487ffa0a5dd0be0db">_pagestep</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abb3f75748a4ba19bedbfbfdcd6b8c5e6">   90</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abb3f75748a4ba19bedbfbfdcd6b8c5e6">_precision</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#af4ab07becb3dcf509a36bb6be9e0ea8c">   91</a></span>&#160;    QString <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#af4ab07becb3dcf509a36bb6be9e0ea8c">_valuestring</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a2c5ab96ae9f7ee567cfb1648fbf62c8c">   93</a></span>&#160;    QPointer&lt;QDoubleSpinBox&gt; <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a2c5ab96ae9f7ee567cfb1648fbf62c8c">_spinbox</a>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a9aae5ae0d86e1fd5cc31a0a5c86867ca">   95</a></span>&#160;    QRegion <a class="code" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a9aae5ae0d86e1fd5cc31a0a5c86867ca">_nullclick</a>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// ABSTRACTSLIDER_H</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html">JackMix::GUI::AbstractSlider</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d54/abstractslider_8h_source.html#l00036">abstractslider.h:37</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a01cd23ddc07f202b2e1a8dcb46af44df"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a01cd23ddc07f202b2e1a8dcb46af44df">JackMix::GUI::AbstractSlider::setNormalisedValue</a></div><div class="ttdeci">virtual void setNormalisedValue(double, bool show_numeric=true)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/df1/abstractslider_8cpp_source.html#l00056">abstractslider.cpp:56</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a0c076dd68c332aa4ca103dbcdcbee9e8"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a0c076dd68c332aa4ca103dbcdcbee9e8">JackMix::GUI::AbstractSlider::_value_inupdate</a></div><div class="ttdeci">bool _value_inupdate</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d54/abstractslider_8h_source.html#l00088">abstractslider.h:88</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a121942fb014a239f5deed620bec20c9e"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a121942fb014a239f5deed620bec20c9e">JackMix::GUI::AbstractSlider::mouseMoveEvent</a></div><div class="ttdeci">virtual void mouseMoveEvent(QMouseEvent *)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/df1/abstractslider_8cpp_source.html#l00135">abstractslider.cpp:135</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a18d74b42fcb1b74487ffa0a5dd0be0db"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a18d74b42fcb1b74487ffa0a5dd0be0db">JackMix::GUI::AbstractSlider::_pagestep</a></div><div class="ttdeci">double _pagestep</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d54/abstractslider_8h_source.html#l00089">abstractslider.h:89</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a26016323bc17cbb0322f42e3b9953d89"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a26016323bc17cbb0322f42e3b9953d89">JackMix::GUI::AbstractSlider::mouseEvent</a></div><div class="ttdeci">virtual void mouseEvent(QMouseEvent *)=0</div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a2c5ab96ae9f7ee567cfb1648fbf62c8c"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a2c5ab96ae9f7ee567cfb1648fbf62c8c">JackMix::GUI::AbstractSlider::_spinbox</a></div><div class="ttdeci">QPointer&lt; QDoubleSpinBox &gt; _spinbox</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d54/abstractslider_8h_source.html#l00093">abstractslider.h:93</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a318530353c62d030615565b325a320ee"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a318530353c62d030615565b325a320ee">JackMix::GUI::AbstractSlider::_value</a></div><div class="ttdeci">double _value</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d54/abstractslider_8h_source.html#l00087">abstractslider.h:87</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a65b79e978373b4f95732447ffea3aba3"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a65b79e978373b4f95732447ffea3aba3">JackMix::GUI::AbstractSlider::valueChanged</a></div><div class="ttdeci">void valueChanged(double)</div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a6f89e6feec06072c0358b09e54399b34"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a6f89e6feec06072c0358b09e54399b34">JackMix::GUI::AbstractSlider::value</a></div><div class="ttdeci">virtual void value(double n, bool)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d54/abstractslider_8h_source.html#l00046">abstractslider.h:46</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a821ae3d8da2cb904270807191a1eec13"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a821ae3d8da2cb904270807191a1eec13">JackMix::GUI::AbstractSlider::contextMenuEvent</a></div><div class="ttdeci">void contextMenuEvent(QContextMenuEvent *)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/df1/abstractslider_8cpp_source.html#l00099">abstractslider.cpp:99</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a92dc32d7f79c894cab29c9789b872899"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a92dc32d7f79c894cab29c9789b872899">JackMix::GUI::AbstractSlider::hideInput</a></div><div class="ttdeci">void hideInput()</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/df1/abstractslider_8cpp_source.html#l00075">abstractslider.cpp:75</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a96192649d052faea2ca1e132a16d9e37"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a96192649d052faea2ca1e132a16d9e37">JackMix::GUI::AbstractSlider::~AbstractSlider</a></div><div class="ttdeci">~AbstractSlider()</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/df1/abstractslider_8cpp_source.html#l00041">abstractslider.cpp:41</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a9a0c846f699e7bfac2a98bc18e232136"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a9a0c846f699e7bfac2a98bc18e232136">JackMix::GUI::AbstractSlider::showInput</a></div><div class="ttdeci">void showInput()</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/df1/abstractslider_8cpp_source.html#l00080">abstractslider.cpp:80</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_a9aae5ae0d86e1fd5cc31a0a5c86867ca"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#a9aae5ae0d86e1fd5cc31a0a5c86867ca">JackMix::GUI::AbstractSlider::_nullclick</a></div><div class="ttdeci">QRegion _nullclick</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d54/abstractslider_8h_source.html#l00095">abstractslider.h:95</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_aa50e659bded393ec33d5f5a89539bf65"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#aa50e659bded393ec33d5f5a89539bf65">JackMix::GUI::AbstractSlider::AbstractSlider</a></div><div class="ttdeci">AbstractSlider(double value, double min, double max, int precision, double pagestep, QWidget *, QString valuestring)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/df1/abstractslider_8cpp_source.html#l00033">abstractslider.cpp:33</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_ab9b486cb2094b03498bce93bb1590394"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ab9b486cb2094b03498bce93bb1590394">JackMix::GUI::AbstractSlider::mousePressEvent</a></div><div class="ttdeci">virtual void mousePressEvent(QMouseEvent *)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/df1/abstractslider_8cpp_source.html#l00108">abstractslider.cpp:108</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_abb3f75748a4ba19bedbfbfdcd6b8c5e6"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abb3f75748a4ba19bedbfbfdcd6b8c5e6">JackMix::GUI::AbstractSlider::_precision</a></div><div class="ttdeci">int _precision</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d54/abstractslider_8h_source.html#l00090">abstractslider.h:90</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_abc8dde461708358bc1fbc8cd2cb4ab64"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abc8dde461708358bc1fbc8cd2cb4ab64">JackMix::GUI::AbstractSlider::value</a></div><div class="ttdeci">double value() const</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d54/abstractslider_8h_source.html#l00047">abstractslider.h:47</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_ac1ca4ebcd2e6d5f7865c0857ef4727ef"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ac1ca4ebcd2e6d5f7865c0857ef4727ef">JackMix::GUI::AbstractSlider::select</a></div><div class="ttdeci">void select(void)</div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_ac91c14a879ad5f713c026c79a9d9b302"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ac91c14a879ad5f713c026c79a9d9b302">JackMix::GUI::AbstractSlider::explode</a></div><div class="ttdeci">void explode(void)</div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_ad4cd2a085d37e2e06c4a6972d6d951f9"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ad4cd2a085d37e2e06c4a6972d6d951f9">JackMix::GUI::AbstractSlider::replace</a></div><div class="ttdeci">void replace(void)</div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_ad69ac1228a5cf73ea4ef412d271520ce"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#ad69ac1228a5cf73ea4ef412d271520ce">JackMix::GUI::AbstractSlider::setMidiValue</a></div><div class="ttdeci">virtual void setMidiValue(int)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/df1/abstractslider_8cpp_source.html#l00065">abstractslider.cpp:65</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_af3ba807bc6919f6274408bc96cd9dda5"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#af3ba807bc6919f6274408bc96cd9dda5">JackMix::GUI::AbstractSlider::wheelEvent</a></div><div class="ttdeci">void wheelEvent(QWheelEvent *)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/df1/abstractslider_8cpp_source.html#l00138">abstractslider.cpp:138</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_abstract_slider_html_af4ab07becb3dcf509a36bb6be9e0ea8c"><div class="ttname"><a href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#af4ab07becb3dcf509a36bb6be9e0ea8c">JackMix::GUI::AbstractSlider::_valuestring</a></div><div class="ttdeci">QString _valuestring</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d54/abstractslider_8h_source.html#l00091">abstractslider.h:91</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1d_b2_vol_calc_html"><div class="ttname"><a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html">JackMix::dB2VolCalc</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/dad/dbvolcalc_8h_source.html#l00028">dbvolcalc.h:28</a></div></div>
+<div class="ttc" id="adbvolcalc_8h_html"><div class="ttname"><a href="../../dc/dad/dbvolcalc_8h.html">dbvolcalc.h</a></div></div>
+<div class="ttc" id="anamespace_jack_mix_html"><div class="ttname"><a href="../../d7/d67/namespace_jack_mix.html">JackMix</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d15/jack__backend_8h_source.html#l00042">jack_backend.h:42</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

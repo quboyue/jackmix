@@ -1,0 +1,8 @@
+<map id="JackMix::MainWindow::saveFile" name="JackMix::MainWindow::saveFile">
+<area shape="rect" id="node1" title=" " alt="" coords="5,136,157,177"/>
+<area shape="rect" id="node2" href="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad80339b1fdb71f33e0bf6590f7a98caa" title=" " alt="" coords="211,5,379,47"/>
+<area shape="rect" id="node3" href="$de/dc4/class_jack_mix_1_1_backend_interface.html#a81f4fd9c3ec3fa1cfeb9630b636c2282" title="Set the volume of the named node." alt="" coords="205,71,384,112"/>
+<area shape="rect" id="node4" href="$de/dc4/class_jack_mix_1_1_backend_interface.html#a242d0cebafac64a381b5df0bd021c631" title="Return the current list of input channels." alt="" coords="205,136,384,177"/>
+<area shape="rect" id="node5" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a9f1d781c8fc1b7d7709fb94b874ccf9a" title=" " alt="" coords="206,201,383,243"/>
+<area shape="rect" id="node6" href="$de/dc4/class_jack_mix_1_1_backend_interface.html#a07163d7434cb8dcf0da00910c66a636e" title="Return the current list of output channels." alt="" coords="205,267,384,308"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="JackMix::MainWindow" name="JackMix::MainWindow">
+<area shape="rect" id="node1" title=" " alt="" coords="409,1412,561,1885"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,1067,112,1144"/>
+<area shape="rect" id="node3" href="$d2/d1e/classq_lash_1_1q_lash_client.html" title="LASH frontend for Qt4" alt="" coords="103,628,295,867"/>
+<area shape="rect" id="node4" title=" " alt="" coords="670,57,741,134"/>
+<area shape="rect" id="node10" href="$de/dc4/class_jack_mix_1_1_backend_interface.html" title="Abstract interface for backends" alt="" coords="616,248,795,604"/>
+<area shape="rect" id="node12" href="$df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html" title=" " alt="" coords="795,993,949,1217"/>
+<area shape="rect" id="node5" href="$d9/d72/class_jack_mix_1_1_main_window_helper_widget.html" title=" " alt="" coords="255,1052,449,1159"/>
+<area shape="rect" id="node6" title=" " alt="" coords="315,387,389,465"/>
+<area shape="rect" id="node7" href="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html" title=" " alt="" coords="474,891,657,1320"/>
+<area shape="rect" id="node8" title=" " alt="" coords="429,387,499,465"/>
+<area shape="rect" id="node9" title=" " alt="" coords="523,387,591,465"/>
+<area shape="rect" id="node11" href="$d7/d8b/class_jack_mix_1_1_gui_server___interface.html" title="Abstract interface for a GUI server" alt="" coords="800,5,952,185"/>
+<area shape="rect" id="node13" href="$dd/d55/class_jack_mix_1_1_midi_control_1_1_port_listener.html" title=" " alt="" coords="907,343,1050,509"/>
+<area shape="rect" id="node14" title=" " alt="" coords="977,57,1047,134"/>
+</map>

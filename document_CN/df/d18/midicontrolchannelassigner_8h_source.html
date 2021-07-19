@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jackmix: midicontrolchannelassigner.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jackmix
+   &#160;<span id="projectnumber">v1.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_7c0bbce4cd396a4571ea5c6cec9a50e0.html">jackmix</a></li><li class="navelem"><a class="el" href="../../dir_ce52b5846c29bdd7bdc71d544c3994c8.html">libgui</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">midicontrolchannelassigner.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../df/d18/midicontrolchannelassigner_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">    Copyright 2013 Nick Bailey &lt;nick@n-ism.org&gt;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">    This library is free software; you can redistribute it and/or</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">    modify it under the terms of the GNU Library General Public</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">    License as published by the Free Software Foundation;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">    version 2 of the License.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">    This library is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">    but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">    Library General Public License for more details.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">    You should have received a copy of the GNU Library General Public License</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">    along with this library; see the file COPYING.LIB.  If not, write to</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment">    the Free Software Foundation, Inc., 59 Temple Place - Suite 330,</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">    Boston, MA 02111-1307, USA.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#ifndef MIDICONTROLCHANNELASSIGNER_H</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define MIDICONTROLCHANNELASSIGNER_H</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;QtWidgets/QDialog&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;QtCore/QString&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;QtCore/QStringList&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;QtCore/QList&gt;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">class </span>QSpinBox;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">class </span>QPushButton;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d7/d67/namespace_jack_mix.html">JackMix</a> {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span>GUI {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html">MidiControlChannelAssigner</a> : <span class="keyword">public</span> QDialog</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;Q_OBJECT</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#af7780f9b6639ffae30ab68f5fd049c58">MidiControlChannelAssigner</a>( QString title, QString label, QStringList controls, <span class="keyword">const</span> QList&lt;int&gt; &amp;init, QWidget*  p = NULL );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a163b7451dcb7ab87e6aa2b97a7a6af25">~MidiControlChannelAssigner</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;signals:</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a6d404c83b253cdde2c5a31cdf9433cf7">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a6d404c83b253cdde2c5a31cdf9433cf7">assignParameters</a>( QList&lt;int&gt; );</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#ac1586cb0ac05b67660b28322ba46d968">updateParameters</a>( QList&lt;int&gt; );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a6f9aa314b4071171754dffd2b61eddf6">commit</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a6e61aabb9184c0b5edfe358609b652b9">commitnquit</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#ad4f25d08f38b81f3cd74abdeb8463c94">   73</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#ad4f25d08f38b81f3cd74abdeb8463c94">_num_controls</a>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a4f671e2f8122f84ad24f901ac9d5119d">   74</a></span>&#160;    QPushButton *<a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a4bfd284b33e6a79ba6eb46afb9491663">_commit</a>, *<a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a1f2e84ce9df0783c8d3f2a099702d353">_commit_n_quit</a>, *<a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a4f671e2f8122f84ad24f901ac9d5119d">_cancel</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a5a8f9333000f3d20c1debf4d0f063e10">   75</a></span>&#160;    QSpinBox** <a class="code" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a5a8f9333000f3d20c1debf4d0f063e10">_cchans</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// MIDICONTROLCHANNELASSIGNER_H</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html">JackMix::GUI::MidiControlChannelAssigner</a></div><div class="ttdef"><b>Definition:</b> <a href="../../df/d18/midicontrolchannelassigner_8h_source.html#l00041">midicontrolchannelassigner.h:42</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html_a163b7451dcb7ab87e6aa2b97a7a6af25"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a163b7451dcb7ab87e6aa2b97a7a6af25">JackMix::GUI::MidiControlChannelAssigner::~MidiControlChannelAssigner</a></div><div class="ttdeci">~MidiControlChannelAssigner()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/ddf/midicontrolchannelassigner_8cpp_source.html#l00085">midicontrolchannelassigner.cpp:85</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html_a1f2e84ce9df0783c8d3f2a099702d353"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a1f2e84ce9df0783c8d3f2a099702d353">JackMix::GUI::MidiControlChannelAssigner::_commit_n_quit</a></div><div class="ttdeci">QPushButton * _commit_n_quit</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d18/midicontrolchannelassigner_8h_source.html#l00074">midicontrolchannelassigner.h:74</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html_a4bfd284b33e6a79ba6eb46afb9491663"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a4bfd284b33e6a79ba6eb46afb9491663">JackMix::GUI::MidiControlChannelAssigner::_commit</a></div><div class="ttdeci">QPushButton * _commit</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d18/midicontrolchannelassigner_8h_source.html#l00074">midicontrolchannelassigner.h:74</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html_a4f671e2f8122f84ad24f901ac9d5119d"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a4f671e2f8122f84ad24f901ac9d5119d">JackMix::GUI::MidiControlChannelAssigner::_cancel</a></div><div class="ttdeci">QPushButton * _cancel</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d18/midicontrolchannelassigner_8h_source.html#l00074">midicontrolchannelassigner.h:74</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html_a5a8f9333000f3d20c1debf4d0f063e10"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a5a8f9333000f3d20c1debf4d0f063e10">JackMix::GUI::MidiControlChannelAssigner::_cchans</a></div><div class="ttdeci">QSpinBox ** _cchans</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d18/midicontrolchannelassigner_8h_source.html#l00075">midicontrolchannelassigner.h:75</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html_a6d404c83b253cdde2c5a31cdf9433cf7"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a6d404c83b253cdde2c5a31cdf9433cf7">JackMix::GUI::MidiControlChannelAssigner::assignParameters</a></div><div class="ttdeci">void assignParameters(QList&lt; int &gt;)</div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html_a6e61aabb9184c0b5edfe358609b652b9"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a6e61aabb9184c0b5edfe358609b652b9">JackMix::GUI::MidiControlChannelAssigner::commitnquit</a></div><div class="ttdeci">void commitnquit()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/ddf/midicontrolchannelassigner_8cpp_source.html#l00095">midicontrolchannelassigner.cpp:95</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html_a6f9aa314b4071171754dffd2b61eddf6"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#a6f9aa314b4071171754dffd2b61eddf6">JackMix::GUI::MidiControlChannelAssigner::commit</a></div><div class="ttdeci">void commit()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/ddf/midicontrolchannelassigner_8cpp_source.html#l00088">midicontrolchannelassigner.cpp:88</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html_ac1586cb0ac05b67660b28322ba46d968"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#ac1586cb0ac05b67660b28322ba46d968">JackMix::GUI::MidiControlChannelAssigner::updateParameters</a></div><div class="ttdeci">void updateParameters(QList&lt; int &gt;)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/ddf/midicontrolchannelassigner_8cpp_source.html#l00102">midicontrolchannelassigner.cpp:102</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html_ad4f25d08f38b81f3cd74abdeb8463c94"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#ad4f25d08f38b81f3cd74abdeb8463c94">JackMix::GUI::MidiControlChannelAssigner::_num_controls</a></div><div class="ttdeci">int _num_controls</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d18/midicontrolchannelassigner_8h_source.html#l00073">midicontrolchannelassigner.h:73</a></div></div>
+<div class="ttc" id="aclass_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner_html_af7780f9b6639ffae30ab68f5fd049c58"><div class="ttname"><a href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#af7780f9b6639ffae30ab68f5fd049c58">JackMix::GUI::MidiControlChannelAssigner::MidiControlChannelAssigner</a></div><div class="ttdeci">MidiControlChannelAssigner(QString title, QString label, QStringList controls, const QList&lt; int &gt; &amp;init, QWidget *p=NULL)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/ddf/midicontrolchannelassigner_8cpp_source.html#l00037">midicontrolchannelassigner.cpp:37</a></div></div>
+<div class="ttc" id="anamespace_jack_mix_html"><div class="ttname"><a href="../../d7/d67/namespace_jack_mix.html">JackMix</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d15/jack__backend_8h_source.html#l00042">jack_backend.h:42</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

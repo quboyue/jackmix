@@ -1,0 +1,17 @@
+digraph "JackMix::MainWindow::updateAutoFilledMidiParams"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="JackMix::MainWindow\l::updateAutoFilledMidiParams",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::MixingMatrix\l::Widget::getResponsible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#ad80339b1fdb71f33e0bf6590f7a98caa",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="JackMix::MixingMatrix\l::Element::update_midi\l_parameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a82f268e085f3fdcf34b6a9ec33a94ecc",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="JackMix::MidiControl\l::ControlSender::subscribe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a11bb2cac34c9a170306749d52676025c",tooltip=" "];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="JackMix::MidiControl\l::ControlSender::unsubscribe",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ae5dc1b69ad333d3d16a54859658111df",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

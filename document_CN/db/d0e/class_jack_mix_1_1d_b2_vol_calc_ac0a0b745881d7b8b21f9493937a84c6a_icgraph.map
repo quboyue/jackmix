@@ -1,0 +1,5 @@
+<map id="JackMix::dB2VolCalc::ndbtodb" name="JackMix::dB2VolCalc::ndbtodb">
+<area shape="rect" id="node1" title="Unnormalizes a dezibel value." alt="" coords="195,39,341,80"/>
+<area shape="rect" id="node2" href="$d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html#a07c3ab854cf88d174d1cdac18cb64012" title=" " alt="" coords="7,5,145,47"/>
+<area shape="rect" id="node3" href="$d3/d47/class_jack_mix_1_1_g_u_i_1_1_slider.html#a3747a8728bd38924d550fd17ba916aad" title=" " alt="" coords="5,71,147,112"/>
+</map>

@@ -1,0 +1,8 @@
+digraph "类继承关系图"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="JackMix::MixingMatrix\l::Global",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d2a/class_jack_mix_1_1_mixing_matrix_1_1_global.html",tooltip=" "];
+}

@@ -1,0 +1,8 @@
+digraph "类继承关系图"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="JackMix::BackendInterface\l::FaderState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/db2/struct_jack_mix_1_1_backend_interface_1_1_fader_state.html",tooltip="State of a fader (including interpolation)"];
+}

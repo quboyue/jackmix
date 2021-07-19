@@ -1,0 +1,963 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jackmix: JackMix::MixerElements::Mono2StereoElement类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jackmix
+   &#160;<span id="projectnumber">v1.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d7/d67/namespace_jack_mix.html">JackMix</a></li><li class="navelem"><a class="el" href="../../d0/ddc/namespace_jack_mix_1_1_mixer_elements.html">MixerElements</a></li><li class="navelem"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html">Mono2StereoElement</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-slots">Public 槽</a> &#124;
+<a href="#signals">信号</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#properties">属性</a> &#124;
+<a href="#pri-slots">Private 槽</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../d9/db2/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">JackMix::MixerElements::Mono2StereoElement类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a>&gt;</code></p>
+<div class="dynheader">
+类 JackMix::MixerElements::Mono2StereoElement 继承关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../dd/d9a/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element__inherit__graph.png" border="0" usemap="#a_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_inherit__map" id="a_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_inherit__map">
+<area shape="rect" title=" " alt="" coords="125,857,299,1199"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html" title=" " alt="" coords="5,175,216,809"/>
+<area shape="rect" title=" " alt="" coords="11,27,80,105"/>
+<area shape="rect" href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html" title=" " alt="" coords="105,5,247,127"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html" title=" " alt="" coords="240,387,387,597"/>
+</map>
+</div>
+<div class="dynheader">
+JackMix::MixerElements::Mono2StereoElement 的协作图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d93/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element__coll__graph.png" border="0" usemap="#a_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_coll__map" alt="Collaboration graph"/></div>
+<map name="a_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_coll__map" id="a_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_coll__map">
+<area shape="rect" title=" " alt="" coords="643,1827,818,2139"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html" title=" " alt="" coords="241,1159,452,1764"/>
+<area shape="rect" title=" " alt="" coords="5,387,75,465"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html" title=" " alt="" coords="69,667,251,1096"/>
+<area shape="rect" href="../../db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html" title=" " alt="" coords="275,821,418,942"/>
+<area shape="rect" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html" title=" " alt="" coords="443,777,656,986"/>
+<area shape="rect" title=" " alt="" coords="515,387,583,465"/>
+<area shape="rect" title=" " alt="" coords="109,387,177,465"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html" title="Abstract interface for backends" alt="" coords="201,248,380,604"/>
+<area shape="rect" title=" " alt="" coords="187,57,258,134"/>
+<area shape="rect" href="../../d7/d8b/class_jack_mix_1_1_gui_server___interface.html" title="Abstract interface for a GUI server" alt="" coords="283,5,435,185"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html" title=" " alt="" coords="620,321,767,531"/>
+<area shape="rect" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html" title=" " alt="" coords="733,703,923,1059"/>
+<area shape="rect" href="../../d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html" title=" " alt="" coords="731,1349,869,1573"/>
+<area shape="rect" href="../../d3/d47/class_jack_mix_1_1_g_u_i_1_1_slider.html" title=" " alt="" coords="893,1371,1035,1551"/>
+<area shape="rect" title=" " alt="" coords="791,387,865,465"/>
+</map>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-slots"></a>
+Public 槽</h2></td></tr>
+<tr class="memitem:a14099499871505a15fe58c62a2b5774e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a14099499871505a15fe58c62a2b5774e">set_panorama</a> (double n)</td></tr>
+<tr class="separator:a14099499871505a15fe58c62a2b5774e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5422a9e5c870f7289e44d633956d546f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5422a9e5c870f7289e44d633956d546f">balance</a> (double)</td></tr>
+<tr class="separator:a5422a9e5c870f7289e44d633956d546f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a815dc54216fece3d08a5d3955571b1c0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a815dc54216fece3d08a5d3955571b1c0">volume</a> (double)</td></tr>
+<tr class="separator:a815dc54216fece3d08a5d3955571b1c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td colspan="2" onclick="javascript:toggleInherit('pub_slots_class_jack_mix_1_1_mixing_matrix_1_1_element')"><img src="../../closed.png" alt="-"/>&#160;Public 槽 继承自 <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">JackMix::MixingMatrix::Element</a></td></tr>
+<tr class="memitem:a455afad3c029a88da9dd1fcc5b8b967b inherit pub_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a455afad3c029a88da9dd1fcc5b8b967b">select</a> (bool)</td></tr>
+<tr class="separator:a455afad3c029a88da9dd1fcc5b8b967b inherit pub_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89daa40b010eb2afc3cca9ce6d88daa6 inherit pub_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a89daa40b010eb2afc3cca9ce6d88daa6">showMenu</a> ()</td></tr>
+<tr class="separator:a89daa40b010eb2afc3cca9ce6d88daa6 inherit pub_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f268e085f3fdcf34b6a9ec33a94ecc inherit pub_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a82f268e085f3fdcf34b6a9ec33a94ecc">update_midi_parameters</a> (QList&lt; int &gt; pv)</td></tr>
+<tr class="separator:a82f268e085f3fdcf34b6a9ec33a94ecc inherit pub_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+信号</h2></td></tr>
+<tr class="memitem:a2d3a96c8fceb3b1dacc16624286f8de6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a2d3a96c8fceb3b1dacc16624286f8de6">volume_changed</a> (double)</td></tr>
+<tr class="separator:a2d3a96c8fceb3b1dacc16624286f8de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe5792b53557ca1e6c8edd1ce1ff3763"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#abe5792b53557ca1e6c8edd1ce1ff3763">panorama_changed</a> (double)</td></tr>
+<tr class="separator:abe5792b53557ca1e6c8edd1ce1ff3763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header signals_class_jack_mix_1_1_mixing_matrix_1_1_element"><td colspan="2" onclick="javascript:toggleInherit('signals_class_jack_mix_1_1_mixing_matrix_1_1_element')"><img src="../../closed.png" alt="-"/>&#160;信号 继承自 <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">JackMix::MixingMatrix::Element</a></td></tr>
+<tr class="memitem:a3f35e794823cfa8b3ed41852c79b4186 inherit signals_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a3f35e794823cfa8b3ed41852c79b4186">replace</a> (<a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a> *)</td></tr>
+<tr class="separator:a3f35e794823cfa8b3ed41852c79b4186 inherit signals_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcba8938103cee8d555f7560705c476e inherit signals_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#adcba8938103cee8d555f7560705c476e">explode</a> (<a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a> *)</td></tr>
+<tr class="separator:adcba8938103cee8d555f7560705c476e inherit signals_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6af96465ccafb366828296c9882c685d inherit signals_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a6af96465ccafb366828296c9882c685d">valueChanged</a> (<a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">Element</a> *n, QString s)</td></tr>
+<tr class="separator:a6af96465ccafb366828296c9882c685d inherit signals_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6ad10badf7e7172fb45980eb7bb1589 inherit signals_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ad6ad10badf7e7172fb45980eb7bb1589">initComplete</a> ()</td></tr>
+<tr class="separator:ad6ad10badf7e7172fb45980eb7bb1589 inherit signals_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a5844619981937c6c89d9b6d6e89741e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8">Mono2StereoElement</a> (QStringList, QStringList, <a class="el" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html">MixingMatrix::Widget</a> *, const char *=0)</td></tr>
+<tr class="separator:a5844619981937c6c89d9b6d6e89741e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271ded8bb1d31783686c42792e7cf471"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a271ded8bb1d31783686c42792e7cf471">~Mono2StereoElement</a> ()</td></tr>
+<tr class="separator:a271ded8bb1d31783686c42792e7cf471"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd849e9f805ccb5b31853773545092a9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#abd849e9f805ccb5b31853773545092a9">inchannels</a> () const</td></tr>
+<tr class="separator:abd849e9f805ccb5b31853773545092a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d8ebf3525b0ae5c872800fe2f5dbd21"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a0d8ebf3525b0ae5c872800fe2f5dbd21">outchannels</a> () const</td></tr>
+<tr class="separator:a0d8ebf3525b0ae5c872800fe2f5dbd21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1866173c59f11183a7ada646526be802"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a1866173c59f11183a7ada646526be802">volume</a> () const</td></tr>
+<tr class="separator:a1866173c59f11183a7ada646526be802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0160ce6ad942c1ba1813743ff24d9e8c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a0160ce6ad942c1ba1813743ff24d9e8c">panorama</a> () const</td></tr>
+<tr class="separator:a0160ce6ad942c1ba1813743ff24d9e8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">JackMix::MixingMatrix::Element</a></td></tr>
+<tr class="memitem:a804d73cd8c8cbb0e281112390619d6cf inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a804d73cd8c8cbb0e281112390619d6cf">Element</a> (QStringList <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a85b44f974d9d35d39ca917bac58ec7a9">in</a>, QStringList <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a3aa5f54986c79df83b07ee552a8a3a55">out</a>, <a class="el" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html">Widget</a> *, const char *=0)</td></tr>
+<tr class="separator:a804d73cd8c8cbb0e281112390619d6cf inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78313cab1689e0d36f6b9db09f294443 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a78313cab1689e0d36f6b9db09f294443">~Element</a> ()</td></tr>
+<tr class="separator:a78313cab1689e0d36f6b9db09f294443 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa896436131c3c0e50048f4a58e9dd1a4 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html">JackMix::BackendInterface</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa896436131c3c0e50048f4a58e9dd1a4">backend</a> () const</td></tr>
+<tr class="separator:aa896436131c3c0e50048f4a58e9dd1a4 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a459d956ee60c8c9a51abc9d3e28e595a inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a459d956ee60c8c9a51abc9d3e28e595a">in</a> () const</td></tr>
+<tr class="separator:a459d956ee60c8c9a51abc9d3e28e595a inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf0b37cb498f45f436e31f605459bfb8 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#acf0b37cb498f45f436e31f605459bfb8">out</a> () const</td></tr>
+<tr class="separator:acf0b37cb498f45f436e31f605459bfb8 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a189e66d1d8897b2a82297d00a74cb2cd inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a189e66d1d8897b2a82297d00a74cb2cd">isResponsible</a> (QString <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a85b44f974d9d35d39ca917bac58ec7a9">in</a>, QString <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a3aa5f54986c79df83b07ee552a8a3a55">out</a>)</td></tr>
+<tr class="separator:a189e66d1d8897b2a82297d00a74cb2cd inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34f0f9a320e3503be93df6b992887c8d inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d">isSelected</a> () const</td></tr>
+<tr class="separator:a34f0f9a320e3503be93df6b992887c8d inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f13c492b2a7b5145359ba34500c878d inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a9f13c492b2a7b5145359ba34500c878d">name</a> () const</td></tr>
+<tr class="separator:a9f13c492b2a7b5145359ba34500c878d inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad871b385baab0801a44d9d0f42b19cd3 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ad871b385baab0801a44d9d0f42b19cd3">name</a> (QString n)</td></tr>
+<tr class="separator:ad871b385baab0801a44d9d0f42b19cd3 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa872dc1eb2b64f09b15cc5b3b42b253b inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa872dc1eb2b64f09b15cc5b3b42b253b">isSelected</a> (bool)</td></tr>
+<tr class="separator:aa872dc1eb2b64f09b15cc5b3b42b253b inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9cb4bbb56d5f7cee13c6f88607ce2f inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a7e9cb4bbb56d5f7cee13c6f88607ce2f">neighbors</a> () const</td></tr>
+<tr class="separator:a7e9cb4bbb56d5f7cee13c6f88607ce2f inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454bb971fd440c35ee81eff35cf643f2 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a454bb971fd440c35ee81eff35cf643f2">neighborsList</a> () const</td></tr>
+<tr class="separator:a454bb971fd440c35ee81eff35cf643f2 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c172e7d5c51cef27ce9524eb2607fd inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa7c172e7d5c51cef27ce9524eb2607fd">followers</a> (int) const</td></tr>
+<tr class="separator:aa7c172e7d5c51cef27ce9524eb2607fd inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae96a63bac60878a340b7f5891ee97658 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae96a63bac60878a340b7f5891ee97658">followersList</a> () const</td></tr>
+<tr class="separator:ae96a63bac60878a340b7f5891ee97658 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f1d781c8fc1b7d7709fb94b874ccf9a inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">const QList&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a9f1d781c8fc1b7d7709fb94b874ccf9a">midiParameters</a> () const</td></tr>
+<tr class="separator:a9f1d781c8fc1b7d7709fb94b874ccf9a inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1f5d256124b4eebcf7b5044bed210a8 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa1f5d256124b4eebcf7b5044bed210a8">invalidateRegistry</a> ()</td></tr>
+<tr class="separator:aa1f5d256124b4eebcf7b5044bed210a8 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c29842ca563766402e43f6228524896 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a1c29842ca563766402e43f6228524896">renamechannels</a> (QString old_name, QString new_name)</td></tr>
+<tr class="separator:a1c29842ca563766402e43f6228524896 inherit pub_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_jack_mix_1_1d_b2_vol_calc')"><img src="../../closed.png" alt="-"/>&#160;Public 成员函数 继承自 <a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html">JackMix::dB2VolCalc</a></td></tr>
+<tr class="memitem:ae64c45bbfb2931ac40e9fc122098c13c inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ae64c45bbfb2931ac40e9fc122098c13c">dB2VolCalc</a> (double _dbmin, double _dbmax)</td></tr>
+<tr class="separator:ae64c45bbfb2931ac40e9fc122098c13c inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace43d45b7606f1edd115853c406a1dc2 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ace43d45b7606f1edd115853c406a1dc2">amptodb</a> (double p)</td></tr>
+<tr class="separator:ace43d45b7606f1edd115853c406a1dc2 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab09e5523dba91f6046e43799e35067f6 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6">dbtoamp</a> (double db)</td></tr>
+<tr class="separator:ab09e5523dba91f6046e43799e35067f6 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad80d29cac26d1f940a83d7651893d010 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ad80d29cac26d1f940a83d7651893d010">amptondb</a> (double p)</td></tr>
+<tr class="memdesc:ad80d29cac26d1f940a83d7651893d010 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="mdescLeft">&#160;</td><td class="mdescRight">With ndb = normalized dB (between 0 and 1)  <a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ad80d29cac26d1f940a83d7651893d010">更多...</a><br /></td></tr>
+<tr class="separator:ad80d29cac26d1f940a83d7651893d010 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79f073f66dbcdad14ca5feba5659b65b inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a79f073f66dbcdad14ca5feba5659b65b">ndbtoamp</a> (double ndb)</td></tr>
+<tr class="separator:a79f073f66dbcdad14ca5feba5659b65b inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7b464a40f3460592eedcf3fa62f97d6 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac7b464a40f3460592eedcf3fa62f97d6">dbtondb</a> (double db)</td></tr>
+<tr class="memdesc:ac7b464a40f3460592eedcf3fa62f97d6 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes a dezibel value.  <a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac7b464a40f3460592eedcf3fa62f97d6">更多...</a><br /></td></tr>
+<tr class="separator:ac7b464a40f3460592eedcf3fa62f97d6 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91acfefb3cb2839b73ae2dc6e314e7b4 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a91acfefb3cb2839b73ae2dc6e314e7b4">dbtovol</a> (double db)</td></tr>
+<tr class="memdesc:a91acfefb3cb2839b73ae2dc6e314e7b4 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes a volume to a logarithmic value between 0 and 1.  <a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a91acfefb3cb2839b73ae2dc6e314e7b4">更多...</a><br /></td></tr>
+<tr class="separator:a91acfefb3cb2839b73ae2dc6e314e7b4 inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0a0b745881d7b8b21f9493937a84c6a inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac0a0b745881d7b8b21f9493937a84c6a">ndbtodb</a> (double ndb)</td></tr>
+<tr class="memdesc:ac0a0b745881d7b8b21f9493937a84c6a inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unnormalizes a dezibel value.  <a href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac0a0b745881d7b8b21f9493937a84c6a">更多...</a><br /></td></tr>
+<tr class="separator:ac0a0b745881d7b8b21f9493937a84c6a inherit pub_methods_class_jack_mix_1_1d_b2_vol_calc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+属性</h2></td></tr>
+<tr class="memitem:a7f1fe1a2af229aea024e9f24f1ea4431"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a7f1fe1a2af229aea024e9f24f1ea4431">volume</a></td></tr>
+<tr class="separator:a7f1fe1a2af229aea024e9f24f1ea4431"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93dad682ea2cbc6b366ce60cb5f6ab66"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a93dad682ea2cbc6b366ce60cb5f6ab66">panorama</a></td></tr>
+<tr class="separator:a93dad682ea2cbc6b366ce60cb5f6ab66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td colspan="2" onclick="javascript:toggleInherit('properties_class_jack_mix_1_1_mixing_matrix_1_1_element')"><img src="../../closed.png" alt="-"/>&#160;属性 继承自 <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">JackMix::MixingMatrix::Element</a></td></tr>
+<tr class="memitem:a882dcd2a9fc2b0390d0c4acd6f6c62bb inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a882dcd2a9fc2b0390d0c4acd6f6c62bb">selected</a></td></tr>
+<tr class="separator:a882dcd2a9fc2b0390d0c4acd6f6c62bb inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b44f974d9d35d39ca917bac58ec7a9 inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a85b44f974d9d35d39ca917bac58ec7a9">in</a></td></tr>
+<tr class="separator:a85b44f974d9d35d39ca917bac58ec7a9 inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa5f54986c79df83b07ee552a8a3a55 inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a3aa5f54986c79df83b07ee552a8a3a55">out</a></td></tr>
+<tr class="separator:a3aa5f54986c79df83b07ee552a8a3a55 inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa4140983a683cde7101d41f3e368db7 inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aaa4140983a683cde7101d41f3e368db7">ins</a></td></tr>
+<tr class="separator:aaa4140983a683cde7101d41f3e368db7 inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af401ff6d9525ecd44696238ccb7d095d inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#af401ff6d9525ecd44696238ccb7d095d">outs</a></td></tr>
+<tr class="separator:af401ff6d9525ecd44696238ccb7d095d inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584c211d21b7410f44a94ef59acc8aa0 inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a584c211d21b7410f44a94ef59acc8aa0">name</a></td></tr>
+<tr class="separator:a584c211d21b7410f44a94ef59acc8aa0 inherit properties_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
+Private 槽</h2></td></tr>
+<tr class="memitem:a634d1555deeb856b6779c3c874801ad4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a634d1555deeb856b6779c3c874801ad4">calculateVolumes</a> ()</td></tr>
+<tr class="separator:a634d1555deeb856b6779c3c874801ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:af1a020db515c4ab28e15be8eb3ac464b"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#af1a020db515c4ab28e15be8eb3ac464b">_inchannel</a></td></tr>
+<tr class="separator:af1a020db515c4ab28e15be8eb3ac464b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59a9a491a71072d8b98e4d0b8ceee64a"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a59a9a491a71072d8b98e4d0b8ceee64a">_outchannel1</a></td></tr>
+<tr class="separator:a59a9a491a71072d8b98e4d0b8ceee64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62747b896371013ce68211f323fdc8f9"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a62747b896371013ce68211f323fdc8f9">_outchannel2</a></td></tr>
+<tr class="separator:a62747b896371013ce68211f323fdc8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39463d0ffc99ed8698cf8022710ae25d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html">JackMix::GUI::Knob</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a39463d0ffc99ed8698cf8022710ae25d">_balance</a></td></tr>
+<tr class="separator:a39463d0ffc99ed8698cf8022710ae25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c710878a1176e8231090f898553e6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d47/class_jack_mix_1_1_g_u_i_1_1_slider.html">JackMix::GUI::Slider</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#af7c710878a1176e8231090f898553e6b">_volume</a></td></tr>
+<tr class="separator:af7c710878a1176e8231090f898553e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8745098f9007f2448cf94815f17f325d"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a8745098f9007f2448cf94815f17f325d">_balance_value</a></td></tr>
+<tr class="separator:a8745098f9007f2448cf94815f17f325d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab71dd29313728951a094ff34a21594ff"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#ab71dd29313728951a094ff34a21594ff">_volume_value</a></td></tr>
+<tr class="separator:ab71dd29313728951a094ff34a21594ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+额外继承的成员函数</h2></td></tr>
+<tr class="inherit_header pub_attribs_class_jack_mix_1_1d_b2_vol_calc"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_jack_mix_1_1d_b2_vol_calc')"><img src="../../closed.png" alt="-"/>&#160;Public 属性 继承自 <a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html">JackMix::dB2VolCalc</a></td></tr>
+<tr class="memitem:ac79cf9728d5ff2dc8520ae3d1ba6a05a inherit pub_attribs_class_jack_mix_1_1d_b2_vol_calc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac79cf9728d5ff2dc8520ae3d1ba6a05a">dbmax</a></td></tr>
+<tr class="separator:ac79cf9728d5ff2dc8520ae3d1ba6a05a inherit pub_attribs_class_jack_mix_1_1d_b2_vol_calc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a070883843e269f1715c49ab2dc0a6ab2 inherit pub_attribs_class_jack_mix_1_1d_b2_vol_calc"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#a070883843e269f1715c49ab2dc0a6ab2">dbmin</a></td></tr>
+<tr class="separator:a070883843e269f1715c49ab2dc0a6ab2 inherit pub_attribs_class_jack_mix_1_1d_b2_vol_calc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td colspan="2" onclick="javascript:toggleInherit('pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element')"><img src="../../closed.png" alt="-"/>&#160;Protected 槽 继承自 <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">JackMix::MixingMatrix::Element</a></td></tr>
+<tr class="memitem:abbd3cfaa82a63ad7b247fefac7b92e97 inherit pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#abbd3cfaa82a63ad7b247fefac7b92e97">slot_simple_replace</a> ()</td></tr>
+<tr class="separator:abbd3cfaa82a63ad7b247fefac7b92e97 inherit pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62d38b180085b2a1586dff9dca773ee7 inherit pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a62d38b180085b2a1586dff9dca773ee7">slot_simple_explode</a> ()</td></tr>
+<tr class="separator:a62d38b180085b2a1586dff9dca773ee7 inherit pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2ca2d009062e005c05435a24c15630e inherit pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae2ca2d009062e005c05435a24c15630e">slot_simple_select</a> ()</td></tr>
+<tr class="separator:ae2ca2d009062e005c05435a24c15630e inherit pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d76df33b687adf0a77424662ee8566a inherit pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a8d76df33b687adf0a77424662ee8566a">controlEvent</a> (int p, int v)</td></tr>
+<tr class="separator:a8d76df33b687adf0a77424662ee8566a inherit pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248e0cae3678aa4500f60eda39f90a36 inherit pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a248e0cae3678aa4500f60eda39f90a36">slot_assign_midi_parameters</a> ()</td></tr>
+<tr class="separator:a248e0cae3678aa4500f60eda39f90a36 inherit pro_slots_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_jack_mix_1_1_mixing_matrix_1_1_element')"><img src="../../closed.png" alt="-"/>&#160;Protected 成员函数 继承自 <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">JackMix::MixingMatrix::Element</a></td></tr>
+<tr class="memitem:ad5c5e138a232e8e7f637707d2de7af9d inherit pro_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html">Widget</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ad5c5e138a232e8e7f637707d2de7af9d">parent</a> ()</td></tr>
+<tr class="separator:ad5c5e138a232e8e7f637707d2de7af9d inherit pro_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a003514960e2cb872c4641dde040cd639 inherit pro_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a003514960e2cb872c4641dde040cd639">menu</a> ()</td></tr>
+<tr class="separator:a003514960e2cb872c4641dde040cd639 inherit pro_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f635cc3530ed7076d3bd6811c81099 inherit pro_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QLayout *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a83f635cc3530ed7076d3bd6811c81099">layout</a> ()</td></tr>
+<tr class="separator:a83f635cc3530ed7076d3bd6811c81099 inherit pro_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e9de0c471b50c97bcf1b24f76c3244e inherit pro_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a5e9de0c471b50c97bcf1b24f76c3244e">contextMenuEvent</a> (QContextMenuEvent *)</td></tr>
+<tr class="separator:a5e9de0c471b50c97bcf1b24f76c3244e inherit pro_methods_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element')"><img src="../../closed.png" alt="-"/>&#160;Protected 属性 继承自 <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html">JackMix::MixingMatrix::Element</a></td></tr>
+<tr class="memitem:ae3e43d56e96e7fb5a1001d996ca9c56e inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QMenu *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae3e43d56e96e7fb5a1001d996ca9c56e">_menu</a></td></tr>
+<tr class="separator:ae3e43d56e96e7fb5a1001d996ca9c56e inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28b68c468c86daa5d8fb42071e185054 inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QLabel *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a28b68c468c86daa5d8fb42071e185054">disp_name</a></td></tr>
+<tr class="separator:a28b68c468c86daa5d8fb42071e185054 inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09b53e904c9ca0deaa7c9735acc2bd8b inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QList&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a09b53e904c9ca0deaa7c9735acc2bd8b">midi_params</a></td></tr>
+<tr class="separator:a09b53e904c9ca0deaa7c9735acc2bd8b inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6f3b40da3690ad62d2e912ce82035c inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html">JackMix::GUI::AbstractSlider</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a7c6f3b40da3690ad62d2e912ce82035c">midi_delegates</a></td></tr>
+<tr class="separator:a7c6f3b40da3690ad62d2e912ce82035c inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fa67edb44fea4f6dfb6509b4d10b7ac inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html">JackMix::GUI::MidiControlChannelAssigner</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a2fa67edb44fea4f6dfb6509b4d10b7ac">_cca</a></td></tr>
+<tr class="separator:a2fa67edb44fea4f6dfb6509b4d10b7ac inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbbe7e41000880872154ed9200919a8a inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#acbbe7e41000880872154ed9200919a8a">_in</a></td></tr>
+<tr class="separator:acbbe7e41000880872154ed9200919a8a inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a257b3615a4f4e711eb665bc4ced5dfe5 inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memItemLeft" align="right" valign="top">QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a257b3615a4f4e711eb665bc4ced5dfe5">_out</a></td></tr>
+<tr class="separator:a257b3615a4f4e711eb665bc4ced5dfe5 inherit pro_attribs_class_jack_mix_1_1_mixing_matrix_1_1_element"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>A MonotoStereo control. </p>
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00047">47</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a5844619981937c6c89d9b6d6e89741e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5844619981937c6c89d9b6d6e89741e8">&#9670;&nbsp;</a></span>Mono2StereoElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mono2StereoElement::Mono2StereoElement </td>
+          <td>(</td>
+          <td class="paramtype">QStringList&#160;</td>
+          <td class="paramname"><em>inchannel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QStringList&#160;</td>
+          <td class="paramname"><em>outchannels</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html">MixingMatrix::Widget</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>n</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d65/stereo__elements_8cpp_source.html">stereo_elements.cpp</a> 第 <a class="el" href="../../d0/d65/stereo__elements_8cpp_source.html#l00074">74</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5844619981937c6c89d9b6d6e89741e8_cgraph.png" border="0" usemap="#ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5844619981937c6c89d9b6d6e89741e8_cgraph" alt=""/></div>
+<map name="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5844619981937c6c89d9b6d6e89741e8_cgraph" id="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5844619981937c6c89d9b6d6e89741e8_cgraph">
+<area shape="rect" title=" " alt="" coords="5,334,171,390"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ace43d45b7606f1edd115853c406a1dc2" title=" " alt="" coords="235,5,381,47"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa896436131c3c0e50048f4a58e9dd1a4" title=" " alt="" coords="747,64,899,105"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5422a9e5c870f7289e44d633956d546f" title=" " alt="" coords="225,122,391,178"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#a81f4fd9c3ec3fa1cfeb9630b636c2282" title="Set the volume of the named node." alt="" coords="219,203,397,244"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a003514960e2cb872c4641dde040cd639" title=" " alt="" coords="232,268,384,309"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a455afad3c029a88da9dd1fcc5b8b967b" title=" " alt="" coords="487,573,639,615"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a248e0cae3678aa4500f60eda39f90a36" title=" " alt="" coords="232,334,384,390"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a62d38b180085b2a1586dff9dca773ee7" title=" " alt="" coords="232,465,384,521"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#abbd3cfaa82a63ad7b247fefac7b92e97" title=" " alt="" coords="232,545,384,601"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#ae2ca2d009062e005c05435a24c15630e" title=" " alt="" coords="232,625,384,681"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a82f268e085f3fdcf34b6a9ec33a94ecc" title=" " alt="" coords="230,705,386,761"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a05285a3f2e3cc7a6b337a98004544f7b" title=" " alt="" coords="967,64,1119,105"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a634d1555deeb856b6779c3c874801ad4" title=" " alt="" coords="480,122,645,178"/>
+<area shape="rect" href="../../d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html#a53a631299876ad218e327c0528c44403" title=" " alt="" coords="493,231,632,272"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6" title=" " alt="" coords="750,129,897,171"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aaea7bf918863db16210d5ded864759f5" title="Set the volume of the named node." alt="" coords="734,195,913,236"/>
+<area shape="rect" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abc8dde461708358bc1fbc8cd2cb4ab64" title=" " alt="" coords="728,260,919,301"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a34f0f9a320e3503be93df6b992887c8d" title=" " alt="" coords="747,627,899,668"/>
+<area shape="rect" href="../../d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#ac1586cb0ac05b67660b28322ba46d968" title=" " alt="" coords="445,341,680,383"/>
+<area shape="rect" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#a11bb2cac34c9a170306749d52676025c" title=" " alt="" coords="475,697,651,739"/>
+<area shape="rect" href="../../df/d79/class_jack_mix_1_1_midi_control_1_1_control_sender.html#ae5dc1b69ad333d3d16a54859658111df" title=" " alt="" coords="728,700,919,741"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a271ded8bb1d31783686c42792e7cf471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a271ded8bb1d31783686c42792e7cf471">&#9670;&nbsp;</a></span>~Mono2StereoElement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mono2StereoElement::~Mono2StereoElement </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d65/stereo__elements_8cpp_source.html">stereo_elements.cpp</a> 第 <a class="el" href="../../d0/d65/stereo__elements_8cpp_source.html#l00131">131</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a5422a9e5c870f7289e44d633956d546f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5422a9e5c870f7289e44d633956d546f">&#9670;&nbsp;</a></span>balance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mono2StereoElement::balance </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d65/stereo__elements_8cpp_source.html">stereo_elements.cpp</a> 第 <a class="el" href="../../d0/d65/stereo__elements_8cpp_source.html#l00134">134</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5422a9e5c870f7289e44d633956d546f_cgraph.png" border="0" usemap="#ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5422a9e5c870f7289e44d633956d546f_cgraph" alt=""/></div>
+<map name="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5422a9e5c870f7289e44d633956d546f_cgraph" id="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5422a9e5c870f7289e44d633956d546f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,130,171,186"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a634d1555deeb856b6779c3c874801ad4" title=" " alt="" coords="219,78,384,134"/>
+<area shape="rect" href="../../d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html#a53a631299876ad218e327c0528c44403" title=" " alt="" coords="232,173,371,215"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa896436131c3c0e50048f4a58e9dd1a4" title=" " alt="" coords="451,5,603,47"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6" title=" " alt="" coords="454,71,601,112"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aaea7bf918863db16210d5ded864759f5" title="Set the volume of the named node." alt="" coords="438,136,617,177"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a05285a3f2e3cc7a6b337a98004544f7b" title=" " alt="" coords="671,5,823,47"/>
+<area shape="rect" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abc8dde461708358bc1fbc8cd2cb4ab64" title=" " alt="" coords="432,201,623,243"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5422a9e5c870f7289e44d633956d546f_icgraph.png" border="0" usemap="#ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5422a9e5c870f7289e44d633956d546f_icgraph" alt=""/></div>
+<map name="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5422a9e5c870f7289e44d633956d546f_icgraph" id="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a5422a9e5c870f7289e44d633956d546f_icgraph">
+<area shape="rect" title=" " alt="" coords="219,45,384,101"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="5,5,171,61"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a14099499871505a15fe58c62a2b5774e" title=" " alt="" coords="5,85,171,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a634d1555deeb856b6779c3c874801ad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a634d1555deeb856b6779c3c874801ad4">&#9670;&nbsp;</a></span>calculateVolumes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mono2StereoElement::calculateVolumes </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d65/stereo__elements_8cpp_source.html">stereo_elements.cpp</a> 第 <a class="el" href="../../d0/d65/stereo__elements_8cpp_source.html#l00149">149</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a634d1555deeb856b6779c3c874801ad4_cgraph.png" border="0" usemap="#ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a634d1555deeb856b6779c3c874801ad4_cgraph" alt=""/></div>
+<map name="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a634d1555deeb856b6779c3c874801ad4_cgraph" id="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a634d1555deeb856b6779c3c874801ad4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,171,119"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa896436131c3c0e50048f4a58e9dd1a4" title=" " alt="" coords="232,5,384,47"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6" title=" " alt="" coords="235,71,381,112"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aaea7bf918863db16210d5ded864759f5" title="Set the volume of the named node." alt="" coords="219,136,397,177"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a05285a3f2e3cc7a6b337a98004544f7b" title=" " alt="" coords="445,5,597,47"/>
+</map>
+</div>
+<div class="dynheader">
+这是这个函数的调用关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a634d1555deeb856b6779c3c874801ad4_icgraph.png" border="0" usemap="#ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a634d1555deeb856b6779c3c874801ad4_icgraph" alt=""/></div>
+<map name="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a634d1555deeb856b6779c3c874801ad4_icgraph" id="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a634d1555deeb856b6779c3c874801ad4_icgraph">
+<area shape="rect" title=" " alt="" coords="432,85,597,141"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5422a9e5c870f7289e44d633956d546f" title=" " alt="" coords="219,45,384,101"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a815dc54216fece3d08a5d3955571b1c0" title=" " alt="" coords="219,125,384,181"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="5,5,171,61"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a14099499871505a15fe58c62a2b5774e" title=" " alt="" coords="5,85,171,141"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abd849e9f805ccb5b31853773545092a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd849e9f805ccb5b31853773545092a9">&#9670;&nbsp;</a></span>inchannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JackMix::MixerElements::Mono2StereoElement::inchannels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a583d7f880bf1663a30d4049a7893ada3">JackMix::MixingMatrix::Element</a>.</p>
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00056">56</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0d8ebf3525b0ae5c872800fe2f5dbd21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d8ebf3525b0ae5c872800fe2f5dbd21">&#9670;&nbsp;</a></span>outchannels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int JackMix::MixerElements::Mono2StereoElement::outchannels </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>实现了 <a class="el" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#acb5a0e739b9dc874b2ede40703038d12">JackMix::MixingMatrix::Element</a>.</p>
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00057">57</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0160ce6ad942c1ba1813743ff24d9e8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0160ce6ad942c1ba1813743ff24d9e8c">&#9670;&nbsp;</a></span>panorama()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::MixerElements::Mono2StereoElement::panorama </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<a id="abe5792b53557ca1e6c8edd1ce1ff3763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe5792b53557ca1e6c8edd1ce1ff3763">&#9670;&nbsp;</a></span>panorama_changed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixerElements::Mono2StereoElement::panorama_changed </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14099499871505a15fe58c62a2b5774e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14099499871505a15fe58c62a2b5774e">&#9670;&nbsp;</a></span>set_panorama</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixerElements::Mono2StereoElement::set_panorama </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00065">65</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a14099499871505a15fe58c62a2b5774e_cgraph.png" border="0" usemap="#ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a14099499871505a15fe58c62a2b5774e_cgraph" alt=""/></div>
+<map name="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a14099499871505a15fe58c62a2b5774e_cgraph" id="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a14099499871505a15fe58c62a2b5774e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,130,171,186"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5422a9e5c870f7289e44d633956d546f" title=" " alt="" coords="219,130,384,186"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a634d1555deeb856b6779c3c874801ad4" title=" " alt="" coords="432,78,597,134"/>
+<area shape="rect" href="../../d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html#a53a631299876ad218e327c0528c44403" title=" " alt="" coords="445,173,584,215"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa896436131c3c0e50048f4a58e9dd1a4" title=" " alt="" coords="665,5,817,47"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6" title=" " alt="" coords="667,71,814,112"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aaea7bf918863db16210d5ded864759f5" title="Set the volume of the named node." alt="" coords="651,136,830,177"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a05285a3f2e3cc7a6b337a98004544f7b" title=" " alt="" coords="884,5,1036,47"/>
+<area shape="rect" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abc8dde461708358bc1fbc8cd2cb4ab64" title=" " alt="" coords="645,201,836,243"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1866173c59f11183a7ada646526be802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1866173c59f11183a7ada646526be802">&#9670;&nbsp;</a></span>volume() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::MixerElements::Mono2StereoElement::volume </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00059">59</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a815dc54216fece3d08a5d3955571b1c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a815dc54216fece3d08a5d3955571b1c0">&#9670;&nbsp;</a></span>volume <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Mono2StereoElement::volume </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d0/d65/stereo__elements_8cpp_source.html">stereo_elements.cpp</a> 第 <a class="el" href="../../d0/d65/stereo__elements_8cpp_source.html#l00141">141</a> 行定义.</p>
+<div class="dynheader">
+函数调用图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a815dc54216fece3d08a5d3955571b1c0_cgraph.png" border="0" usemap="#ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a815dc54216fece3d08a5d3955571b1c0_cgraph" alt=""/></div>
+<map name="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a815dc54216fece3d08a5d3955571b1c0_cgraph" id="ad8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element_a815dc54216fece3d08a5d3955571b1c0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,130,171,186"/>
+<area shape="rect" href="../../d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a634d1555deeb856b6779c3c874801ad4" title=" " alt="" coords="219,78,384,134"/>
+<area shape="rect" href="../../d3/d47/class_jack_mix_1_1_g_u_i_1_1_slider.html#a9ed5edd784d112578f8677110371d96f" title=" " alt="" coords="231,173,372,215"/>
+<area shape="rect" href="../../d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#aa896436131c3c0e50048f4a58e9dd1a4" title=" " alt="" coords="451,5,603,47"/>
+<area shape="rect" href="../../db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ab09e5523dba91f6046e43799e35067f6" title=" " alt="" coords="454,71,601,112"/>
+<area shape="rect" href="../../de/dc4/class_jack_mix_1_1_backend_interface.html#aaea7bf918863db16210d5ded864759f5" title="Set the volume of the named node." alt="" coords="438,136,617,177"/>
+<area shape="rect" href="../../d9/d0d/class_jack_mix_1_1_mixing_matrix_1_1_widget.html#a05285a3f2e3cc7a6b337a98004544f7b" title=" " alt="" coords="671,5,823,47"/>
+<area shape="rect" href="../../d9/dfa/class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html#abc8dde461708358bc1fbc8cd2cb4ab64" title=" " alt="" coords="432,201,623,243"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2d3a96c8fceb3b1dacc16624286f8de6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d3a96c8fceb3b1dacc16624286f8de6">&#9670;&nbsp;</a></span>volume_changed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void JackMix::MixerElements::Mono2StereoElement::volume_changed </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a39463d0ffc99ed8698cf8022710ae25d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39463d0ffc99ed8698cf8022710ae25d">&#9670;&nbsp;</a></span>_balance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/d7d/class_jack_mix_1_1_g_u_i_1_1_knob.html">JackMix::GUI::Knob</a>* JackMix::MixerElements::Mono2StereoElement::_balance</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00072">72</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a8745098f9007f2448cf94815f17f325d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8745098f9007f2448cf94815f17f325d">&#9670;&nbsp;</a></span>_balance_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::MixerElements::Mono2StereoElement::_balance_value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af1a020db515c4ab28e15be8eb3ac464b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1a020db515c4ab28e15be8eb3ac464b">&#9670;&nbsp;</a></span>_inchannel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString JackMix::MixerElements::Mono2StereoElement::_inchannel</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a59a9a491a71072d8b98e4d0b8ceee64a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59a9a491a71072d8b98e4d0b8ceee64a">&#9670;&nbsp;</a></span>_outchannel1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString JackMix::MixerElements::Mono2StereoElement::_outchannel1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a62747b896371013ce68211f323fdc8f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62747b896371013ce68211f323fdc8f9">&#9670;&nbsp;</a></span>_outchannel2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString JackMix::MixerElements::Mono2StereoElement::_outchannel2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00071">71</a> 行定义.</p>
+
+</div>
+</div>
+<a id="af7c710878a1176e8231090f898553e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7c710878a1176e8231090f898553e6b">&#9670;&nbsp;</a></span>_volume</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d47/class_jack_mix_1_1_g_u_i_1_1_slider.html">JackMix::GUI::Slider</a>* JackMix::MixerElements::Mono2StereoElement::_volume</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00073">73</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ab71dd29313728951a094ff34a21594ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab71dd29313728951a094ff34a21594ff">&#9670;&nbsp;</a></span>_volume_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::MixerElements::Mono2StereoElement::_volume_value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">属性说明</h2>
+<a id="a93dad682ea2cbc6b366ce60cb5f6ab66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93dad682ea2cbc6b366ce60cb5f6ab66">&#9670;&nbsp;</a></span>panorama</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::MixerElements::Mono2StereoElement::panorama</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00104">104</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a7f1fe1a2af229aea024e9f24f1ea4431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f1fe1a2af229aea024e9f24f1ea4431">&#9670;&nbsp;</a></span>volume</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double JackMix::MixerElements::Mono2StereoElement::volume</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a> 第 <a class="el" href="../../de/df4/stereo__elements_8h_source.html#l00104">104</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li><a class="el" href="../../de/df4/stereo__elements_8h_source.html">stereo_elements.h</a></li>
+<li><a class="el" href="../../d0/d65/stereo__elements_8cpp_source.html">stereo_elements.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

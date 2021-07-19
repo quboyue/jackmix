@@ -1,0 +1,12 @@
+digraph "JackMix::MixingMatrix::Element::slot_simple_explode"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="JackMix::MixingMatrix\l::Element::slot_simple\l_explode",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="JackMix::MixerElements\l::Mono2StereoElement::\lMono2StereoElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="JackMix::MixerElements\l::Stereo2StereoElement\l::Stereo2StereoElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed",tooltip=" "];
+}

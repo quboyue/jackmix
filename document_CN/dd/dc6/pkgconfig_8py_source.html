@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jackmix: pkgconfig.py 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jackmix
+   &#160;<span id="projectnumber">v1.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_7c0bbce4cd396a4571ea5c6cec9a50e0.html">jackmix</a></li><li class="navelem"><a class="el" href="../../dir_48ba0c1f12a4e40f4ab307cdcfd3bbb9.html">admin</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">pkgconfig.py</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dd/dc6/pkgconfig_8py.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="../../de/df8/namespacepkgconfig.html">    1</a></span>&#160;<span class="comment">#!/usr/bin/python</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"># Copyright (C) 2007-2008 Arnold Krille</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"># This program is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"># it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"># the Free Software Foundation, either version 2 of the License.</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"># This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"># but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"># MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"># GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"># You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"># along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"># Taken from http://www.scons.org/wiki/UsingPkgConfig</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"># and heavily modified</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"># Checks for pkg-config</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../de/df8/namespacepkgconfig.html#adebdc27e942236e1a1546c6e5b6e4ee1">   26</a></span>&#160;<span class="keyword">def </span><a class="code" href="../../de/df8/namespacepkgconfig.html#adebdc27e942236e1a1546c6e5b6e4ee1">CheckForPKGConfig</a>( context, version=&#39;0.0.0&#39; ):</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        context.Message( <span class="stringliteral">&quot;Checking for pkg-config (at least version %s)... &quot;</span> % version )</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        ret = context.TryAction( <span class="stringliteral">&quot;pkg-config --atleast-pkgconfig-version=%s&quot;</span> %version )[0]</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        context.Result( ret )</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> ret</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"># Checks for the existance of the package and returns the packages flags.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"># This should allow caching of the flags so that pkg-config is called only once.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">#</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../de/df8/namespacepkgconfig.html#a3dc96a889bf85922eb88f1f8430fdd70">   37</a></span>&#160;<span class="keyword">def </span><a class="code" href="../../de/df8/namespacepkgconfig.html#a3dc96a889bf85922eb88f1f8430fdd70">GetPKGFlags</a>( context, name, version=&quot;&quot; ):</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">from</span> subprocess <span class="keyword">import</span> Popen, PIPE</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> version == <span class="stringliteral">&quot;&quot;</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                context.Message( <span class="stringliteral">&quot;Checking for %s... \t&quot;</span> % name )</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                ret = context.TryAction( <span class="stringliteral">&quot;pkg-config --exists &#39;%s&#39;&quot;</span> % name )[0]</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">else</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                context.Message( <span class="stringliteral">&quot;Checking for %s (%s or higher)... \t&quot;</span> % (name,version) )</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                ret = context.TryAction( <span class="stringliteral">&quot;pkg-config --atleast-version=%s &#39;%s&#39;&quot;</span> % (version,name) )[0]</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> <span class="keywordflow">not</span> ret:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                context.Result( ret )</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">return</span> ret</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        p = Popen(<span class="stringliteral">&quot;pkg-config --cflags --libs %s&quot;</span> % name,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                  shell=<span class="keyword">True</span>, stdin=PIPE, stdout=PIPE, close_fds=<span class="keyword">True</span>)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        out = p.stdout</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        ret = out.read()</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        context.Result( <span class="keyword">True</span> )</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> ret</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../de/df8/namespacepkgconfig.html#a9a276ab6ad4f080120be530492c494f9">   59</a></span>&#160;<span class="keyword">def </span><a class="code" href="../../de/df8/namespacepkgconfig.html#a9a276ab6ad4f080120be530492c494f9">generate</a>( env, **kw ):</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        env[<span class="stringliteral">&#39;PKGCONFIG_TESTS&#39;</span> ] = { <span class="stringliteral">&#39;CheckForPKGConfig&#39;</span> : CheckForPKGConfig, <span class="stringliteral">&#39;GetPKGFlags&#39;</span> : GetPKGFlags }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../de/df8/namespacepkgconfig.html#a20ee188187a60db71aa6b6b7a514645e">   62</a></span>&#160;<span class="keyword">def </span><a class="code" href="../../de/df8/namespacepkgconfig.html#a20ee188187a60db71aa6b6b7a514645e">exists</a>( env ):</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> 1</div>
+<div class="ttc" id="anamespacepkgconfig_html_a20ee188187a60db71aa6b6b7a514645e"><div class="ttname"><a href="../../de/df8/namespacepkgconfig.html#a20ee188187a60db71aa6b6b7a514645e">pkgconfig.exists</a></div><div class="ttdeci">def exists(env)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dc6/pkgconfig_8py_source.html#l00062">pkgconfig.py:62</a></div></div>
+<div class="ttc" id="anamespacepkgconfig_html_a3dc96a889bf85922eb88f1f8430fdd70"><div class="ttname"><a href="../../de/df8/namespacepkgconfig.html#a3dc96a889bf85922eb88f1f8430fdd70">pkgconfig.GetPKGFlags</a></div><div class="ttdeci">def GetPKGFlags(context, name, version=&quot;&quot;)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dc6/pkgconfig_8py_source.html#l00037">pkgconfig.py:37</a></div></div>
+<div class="ttc" id="anamespacepkgconfig_html_a9a276ab6ad4f080120be530492c494f9"><div class="ttname"><a href="../../de/df8/namespacepkgconfig.html#a9a276ab6ad4f080120be530492c494f9">pkgconfig.generate</a></div><div class="ttdeci">def generate(env, **kw)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dc6/pkgconfig_8py_source.html#l00059">pkgconfig.py:59</a></div></div>
+<div class="ttc" id="anamespacepkgconfig_html_adebdc27e942236e1a1546c6e5b6e4ee1"><div class="ttname"><a href="../../de/df8/namespacepkgconfig.html#adebdc27e942236e1a1546c6e5b6e4ee1">pkgconfig.CheckForPKGConfig</a></div><div class="ttdeci">def CheckForPKGConfig(context, version='0.0.0')</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dc6/pkgconfig_8py_source.html#l00026">pkgconfig.py:26</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

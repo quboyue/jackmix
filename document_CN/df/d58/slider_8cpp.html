@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Jackmix: slider.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Jackmix
+   &#160;<span id="projectnumber">v1.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.9.1 -->
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',false,false,'search.php','搜索');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_7c0bbce4cd396a4571ea5c6cec9a50e0.html">jackmix</a></li><li class="navelem"><a class="el" href="../../dir_ce52b5846c29bdd7bdc71d544c3994c8.html">libgui</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a>  </div>
+  <div class="headertitle">
+<div class="title">slider.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="../../dd/de2/slider_8h_source.html">slider.h</a>&quot;</code><br />
+<code>#include &quot;slider.moc&quot;</code><br />
+<code>#include &lt;QtGui/QPainter&gt;</code><br />
+<code>#include &lt;QtWidgets/QStyleOption&gt;</code><br />
+<code>#include &lt;QtWidgets/QStyle&gt;</code><br />
+<code>#include &lt;QtGui/QMouseEvent&gt;</code><br />
+<code>#include &lt;QtCore/QDebug&gt;</code><br />
+<code>#include &lt;QtCore/QTimer&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+slider.cpp 的引用(Include)关系图:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../da/d9f/slider_8cpp__incl.png" border="0" usemap="#aslider_8cpp" alt=""/></div>
+<map name="aslider_8cpp" id="aslider_8cpp">
+<area shape="rect" title=" " alt="" coords="655,5,734,32"/>
+<area shape="rect" href="../../dd/de2/slider_8h.html" title=" " alt="" coords="196,80,260,107"/>
+<area shape="rect" title=" " alt="" coords="284,80,367,107"/>
+<area shape="rect" title=" " alt="" coords="391,80,502,107"/>
+<area shape="rect" title=" " alt="" coords="526,80,693,107"/>
+<area shape="rect" title=" " alt="" coords="717,80,845,107"/>
+<area shape="rect" title=" " alt="" coords="869,80,1011,107"/>
+<area shape="rect" title=" " alt="" coords="1035,80,1149,107"/>
+<area shape="rect" title=" " alt="" coords="1173,80,1283,107"/>
+<area shape="rect" href="../../da/d54/abstractslider_8h.html" title=" " alt="" coords="173,155,283,181"/>
+<area shape="rect" title=" " alt="" coords="5,229,144,256"/>
+<area shape="rect" title=" " alt="" coords="169,229,287,256"/>
+<area shape="rect" href="../../dc/dad/dbvolcalc_8h.html" title=" " alt="" coords="311,229,398,256"/>
+<area shape="rect" title=" " alt="" coords="323,304,386,331"/>
+</map>
+</div>
+</div>
+<p><a href="../../df/d58/slider_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ab1ed09c0de5eafb0ef77795614b8177b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d58/slider_8cpp.html#ab1ed09c0de5eafb0ef77795614b8177b">SLIDER_BORDER</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:ab1ed09c0de5eafb0ef77795614b8177b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ab1ed09c0de5eafb0ef77795614b8177b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1ed09c0de5eafb0ef77795614b8177b">&#9670;&nbsp;</a></span>SLIDER_BORDER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SLIDER_BORDER&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d58/slider_8cpp_source.html">slider.cpp</a> 第 <a class="el" href="../../df/d58/slider_8cpp_source.html#l00069">69</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+制作者&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
