@@ -99,7 +99,7 @@ void Slider::paintEvent( QPaintEvent* ) {
 	//double pos = dbtondb( _value )*w-w/2;
 	QRectF bar( -w/2, -h/4, w, h/2 );
 
-	// Tickmarks
+	//Tickmarks;
 	p.save();
 	p.setPen( palette().color( QPalette::ButtonText ) );
 	QFont small = font();
