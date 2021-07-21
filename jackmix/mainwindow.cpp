@@ -533,6 +533,7 @@ void MainWindow::addInput() {
 		addInput( tmp );
 }
 void MainWindow::addInput( QString name ) {
+	qDebug() << "MainWindow   addInput ";
 	if ( !_backend->inchannels().contains(name) &&
 	     !_backend->outchannels().contains(name) &&
 	     _backend->addInput( name ) ) {
