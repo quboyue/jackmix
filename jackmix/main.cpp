@@ -30,6 +30,8 @@ int main( int argc, char** argv ) {
 	qDebug() << "Main()";
 	QApplication *qapp = new QApplication( argc, argv );
         qRegisterMetaType<JackMix::BackendInterface::levels_t>("JackMix::BackendInterface::levels_t");
+
+	qDebug() << "----------------------- ";
 	QStringList args = qapp->arguments();
 	QString file;
 	for( int i=1; i<args.size(); ++i ) {
@@ -38,6 +40,8 @@ int main( int argc, char** argv ) {
 			file = args[ i ];
 	}
 
+
+	qDebug() << "MainWindow * mw; ";
 	JackMix::MainWindow *mw;
 	if ( !file.isEmpty() )
 		mw = new JackMix::MainWindow( file );
