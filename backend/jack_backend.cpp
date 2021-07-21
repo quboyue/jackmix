@@ -80,7 +80,7 @@ bool JackBackend::addOutput( QString name ) {
 }
 bool JackBackend::addInput( QString name ) {
 	if ( client ) {
-		qDebug() << "JackBackend::addInput(" << name << ")";
+		
 		
 		/* Register the input port (see above) */
 		involumes[name];
@@ -88,6 +88,7 @@ bool JackBackend::addInput( QString name ) {
 		in_ports.insert( name, jack_port_register ( client, name.toStdString().c_str(), JACK_DEFAULT_AUDIO_TYPE, JackPortIsInput, 0 ) );
 		in_ports_list << name;
 		
+		qDebug() << "JackBackend::addInput(" << name << ")";
 		return true;
 	}
 	return false;
