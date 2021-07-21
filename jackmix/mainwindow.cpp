@@ -690,12 +690,14 @@ void MainWindow::removeOutput( QString n ) {
 }
 
 void MainWindow::allAutoFill() {
+	qDebug("Mainwindow    ------allAutoFill")
 	_mixerwidget->autoFill();
 	_outputswidget->autoFill();
 	_inputswidget->autoFill();
 	_autofillscheduled = false;
 }
 void MainWindow::scheduleAutoFill() {
+	qDebug("Mainwindow    scheduleAutoFill")
 	if ( !_autofillscheduled ) {
 		QTimer::singleShot( 1, this, SLOT( allAutoFill() ) );
 		_autofillscheduled = true;
