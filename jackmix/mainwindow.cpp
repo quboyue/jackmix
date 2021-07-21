@@ -220,7 +220,7 @@ void MainWindow::init() {
 //	_debugPrint = new QAction( "DebugPrint", CTRL+Key_P, this );
 //	connect( _debugPrint, SIGNAL( activated() ), _mixerwidget, SLOT( debugPrint() ) );
 //	_debugPrint->addTo( _filemenu );
-	qdebug<<"_select_action->toggle();   "<< _select_action->toggle();
+	qdebug()<<"_select_action->toggle();   "<< _select_action->toggle();
 	//_select_action->toggle();
 	toggleselectmode();
 /*
