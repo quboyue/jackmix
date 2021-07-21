@@ -242,6 +242,8 @@ void MainWindow::init() {
 	connect (_backend, SIGNAL(cc_message(int, int)),
 		 midiControlSender, SLOT(despatch_message(int, int)));
 
+	qDebug() << "END FOR INITAL!!! ";
+	
 }
 
 MainWindow::~MainWindow() {
