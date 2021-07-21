@@ -697,8 +697,9 @@ void MainWindow::allAutoFill() {
 	_autofillscheduled = false;
 }
 void MainWindow::scheduleAutoFill() {
-	qDebug()<<"Mainwindow    scheduleAutoFill";
+	
 	if ( !_autofillscheduled ) {
+		qDebug() << "Mainwindow    scheduleAutoFill";
 		QTimer::singleShot( 1, this, SLOT( allAutoFill() ) );
 		_autofillscheduled = true;
 	}
