@@ -1,8 +1,0 @@
-<map id="JackMix::GUI::MidiControlChannelAssigner::updateParameters" name="JackMix::GUI::MidiControlChannelAssigner::updateParameters">
-<area shape="rect" id="node1" title=" " alt="" coords="521,53,756,94"/>
-<area shape="rect" id="node2" href="$d3/d9d/class_jack_mix_1_1_g_u_i_1_1_midi_control_channel_assigner.html#af7780f9b6639ffae30ab68f5fd049c58" title=" " alt="" coords="233,5,473,61"/>
-<area shape="rect" id="node3" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html#a248e0cae3678aa4500f60eda39f90a36" title=" " alt="" coords="277,85,429,141"/>
-<area shape="rect" id="node4" href="$df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html#ac51dd9e5fba904d42dbcce48a41b48fc" title=" " alt="" coords="5,19,185,61"/>
-<area shape="rect" id="node5" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="13,85,178,141"/>
-<area shape="rect" id="node6" href="$de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html#a025804fa9eccfdf9be1b2933c621aeed" title=" " alt="" coords="13,165,178,221"/>
-</map>

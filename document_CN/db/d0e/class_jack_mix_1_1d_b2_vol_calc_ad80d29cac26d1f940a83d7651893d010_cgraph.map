@@ -1,5 +1,0 @@
-<map id="JackMix::dB2VolCalc::amptondb" name="JackMix::dB2VolCalc::amptondb">
-<area shape="rect" id="node1" title="With ndb = normalized dB (between 0 and 1)" alt="" coords="5,39,152,80"/>
-<area shape="rect" id="node2" href="$db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ace43d45b7606f1edd115853c406a1dc2" title=" " alt="" coords="200,5,347,47"/>
-<area shape="rect" id="node3" href="$db/d0e/class_jack_mix_1_1d_b2_vol_calc.html#ac7b464a40f3460592eedcf3fa62f97d6" title="Normalizes a dezibel value." alt="" coords="200,71,347,112"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="JackMix::MidiControl::ControlReceiver" name="JackMix::MidiControl::ControlReceiver">
-<area shape="rect" id="node1" title=" " alt="" coords="111,5,254,127"/>
-<area shape="rect" id="node2" href="$d5/dfc/class_controlled_slider.html" title=" " alt="" coords="12,439,153,545"/>
-<area shape="rect" id="node3" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html" title=" " alt="" coords="177,175,388,809"/>
-<area shape="rect" id="node4" href="$df/dbc/class_jack_mix_1_1_mixer_elements_1_1_aux_element.html" title=" " alt="" coords="5,945,171,1111"/>
-<area shape="rect" id="node5" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html" title=" " alt="" coords="195,857,370,1199"/>
-<area shape="rect" id="node6" href="$de/d2c/class_jack_mix_1_1_mixer_elements_1_1_stereo2_stereo_element.html" title=" " alt="" coords="395,857,576,1199"/>
-</map>

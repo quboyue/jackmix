@@ -1,7 +1,0 @@
-<map id="JackMix::MixerElements::Mono2StereoElement::calculateVolumes" name="JackMix::MixerElements::Mono2StereoElement::calculateVolumes">
-<area shape="rect" id="node1" title=" " alt="" coords="432,85,597,141"/>
-<area shape="rect" id="node2" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5422a9e5c870f7289e44d633956d546f" title=" " alt="" coords="219,45,384,101"/>
-<area shape="rect" id="node5" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a815dc54216fece3d08a5d3955571b1c0" title=" " alt="" coords="219,125,384,181"/>
-<area shape="rect" id="node3" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a5844619981937c6c89d9b6d6e89741e8" title=" " alt="" coords="5,5,171,61"/>
-<area shape="rect" id="node4" href="$d8/d64/class_jack_mix_1_1_mixer_elements_1_1_mono2_stereo_element.html#a14099499871505a15fe58c62a2b5774e" title=" " alt="" coords="5,85,171,141"/>
-</map>

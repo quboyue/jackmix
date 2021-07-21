@@ -1,5 +1,0 @@
-<map id="JackMix::JackBackend::setVolume" name="JackMix::JackBackend::setVolume">
-<area shape="rect" id="node1" title="sets the volume of channel,output" alt="" coords="5,39,161,80"/>
-<area shape="rect" id="node2" href="$d6/d69/class_jack_mix_1_1_jack_backend.html#abb00eb3357f771e6726a36782608f855" title=" " alt="" coords="209,5,365,47"/>
-<area shape="rect" id="node3" href="$d6/d69/class_jack_mix_1_1_jack_backend.html#a5aea46ee19aca99d3f6435c1fc76d06b" title=" " alt="" coords="209,71,365,112"/>
-</map>

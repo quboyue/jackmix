@@ -1,8 +1,0 @@
-<map id="ControlledSlider" name="ControlledSlider">
-<area shape="rect" id="node1" title=" " alt="" coords="121,895,262,1001"/>
-<area shape="rect" id="node2" href="$class_jack_mix_1_1_g_u_i_1_1_slider.html" title=" " alt="" coords="38,667,179,847"/>
-<area shape="rect" id="node3" href="$class_jack_mix_1_1_g_u_i_1_1_abstract_slider.html" title=" " alt="" coords="13,263,204,619"/>
-<area shape="rect" id="node4" title=" " alt="" coords="5,71,79,149"/>
-<area shape="rect" id="node5" href="$class_jack_mix_1_1d_b2_vol_calc.html" title=" " alt="" coords="103,5,250,215"/>
-<area shape="rect" id="node6" href="$class_jack_mix_1_1_midi_control_1_1_control_receiver.html" title=" " alt="" coords="204,696,347,817"/>
-</map>

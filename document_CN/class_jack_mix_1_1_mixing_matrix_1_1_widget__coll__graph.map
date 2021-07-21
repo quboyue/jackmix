@@ -1,8 +1,0 @@
-<map id="JackMix::MixingMatrix::Widget" name="JackMix::MixingMatrix::Widget">
-<area shape="rect" id="node1" title=" " alt="" coords="42,667,225,1096"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,387,75,465"/>
-<area shape="rect" id="node3" title=" " alt="" coords="99,387,167,465"/>
-<area shape="rect" id="node4" href="$class_jack_mix_1_1_backend_interface.html" title="Abstract interface for backends." alt="" coords="192,248,371,604"/>
-<area shape="rect" id="node5" title=" " alt="" coords="178,57,249,134"/>
-<area shape="rect" id="node6" href="$class_jack_mix_1_1_gui_server___interface.html" title="Abstract interface for a GUI server." alt="" coords="273,5,425,185"/>
-</map>

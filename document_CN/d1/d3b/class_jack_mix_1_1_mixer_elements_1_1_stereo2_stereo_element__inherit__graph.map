@@ -1,7 +1,0 @@
-<map id="JackMix::MixerElements::Stereo2StereoElement" name="JackMix::MixerElements::Stereo2StereoElement">
-<area shape="rect" id="node1" title=" " alt="" coords="121,857,303,1199"/>
-<area shape="rect" id="node2" href="$d9/daa/class_jack_mix_1_1_mixing_matrix_1_1_element.html" title=" " alt="" coords="5,175,216,809"/>
-<area shape="rect" id="node3" title=" " alt="" coords="11,27,80,105"/>
-<area shape="rect" id="node4" href="$db/da4/class_jack_mix_1_1_midi_control_1_1_control_receiver.html" title=" " alt="" coords="105,5,247,127"/>
-<area shape="rect" id="node5" href="$db/d0e/class_jack_mix_1_1d_b2_vol_calc.html" title=" " alt="" coords="240,387,387,597"/>
-</map>

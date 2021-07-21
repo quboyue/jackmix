@@ -1,6 +1,0 @@
-<map id="JackMix::MidiControl::ControlSender::unsubscribe" name="JackMix::MidiControl::ControlSender::unsubscribe">
-<area shape="rect" id="node1" title=" " alt="" coords="677,35,868,76"/>
-<area shape="rect" id="node2" href="$class_jack_mix_1_1_midi_control_1_1_control_sender.html#a11bb2cac34c9a170306749d52676025c" title=" " alt="" coords="453,5,629,47"/>
-<area shape="rect" id="node3" href="$class_jack_mix_1_1_mixing_matrix_1_1_element.html#a82f268e085f3fdcf34b6a9ec33a94ecc" title=" " alt="" coords="249,27,405,83"/>
-<area shape="rect" id="node4" href="$class_jack_mix_1_1_main_window.html#a1fdd236b2dbd0a6924ce874396c60dfc" title=" " alt="" coords="5,35,201,76"/>
-</map>
