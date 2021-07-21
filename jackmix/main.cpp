@@ -27,7 +27,7 @@
 
 int main( int argc, char** argv ) {
 	qDebug() << "JackMix starting";
-
+	qDebug() << "Main()";
 	QApplication *qapp = new QApplication( argc, argv );
         qRegisterMetaType<JackMix::BackendInterface::levels_t>("JackMix::BackendInterface::levels_t");
 	QStringList args = qapp->arguments();

@@ -66,6 +66,8 @@ Widget::Widget( QStringList ins, QStringList outs, JackMix::BackendInterface* ba
 		_direction = Horizontal;
 		_outchannels = _inchannels;
 	}
+
+	//setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 	setSizePolicy( QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding );
 }
 Widget::~Widget() {

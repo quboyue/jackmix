@@ -111,17 +111,31 @@ MainWindow::MainWindow( QString filename, QWidget* p ) : QMainWindow( p ), _back
 	qDebug() << "MainWindow::MainWindow() finished...";
 }
 
-void MainWindow::init() {
 
-	JackMix::MixerElements::init_aux_elements();
+
+
+
+void MainWindow::init() {
+	qDebug() << "init()";
+
+
+
+	qDebug() << "init_aux_element";
+	JackMix::MixerElements::init_aux_elements();	
+	qDebug() << "init_stereo_elements";
 	JackMix::MixerElements::init_stereo_elements();
 
+
+
+	qDebug() << "Add _filemenu";
 	_filemenu = menuBar()->addMenu( "&File" );
 	_filemenu->addAction( "Open File...", this, SLOT( openFile() ), Qt::CTRL+Qt::Key_O );
 	_filemenu->addAction( "Save File...", this, SLOT( saveFile() ), Qt::CTRL+Qt::Key_S );
 	_filemenu->addSeparator();
 	_filemenu->addAction( "&Quit", this, SLOT( close() ), Qt::CTRL+Qt::Key_Q );
 
+
+	qDebug() << "Add _editmenu";
 	_editmenu = menuBar()->addMenu( "&Edit" );
 	_select_action = new QAction( "Select Mode", this );
 	_select_action->setCheckable( true );
@@ -149,6 +163,8 @@ void MainWindow::init() {
 	connect( _remove_outchannel_action, SIGNAL( triggered() ), this, SLOT( removeOutput() ) );
 	_editmenu->addAction( _remove_outchannel_action );
 
+
+	qDebug() << "Add _viewmenu";
 	_viewmenu = menuBar()->addMenu( "&View" );
 	_togglein_action = new QAction( "Hide &inputcontrols", this );
 	connect( _togglein_action, SIGNAL( triggered() ), this, SLOT( togglein() ) );
@@ -157,6 +173,8 @@ void MainWindow::init() {
 	connect( _toggleout_action, SIGNAL( triggered() ), this, SLOT( toggleout() ) );
 	_viewmenu->addAction( _toggleout_action );
 
+
+	qDebug() << "Add _helpmenu";
 	_helpmenu = menuBar()->addMenu( "&Help" );
 	_helpmenu->addAction( "About &JackMix", this, SLOT( about() ) );
 	_helpmenu->addAction( "About &Qt", this, SLOT( aboutQt() ) );
@@ -164,13 +182,17 @@ void MainWindow::init() {
 	_mw = new MainWindowHelperWidget( this );
 	setCentralWidget( _mw );
 
+
+	qDebug() << "Set Widget Layout";
 	_mixerwidget = new MixingMatrix::Widget( QStringList() << "i1", QStringList() << "o1", _backend, _mw );
 	_mixerwidget->removeinchannel( "i1" );
 	_mixerwidget->removeoutchannel( "o1" );
 	_mw->layout->addWidget( _mixerwidget, 1,0 );
+
 	_inputswidget = new MixingMatrix::Widget( QStringList() << "i1", QStringList(), _backend, _mw );
 	_inputswidget->removeinchannel( "i1" );
 	_mw->layout->addWidget( _inputswidget, 0,0 );
+
 	_outputswidget = new MixingMatrix::Widget( QStringList(), QStringList() << "o1", _backend, _mw );
 	_outputswidget->removeoutchannel( "o1" );
 	_mw->layout->addWidget( _outputswidget, 1,1 );
@@ -179,6 +201,9 @@ void MainWindow::init() {
 	// their Midi parameters. This can't happen before layout's complete because
 	// elements may change (e.g. several auxes be replaced by a stereo element
 	// on loading a layout file)
+
+
+	qDebug() << "Set Singals and slot for MIDI parameters";
 	connect (_mixerwidget, SIGNAL(autoFillComplete(MixingMatrix::Widget *)),
 		 this, SLOT(updateAutoFilledMidiParams(MixingMatrix::Widget *)) );
 	connect (_inputswidget, SIGNAL(autoFillComplete(MixingMatrix::Widget *)),
@@ -186,6 +211,7 @@ void MainWindow::init() {
 	connect (_outputswidget, SIGNAL(autoFillComplete(MixingMatrix::Widget *)),
 		 this, SLOT(updateAutoFilledMidiParams(MixingMatrix::Widget *)) );
 
+	qDebug() << "Set row and column layout";
 	_mw->layout->setRowStretch( 0, 1 );
 	_mw->layout->setRowStretch( 1, int( 1E2 ) );
 	_mw->layout->setColumnStretch( 1, 1 );
@@ -194,8 +220,8 @@ void MainWindow::init() {
 //	_debugPrint = new QAction( "DebugPrint", CTRL+Key_P, this );
 //	connect( _debugPrint, SIGNAL( activated() ), _mixerwidget, SLOT( debugPrint() ) );
 //	_debugPrint->addTo( _filemenu );
-
-	_select_action->toggle();
+	qdebug<<"_select_action->toggle();   "<< _select_action->toggle();
+	//_select_action->toggle();
 	toggleselectmode();
 /*
 	_lashclient = new qLash::qLashClient( "JackMix", 0,0, this );
@@ -687,6 +713,7 @@ void MainWindow::restoreLash( QString dir ) {
 
 
 MainWindowHelperWidget::MainWindowHelperWidget( QWidget* p ) : QWidget( p ) {
+	qDebug()<<"MainWindowHelperWidget   set QGridlayout"
 	layout = new QGridLayout( this );
 	layout->setMargin( 2 );
 	layout->setSpacing( 2 );
