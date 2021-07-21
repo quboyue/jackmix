@@ -220,7 +220,8 @@ void MainWindow::init() {
 //	_debugPrint = new QAction( "DebugPrint", CTRL+Key_P, this );
 //	connect( _debugPrint, SIGNAL( activated() ), _mixerwidget, SLOT( debugPrint() ) );
 //	_debugPrint->addTo( _filemenu );
-	qDebug() << "_select_action->toggle();  " << _select_action->toggle();
+	qDebug() << "_select_action->toggle();  ";
+	_select_action->toggle();
 	//_select_action->toggle();
 	toggleselectmode();
 /*
@@ -713,7 +714,7 @@ void MainWindow::restoreLash( QString dir ) {
 
 
 MainWindowHelperWidget::MainWindowHelperWidget( QWidget* p ) : QWidget( p ) {
-	qDebug() << "MainWindowHelperWidget   set QGridlayout";
+	qDebug() << "MainWindowHelperWidget set QGridlayout";
 	layout = new QGridLayout( this );
 	layout->setMargin( 2 );
 	layout->setSpacing( 2 );
