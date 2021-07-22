@@ -97,11 +97,11 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 
 
 	//delete me!!!!
-	qDebug()<<" JackMix::GUI::Knob<<     	_layout->addWidget(_poti2, 100);----------------------------------"
+	qDebug() << " JackMix::GUI::Knob<<     	_layout->addWidget(_poti2, 100);----------------------------------";
 	_poti2 = new JackMix::GUI::Knob(
 		amptodb(backend()->getVolume(_in[0], _out[0])),
 		-55, 100, 2, 3, this);
-	_layout->addWidget(_poti2, 100);
+	_layout->addWidget(_poti2, 0);
 	//delete me!!!!
 
 	connect( _poti, SIGNAL( valueChanged( double ) ), this, SLOT( emitvalue( double ) ) );
