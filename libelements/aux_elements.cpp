@@ -95,6 +95,11 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 		dbmin, dbmax, 2, 3, this );
 	_layout->addWidget( _poti, 100 );
 
+	qDebug() << "_layout->addWidget( _poti, 100 );";//delete me!!!
+	_layout->addWidget(_poti, 100);
+
+
+
 	connect( _poti, SIGNAL( valueChanged( double ) ), this, SLOT( emitvalue( double ) ) );
 	connect( _poti, SIGNAL( select() ), this, SLOT( slot_simple_select() ) );
 	connect( _poti, SIGNAL( replace() ), this, SLOT( slot_simple_replace() ) );
