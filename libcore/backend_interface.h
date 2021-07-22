@@ -251,8 +251,8 @@ Q_OBJECT
 			SampT max {0};
 
 			if ( fs.p != nullptr && !qFuzzyCompare(fs.target, fs.current)) {
-// 				qDebug() << "In/Out fader. Target " << fs.target
-// 				         << ": " << fs.num_steps << " steps, now " << fs.cur_step ;
+ 				qDebug() << "In/Out fader. Target " << fs.target
+ 				         << ": " << fs.num_steps << " steps, now " << fs.cur_step ;
 					 
 				for (size_t n {0}; n < nframes; n++) {
 					buf[n] *= fs.current + fs.cur_step*(fs.target - fs.current)/fs.num_steps;
