@@ -288,7 +288,8 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 	
 	QMap<QString,jack_default_audio_sample_t*> ins;
 	JackMix::ports_it it;
-	for ( it = backend->in_ports.begin(); it!=backend->in_ports.end(); ++it )
+	for (it = backend->in_ports.begin(); it != backend->in_ports.end(); ++it)
+		qDebug() << "  jack_default_audio_sample_t   " << jack_default_audio_sample_t;
 		ins.insert( it.key(), (jack_default_audio_sample_t*) jack_port_get_buffer( it.value(), nframes ) );
 	QMap<QString,jack_default_audio_sample_t*> outs;
 	for ( it = backend->out_ports.begin(); it != backend->out_ports.end(); ++it )
