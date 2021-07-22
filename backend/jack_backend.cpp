@@ -289,7 +289,6 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 	QMap<QString,jack_default_audio_sample_t*> ins;
 	JackMix::ports_it it;
 	for (it = backend->in_ports.begin(); it != backend->in_ports.end(); ++it) {
-		qDebug() << "  jack_default_audio_sample_t   " << *jack_port_get_buffer(it.value(), nframes);
 		ins.insert(it.key(), (jack_default_audio_sample_t*)jack_port_get_buffer(it.value(), nframes));
 	}
 	QMap<QString,jack_default_audio_sample_t*> outs;
@@ -300,6 +299,7 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 	/// Blank outports... 
 	for ( out_it = backend->out_ports.begin(); out_it != backend->out_ports.end(); ++out_it ) {
 		jack_default_audio_sample_t* tmp = outs[ out_it.key() ];
+		qDebug() << "  jack_default_audio_sample_t tmp  " << *tmp;
 		for ( jack_nframes_t n=0; n<nframes; n++ ) tmp[ n ] = 0;
 	}
 	/// Adjust inlevels.
