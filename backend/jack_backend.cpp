@@ -71,7 +71,7 @@ bool JackBackend::addOutput( QString name ) {
 		 * is set.
 		 */
 		outvolumes[name];
-		qDebug() << "outvolumes[name];  "<< outvolumes[name];
+		
 		out_ports.insert( name, jack_port_register ( client, name.toStdString().c_str(), JACK_DEFAULT_AUDIO_TYPE, JackPortIsOutput, 0 ) );
 		out_ports_list << name;
 		return true;
