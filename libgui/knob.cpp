@@ -78,7 +78,7 @@ void Knob::value( double n, bool show_numeric ) {
 }
 
 void Knob::setIndicatorColor(const QColor& c) {
-        qDebug()<<c;
+        qDebug()<<"IndicatorColor changed to ------" << c;
         _indicator = c;
         update();
 }
