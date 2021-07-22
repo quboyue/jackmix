@@ -75,7 +75,7 @@ void MixerElements::init_aux_elements() {
 
 AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMatrix::Widget* p, const char* n )
 	: Element( inchannel, outchannel, p, n )
-	, dB2VolCalc( -42, 6 )
+	, dB2VolCalc( -42, 16 )
 {
 	if (p->mode() == Widget::Select) {
 		menu()->addAction( "Select", this, SLOT( slot_simple_select() ) );
@@ -95,8 +95,6 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 		dbmin, dbmax, 2, 3, this );
 	_layout->addWidget( _poti, 100 );
 
-	qDebug() << "_layout->addWidget( _poti, 100 );";//delete me!!!
-	_layout->addWidget(_poti, 100);
 
 
 
