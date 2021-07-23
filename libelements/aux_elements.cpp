@@ -130,7 +130,7 @@ AuxElement::~AuxElement() {
 }
 
 void AuxElement::emitvalue( double n ) {
-	qDebug() << " backend()->setVolume" << _in << "  " << _out<<" is_mute" << is_mute;
+	qDebug() << " backend()->setVolume" << _in << "  " << _out<<" is_mute" << is_mute<<"  "<< n;
 
 	if(!is_mute)
 		backend()->setVolume(_in[0], _out[0], dbtoamp(n));
