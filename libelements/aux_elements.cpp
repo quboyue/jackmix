@@ -143,8 +143,10 @@ void AuxElement::setIndicator(const QColor& c) { _poti->setIndicatorColor(c); };
 void AuxElement::slot_mute_channel(bool input) {
 	qDebug() << " MuteButton input   " << input;
 	is_mute = input;
-	if(is_mute)
-		QTimer::singleShot(1, this, SLOT(emitvalue(-1000)));
+	double xxx= -100.0;
+	if (is_mute)
+		//QTimer::singleShot(1, this, SLOT(emitvalue(xxx )));
+		emitvalue(xxx);
 }
 
 //delete me!!!
