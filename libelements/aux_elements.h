@@ -58,7 +58,7 @@ public:
     bool is_mute = false;
 
     //value showed by knob's indicator 
-    double indicator_value;
+    double indicator_value=-42;
  
 public slots:
 	void emitvalue( double );
