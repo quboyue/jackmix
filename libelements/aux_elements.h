@@ -56,9 +56,15 @@ public:
  
 public slots:
 	void emitvalue( double );
+    //delete me!!!
+    void slot_mute_channel();
+    //delete me!!!
 
 private:
 	JackMix::GUI::Knob *_poti;
+    //delete me!!!
+    QPushButton* MuteButton
+     //delete me!!!
 };
 
 void init_aux_elements();
