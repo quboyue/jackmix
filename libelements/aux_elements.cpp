@@ -100,7 +100,7 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	QPushButton* MuteButton = new QPushButton();
 	_layout->addWidget(MuteButton, 1);
 	MuteButton->setText("Mute");
-	connect(MuteButton, SIGNAL(QPushButton::clicked()), this, SLOT(slot_mute_channel()));
+	connect(MuteButton, SIGNAL(clicked()), this, SLOT(slot_mute_channel()));
 	//delete me!!!!
 
 	connect( _poti, SIGNAL( valueChanged( double ) ), this, SLOT( emitvalue( double ) ) );
