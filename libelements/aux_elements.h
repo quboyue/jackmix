@@ -61,6 +61,9 @@ public slots:
     //delete me!!!
 private:
 	JackMix::GUI::Knob *_poti;
+    //delete me!!!
+    QPushButton* MuteButton;
+    //delete me!!!
 };
 
 void init_aux_elements();
