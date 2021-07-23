@@ -132,7 +132,7 @@ void AuxElement::setIndicator(const QColor& c) { _poti->setIndicatorColor(c); };
 
 //delete me!!!
 void AuxElement::slot_mute_channel() {
-	qDebug() << "\n\n !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1\n\n";
+	qDebug() << "\n\n !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 Button pushed\n\n";
 
 }
 
