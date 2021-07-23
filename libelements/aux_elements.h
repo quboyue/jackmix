@@ -56,7 +56,9 @@ public:
  
 public slots:
 	void emitvalue( double );
-
+    //delete me!!!
+    void slot_mute_channel();
+    //delete me!!!
 private:
 	JackMix::GUI::Knob *_poti;
 };
