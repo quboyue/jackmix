@@ -100,11 +100,40 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 	
 	_balance = new JackMix::GUI::Knob( _balance_value, -1, 1, 2, 0.1, this, "%1" );
 	_layout->addWidget( _balance, 10 );
+
+	//delete me!!
+	QHBoxLayout* _layout_button = new QHBoxLayout(this);
+
+	MuteButton_left = new QPushButton();
+	MuteButton_left->setFixedSize(80, 50);
+	MuteButton_left->setStyleSheet("background-color: rgb(175,175,175)");
+	MuteButton_left->setCheckable(true);
+	MuteButton_left->setText("Mute L");
+	MuteButton_left->setFont(QFont("", 7));
+	_layout_button->addWidget(MuteButton_left, 1);
+
+
+
+	MuteButton_right = new QPushButton();
+	MuteButton_right->setFixedSize(80, 50);
+	MuteButton_right->setStyleSheet("background-color: rgb(175,175,175)");
+	MuteButton_right->setCheckable(true);
+	MuteButton_right->setText("Mute R");
+	MuteButton_right->setFont(QFont("", 7));
+	_layout_button->addWidget(MuteButton_right, 2);
+
+
+	_layout->addLayout(_layout_button);
+	//delete me!!
+
+
 	connect( _balance, SIGNAL( valueChanged( double ) ), this, SLOT( balance( double ) ) );
 	connect( _balance, SIGNAL( select() ), this, SLOT( slot_simple_select() ) );
 	connect( _balance, SIGNAL( replace() ), this, SLOT( slot_simple_replace() ) );
 	_volume = new JackMix::GUI::Slider( amptodb( _volume_value ), dbmin, dbmax, 2, 3, this );
 	_layout->addWidget( _volume, 20 );
+
+
 	connect( _volume, SIGNAL( valueChanged( double ) ), this, SLOT( volume( double ) ) );
 	connect( _volume, SIGNAL( select() ), this, SLOT( slot_simple_select() ) );
 	connect( _volume, SIGNAL( replace() ), this, SLOT( slot_simple_replace() ) );

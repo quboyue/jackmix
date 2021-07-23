@@ -100,7 +100,7 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	_layout->addWidget( _poti, 100 );
 
 	//delete me!!!!
-	QPushButton* MuteButton = new QPushButton();
+	MuteButton = new QPushButton();
 	MuteButton->setStyleSheet("background-color: rgb(175,175,175)");
 	MuteButton->setCheckable(true);
 	_layout->addWidget(MuteButton, 1);

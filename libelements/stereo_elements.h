@@ -72,6 +72,10 @@ private:
 	JackMix::GUI::Knob *_balance;
 	JackMix::GUI::Slider *_volume;
 	double _balance_value, _volume_value;
+
+	QPushButton* MuteButton_left;
+	QPushButton* MuteButton_right;
+
 };
 
 /**
