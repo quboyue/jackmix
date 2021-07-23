@@ -54,7 +54,11 @@ public:
 	
 	void setIndicator(const QColor& c);
 
+    // wether mute button was pushed
     bool is_mute = false;
+
+    //value showed by knob's indicator 
+    double indicator_value;
  
 public slots:
 	void emitvalue( double );
