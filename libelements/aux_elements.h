@@ -53,11 +53,13 @@ public:
 	int outchannels() const { return 1; }
 	
 	void setIndicator(const QColor& c);
+
+    bool is_mute = false;
  
 public slots:
 	void emitvalue( double );
     //delete me!!!
-    void slot_mute_channel();
+    void slot_mute_channel(bool);
     //delete me!!!
 
 private:

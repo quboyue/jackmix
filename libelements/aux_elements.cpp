@@ -77,6 +77,10 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	: Element( inchannel, outchannel, p, n )
 	, dB2VolCalc( -42, 6 )
 {
+
+	//qDebug( "AuxElement( QStringList '%s', QStringList '%s', %s)", qPrintable(inchannel.join( "," ) ), qPrintable(outchannel.join( "," ) ) );
+	qDebug() << "AuxElement inchannel " << inchannel<< " outchannel " << outchannel;
+
 	if (p->mode() == Widget::Select) {
 		menu()->addAction( "Select", this, SLOT( slot_simple_select() ) );
 		menu()->addAction( "Replace", this, SLOT( slot_simple_replace() ) );
@@ -97,9 +101,11 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 
 	//delete me!!!!
 	QPushButton* MuteButton = new QPushButton();
+	MuteButton->setStyleSheet("background-color: rgb(175,175,175)");
+	MuteButton->setCheckable(true);
 	_layout->addWidget(MuteButton, 1);
 	MuteButton->setText("Mute");
-	connect(MuteButton, SIGNAL(clicked()), this, SLOT(slot_mute_channel()));
+	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
 	//delete me!!!!
 
 
@@ -124,15 +130,21 @@ AuxElement::~AuxElement() {
 }
 
 void AuxElement::emitvalue( double n ) {
-	backend()->setVolume( _in[0], _out[0], dbtoamp( n ) );
+	qDebug() << " backend()->setVolume" << _in << "  " << _out<<" is_mute" << is_mute;
+		backend()->setVolume(_in[0], _out[0], dbtoamp(n));
+
+
+
 }
 
 void AuxElement::setIndicator(const QColor& c) { _poti->setIndicatorColor(c); };
 
 
 //delete me!!!
-void AuxElement::slot_mute_channel() {
-	qDebug() << "\n\n !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Button pushed\n\n";
+void AuxElement::slot_mute_channel(bool input) {
+	qDebug() << " MuteButton input   " << input;
+	is_mute = input;
+
 
 }
 
