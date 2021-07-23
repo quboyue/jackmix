@@ -97,9 +97,10 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 
 
 	//delete me!!!!
-	QPushButton* pBtn = new QPushButton();
-	_layout->addWidget(pBtn, 1);
-	pBtn->setText("Mute");
+	QPushButton* MuteButton = new QPushButton();
+	_layout->addWidget(MuteButton, 1);
+	MuteButton->setText("Mute");
+	connect(MuteButton, SIGNAL(QPushButton::clicked), this, SLOT(slot_mute_channel()));
 	//delete me!!!!
 
 	connect( _poti, SIGNAL( valueChanged( double ) ), this, SLOT( emitvalue( double ) ) );
@@ -127,3 +128,12 @@ void AuxElement::emitvalue( double n ) {
 }
 
 void AuxElement::setIndicator(const QColor& c) { _poti->setIndicatorColor(c); };
+
+
+//delete me!!!
+void AuxElement::slot_mute_channel() {
+	qDebug() << "\n\n !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1\n\n";
+
+}
+
+//delete me!!!
