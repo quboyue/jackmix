@@ -147,6 +147,4 @@ void AuxElement::slot_mute_channel(bool input) {
 		QTimer::singleShot(1, this, SLOT(emitvalue(-1000)));
 }
 
-}
-
 //delete me!!!
