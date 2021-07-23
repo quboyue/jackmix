@@ -93,13 +93,13 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	_poti = new JackMix::GUI::Knob(
 		amptodb( backend()->getVolume( _in[0], _out[0] ) ),
 		dbmin, dbmax, 2, 3, this );
-	_layout->addWidget( _poti, 100 );
+	_layout->addWidget( _poti, 0 );
 
 
 	//delete me!!!!
 	QPushButton* pBtn = new QPushButton();
 
-	_layout->addWidget(pBtn, 0);
+	_layout->addWidget(pBtn, 1);
 	//delete me!!!!
 
 	connect( _poti, SIGNAL( valueChanged( double ) ), this, SLOT( emitvalue( double ) ) );
