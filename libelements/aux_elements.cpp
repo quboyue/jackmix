@@ -98,8 +98,8 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 
 	//delete me!!!!
 	QPushButton* pBtn = new QPushButton();
-
 	_layout->addWidget(pBtn, 1);
+	pBtn->setText("Mute");
 	//delete me!!!!
 
 	connect( _poti, SIGNAL( valueChanged( double ) ), this, SLOT( emitvalue( double ) ) );
