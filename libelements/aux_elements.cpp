@@ -97,6 +97,7 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 
 
 	//delete me!!!!
+	JackMix::GUI::Knob* _poti2;
 	qDebug() << " JackMix::GUI::Knob<<     	_layout->addWidget(_poti2, 100);----------------------------------";
 	_poti2 = new JackMix::GUI::Knob(
 		amptodb(backend()->getVolume(_in[0], _out[0])),
