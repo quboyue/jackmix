@@ -110,6 +110,7 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 	MuteButton_left->setCheckable(true);
 	MuteButton_left->setText("Mute L");
 	MuteButton_left->setFont(QFont("", 7));
+	connect(MuteButton_left, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_left(bool)));
 	_layout_button->addWidget(MuteButton_left, 1);
 
 
@@ -120,6 +121,7 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 	MuteButton_right->setCheckable(true);
 	MuteButton_right->setText("Mute R");
 	MuteButton_right->setFont(QFont("", 7));
+	connect(MuteButton_right, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_right(bool)));
 	_layout_button->addWidget(MuteButton_right, 2);
 
 
@@ -183,9 +185,50 @@ void Mono2StereoElement::calculateVolumes() {
 		left = dbtoamp( _volume_value )*( 1-_balance_value );
 	if ( _balance_value < 0 )
 		right = dbtoamp( _volume_value )*( 1+_balance_value );
-	backend()->setVolume( _in[0], _out[0], left );
-	backend()->setVolume( _in[0], _out[1], right );
+
+	indicator_value_left = left;
+	indicator_value_right = right;
+	if (!is_mute_left)
+		backend()->setVolume(_in[0], _out[0], left);
+	if (!is_mute_right)
+		backend()->setVolume(_in[0], _out[1], right);
+
 }
+//delete me!!!
+void Mono2StereoElement::slot_mute_channel_left(bool input) {
+	qDebug() << " MuteButton input   " << input;
+
+	if (is_mute_left) {
+
+		is_mute_left = false;
+		qDebug() << " indicator_value " << indicator_value_left;
+		backend()->setVolume(_in[0], _out[0], indicator_value_left);
+	}
+	else {
+		is_mute_left = true;
+		backend()->setVolume(_in[0], _out[0], dbtoamp(-42));
+	}
+
+}
+
+void Mono2StereoElement::slot_mute_channel_right(bool input) {
+	qDebug() << " MuteButton input   " << input;
+
+	if (is_mute_right) {
+
+		is_mute_right = false;
+		qDebug() << " indicator_value " << indicator_value_right;
+		backend()->setVolume(_in[0], _out[1], indicator_value_right);
+	}
+	else {
+		is_mute_right = true;
+		backend()->setVolume(_in[0], _out[1], dbtoamp(-42));
+	}
+
+}
+
+//delete me!!!
+
 
 
 
