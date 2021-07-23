@@ -134,11 +134,6 @@ void AuxElement::emitvalue( double n ) {
 
 	if(!is_mute)
 		backend()->setVolume(_in[0], _out[0], dbtoamp(n));
-	else
-		backend()->setVolume(_in[0], _out[0], dbtoamp(0));
-
-
-
 }
 
 void AuxElement::setIndicator(const QColor& c) { _poti->setIndicatorColor(c); };
@@ -148,7 +143,9 @@ void AuxElement::setIndicator(const QColor& c) { _poti->setIndicatorColor(c); };
 void AuxElement::slot_mute_channel(bool input) {
 	qDebug() << " MuteButton input   " << input;
 	is_mute = input;
-
+	if(is_mute)
+		QTimer::singleShot(1, this, SLOT(emitvalue(-1000)));
+}
 
 }
 
