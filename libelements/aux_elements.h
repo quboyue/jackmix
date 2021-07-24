@@ -65,7 +65,7 @@ public slots:
     //delete me!!!
     void slot_mute_channel(bool);
     //delete me!!!
-
+    void mouseMoveEvent(QMouseEvent* event);
 private:
 	JackMix::GUI::Knob *_poti;
     //delete me!!!

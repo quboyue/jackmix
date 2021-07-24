@@ -77,7 +77,8 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	: Element( inchannel, outchannel, p, n )
 	, dB2VolCalc( -42, 6 )
 {
-
+	//this->setStyleSheet("border:2px solid red;");
+	this->setMouseTracking(true);
 	//qDebug( "AuxElement( QStringList '%s', QStringList '%s', %s)", qPrintable(inchannel.join( "," ) ), qPrintable(outchannel.join( "," ) ) );
 	qDebug() << "AuxElement inchannel " << inchannel<< " outchannel " << outchannel;
 
@@ -157,5 +158,27 @@ void AuxElement::slot_mute_channel(bool input) {
 	}
 
 }
+
+
+void AuxElement::mouseMoveEvent(QMouseEvent* event)
+{
+
+
+	QPoint p_ab = event->globalPos();
+
+	//qDebug() << this->height() << "  " << this->mapFromGlobal(p_ab).y() << "  ";
+
+
+	int mouse_y = mapFromGlobal(p_ab).y();
+
+
+	if (mouse_y<this->height() && mouse_y>this->height() * 0.8)
+		setCursor(Qt::SplitHCursor);
+	else
+		setCursor(Qt::ArrowCursor);
+	//if (cursor().shape() == Qt::SplitHCursor)
+	
+}
+
 
 //delete me!!!
