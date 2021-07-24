@@ -180,5 +180,15 @@ void AuxElement::mouseMoveEvent(QMouseEvent* event)
 	
 }
 
+void AuxElement::mousePressEvent(QMouseEvent* event)
+{
+	
+	if (event->button() == Qt::LeftButton && cursor().shape() == Qt::SplitHCursor )
+	{
+		qDebug() << "	event->button() == Qt::LeftButton && cursor().shape() == Qt::SplitHCursor";
+		//slot_simple_replace();
+		emit _poti->replace();
+	}
 
+}
 //delete me!!!

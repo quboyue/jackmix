@@ -95,6 +95,7 @@ void Widget::replace( Element* n ) {
 	qDebug( "Selected ins = %s", qPrintable( in.join( "," ) ) );
 	out = n->followersList();
 	qDebug( "Selected outs = %s", qPrintable( out.join( "," ) ) );
+	qDebug() << "	--decribe n  in:" << n->in() << " out: " << n-> out()<<" name "<<n->name();
 	for ( QStringList::ConstIterator it=out.begin(); it!=out.end(); ++it ) {
 		for ( QStringList::ConstIterator jt=in.begin(); jt!=in.end(); ++jt ) {
 			Element* tmp = getResponsible( ( *jt ),( *it ) );
@@ -115,7 +116,7 @@ void Widget::explode( Element* n )  {
 }
 
 Element* Widget::getResponsible( QString in, QString out ) const {
-	//qDebug() << "Widget::getResponsible(" << in << "," << out << ") size =" << _elements.size();
+	qDebug() << "Widget::getResponsible(" << in << "," << out << ") size =" << _elements.size();
 	for ( int i=0; i<_elements.size(); i++ )
 		if ( _elements[ i ] && _elements[ i ]->isResponsible( in, out ) )
 			return _elements[ i ];
@@ -422,8 +423,8 @@ int Element::neighbors() const {
 	return 0;
 }
 QStringList Element::neighborsList() const {
-	//qDebug( "self = [%s]", qPrintable( _in.join( "|" ) ) );
-	//qDebug( "neighbor = %s", qPrintable( _parent->nextIn( _in[ _in.size()-1 ] ) ) );
+	qDebug( "	self = [%s]", qPrintable( _in.join( "|" ) ) );
+	qDebug( "	neighbor = %s", qPrintable( _parent->nextIn( _in[ _in.size()-1 ] ) ) );
 	Element* neighbor = _parent->getResponsible( _parent->nextIn( _in[ _in.size()-1 ] ), _out[ 0 ] );
 	QStringList tmp;
 	if ( neighbor && neighbor->isSelected() )
@@ -440,12 +441,17 @@ int Element::followers( int n ) const {
 	return 0;
 }
 QStringList Element::followersList() const {
-	//qDebug( "self = [%s]", qPrintable( _out.join( "|" ) ) );
-	//qDebug( "follower = %s", qPrintable( _parent->nextOut( _out[ _out.size()-1 ] ) ) );
+	qDebug( "	self = [%s]", qPrintable( _out.join( "|" ) ) );
+	qDebug( "	-follower = %s", qPrintable( _parent->nextOut( _out[ _out.size()-1 ] ) ) );
 	Element* follower = _parent->getResponsible( _in[ 0 ], _parent->nextOut(  _out[  _out.size()-1 ] ) );
 	QStringList tmp;
-	if ( follower && follower->isSelected() )
+	//delete me!! 
+	//if (follower && follower->isSelected())
+	if (follower)
+
 		tmp = follower->followersList();
+
+	//delete me!! 
 	tmp = _out + tmp;
 	return tmp;
 }

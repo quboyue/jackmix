@@ -126,6 +126,11 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 
 
 	_layout->addLayout(_layout_button);
+
+
+	//////////////////////////
+	// 	   _parent
+	//qDebug( )<<"	--------------------------follower "<<_parent->nextOut( _out[ _out.size()-1 ] );
 	//delete me!!
 
 
