@@ -98,32 +98,39 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
         menu()->addAction( "Explode", this, SLOT( slot_simple_explode() ) );
 	menu()->addAction( "Assign MIDI Parameter", this, SLOT( slot_assign_midi_parameters() ) );
 	
-	_balance = new JackMix::GUI::Knob( _balance_value, -1, 1, 2, 0.1, this, "%1" );
-	_layout->addWidget( _balance, 10 );
+
 
 	//delete me!!
+	Explode_button = new QPushButton("X");
+	Explode_button->setFixedSize(30, 30);
+	_layout->addWidget(Explode_button, 0);
+	connect(Explode_button, SIGNAL(clicked()), this, SLOT(slot_simple_explode()));
+
+
+	_balance = new JackMix::GUI::Knob( _balance_value, -1, 1, 2, 0.1, this, "%1" );
+
+	_layout->addWidget( _balance, 10 );
+
 
 
 
 
 	QHBoxLayout* _layout_button = new QHBoxLayout(this);
 
-	MuteButton_left = new QPushButton();
+	MuteButton_left = new QPushButton("Mute L");
 	MuteButton_left->setFixedSize(80, 50);
 	MuteButton_left->setStyleSheet("background-color: rgb(175,175,175)");
 	MuteButton_left->setCheckable(true);
-	MuteButton_left->setText("Mute L");
 	MuteButton_left->setFont(QFont("", 7));
 	connect(MuteButton_left, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_left(bool)));
 	_layout_button->addWidget(MuteButton_left, 1);
 
 
 
-	MuteButton_right = new QPushButton();
+	MuteButton_right = new QPushButton("Mute R");
 	MuteButton_right->setFixedSize(80, 50);
 	MuteButton_right->setStyleSheet("background-color: rgb(175,175,175)");
 	MuteButton_right->setCheckable(true);
-	MuteButton_right->setText("Mute R");
 	MuteButton_right->setFont(QFont("", 7));
 	connect(MuteButton_right, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_right(bool)));
 	_layout_button->addWidget(MuteButton_right, 2);
