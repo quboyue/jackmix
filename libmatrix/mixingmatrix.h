@@ -222,7 +222,7 @@ public slots:
 
 signals:
 
-	void replace(Element*);
+
 	void replace( Element* ,QString);
     void explode( Element* );
 	// Informs, that Element* n, Property s has changed.
@@ -263,7 +263,7 @@ protected:
 
 protected slots:
 	// Use this slot if you don't want to do something before replacement.
-	virtual void slot_simple_replace() { qDebug() << "		--slot_simple_replace"; replace(this); }
+	virtual void slot_simple_replace() { qDebug() << "		--slot_simple_replace"; replace(this, type); }
 	virtual void slot_simple_replace(QString type) { qDebug() << "		--slot_simple_replace_with type  "<<type; replace(this,type); }
 	// Use this slot if you don't want to do something before explosion.
 	virtual void slot_simple_explode() { explode( this ); }

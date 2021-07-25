@@ -77,7 +77,6 @@ Widget::~Widget() {
 
 void Widget::addElement( Element* n ) {
 	_elements.push_back( n );
-	connect(n, SIGNAL(replace(Element*)), this, SLOT(replace(Element*, QString)));
 	connect( n, SIGNAL( replace( Element*, QString) ), this, SLOT( replace( Element*,QString) ) );
 	connect( n, SIGNAL( explode( Element* ) ), this, SLOT( explode( Element* ) ) );
 	resizeEvent( 0 );
@@ -101,14 +100,13 @@ void Widget::replace( Element* n,QString type) {
 	//Qt::SizeAllCursor means stereo to stereo
 	//Qt::SplitVCursor means mono to stereo
 	qDebug() << "	--decribe n  in:" << in << " out: " << out ;
-	qDebug() << "	--	type type" << type;
+
 	if (type=="mono"){
 		//only get self
 		in.removeLast();
-		qDebug() << "-----------------cursor().shape() == Qt::SplitVCursor";
 	}
 	//delete me!!
-	qDebug() << "	--decribe n  in:" << in << " out: " << out;
+
 	for ( QStringList::ConstIterator it=out.begin(); it!=out.end(); ++it ) {
 		for ( QStringList::ConstIterator jt=in.begin(); jt!=in.end(); ++jt ) {
 			Element* tmp = getResponsible( ( *jt ),( *it ) );
