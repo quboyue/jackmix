@@ -173,19 +173,19 @@ void AuxElement::mouseMoveEvent(QMouseEvent* event)
 
 
 	if (mouse_y<this->height() && mouse_y>this->height() * 0.8)
-		setCursor(Qt::SplitHCursor);
+		setCursor(Qt::SplitVCursor);
 	else
 		setCursor(Qt::ArrowCursor);
-	//if (cursor().shape() == Qt::SplitHCursor)
+	//if (cursor().shape() == Qt::SplitVCursor)
 	
 }
 
 void AuxElement::mousePressEvent(QMouseEvent* event)
 {
 	
-	if (event->button() == Qt::LeftButton && cursor().shape() == Qt::SplitHCursor )
+	if (event->button() == Qt::LeftButton && cursor().shape() == Qt::SplitVCursor )
 	{
-		qDebug() << "	event->button() == Qt::LeftButton && cursor().shape() == Qt::SplitHCursor";
+		qDebug() << "	event->button() == Qt::LeftButton && cursor().shape() == Qt::SplitVCursor";
 		//slot_simple_replace();
 		emit _poti->replace();
 	}
