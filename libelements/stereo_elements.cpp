@@ -95,7 +95,7 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
   
 	menu()->addAction( "Select", this, SLOT( slot_simple_select() ) );
 	menu()->addAction( "Replace", this, SLOT( slot_simple_replace() ) );
-        menu()->addAction( "Explode", this, SLOT( slot_simple_explode() ) );
+    menu()->addAction( "Explode", this, SLOT( slot_simple_explode() ) );
 	menu()->addAction( "Assign MIDI Parameter", this, SLOT( slot_assign_midi_parameters() ) );
 	
 
@@ -108,12 +108,7 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 
 
 	_balance = new JackMix::GUI::Knob( _balance_value, -1, 1, 2, 0.1, this, "%1" );
-
 	_layout->addWidget( _balance, 10 );
-
-
-
-
 
 	QHBoxLayout* _layout_button = new QHBoxLayout(this);
 
