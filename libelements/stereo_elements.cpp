@@ -108,6 +108,7 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 
 
 	_balance = new JackMix::GUI::Knob( _balance_value, -1, 1, 2, 0.1, this, "%1" );
+
 	_layout->addWidget( _balance, 10 );
 
 	QHBoxLayout* _layout_button = new QHBoxLayout(this);
@@ -132,11 +133,6 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 
 
 	_layout->addLayout(_layout_button);
-
-
-	//////////////////////////
-	// 	   _parent
-	//qDebug( )<<"	--------------------------follower "<<_parent->nextOut( _out[ _out.size()-1 ] );
 	//delete me!!
 
 
@@ -262,15 +258,24 @@ Stereo2StereoElement::Stereo2StereoElement( QStringList inchannels, QStringList 
 	QGridLayout* _layout = new QGridLayout( this );
 	_layout->setSpacing( 1 );
 	_layout->setMargin( 2 );
+
+	//delete me!!
+	Explode_button = new QPushButton("X");
+	Explode_button->setFixedSize(30, 30);
+	_layout->addWidget(Explode_button, 0,0,1,1);
+	connect(Explode_button, SIGNAL(clicked()), this, SLOT(slot_simple_explode()));
+	//delete me!!
+
+
 	_balance_widget = new JackMix::GUI::Slider( _balance_value, -1, 1, 2, 0.1, this, "%1" );
-	_layout->addWidget( _balance_widget, 0,0 );
-	_layout->setRowStretch( 0, 0 );
+	_layout->addWidget( _balance_widget, 1,0,1,2);
+	//_layout->setRowStretch( 0, 0);
 	connect( _balance_widget, SIGNAL( valueChanged( double ) ), this, SLOT( balance( double ) ) );
 	connect( _balance_widget, SIGNAL( select() ), this, SLOT( slot_simple_select() ) );
 	connect( _balance_widget, SIGNAL( replace() ), this, SLOT( slot_simple_replace() ) );
 	_volume_widget = new JackMix::GUI::Slider( amptodb( _volume_value ), dbmin, dbmax, 1, 3, this );
-	_layout->addWidget( _volume_widget, 1,0 );
-	_layout->setRowStretch( 1, 255 );
+	_layout->addWidget( _volume_widget, 2,0,3,2 );
+	//_layout->setRowStretch( 1, 255 );
 	connect( _volume_widget, SIGNAL( valueChanged( double ) ), this, SLOT( volume( double ) ) );
 	connect( _volume_widget, SIGNAL( select() ), this, SLOT( slot_simple_select() ) );
 	connect( _volume_widget, SIGNAL( replace() ), this, SLOT( slot_simple_replace() ) );

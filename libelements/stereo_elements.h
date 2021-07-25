@@ -114,6 +114,7 @@ private:
 	QString _inchannel1, _inchannel2, _outchannel1, _outchannel2;
 	double _balance_value, _volume_value;
 	JackMix::GUI::Slider *_volume_widget, *_balance_widget;
+	QPushButton* Explode_button;
 };
 
 void init_stereo_elements();
