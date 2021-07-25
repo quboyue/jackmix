@@ -77,7 +77,8 @@ Widget::~Widget() {
 
 void Widget::addElement( Element* n ) {
 	_elements.push_back( n );
-	connect( n, SIGNAL( replace( Element* ) ), this, SLOT( replace( Element* ) ) );
+	connect(n, SIGNAL(replace(Element*)), this, SLOT(replace(Element*, QString)));
+	connect( n, SIGNAL( replace( Element*, QString) ), this, SLOT( replace( Element*,QString) ) );
 	connect( n, SIGNAL( explode( Element* ) ), this, SLOT( explode( Element* ) ) );
 	resizeEvent( 0 );
 }
@@ -86,7 +87,7 @@ void Widget::removeElement( Element* n ) {
 	_elements.removeAll( n );
 }
 
-void Widget::replace( Element* n ) {
+void Widget::replace( Element* n,QString type) {
 	qDebug( "Widget::replace( Element* %p )", n );
 	qDebug( "This Element has %i selected neighbors.", n->neighbors() );
 	qDebug( " and %i selected followers.", n->followers( n->neighbors() ) );
@@ -95,7 +96,19 @@ void Widget::replace( Element* n ) {
 	qDebug( "Selected ins = %s", qPrintable( in.join( "," ) ) );
 	out = n->followersList();
 	qDebug( "Selected outs = %s", qPrintable( out.join( "," ) ) );
-	qDebug() << "	--decribe n  in:" << n->in() << " out: " << n-> out()<<" name "<<n->name();
+	
+	//delete me!!
+	//Qt::SizeAllCursor means stereo to stereo
+	//Qt::SplitVCursor means mono to stereo
+	qDebug() << "	--decribe n  in:" << in << " out: " << out ;
+	qDebug() << "	--	type type" << type;
+	if (type=="mono"){
+		//only get self
+		in.removeLast();
+		qDebug() << "-----------------cursor().shape() == Qt::SplitVCursor";
+	}
+	//delete me!!
+	qDebug() << "	--decribe n  in:" << in << " out: " << out;
 	for ( QStringList::ConstIterator it=out.begin(); it!=out.end(); ++it ) {
 		for ( QStringList::ConstIterator jt=in.begin(); jt!=in.end(); ++jt ) {
 			Element* tmp = getResponsible( ( *jt ),( *it ) );
@@ -427,11 +440,18 @@ QStringList Element::neighborsList() const {
 	qDebug( "	neighbor = %s", qPrintable( _parent->nextIn( _in[ _in.size()-1 ] ) ) );
 	Element* neighbor = _parent->getResponsible( _parent->nextIn( _in[ _in.size()-1 ] ), _out[ 0 ] );
 	QStringList tmp;
-	if ( neighbor && neighbor->isSelected() )
-		tmp = neighbor->neighborsList();
+	//delete me!!
+	//if ( neighbor && neighbor->isSelected() )
+	//tmp = neighbor->neighborsList();
+	if (neighbor)
+		tmp+=_parent->nextIn(_in[_in.size() - 1]);
+
 	tmp = _in + tmp;
+	qDebug() << "		--neighbor->neighborsList();    " << tmp;
 	return tmp;
+	//delete me!!
 }
+
 int Element::followers( int n ) const {
 	if ( n==0 )
 		return 0;

@@ -67,6 +67,12 @@ signals:
 	 *  This signal would normally be connected to the responsible element's
 	 *  slot_simple_explode
 	 */
+
+	//delete me!!
+	void replace(QString type);
+	//delete me!!
+
+
         void explode(void);
         
 

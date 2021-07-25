@@ -108,13 +108,16 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	MuteButton->setText("Mute");
 	MuteButton->setMouseTracking(true);
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
+	connect(_poti, SIGNAL(replace(QString)), this, SLOT(slot_simple_replace(QString)));
 	//delete me!!!!
 
 
 	connect( _poti, SIGNAL( valueChanged( double ) ), this, SLOT( emitvalue( double ) ) );
 	connect( _poti, SIGNAL( select() ), this, SLOT( slot_simple_select() ) );
 	connect( _poti, SIGNAL( replace() ), this, SLOT( slot_simple_replace() ) );
-	
+
+
+
 	midi_params.append(0);        // Initial MIDI paramater number
 	midi_delegates.append(_poti); //   for the potentiometer
 	//qDebug()<<"There are "<<midi_delegates.size()<<" Midi delegates";
@@ -166,23 +169,33 @@ void AuxElement::mouseMoveEvent(QMouseEvent* event)
 
 
 	QPoint p_ab = event->globalPos();
+	int mouse_x = mapFromGlobal(p_ab).x();
 	int mouse_y = mapFromGlobal(p_ab).y();
 	int mute_button_bottom = MuteButton->frameGeometry().y() + MuteButton->frameGeometry().height() + 1;
-	if (mouse_y<this->height() && mouse_y> mute_button_bottom)
+	int mute_button_right = MuteButton->frameGeometry().x() + MuteButton->frameGeometry().width() + 1;
+	if (mouse_y<this->height() && mouse_y> mute_button_bottom) {
 		setCursor(Qt::SplitVCursor);
+		if (mouse_x < this->width() && mouse_x>mute_button_right ) {
+			setCursor(Qt::SizeAllCursor);
+		}
+	}
 	else
 		setCursor(Qt::ArrowCursor);
-	//if (cursor().shape() == Qt::SplitVCursor)
 	
+
+	//if (cursor().shape() == Qt::SplitVCursor)
 }
 
 void AuxElement::mousePressEvent(QMouseEvent* event)
 {
 	
-	if (event->button() == Qt::LeftButton && cursor().shape() == Qt::SplitVCursor )
+	if (event->button() == Qt::LeftButton  )
 	{
-		qDebug() << "	event->button() == Qt::LeftButton && cursor().shape() == Qt::SplitVCursor";
-		emit _poti->replace();
+
+		if (cursor().shape() == Qt::SplitVCursor)
+			emit _poti->replace("mono");
+		if (cursor().shape() == Qt::SizeAllCursor)
+			emit _poti->replace("stereo");
 	}
 
 }

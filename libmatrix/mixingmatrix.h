@@ -120,7 +120,7 @@ signals:
 
 public slots:
         // Combine many elements to form a multichannel one
-	void replace( Element* );
+	void replace( Element* ,QString type="none");
         
         // Split a multichannel element into its constituents
         void explode( Element* );
@@ -221,8 +221,10 @@ public slots:
 	void update_midi_parameters(QList< int > pv);
 
 signals:
-	void replace( Element* );
-        void explode( Element* );
+
+	void replace(Element*);
+	void replace( Element* ,QString);
+    void explode( Element* );
 	// Informs, that Element* n, Property s has changed.
 	void valueChanged( Element* n, QString s );
 	/** Indicates completion of lazy initialisation */
@@ -262,6 +264,7 @@ protected:
 protected slots:
 	// Use this slot if you don't want to do something before replacement.
 	virtual void slot_simple_replace() { qDebug() << "		--slot_simple_replace"; replace(this); }
+	virtual void slot_simple_replace(QString type) { qDebug() << "		--slot_simple_replace_with type  "<<type; replace(this,type); }
 	// Use this slot if you don't want to do something before explosion.
 	virtual void slot_simple_explode() { explode( this ); }
 	// Use this slot if you want a simple selection toggle
