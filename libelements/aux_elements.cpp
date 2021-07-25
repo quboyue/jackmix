@@ -106,6 +106,7 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	MuteButton->setCheckable(true);
 	_layout->addWidget(MuteButton, 1);
 	MuteButton->setText("Mute");
+	MuteButton->setMouseTracking(true);
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
 	//delete me!!!!
 
@@ -165,14 +166,9 @@ void AuxElement::mouseMoveEvent(QMouseEvent* event)
 
 
 	QPoint p_ab = event->globalPos();
-
-	//qDebug() << this->height() << "  " << this->mapFromGlobal(p_ab).y() << "  ";
-
-
 	int mouse_y = mapFromGlobal(p_ab).y();
-
-
-	if (mouse_y<this->height() && mouse_y>this->height() * 0.8)
+	int mute_button_bottom = MuteButton->frameGeometry().y() + MuteButton->frameGeometry().height() + 1;
+	if (mouse_y<this->height() && mouse_y> mute_button_bottom)
 		setCursor(Qt::SplitVCursor);
 	else
 		setCursor(Qt::ArrowCursor);
@@ -186,7 +182,6 @@ void AuxElement::mousePressEvent(QMouseEvent* event)
 	if (event->button() == Qt::LeftButton && cursor().shape() == Qt::SplitVCursor )
 	{
 		qDebug() << "	event->button() == Qt::LeftButton && cursor().shape() == Qt::SplitVCursor";
-		//slot_simple_replace();
 		emit _poti->replace();
 	}
 

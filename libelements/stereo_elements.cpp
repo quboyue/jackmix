@@ -102,6 +102,10 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 	_layout->addWidget( _balance, 10 );
 
 	//delete me!!
+
+
+
+
 	QHBoxLayout* _layout_button = new QHBoxLayout(this);
 
 	MuteButton_left = new QPushButton();
