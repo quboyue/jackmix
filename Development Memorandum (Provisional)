@@ -1,0 +1,20 @@
+
+
+aux_elements call AbstractSlider-->Knob-->replace  signal
+then
+
+aux_elements  connect replace to slot_simple_replace when new widget added
+
+AbstractSlider-->Knob-->replace signal save by slot_simple_replace
+
+then mixingmatrix.h slot_simple_replace() send replace(this, type)
+	!note this replace is belong to mixingmatrix::Element
+	!then signal replace from mixingmatrix::Element connect to replace mixingmatrix::Widget
+	!then run Widget::replace
+	!too hard,,,,,,
+
+there are too many function called replace ....
+AbstractSlider as signal 
+mixingmatrix::Element slot_simple_replace as slot
+mixingmatrix::Element as signal
+mixingmatrix::Widget as slot
