@@ -203,7 +203,7 @@ void JackBackend::setVolume(QString channel, QString output, float volume) {
 JackBackend::FaderState& JackBackend::getMatrixVolume( QString channel, QString output ) {
 	//qDebug() << "JackBackend::getVolume(" << channel << ", " << output << ");
 	static JackBackend::FaderState invalid(-1, nullptr); // no likee - somebody might change it. FIXME
-	
+	qDebug() << "JackBackend::getVolume(" << channel << ", " << output << ")";
 	if ( channel == output ) {
 		if ( outvolumes.contains( channel ) )
 			return getOutVolume(channel);
@@ -310,8 +310,8 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 			jack_default_audio_sample_t* tmpout = outs[ out_it.key() ];
 			backend->interp_fader<jack_default_audio_sample_t>(
 				tmpout, tmpin, nframes, backend->getMatrixVolume(in_it.key(), out_it.key())
-			);
- 		}
+				);
+		}
 		
 	}
 	/// Adjust outlevels.

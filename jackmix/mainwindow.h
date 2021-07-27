@@ -116,13 +116,18 @@ private:
 	void init();
 	int config_restore_id;
 	QMenu *_filemenu, *_editmenu, *_viewmenu, *_settingsmenu, *_helpmenu;
-	MixingMatrix::Widget *_mixerwidget, *_inputswidget, *_outputswidget;
+	//delete me!!
+	//add  _unitywidget
+
+	MixingMatrix::Widget *_mixerwidget, *_inputswidget, *_outputswidget,* _unitywidget;
 	/** Elements in the main window's widgets should be allowed to complete their
 	 *  initialisation before their MIDI parameters are set. The following lists of
 	 *  midi parameters are applied to its respective widget after initialisation
 	 *  is complete.
 	 */
-	QHash<QString,QString> _mixermps, _inputmps, _outputmps;
+	//delete me!!
+	//add _unitymps
+	QHash<QString,QString> _mixermps, _inputmps, _outputmps,_unitymps;
 	MainWindowHelperWidget* _mw;
 	QAction *_select_action
 	      , *_togglein_action, *_toggleout_action

@@ -98,7 +98,7 @@ public:
 	void mode( Mode n ) { _mode=n; }
 
 	/// 2D-Direction
-	enum Direction { None, Horizontal, Vertical };
+	enum Direction { None, Horizontal, Vertical , Corner};
 	Direction direction() const { return _direction; }
 	void direction( Direction n ) { _direction = n; }
 

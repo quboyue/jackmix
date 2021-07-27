@@ -33,6 +33,8 @@
 
 #include "aux_elements.h"
 #include "stereo_elements.h"
+
+#include "unity_elements.h"
 /*
 #include "qlash.h"
 */
@@ -61,6 +63,7 @@ using namespace JackMix::MixingMatrix;
 
 MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBackend( new GUI::GraphicalGuiServer( this ) ) ), _autofillscheduled( true ) {
 	//qDebug() << "MainWindow::MainWindow(" << p << ")";
+	
 	init();
 
 	QStringList ins;
@@ -74,6 +77,8 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
 		if ( !yes ) {
 			ins = QStringList() << "in_1" << "in_2" << "in_3" << "in_4" << "in_5" << "in_6" << "in_7" << "in_8";
 			outs = QStringList() << "out_1" << "out_2";
+			//ins = QStringList() << "in_1";
+			//outs= QStringList() << "out_1";
 		}
 	}
 
@@ -115,7 +120,9 @@ void MainWindow::init() {
 
 	JackMix::MixerElements::init_aux_elements();
 	JackMix::MixerElements::init_stereo_elements();
-
+	//delete me!!
+	JackMix::MixerElements::init_unity_elements();
+	//delete me!!
 	_filemenu = menuBar()->addMenu( "&File" );
 	_filemenu->addAction( "Open File...", this, SLOT( openFile() ), Qt::CTRL+Qt::Key_O );
 	_filemenu->addAction( "Save File...", this, SLOT( saveFile() ), Qt::CTRL+Qt::Key_S );
@@ -164,6 +171,12 @@ void MainWindow::init() {
 	_mw = new MainWindowHelperWidget( this );
 	setCentralWidget( _mw );
 
+
+
+
+
+
+
 	_mixerwidget = new MixingMatrix::Widget( QStringList() << "i1", QStringList() << "o1", _backend, _mw );
 	_mixerwidget->removeinchannel( "i1" );
 	_mixerwidget->removeoutchannel( "o1" );
@@ -175,6 +188,10 @@ void MainWindow::init() {
 	_outputswidget->removeoutchannel( "o1" );
 	_mw->layout->addWidget( _outputswidget, 1,1 );
 
+	//delete me!!
+	_unitywidget = new MixingMatrix::Widget(QStringList(), QStringList(), _backend, _mw);
+	_mw->layout->addWidget(_unitywidget, 0, 1);
+
 	// When the widgets have finished laying themselves out, we need to set up
 	// their Midi parameters. This can't happen before layout's complete because
 	// elements may change (e.g. several auxes be replaced by a stereo element
@@ -185,6 +202,10 @@ void MainWindow::init() {
 		 this, SLOT(updateAutoFilledMidiParams(MixingMatrix::Widget *)) );
 	connect (_outputswidget, SIGNAL(autoFillComplete(MixingMatrix::Widget *)),
 		 this, SLOT(updateAutoFilledMidiParams(MixingMatrix::Widget *)) );
+	//delete me!!
+	connect(_unitywidget, SIGNAL(autoFillComplete(MixingMatrix::Widget*)),
+		this, SLOT(updateAutoFilledMidiParams(MixingMatrix::Widget*)));
+	//delete me!!
 
 	_mw->layout->setRowStretch( 0, 1 );
 	_mw->layout->setRowStretch( 1, int( 1E2 ) );
@@ -315,17 +336,26 @@ void MainWindow::openFile( QString path ) {
 
 void MainWindow::updateAutoFilledMidiParams(MixingMatrix::Widget *w) {
 	QHash<QString,QString> *mphash(0);           // Iterate over the right midi parameter set
-	//qDebug() << "Autofill is complete. for widget" << w;
+	qDebug() << "	Autofill is complete. for widget" << w->direction();
 	if (w == _inputswidget) {
-		//qDebug("(inputs widget)");
+		qDebug("		(inputs widget)");
 		mphash = &_inputmps;
 	} else if (w == _outputswidget) {
-		//qDebug("(outputs widget)");
+		//qDebug("		(outputs widget)");
 		mphash = &_outputmps;
-	} else if (w == _mixerwidget) {
-		//qDebug("(mixer widget)");
+	}
+	else if (w == _mixerwidget) {
+		//qDebug("		(mixer widget)");
 		mphash = &_mixermps;
-	} else { //qDebug("(UNKNOWN widget)");
+
+	}
+	//delete me!!
+	else if(w==_unitywidget){
+		qDebug("		(_unitywidget widget)");
+		mphash = &_unitymps;
+	} 
+	//delete me!!
+	else { qDebug("(UNKNOWN widget)");
         }
 
 	//qDebug("Setting %d MIDI control parameters.", mphash->size());
@@ -660,9 +690,19 @@ void MainWindow::removeOutput( QString n ) {
 }
 
 void MainWindow::allAutoFill() {
+
+	qDebug() << "--------------------------------		!!!!_mixerwidget->autoFill();";
 	_mixerwidget->autoFill();
+	qDebug() << "---------------------------------		!!!!_unitywidget->autoFill();";
+	_unitywidget->autoFill();
+	qDebug() << "-		!!!!_outputswidget->autoFill();";
 	_outputswidget->autoFill();
+	qDebug() << "----------------------------------		!!!!_inputswidget->autoFill();";
 	_inputswidget->autoFill();
+
+	qDebug() << "----------------------------------		!!!!_inputswidget->autoFill();";
+
+	qDebug() << "----------------------------------		!!!!_inputswidget->endfill();";
 	_autofillscheduled = false;
 }
 void MainWindow::scheduleAutoFill() {

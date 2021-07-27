@@ -58,6 +58,7 @@ Widget::Widget( QStringList ins, QStringList outs, JackMix::BackendInterface* ba
 	, _backend( backend )
 	, _controls_remaining(0)
 {
+	
 	if ( _inchannels.size()==0 ) {
 		_direction = Vertical;
 		_inchannels = _outchannels;
@@ -65,6 +66,9 @@ Widget::Widget( QStringList ins, QStringList outs, JackMix::BackendInterface* ba
 	if ( _outchannels.size()==0 ) {
 		_direction = Horizontal;
 		_outchannels = _inchannels;
+	}
+	if (_inchannels.size() == 0 && _outchannels.size() == 0) {
+		_direction = Corner;
 	}
 	setSizePolicy( QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding );
 }
@@ -101,7 +105,7 @@ void Widget::replace( Element* n,QString type) {
 	//Qt::SplitVCursor means mono to stereo
 	qDebug() << "	--decribe n  in:" << in << " out: " << out ;
 
-	if (type=="mono"){
+	if (type=="mono" && in.count()>1){
 		//only get self
 		in.removeLast();
 	}
@@ -148,36 +152,47 @@ bool Widget::createControl( QStringList inchannels, QStringList outchannels ) {
 
 void Widget::autoFill() {
 	qDebug() << "\nWidget::autoFill()";
-	qDebug() << " _direction = " << _direction;
+	qDebug() << "	_direction = " << _direction;
 	if ( _direction == None ) {
-		qDebug( "Doing the Autofill-boogie..." );
+		qDebug( "	Doing the Autofill-boogie..." );
 		for ( QStringList::Iterator init=_inchannels.begin(); init!=_inchannels.end(); ++init )
 			for ( QStringList::Iterator outit=_outchannels.begin(); outit!=_outchannels.end(); ++outit ) {
 				if ( !getResponsible( *init, *outit ) ) {
-					qDebug( "...together with (%s|%s)", qPrintable( *init ), qPrintable( *outit ) );
+					qDebug( "	...together with (%s|%s)", qPrintable( *init ), qPrintable( *outit ) );
 					createControl( QStringList()<<*init, QStringList()<<*outit );
 				 }
 				else
 					qDebug( "   (%s|%s) is allready occupied. :(", qPrintable( *init ), qPrintable( *outit ) );
 			}
+	
+			//delete me!!
+
+	
+			//delete me!!
 	} else if ( _direction == Vertical ) {
-		qDebug() << "Available outputs are" << _outchannels.join( "," );
+		qDebug() << "	Available outputs are" << _outchannels.join( "," );
 		for ( QStringList::Iterator outit=_outchannels.begin(); outit!=_outchannels.end(); ++outit ) {
-			qDebug() << "Setting element for" << *outit;
+			qDebug() << "	Setting element for" << *outit;
 			if ( !getResponsible( *outit, *outit ) )
 				createControl( QStringList()<<*outit, QStringList()<<*outit );
 		}
 	} else if ( _direction == Horizontal ) {
-		qDebug() << "Available inputs are" << _inchannels.join( "," );
+		qDebug() << "	Available inputs are" << _inchannels.join( "," );
 		for ( QStringList::Iterator init=_inchannels.begin(); init!=_inchannels.end(); ++init ) {
-			qDebug() << "Setting element for" << *init;
+			qDebug() << "	Setting element for" << *init;
 			if ( !getResponsible( *init, *init ) ) {
-				qDebug() << " No responsible element found, creating a new one";
+				qDebug() << "	No responsible element found, creating a new one";
 				createControl( QStringList()<<*init, QStringList()<<*init );
 			}
 			
 		}
 	}
+	//delete me!!
+	else if (_direction == Corner) {
+		qDebug() << "		----------!Corner";
+		createControl(QStringList(), QStringList());
+	}
+	//delete me!!
 	resizeEvent( 0 );
 }
 
@@ -220,7 +235,7 @@ void Widget::placeFilled() {
 
 void Widget::resizeEvent( QResizeEvent* ) {
 	setMinimumSize( sizeHint() );
-	//qDebug( "MinimumSize = (%i,%i)", sizeHint().width(), sizeHint().height() );
+	//qDebug( "Widget::resizeEvent( QResizeEvent* )    MinimumSize = (%i,%i)", sizeHint().width(), sizeHint().height() );
 	int ins = _inchannels.size(), outs = _outchannels.size();
 	//qDebug( "%i InChannels and %i OutChannels", ins, outs );
 	//qDebug( " in: %s\n out: %s", qPrintable( _inchannels.join( "," ) ), qPrintable( _outchannels.join( "," ) ) );
@@ -238,16 +253,23 @@ void Widget::resizeEvent( QResizeEvent* ) {
 
 	if ( _direction == Horizontal )
 		//h=0;
-		for ( int i=0; i<_elements.size(); i++ ) {
-			_elements[ i ]->setGeometry( _inchannels.indexOf( _elements[ i ]->in()[ 0 ] )*w, 0, w*_elements[ i ]->inchannels(), h );
-			_elements[ i ]->show();
+		for ( int i = 0; i < _elements.size(); i++ ) {
+			_elements[i]->setGeometry(_inchannels.indexOf(_elements[i]->in()[0]) * w, 0, w * _elements[i]->inchannels(), h);
+			_elements[i]->show();
 		}
-	else if ( _direction == Vertical )
+	else if (_direction == Vertical)
 		//w=0;
-		for ( int i=0; i<_elements.size(); i++ ) {
-			_elements[ i ]->setGeometry( 0, _outchannels.indexOf( _elements[ i ]->out()[ 0 ] )*h, w, h*_elements[ i ]->outchannels() );
-			_elements[ i ]->show();
+		for (int i = 0; i < _elements.size(); i++) {
+			_elements[i]->setGeometry(0, _outchannels.indexOf(_elements[i]->out()[0]) * h, w, h * _elements[i]->outchannels());
+			_elements[i]->show();
 		}
+	//delete me!!
+	else if (_direction == Corner)
+		for (int i = 0; i < _elements.size(); i++) {
+			_elements[i]->setGeometry(0, 0, 199, 228);//set the positon as min
+			_elements[i]->show();
+		}
+	//delete me!!
 	else
 		for ( int i=0; i<_elements.size(); i++ ) {
 			_elements[ i ]->setGeometry( _inchannels.indexOf( _elements[ i ]->in()[ 0 ] )*w, _outchannels.indexOf( _elements[ i ]->out()[ 0 ] )*h, w*_elements[ i ]->inchannels(), h*_elements[ i ]->outchannels() );
@@ -262,6 +284,10 @@ QSize Widget::minimumSizeHint() const {
 		return QSize(  smallest.width()*_inchannels.size(),smallest.height() );
 	if ( _direction == Vertical )
 		return QSize(  smallest.width(),smallest.height()*_outchannels.size() );
+	//delete me!!
+	if (_direction == Corner)
+		return QSize(smallest.width(), smallest.height());
+	//delete me!!
 	return QSize( smallest.width()*_inchannels.size(),smallest.height()*_outchannels.size() );
 }
 
@@ -568,15 +594,19 @@ bool Global::create( QString type, QStringList ins, QStringList outs, Widget* pa
                 elem = _factories[ i ]->create( type, ins, outs, parent, name );
                 // If the element now exists, make it ready to display peaks
                 // All input mixers are AuxElements
-                if (elem && parent->direction() != Widget::None) {
+								//delete me!!
+				qDebug() << " Successful create elem " << type;
+				//delete me!!
+				// without && type!="UnityElement" will be error ; need be repair
+                if (elem && parent->direction() != Widget::None && type!="UnityElement") {
                         static_cast<JackMix::MixerElements::AuxElement*>(elem)->
 							setIndicator(Widget::indicatorColors[JackMix::BackendInterface::Level::none]);
                 }
         }
-        //qDebug("Used factory %d to create elem %p", i-1, elem);
-	//qDebug( "Will show and return %p", elem );
+     qDebug("Used factory %d to create elem %p", i-1, elem);
+	qDebug( "Will show and return %p", elem );
 	//if ( elem )
-	//	elem->show();
+		//elem->show();
 	return elem;
 }
 

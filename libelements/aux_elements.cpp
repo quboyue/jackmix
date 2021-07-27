@@ -95,6 +95,8 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 		_layout->addWidget(disp_name, 0);
 	}
 	
+
+	qDebug() << " _poti = new JackMix::GUI::Knob ";
 	_poti = new JackMix::GUI::Knob(
 		amptodb( backend()->getVolume( _in[0], _out[0] ) ),
 		dbmin, dbmax, 2, 3, this );
