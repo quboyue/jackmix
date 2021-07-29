@@ -6,6 +6,7 @@ This is a demo used to add a new kind of elements which used to control unity ga
 #ifndef UNITY_ELEMENTS_H
 #define UNITY_ELEMENTS_H
 
+
 #include <QtCore/QVector>
 
 #include <mixingmatrix.h>
@@ -48,6 +49,7 @@ namespace JackMix {
             void mouseMoveEvent(QMouseEvent* event);
             void mousePressEvent(QMouseEvent* event);
         private:
+     
             JackMix::GUI::Knob* _poti;
             //delete me!!!
             QPushButton* MuteButton;

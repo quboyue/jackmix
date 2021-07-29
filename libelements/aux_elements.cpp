@@ -115,23 +115,7 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 
 
 	connect( _poti, SIGNAL( valueChanged( double ) ), this, SLOT( emitvalue( double ) ) );
-	connect( _poti, SIGNAL( select() ), this, SLOT( slot_simple_select() ) );
-	connect( _poti, SIGNAL( replace() ), this, SLOT( slot_simple_replace() ) );
 
-
-
-	midi_params.append(0);        // Initial MIDI paramater number
-	midi_delegates.append(_poti); //   for the potentiometer
-	//qDebug()<<"There are "<<midi_delegates.size()<<" Midi delegates";
-
-	// Now construct the parameter setting menu
-	_cca = new JackMix::GUI::MidiControlChannelAssigner(QString("Set MIDI control parameter"),
-	                                                     "<qt>" + _in[0] + " &rarr; "  + _out[0] + "</qt>",
-	                                                     QStringList() << "Gain",
-	                                                     midi_params,
-		                                             this
-	                                                    );
-	connect( _cca, SIGNAL(assignParameters(QList<int>)), this, SLOT(update_midi_parameters(QList<int>)) );
 }
 AuxElement::~AuxElement() {
 }
@@ -141,6 +125,7 @@ void AuxElement::emitvalue( double n ) {
 	indicator_value = n;
 	if(!is_mute)
 		backend()->setVolume(_in[0], _out[0], dbtoamp(n));
+
 }
 
 void AuxElement::setIndicator(const QColor& c) { _poti->setIndicatorColor(c); };
@@ -149,7 +134,6 @@ void AuxElement::setIndicator(const QColor& c) { _poti->setIndicatorColor(c); };
 //delete me!!!
 void AuxElement::slot_mute_channel(bool input) {
 	qDebug() << " MuteButton input   " << input;
-	
 	if (is_mute) 
 	{
 		
@@ -202,3 +186,5 @@ void AuxElement::mousePressEvent(QMouseEvent* event)
 
 }
 //delete me!!!
+
+

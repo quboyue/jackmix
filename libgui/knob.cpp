@@ -89,6 +89,7 @@ void Knob::timeOut() {
 }
 
 void Knob::paintEvent( QPaintEvent* ) {
+	qDebug() << " 	paintEvent   " << _value;
 	QPainter p( this );
 	p.setRenderHints( QPainter::Antialiasing );
 
@@ -101,7 +102,7 @@ void Knob::paintEvent( QPaintEvent* ) {
 	double radius = qMin( width(), height() )/2 - 4; // "Border" of 10 pixels
 
 	// Draw Arc around whole area
-	//p.drawArc( QRectF( -radius, -radius, 2*radius, 2*radius ), 16* 0, 16* -300 );
+	p.drawArc( QRectF( -radius, -radius, 2*radius, 2*radius ), 16* 0, 16* -300 );
 
 	// Draw Knob
 	p.save();
@@ -126,7 +127,8 @@ void Knob::paintEvent( QPaintEvent* ) {
 
 	// Draw ticks
 	p.save();
-	p.setPen( palette().color( QPalette::ButtonText ) );
+	//p.setPen( palette().color( QPalette::ButtonText ) );
+	p.setPen(QColor(0, 0, 0));
 	if ( _show_value ) {
 		for ( double a=_pagestep; a<dbmax; a+= _pagestep ) {
 			p.save();
@@ -170,7 +172,8 @@ void Knob::paintEvent( QPaintEvent* ) {
 	// Draw highlight-line for the value
 	p.save();
 	p.rotate( 300 * dbtondb( _value ) );
-	QPen linepen( palette().color( QPalette::HighlightedText ) );
+	qDebug() << " 	QPen linepen(QColor(250,0,0) ) " << 300 * dbtondb(_value);
+	QPen linepen(QColor(250,0,0) );
 	linepen.setWidthF( 3 );
 	linepen.setCapStyle( Qt::RoundCap );
 	p.setPen( linepen );

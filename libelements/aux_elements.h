@@ -49,9 +49,8 @@ public:
 	AuxElement( QStringList inchannel, QStringList outchannel, MixingMatrix::Widget*, const char* =0 );
 	~AuxElement();
 
-	int inchannels() const { return 1; }
+	int inchannels () const  { return 1; }
 	int outchannels() const { return 1; }
-	
 	void setIndicator(const QColor& c);
 
     // wether mute button was pushed
@@ -59,6 +58,10 @@ public:
 
     //value showed by knob's indicator 
     double indicator_value=-42;
+    JackMix::GUI::Knob* _poti;
+    //delete me!!!
+    QPushButton* MuteButton;
+    //delete me!!!
  
 public slots:
 	void emitvalue( double );
@@ -67,11 +70,8 @@ public slots:
     //delete me!!!
     void mouseMoveEvent(QMouseEvent* event);
     void mousePressEvent(QMouseEvent* event);
-private:
-	JackMix::GUI::Knob *_poti;
-    //delete me!!!
-    QPushButton* MuteButton;
-     //delete me!!!
+
+
 };
 
 void init_aux_elements();

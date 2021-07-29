@@ -7,6 +7,8 @@ This is a demo used to add a new kind of elements which used to control unity ga
 #include "unity_elements.h"
 #include "unity_elements.moc"
 
+
+
 #include "knob.h"
 #include "midicontrolchannelassigner.h"
 
@@ -71,16 +73,60 @@ UnityElement::UnityElement(QStringList inchannel, QStringList outchannel, Mixing
 	: Element(inchannel, outchannel, p, n)
 	, dB2VolCalc(-42, 6)
 {
+
+	this->setMouseTracking(true);
+	
 	qDebug() << "UnityElement inchannel " << inchannel << " outchannel " << outchannel;
+
+
+
 	QVBoxLayout* _layout = new QVBoxLayout(this);
-	disp_name = new QLabel("Unity");
-	_layout->addWidget(disp_name, 0);
+
+
+
+	qDebug() << " _poti = new JackMix::GUI::Knob ";
+	_poti = new JackMix::GUI::Knob(
+		amptodb(backend()->getVolume(_in[0], _out[0])),
+		dbmin, dbmax, 2, 3, this);
+	_layout->addWidget(_poti, 100);
+
+	//delete me!!!!
+	MuteButton = new QPushButton();
+	MuteButton->setStyleSheet("background-color: rgb(175,175,175)");
+	MuteButton->setCheckable(true);
+	_layout->addWidget(MuteButton, 1);
+	MuteButton->setText("Unity Mute");
+	MuteButton->setMouseTracking(true);
+	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
+
+	//delete me!!!!
+
+
+	connect(_poti, SIGNAL(valueChanged(double)), this, SLOT(emitvalue(double)));
+
+	connect(_poti, SIGNAL(valueChanged(double)), this, SLOT(emitvalue(double)));
 
 }
 UnityElement::~UnityElement() {
 }
 
 void UnityElement::emitvalue(double n) {
+	QStringList inchannels = backend()->inchannels();
+	QStringList outchannels = backend()->outchannels();
+
+
+	for (int i = 0; i < inchannels.count(); i++) {
+		for (int j = 0; j < outchannels.count(); j++) {
+			if (!is_mute) {
+				backend()->setVolume(inchannels[i], outchannels[j], dbtoamp(n));
+				qDebug() << inchannels[i];
+			}
+
+		
+		}
+	
+	}
+
 	return;
 }
 
@@ -89,6 +135,8 @@ void UnityElement::setIndicator(const QColor& c) { qDebug() << "	setsetIndicator
 
 //delete me!!!
 void UnityElement::slot_mute_channel(bool input) {
+	qDebug() << backend()->inchannels()<<"  backend()->inchannels ";
+
 	return;
 }
 
