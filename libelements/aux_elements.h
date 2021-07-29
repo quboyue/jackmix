@@ -62,6 +62,7 @@ public:
     //delete me!!!
     QPushButton* MuteButton;
     //delete me!!!
+    void update_pointer(double volume);
  
 public slots:
 	void emitvalue( double );

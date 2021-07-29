@@ -75,10 +75,10 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
 			if ( tmp.contains( "lash" ) )
                         yes = true;  */
 		if ( !yes ) {
-			ins = QStringList() << "in_1" << "in_2" << "in_3" << "in_4" << "in_5" << "in_6" << "in_7" << "in_8";
-			outs = QStringList() << "out_1" << "out_2";
-			//ins = QStringList() << "in_1";
-			//outs= QStringList() << "out_1";
+			//ins = QStringList() << "in_1" << "in_2" << "in_3" << "in_4" << "in_5" << "in_6" << "in_7" << "in_8";
+			//outs = QStringList() << "out_1" << "out_2";
+			ins = QStringList() << "in_1";
+			outs= QStringList() << "out_1";
 		}
 	}
 
@@ -94,6 +94,14 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
 
 	_autofillscheduled = false;
 	scheduleAutoFill();
+	//delete me!!
+	
+
+		
+	//delete me!!
+
+
+
 
 	//qDebug() << "MainWindow::MainWindow() finished...";
 }
@@ -190,7 +198,11 @@ void MainWindow::init() {
 
 	//delete me!!
 	_unitywidget = new MixingMatrix::Widget(QStringList(), QStringList(), _backend, _mw);
-	_mw->layout->addWidget(_unitywidget, 0, 1);
+	//_mw->layout->addWidget(_unitywidget, 0, 1);
+	QPushButton* test_button = new QPushButton();
+	_mw->layout->addWidget(test_button, 0, 1);
+	connect(test_button, SIGNAL(clicked()),this, SLOT(test_slot()));
+
 
 	// When the widgets have finished laying themselves out, we need to set up
 	// their Midi parameters. This can't happen before layout's complete because
@@ -732,3 +744,21 @@ MainWindowHelperWidget::MainWindowHelperWidget( QWidget* p ) : QWidget( p ) {
 	layout->setSpacing( 2 );
 }
 
+void MainWindow::test_slot() {
+	update();
+	qDebug() << "     test_slot!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n";
+	qDebug() << "--------------------eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee ";
+	qDebug() << _mixerwidget->inchannels() << _mixerwidget->outchannels();
+	_backend->setVolume("in_1","out_1", 6);
+
+	Element* e{ _mixerwidget->getResponsible("in_1","out_1") };
+	if (e) {
+		(static_cast<MixerElements::AuxElement*>(e))->setIndicator(QColor(255, 0, 0));
+
+		(static_cast<MixerElements::AuxElement*>(e))->update_pointer(6);
+
+	}
+	else {
+		qDebug() << "getResponsible(" << "in_1" << ", " << "out_1" << "] returned null";
+	}
+}

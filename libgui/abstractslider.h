@@ -37,6 +37,7 @@ class AbstractSlider : public QWidget, public dB2VolCalc
 {
 Q_OBJECT
 public:
+	double _value;
 	AbstractSlider( double value, double min, double max, int precision, double pagestep, QWidget*, QString valuestring );
 	~AbstractSlider();
 
@@ -90,7 +91,7 @@ protected:
 	virtual void mouseEvent( QMouseEvent* ) =0;
 
 
-	double _value;
+
 	bool _value_inupdate;
 	double _pagestep;
 	int _precision;

@@ -31,7 +31,7 @@
 #include <QtCore/QList>
 #include <QtCore/QHash>
 #include <QtWidgets/QGridLayout>
-
+#include <QtWidgets/QPushButton>
 #include "controlsender.h"
 
 class QHBox;
@@ -67,7 +67,7 @@ public:
 	MainWindow( QWidget* =0 );
 	MainWindow( QString filename, QWidget* =0 );
 	~MainWindow();
-
+	QPushButton* test_button;
 signals:
 	/** If the user requests a channel name already in use,
 	 *  an alternative is chosen and this signal is fired
@@ -78,6 +78,7 @@ public slots:
 	void openFile();
 	void openFile( QString path );
 	void saveFile( QString path="" );
+	void test_slot();
 
 private slots:
 	void toggleselectmode();
