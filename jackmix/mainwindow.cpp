@@ -745,20 +745,7 @@ MainWindowHelperWidget::MainWindowHelperWidget( QWidget* p ) : QWidget( p ) {
 }
 
 void MainWindow::test_slot() {
-	update();
-	qDebug() << "     test_slot!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n\n";
-	qDebug() << "--------------------eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee ";
-	qDebug() << _mixerwidget->inchannels() << _mixerwidget->outchannels();
-	_backend->setVolume("in_1","out_1", 6);
 
-	Element* e{ _mixerwidget->getResponsible("in_1","out_1") };
-	if (e) {
-		(static_cast<MixerElements::AuxElement*>(e))->setIndicator(QColor(255, 0, 0));
-
-		(static_cast<MixerElements::AuxElement*>(e))->update_pointer(6);
-
-	}
-	else {
-		qDebug() << "getResponsible(" << "in_1" << ", " << "out_1" << "] returned null";
-	}
+	connect(_unitywidget, SIGNAL(setKonbPointer_signal(double)), _mixerwidget, SLOT(setKonbPointer_slot(double)));
+	emit _unitywidget->setKonbPointer_signal(6);
 }

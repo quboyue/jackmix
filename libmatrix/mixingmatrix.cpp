@@ -396,6 +396,39 @@ void Widget::debugPrint() {
         qDebug( "\nWidget::debugPrint()" );
 }
 
+void Widget::setKonbPointer_slot(double volume) {
+	for (int i = 0; i < _inchannels.count(); i++) {
+		for (int j = 0; j < _outchannels.count(); j++) {
+
+			Element* e{ getResponsible(_inchannels[i],_outchannels[j]) };
+			if (e) {
+				(static_cast<MixerElements::AuxElement*>(e))->update_pointer(volume);
+			}
+			else {
+				qDebug() << "getResponsible( returned null";
+			}
+		}
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Element::Element( QStringList in, QStringList out, Widget* p, const char* n )
 	: QFrame( p )

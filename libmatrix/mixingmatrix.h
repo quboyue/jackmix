@@ -117,6 +117,7 @@ public:
 signals:
 	/** AutoFill pass complete: safe to getResponsible() etc now */
 	void autoFillComplete(MixingMatrix::Widget *);
+	void setKonbPointer_signal(double volume);
 
 public slots:
         // Combine many elements to form a multichannel one
@@ -135,7 +136,7 @@ public slots:
          *  on the widget, it sends a map of the ones it wants to change to this slot
          */ 
         void update_peak_inidicators(JackMix::BackendInterface::levels_t newLevels);
-
+		void setKonbPointer_slot(double volume);
 private:
 	enum Mode _mode;
 	Direction _direction;
