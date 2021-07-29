@@ -89,7 +89,7 @@ void Knob::timeOut() {
 }
 
 void Knob::paintEvent( QPaintEvent* ) {
-	qDebug() << " 	paintEvent   " << _value;
+	//qDebug() << " 	paintEvent   " << _value;
 	QPainter p( this );
 	p.setRenderHints( QPainter::Antialiasing );
 
@@ -172,7 +172,7 @@ void Knob::paintEvent( QPaintEvent* ) {
 	// Draw highlight-line for the value
 	p.save();
 	p.rotate( 300 * dbtondb( _value ) );
-	qDebug() << " 	QPen linepen(QColor(250,0,0) ) " << 300 * dbtondb(_value);
+	//qDebug() << " 	QPen linepen(QColor(250,0,0) ) " << 300 * dbtondb(_value);
 	QPen linepen(QColor(250,0,0) );
 	linepen.setWidthF( 3 );
 	linepen.setCapStyle( Qt::RoundCap );
