@@ -68,6 +68,7 @@ signals:
 	void volume_changed( double );
 	void panorama_changed( double );
 public slots:
+
 	void set_panorama( double n ) { balance( n ); }
 	void balance( double );
 	void volume( double );
@@ -75,7 +76,7 @@ public slots:
 	void slot_mute_channel_left(bool);
 	void slot_mute_channel_right(bool);
 	//delete me!!!
-
+	void setKnobPointer_slot(double volume);
 private slots:
 	void calculateVolumes();
 private:

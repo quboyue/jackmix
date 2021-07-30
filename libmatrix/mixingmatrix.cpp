@@ -496,8 +496,7 @@ QStringList Element::followersList() const {
 	//delete me!! 
 	//if (follower && follower->isSelected())
 	if (follower)
-
-		tmp = follower->followersList();
+		tmp += _parent->nextOut(_out[_out.size() - 1]);
 
 	//delete me!! 
 	tmp = _out + tmp;

@@ -233,7 +233,17 @@ void Mono2StereoElement::slot_mute_channel_right(bool input) {
 	}
 
 }
+void Mono2StereoElement::setKnobPointer_slot(double volume) {
+	
+		qDebug() << "Mono2StereoElement setKnobPointer_slot";
 
+		_volume_value = volume;
+		calculateVolumes();
+		_volume->value(volume);
+		emit valueChanged(this, QString("volume"));
+		_volume->update();
+
+}
 //delete me!!!
 
 

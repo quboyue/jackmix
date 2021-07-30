@@ -75,8 +75,8 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
 			if ( tmp.contains( "lash" ) )
                         yes = true;  */
 		if ( !yes ) {
-			ins = QStringList() << "in_1" << "in_2" << "in_3" << "in_4" << "in_5" << "in_6" << "in_7" << "in_8";
-			outs = QStringList() << "out_1" << "out_2";
+			ins = QStringList() << "in_1" << "in_2" << "in_3" ;
+			outs = QStringList() << "out_1" << "out_2"<<"out_3";
 			//ins = QStringList() << "in_1";
 			//outs= QStringList() << "out_1";
 		}
