@@ -63,7 +63,7 @@ public:
 	// \param inchannels, outchannels, backend, parent, name=0
 	Widget( QStringList, QStringList, JackMix::BackendInterface*, QWidget*, const char* =0 );
 	~Widget();
-
+	QList <Element*> _elements;
 	JackMix::BackendInterface* backend() const { return _backend; }
 
 	QStringList inchannels() const { return _inchannels; }
@@ -117,7 +117,7 @@ public:
 signals:
 	/** AutoFill pass complete: safe to getResponsible() etc now */
 	void autoFillComplete(MixingMatrix::Widget *);
-	void setKnobPointer_signal(double volume);
+	void setKnobPointer_signal(double);
 
 public slots:
         // Combine many elements to form a multichannel one
@@ -136,11 +136,11 @@ public slots:
          *  on the widget, it sends a map of the ones it wants to change to this slot
          */ 
         void update_peak_inidicators(JackMix::BackendInterface::levels_t newLevels);
-		void setKnobPointer_slot(double volume);
+		void receiveKnobPointer_signal(double volume) { emit setKnobPointer_signal(volume); };
 private:
 	enum Mode _mode;
 	Direction _direction;
-	QList <Element*> _elements;
+
 	QStringList _inchannels, _outchannels;
 	JackMix::BackendInterface* _backend;
 	/** Controls have lazy initialisation: this counts how many are left to go
@@ -220,6 +220,7 @@ public slots:
 	 *  a saved control layout.
 	 */
 	void update_midi_parameters(QList< int > pv);
+	virtual void setKnobPointer_slot(double volume) { qDebug() << "father setKnobPointer_slot"; return; };
 
 signals:
 
@@ -230,7 +231,6 @@ signals:
 	void valueChanged( Element* n, QString s );
 	/** Indicates completion of lazy initialisation */
 	void initComplete();
-	
 protected:
 	// Internal pointer
 	const Widget* parent() { return _parent; }

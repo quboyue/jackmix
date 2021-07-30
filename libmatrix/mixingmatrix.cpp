@@ -81,6 +81,8 @@ Widget::~Widget() {
 
 void Widget::addElement( Element* n ) {
 	_elements.push_back( n );
+	qDebug() << "		------!!!!!!!!!!!!!! addElement addElementaddElementaddElement";
+	connect(this, SIGNAL(setKnobPointer_signal(double)), n, SLOT(setKnobPointer_slot(double)));
 	connect( n, SIGNAL( replace( Element*, QString) ), this, SLOT( replace( Element*,QString) ) );
 	connect( n, SIGNAL( explode( Element* ) ), this, SLOT( explode( Element* ) ) );
 	resizeEvent( 0 );
@@ -395,37 +397,6 @@ void Widget::renamechannels(QString old_name, QString new_name) {
 void Widget::debugPrint() {
         qDebug( "\nWidget::debugPrint()" );
 }
-
-void Widget::setKnobPointer_slot(double volume) {
-	for (int i = 0; i < _inchannels.count(); i++) {
-		for (int j = 0; j < _outchannels.count(); j++) {
-
-			Element* e{ getResponsible(_inchannels[i],_outchannels[j]) };
-			if (e) {
-				(static_cast<MixerElements::AuxElement*>(e))->update_pointer(volume);
-			}
-			else {
-				qDebug() << "getResponsible( returned null";
-			}
-		}
-	}
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

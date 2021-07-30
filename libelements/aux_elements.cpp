@@ -193,3 +193,21 @@ void  AuxElement::update_pointer(double volume) {
 
 
 }
+
+void  AuxElement::setKnobPointer_slot(double volume) {
+	qDebug() << "AuxElement setKnobPointer_slot";
+	/*
+	double real_volume;
+	real_volume = volume + _poti->_value;
+	if (real_volume > 6) {
+		real_volume = 6;
+	}
+	if (real_volume < -42) {
+		real_volume = -42;
+	}
+	*/
+	backend()->setVolume(_in[0], _out[0], dbtoamp(volume));
+	_poti->_value = volume;
+	_poti->update();
+
+}

@@ -71,8 +71,8 @@ public slots:
     //delete me!!!
     void mouseMoveEvent(QMouseEvent* event);
     void mousePressEvent(QMouseEvent* event);
-
-
+    void setKnobPointer_slot(double volume);
+       
 };
 
 void init_aux_elements();

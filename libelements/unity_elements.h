@@ -40,7 +40,8 @@ namespace JackMix {
 
             //value showed by knob's indicator 
             double indicator_value = -42;
-
+        signals:
+            void sendKnobPointer_signal(double);
         public slots:
             void emitvalue(double);
             //delete me!!!

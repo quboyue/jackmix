@@ -67,7 +67,7 @@ public:
 	MainWindow( QWidget* =0 );
 	MainWindow( QString filename, QWidget* =0 );
 	~MainWindow();
-	QPushButton* test_button;
+	//QPushButton* test_button;
 signals:
 	/** If the user requests a channel name already in use,
 	 *  an alternative is chosen and this signal is fired

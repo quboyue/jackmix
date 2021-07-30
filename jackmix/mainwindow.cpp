@@ -96,14 +96,10 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
 	scheduleAutoFill();
 	//delete me!!
 	
-
+	QTimer::singleShot(100, this, SLOT(test_slot()));
 		
 	//delete me!!
 
-
-
-
-	//qDebug() << "MainWindow::MainWindow() finished...";
 }
 MainWindow::MainWindow( QString filename, QWidget* p ) : QMainWindow( p ), _backend( new JackBackend( new GUI::GraphicalGuiServer( this ) ) ), _autofillscheduled( true ) {
 	//qDebug() << "MainWindow::MainWindow(" << filename << "," << p << ")";
@@ -198,10 +194,9 @@ void MainWindow::init() {
 
 	//delete me!!
 	_unitywidget = new MixingMatrix::Widget(QStringList(), QStringList(), _backend, _mw);
-	//_mw->layout->addWidget(_unitywidget, 0, 1);
-	QPushButton* test_button = new QPushButton();
-	_mw->layout->addWidget(test_button, 0, 1);
-	connect(test_button, SIGNAL(clicked()),this, SLOT(test_slot()));
+	_mw->layout->addWidget(_unitywidget, 0, 1);
+	//QPushButton* test_button = new QPushButton();
+	//_mw->layout->addWidget(test_button, 0, 1);
 
 
 	// When the widgets have finished laying themselves out, we need to set up
@@ -746,6 +741,8 @@ MainWindowHelperWidget::MainWindowHelperWidget( QWidget* p ) : QWidget( p ) {
 
 void MainWindow::test_slot() {
 
-	connect(_unitywidget, SIGNAL(setKnobPointer_signal(double)), _mixerwidget, SLOT(setKnobPointer_slot(double)));
-	emit _unitywidget->setKnobPointer_signal(6);
+	connect(_unitywidget->_elements[0], SIGNAL(sendKnobPointer_signal(double)), _mixerwidget, SLOT(receiveKnobPointer_signal(double)));
+	
+	//emit _mixerwidget->setKnobPointer_signal(6);
+	qDebug() << "	emit _mixerwidget->setKnobPointer_signal(6);";
 }
