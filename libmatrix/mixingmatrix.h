@@ -136,7 +136,7 @@ public slots:
          *  on the widget, it sends a map of the ones it wants to change to this slot
          */ 
         void update_peak_inidicators(JackMix::BackendInterface::levels_t newLevels);
-		void setKbPointer_slot(double volume);
+		void setKnobPointer_slot(double volume);
 private:
 	enum Mode _mode;
 	Direction _direction;

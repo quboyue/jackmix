@@ -111,7 +111,7 @@ UnityElement::~UnityElement() {
 }
 
 void UnityElement::emitvalue(double n) {
-	setKonbPointer(_poti()->_value);
+	//setKnobPointer(_poti->_value);
 	return;
 }
 
