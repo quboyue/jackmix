@@ -111,22 +111,7 @@ UnityElement::~UnityElement() {
 }
 
 void UnityElement::emitvalue(double n) {
-	QStringList inchannels = backend()->inchannels();
-	QStringList outchannels = backend()->outchannels();
-
-
-	for (int i = 0; i < inchannels.count(); i++) {
-		for (int j = 0; j < outchannels.count(); j++) {
-			if (!is_mute) {
-				backend()->setVolume(inchannels[i], outchannels[j], dbtoamp(n));
-				qDebug() << inchannels[i];
-			}
-
-		
-		}
-	
-	}
-
+	setKonbPointer(_poti()->_value);
 	return;
 }
 

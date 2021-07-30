@@ -75,10 +75,10 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
 			if ( tmp.contains( "lash" ) )
                         yes = true;  */
 		if ( !yes ) {
-			//ins = QStringList() << "in_1" << "in_2" << "in_3" << "in_4" << "in_5" << "in_6" << "in_7" << "in_8";
-			//outs = QStringList() << "out_1" << "out_2";
-			ins = QStringList() << "in_1";
-			outs= QStringList() << "out_1";
+			ins = QStringList() << "in_1" << "in_2" << "in_3" << "in_4" << "in_5" << "in_6" << "in_7" << "in_8";
+			outs = QStringList() << "out_1" << "out_2";
+			//ins = QStringList() << "in_1";
+			//outs= QStringList() << "out_1";
 		}
 	}
 
@@ -746,6 +746,6 @@ MainWindowHelperWidget::MainWindowHelperWidget( QWidget* p ) : QWidget( p ) {
 
 void MainWindow::test_slot() {
 
-	connect(_unitywidget, SIGNAL(setKonbPointer_signal(double)), _mixerwidget, SLOT(setKonbPointer_slot(double)));
-	emit _unitywidget->setKonbPointer_signal(6);
+	connect(_unitywidget, SIGNAL(setKnobPointer_signal(double)), _mixerwidget, SLOT(setKnobPointer_slot(double)));
+	emit _unitywidget->setKnobPointer_signal(6);
 }

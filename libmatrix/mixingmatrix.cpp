@@ -396,7 +396,7 @@ void Widget::debugPrint() {
         qDebug( "\nWidget::debugPrint()" );
 }
 
-void Widget::setKonbPointer_slot(double volume) {
+void Widget::setKnobPointer_slot(double volume) {
 	for (int i = 0; i < _inchannels.count(); i++) {
 		for (int j = 0; j < _outchannels.count(); j++) {
 
