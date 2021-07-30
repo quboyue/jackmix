@@ -252,7 +252,7 @@ void Widget::resizeEvent( QResizeEvent* ) {
 		w = smallestElement().width();
 	if ( smallestElement().height()>h )
 		h = smallestElement().height();
-
+	qDebug() << "--------------- Widget::resizeEven  _direction " << _direction << "w and h" << w << "  " << h;
 	if ( _direction == Horizontal )
 		//h=0;
 		for ( int i = 0; i < _elements.size(); i++ ) {
@@ -600,7 +600,7 @@ bool Global::create( QString type, QStringList ins, QStringList outs, Widget* pa
 								//delete me!!
 				qDebug() << " Successful create elem " << type;
 				//delete me!!
-				// without && type!="UnityElement" will be error ; need be repair
+				// only setIndicator for input/output widget
                 if (elem && parent->direction() != Widget::None && type!="UnityElement") {
                         static_cast<JackMix::MixerElements::AuxElement*>(elem)->
 							setIndicator(Widget::indicatorColors[JackMix::BackendInterface::Level::none]);

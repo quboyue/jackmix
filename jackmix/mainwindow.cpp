@@ -57,6 +57,9 @@
 
 #include <QtXml/QDomDocument>
 
+#include <QtWidgets/QWidget>
+
+#include "volume_slider.h"
 
 using namespace JackMix;
 using namespace JackMix::MixingMatrix;
@@ -76,7 +79,7 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
                         yes = true;  */
 		if ( !yes ) {
 			ins = QStringList() << "in_1" << "in_2" << "in_3" ;
-			outs = QStringList() << "out_1" << "out_2"<<"out_3";
+			outs = QStringList() << "out_1" << "out_2";
 			//ins = QStringList() << "in_1";
 			//outs= QStringList() << "out_1";
 		}
@@ -175,12 +178,6 @@ void MainWindow::init() {
 	_mw = new MainWindowHelperWidget( this );
 	setCentralWidget( _mw );
 
-
-
-
-
-
-
 	_mixerwidget = new MixingMatrix::Widget( QStringList() << "i1", QStringList() << "o1", _backend, _mw );
 	_mixerwidget->removeinchannel( "i1" );
 	_mixerwidget->removeoutchannel( "o1" );
@@ -195,9 +192,11 @@ void MainWindow::init() {
 	//delete me!!
 	_unitywidget = new MixingMatrix::Widget(QStringList(), QStringList(), _backend, _mw);
 	_mw->layout->addWidget(_unitywidget, 0, 1);
-	//QPushButton* test_button = new QPushButton();
-	//_mw->layout->addWidget(test_button, 0, 1);
+	
 
+	QWidget* slider_test = new JackMix::GUI::volume_slider(0, -20, 3, 2, 1.0, 0);
+	_mw->layout->addWidget(slider_test, 0, 2,2,1);
+	_mw->layout->addWidget(slider_test, 0, 3, 2, 1);
 
 	// When the widgets have finished laying themselves out, we need to set up
 	// their Midi parameters. This can't happen before layout's complete because
@@ -702,7 +701,6 @@ void MainWindow::allAutoFill() {
 	_mixerwidget->autoFill();
 	qDebug() << "---------------------------------		!!!!_unitywidget->autoFill();";
 	_unitywidget->autoFill();
-	qDebug() << "-		!!!!_outputswidget->autoFill();";
 	_outputswidget->autoFill();
 	qDebug() << "----------------------------------		!!!!_inputswidget->autoFill();";
 	_inputswidget->autoFill();
