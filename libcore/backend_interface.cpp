@@ -64,6 +64,7 @@ void BackendInterface::newInputLevel(QString which, float maxSignal)
 
 void BackendInterface::newOutputLevel(QString which, float maxSignal)
 {
+        emit  send_OutputVolume(which, maxSignal);
         newLevel(stats[1][which], maxSignal);
 }
 

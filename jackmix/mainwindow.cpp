@@ -237,6 +237,13 @@ void MainWindow::init() {
 	         _inputswidget, SLOT(update_peak_inidicators(JackMix::BackendInterface::levels_t)));
 	connect (_backend, SIGNAL(outputLevelsChanged(JackMix::BackendInterface::levels_t)),
                  _outputswidget, SLOT(update_peak_inidicators(JackMix::BackendInterface::levels_t)));
+	
+	//delete me!!
+	connect(_backend, SIGNAL(send_OutputVolume(QString,float)),
+		slider_test, SLOT(receive_OutputVolume(QString, float)));
+	//delete me!!
+
+
 
 	// Connect the backend's MIDI control events to the MIDI listener's despatcher.
 	connect (_backend, SIGNAL(cc_message(int, int)),

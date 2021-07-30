@@ -4,14 +4,16 @@
 #define VOLUME_SLIDER_H
 
 #include "abstractslider.h"
-
+#include <dbvolcalc.h>
 namespace JackMix {
     namespace GUI {
 
-        class volume_slider : public AbstractSlider
+        class volume_slider : public QWidget,public dB2VolCalc
         {
             Q_OBJECT
         public:
+            
+            double _value;
             volume_slider(double value, double min, double max, int precision, double pagestep, QWidget*, QString = "%1 dB");
             ~volume_slider();
 
@@ -22,13 +24,13 @@ namespace JackMix {
 
             void mouseEvent(QMouseEvent*);
             QRect _faderarea;
-
+        public slots:
+            void receive_OutputVolume(QString which, float max);
         private slots:
             void timeout();
 
-        private:
-            QTimer* _timer;
-            bool _show_value;
+
+
         };
 
     }; // GUI

@@ -138,7 +138,7 @@ Q_OBJECT
 		void inputLevelsChanged(JackMix::BackendInterface::levels_t);
 		void outputLevelsChanged(JackMix::BackendInterface::levels_t);
 		void cc_message(int ch, int val);
-
+		void send_OutputVolume(QString, float);
 	private:
 		typedef struct {
 			Level level;

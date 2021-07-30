@@ -324,8 +324,8 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 				tmp, nframes, backend->getOutVolume(key)
 			);
 
-		dB2VolCalc* calcu_part = new dB2VolCalc(-42, 6);
-		qDebug() << " 	float max    newOutputLevel   max:::" << calcu_part->amptodb(max);
+		//dB2VolCalc* calcu_part = new dB2VolCalc(-42, 6);
+		//qDebug() << " 	float max    newOutputLevel   max:::" << calcu_part->amptodb(max);
 		backend->newOutputLevel(key, max);
 	}
 
