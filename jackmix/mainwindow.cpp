@@ -96,7 +96,7 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
 	scheduleAutoFill();
 	//delete me!!
 	
-	//QTimer::singleShot(1500, this, SLOT(test_slot()));
+	QTimer::singleShot(5000, this, SLOT(test_slot()));
 		
 	//delete me!!
 
