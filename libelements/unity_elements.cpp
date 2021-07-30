@@ -94,7 +94,7 @@ UnityElement::UnityElement(QStringList inchannel, QStringList outchannel, Mixing
 	MuteButton = new QPushButton();
 	MuteButton->setStyleSheet("background-color: rgb(175,175,175)");
 	MuteButton->setCheckable(true);
-	_layout->addWidget(MuteButton, 1);
+	//_layout->addWidget(MuteButton, 1);
 	MuteButton->setText("Unity Mute");
 	MuteButton->setMouseTracking(true);
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));

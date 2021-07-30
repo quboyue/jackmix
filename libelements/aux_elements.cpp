@@ -206,8 +206,9 @@ void  AuxElement::setKnobPointer_slot(double volume) {
 		real_volume = -42;
 	}
 	*/
-	backend()->setVolume(_in[0], _out[0], dbtoamp(volume));
-	_poti->_value = volume;
-	_poti->update();
-
+	if (!is_mute) {
+		backend()->setVolume(_in[0], _out[0], dbtoamp(volume));
+		_poti->_value = volume;
+		_poti->update();
+	}
 }
