@@ -742,7 +742,9 @@ MainWindowHelperWidget::MainWindowHelperWidget( QWidget* p ) : QWidget( p ) {
 void MainWindow::test_slot() {
 
 	connect(_unitywidget->_elements[0], SIGNAL(sendKnobPointer_signal(double)), _mixerwidget, SLOT(receiveKnobPointer_signal(double)));
-	
+	connect(_unitywidget->_elements[0], SIGNAL(sendKnobPointer_signal(double)), _inputswidget, SLOT(receiveKnobPointer_signal(double)));
+	connect(_unitywidget->_elements[0], SIGNAL(sendKnobPointer_signal(double)), _outputswidget, SLOT(receiveKnobPointer_signal(double)));
+
 	//emit _mixerwidget->setKnobPointer_signal(6);
 	qDebug() << "	emit _mixerwidget->setKnobPointer_signal(6);";
 }
