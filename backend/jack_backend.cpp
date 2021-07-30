@@ -323,7 +323,9 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 			backend->interp_fader<jack_default_audio_sample_t>(
 				tmp, nframes, backend->getOutVolume(key)
 			);
-		qDebug() << " 	float max    newOutputLevel   max:::" << max;
+
+		dB2VolCalc* calcu_part = new dB2VolCalc(-42, 6);
+		qDebug() << " 	float max    newOutputLevel   max:::" << calcu_part->amptodb(max);
 		backend->newOutputLevel(key, max);
 	}
 

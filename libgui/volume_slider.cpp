@@ -21,7 +21,7 @@ volume_slider::volume_slider(double value, double min, double max, int precision
 	setAutoFillBackground(false);
 	int m = QFontMetrics(font()).height();
 	int w = QFontMetrics(font()).width(valuestring);
-	setMinimumSize(int(w * 1.2), int(m * 2.2));
+	setMinimumSize(int(w ), int(m * 2.2));
 	setFocusPolicy(Qt::TabFocus);
 
 	_timer->setInterval(2000);
@@ -45,10 +45,13 @@ void volume_slider::timeout() {
 	update();
 }
 
-#define SLIDER_BORDER 1
+#define SLIDER_BORDER 2
 
 void volume_slider::paintEvent(QPaintEvent*) {
-	bool rotated = false;
+	qDebug() << "    volume_slider::paintEvent";
+	//0, 0.00316, 0.12589, 0.50119
+	// Thresholds are at -50dB, -18dB and -6dB
+	//const float BackendInterface::threshold[] = { 0, 0.00316, 0.12589, 0.50119 };
 	QStyleOption opt;
 	QPainter p(this);
 	p.setRenderHints(QPainter::Antialiasing);
@@ -64,12 +67,11 @@ void volume_slider::paintEvent(QPaintEvent*) {
 
 	double w = width() - SLIDER_BORDER;
 	double h = height() - SLIDER_BORDER;
-	if (width() < height()) {
-		w = height() - SLIDER_BORDER;
-		h = width() - SLIDER_BORDER;
-		p.rotate(-90);
-		rotated = true;
-	}
+
+	w = height() - SLIDER_BORDER;
+	h = width() - SLIDER_BORDER;
+	p.rotate(-90);
+
 
 	if (hasFocus()) {
 		style()->drawPrimitive(QStyle::PE_FrameFocusRect, &opt, &p, this);
@@ -102,17 +104,7 @@ void volume_slider::paintEvent(QPaintEvent*) {
 			0, 0,
 			QFontMetrics(small).width(_valuestring),
 			QFontMetrics(small).height());
-		if (!rotated) {
-			if (dbtondb(a) > 0.5)
-				rect.translate(-QFontMetrics(small).width(_valuestring), 0);
-			p.drawText(rect.translated(0, h / 3), Qt::AlignCenter, QString(_valuestring).arg(a));
-			//p.drawText( rect.translated( 0, -h/3 -rect.height() ), Qt::AlignCenter, QString( _valuestring ).arg( a ) );
-			if (a == 0.0) {
-				_nullclick = p.matrix().mapRect(rect.translated(0, h / 3)).toRect();
-				//_nullclick = _nullclick.united( p.matrix().mapRect( rect.translated( 0, -h/3 -rect.height() ) ).toRect() );
-			}
-		}
-		else {
+
 			p.rotate(90);
 			if (dbtondb(a) < 0.5)
 				rect.translate(0, -QFontMetrics(small).height());
@@ -122,7 +114,7 @@ void volume_slider::paintEvent(QPaintEvent*) {
 				_nullclick = p.matrix().mapRect(rect.translated(h / 3, 0)).toRect();
 				//_nullclick = _nullclick.united( p.matrix().mapRect( rect.translated( -h/3-rect.width(),0 ) ).toRect() );
 			}
-		}
+		
 		p.restore();
 	}
 	p.restore();
@@ -134,21 +126,19 @@ void volume_slider::paintEvent(QPaintEvent*) {
 	{
 		p.save();
 		QLinearGradient grad(QPointF(-w / 2, -h / 4), QPointF(w / 2, -h / 4));
-
-
 		// Global ends first
-		grad.setColorAt(0.0, QColor(0, 180, 0));
+		grad.setColorAt(0.0, QColor(0, 255, 0));
 		if (dbtondb(_value) < 1.0)
 			grad.setColorAt(1.0, QColor(255, 255, 255));
 
 		// Next soft-fades
-		grad.setColorAt(qMax(0.0, dbtondb(_value) - 0.01), QColor(180, 0, 0));
+		grad.setColorAt(qMax(0.0, dbtondb(_value) - 0.01), QColor(255, 0, 0));
 		if (dbtondb(_value) + 0.01 < 1.0)
-			grad.setColorAt(qMin(1.0, dbtondb(_value) + 0.01), QColor(200, 200, 200));
+			grad.setColorAt(qMin(1.0, dbtondb(_value) + 0.01), QColor(255, 0, 255));
 
 
 		// Last the value itself
-		grad.setColorAt(dbtondb(_value), QColor(0, 0, 0));
+		grad.setColorAt(dbtondb(_value), QColor(0, 0, 255));
 		// That way minimum and maximum get the right color
 
 		p.fillRect(bar, grad);
@@ -175,5 +165,14 @@ void volume_slider::paintEvent(QPaintEvent*) {
 
 
 void volume_slider::mouseEvent(QMouseEvent* ev) {
-	return;
+	/*
+	if (width() >= height())
+		value(ndbtodb(
+			(ev->pos().x() - _faderarea.x()) / double(_faderarea.width() - 1)
+		));
+	else
+		value(ndbtodb(
+			(_faderarea.height() - ev->pos().y() + _faderarea.y()) / double(_faderarea.height() - 1)
+		));
+		*/
 }
