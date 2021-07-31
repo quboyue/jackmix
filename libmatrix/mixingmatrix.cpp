@@ -268,7 +268,7 @@ void Widget::resizeEvent( QResizeEvent* ) {
 	//delete me!!
 	else if (_direction == Corner)
 		for (int i = 0; i < _elements.size(); i++) {
-			_elements[i]->setGeometry(0, 0, 199, 228);//set the positon as min
+			_elements[i]->setGeometry(0, 0, w, h);//set the positon as min
 			_elements[i]->show();
 		}
 	//delete me!!

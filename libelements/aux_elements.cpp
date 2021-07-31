@@ -101,7 +101,6 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 		amptodb( backend()->getVolume( _in[0], _out[0] ) ),
 		dbmin, dbmax, 2, 3, this );
 	_layout->addWidget( _poti, 100 );
-
 	//delete me!!!!
 	MuteButton = new QPushButton();
 	MuteButton->setStyleSheet("background-color: rgb(175,175,175)");
@@ -109,6 +108,8 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	_layout->addWidget(MuteButton, 1);
 	MuteButton->setText("Mute");
 	MuteButton->setMouseTracking(true);
+	MuteButton->setMinimumSize(40,50);
+	MuteButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
 	connect(_poti, SIGNAL(replace(QString)), this, SLOT(slot_simple_replace(QString)));
 	//delete me!!!!

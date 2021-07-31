@@ -83,6 +83,8 @@ UnityElement::UnityElement(QStringList inchannel, QStringList outchannel, Mixing
 	QVBoxLayout* _layout = new QVBoxLayout(this);
 
 
+	disp_name = new QLabel(QString("<qt><center>Unity</center></qt>").arg(_in[0]), this);
+	_layout->addWidget(disp_name, 0);
 
 	qDebug() << " _poti = new JackMix::GUI::Knob ";
 	_poti = new JackMix::GUI::Knob(
@@ -94,9 +96,11 @@ UnityElement::UnityElement(QStringList inchannel, QStringList outchannel, Mixing
 	MuteButton = new QPushButton();
 	MuteButton->setStyleSheet("background-color: rgb(175,175,175)");
 	MuteButton->setCheckable(true);
-	//_layout->addWidget(MuteButton, 1);
-	MuteButton->setText("Unity Mute");
+	_layout->addWidget(MuteButton, 1);
+	MuteButton->setText("Mute");
 	MuteButton->setMouseTracking(true);
+	MuteButton->setMinimumSize(40, 50);
+	MuteButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
 
 	//delete me!!!!
