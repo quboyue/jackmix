@@ -73,10 +73,11 @@ public slots:
 	void balance( double );
 	void volume( double );
 	//delete me!!!
-	void slot_mute_channel_left(bool);
-	void slot_mute_channel_right(bool);
+	void slot_mute_channel_left();
+	void slot_mute_channel_right();
 	//delete me!!!
 	void setKnobPointer_slot(double volume);
+	void setUnityMute_slot(bool is_mute);
 private slots:
 	void calculateVolumes();
 private:
@@ -115,9 +116,10 @@ private slots:
 	void balance( double );
 	void volume( double );
 	void calculateVolumes();
-	void slot_mute_channel_left(bool);
-	void slot_mute_channel_right(bool);
+	void slot_mute_channel_left();
+	void slot_mute_channel_right();
 	void setKnobPointer_slot(double volume);
+	void setUnityMute_slot(bool is_mute);
 private:
 	QString _inchannel1, _inchannel2, _outchannel1, _outchannel2;
 	double _balance_value, _volume_value;

@@ -110,7 +110,7 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	MuteButton->setMouseTracking(true);
 	_poti->setMinimumSize(150, 90);
 	MuteButton->setMinimumSize(20,30);
-	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
+	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel()));
 	connect(_poti, SIGNAL(replace(QString)), this, SLOT(slot_simple_replace(QString)));
 	//delete me!!!!
 
@@ -132,20 +132,25 @@ void AuxElement::setIndicator(const QColor& c) { _poti->setIndicatorColor(c); };
 
 
 //delete me!!!
-void AuxElement::slot_mute_channel(bool input) {
-	qDebug() << " MuteButton input   " << input;
+void AuxElement::slot_mute_channel() {
+
+
+
+
 	if (is_mute) 
 	{
-		
+		MuteButton->setChecked(false);
 		is_mute = false;
 		qDebug() << " indicator_value " << _poti->_value;
 		backend()->setVolume(_in[0], _out[0], dbtoamp(_poti->_value));
 	}
 	else 
 	{	
+		MuteButton->setChecked(true);
 		is_mute = true;
 		backend()->setVolume(_in[0], _out[0], dbtoamp(-42));
 	}
+
 
 }
 
@@ -207,9 +212,17 @@ void  AuxElement::setKnobPointer_slot(double volume) {
 		real_volume = -42;
 	}
 	*/
-	if (!is_mute) {
-		backend()->setVolume(_in[0], _out[0], dbtoamp(volume));
+
+		emitvalue(volume);
 		_poti->_value = volume;
 		_poti->update();
+
+}
+
+void  AuxElement::setUnityMute_slot(bool is_mute) {
+	if (is_mute != this->is_mute) {
+		slot_mute_channel();
 	}
+
+
 }

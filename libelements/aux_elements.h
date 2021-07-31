@@ -67,11 +67,12 @@ public:
 public slots:
 	void emitvalue( double );
     //delete me!!!
-    void slot_mute_channel(bool);
+    void slot_mute_channel();
     //delete me!!!
     void mouseMoveEvent(QMouseEvent* event);
     void mousePressEvent(QMouseEvent* event);
     void setKnobPointer_slot(double volume);
+    void setUnityMute_slot(bool is_mute);
        
 };
 

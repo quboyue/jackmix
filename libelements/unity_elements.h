@@ -42,6 +42,7 @@ namespace JackMix {
             double indicator_value = -42;
         signals:
             void sendKnobPointer_signal(double);
+            void sendUnityMute_signal(bool);
         public slots:
             void emitvalue(double);
             //delete me!!!

@@ -116,7 +116,7 @@ UnityElement::~UnityElement() {
 }
 
 void UnityElement::emitvalue(double n) {
-	//setKnobPointer(_poti->_value);
+
 
 	qDebug() << "	emitvalue sendKnobPointer_signal";
 	emit sendKnobPointer_signal(_poti->_value);
@@ -128,8 +128,8 @@ void UnityElement::setIndicator(const QColor& c) { qDebug() << "	setsetIndicator
 
 //delete me!!!
 void UnityElement::slot_mute_channel(bool input) {
-	qDebug() << backend()->inchannels()<<"  backend()->inchannels ";
-
+	qDebug() <<"emit  sendUnityMute_signal(input);";
+	emit sendUnityMute_signal(input);
 	return;
 }
 

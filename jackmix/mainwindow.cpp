@@ -752,6 +752,11 @@ void MainWindow::test_slot() {
 	connect(_unitywidget->_elements[0], SIGNAL(sendKnobPointer_signal(double)), _inputswidget, SLOT(receiveKnobPointer_signal(double)));
 	connect(_unitywidget->_elements[0], SIGNAL(sendKnobPointer_signal(double)), _outputswidget, SLOT(receiveKnobPointer_signal(double)));
 
+
+	connect(_unitywidget->_elements[0], SIGNAL(sendUnityMute_signal(bool )), _mixerwidget, SLOT(receiveUnityMute_signal(bool)));
+	connect(_unitywidget->_elements[0], SIGNAL(sendUnityMute_signal(bool)), _inputswidget, SLOT(receiveUnityMute_signal(bool)));
+	connect(_unitywidget->_elements[0], SIGNAL(sendUnityMute_signal(bool)), _outputswidget, SLOT(receiveUnityMute_signal(bool)));
+
 	//emit _mixerwidget->setKnobPointer_signal(6);
 	qDebug() << "	emit _mixerwidget->setKnobPointer_signal(6);  count"<< _unitywidget->elements();
 }

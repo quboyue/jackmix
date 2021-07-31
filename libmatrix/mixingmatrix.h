@@ -118,7 +118,7 @@ signals:
 	/** AutoFill pass complete: safe to getResponsible() etc now */
 	void autoFillComplete(MixingMatrix::Widget *);
 	void setKnobPointer_signal(double);
-
+	void setUnityMute_signal(bool);
 public slots:
         // Combine many elements to form a multichannel one
 	void replace( Element* ,QString type="none");
@@ -137,6 +137,8 @@ public slots:
          */ 
         void update_peak_inidicators(JackMix::BackendInterface::levels_t newLevels);
 		void receiveKnobPointer_signal(double volume) { qDebug()<<"  --receiveKnobPointer_signal"; emit setKnobPointer_signal(volume); };
+		void receiveUnityMute_signal(bool is_mute) { qDebug() << "  --receiveUnityMute_signal"; emit setUnityMute_signal(is_mute); }
+
 private:
 	enum Mode _mode;
 	Direction _direction;
@@ -223,6 +225,10 @@ public slots:
 	virtual void setKnobPointer_slot(double volume) {
 		// qDebug() << "father setKnobPointer_slot";
 		return; 
+	};
+	virtual void setUnityMute_slot(bool is_mute) {
+		// qDebug() << "father setKnobPointer_slot";
+		return;
 	};
 
 signals:

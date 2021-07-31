@@ -118,7 +118,7 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 	MuteButton_left->setStyleSheet("background-color: rgb(175,175,175)");
 	MuteButton_left->setCheckable(true);
 	MuteButton_left->setFont(QFont("", 7));
-	connect(MuteButton_left, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_left(bool)));
+	connect(MuteButton_left, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_left()));
 	_layout_button->addWidget(MuteButton_left, 1);
 
 
@@ -128,7 +128,7 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 	MuteButton_right->setStyleSheet("background-color: rgb(175,175,175)");
 	MuteButton_right->setCheckable(true);
 	MuteButton_right->setFont(QFont("", 7));
-	connect(MuteButton_right, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_right(bool)));
+	connect(MuteButton_right, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_right()));
 	_layout_button->addWidget(MuteButton_right, 2);
 
 
@@ -202,32 +202,35 @@ void Mono2StereoElement::calculateVolumes() {
 
 }
 //delete me!!!
-void Mono2StereoElement::slot_mute_channel_left(bool input) {
-	qDebug() << " MuteButton input   " << input;
+void Mono2StereoElement::slot_mute_channel_left() {
+
 
 	if (is_mute_left) {
 
+		MuteButton_left->setChecked(false);
 		is_mute_left = false;
 		qDebug() << " indicator_value " << indicator_value_left;
 		backend()->setVolume(_in[0], _out[0], indicator_value_left);
 	}
 	else {
+		MuteButton_left->setChecked(true);
 		is_mute_left = true;
 		backend()->setVolume(_in[0], _out[0], dbtoamp(-42));
 	}
 
 }
 
-void Mono2StereoElement::slot_mute_channel_right(bool input) {
-	qDebug() << " MuteButton input   " << input;
+void Mono2StereoElement::slot_mute_channel_right() {
+
 
 	if (is_mute_right) {
-
+		MuteButton_right->setChecked(false);
 		is_mute_right = false;
 		qDebug() << " indicator_value " << indicator_value_right;
 		backend()->setVolume(_in[0], _out[1], indicator_value_right);
 	}
 	else {
+		MuteButton_right->setChecked(true);
 		is_mute_right = true;
 		backend()->setVolume(_in[0], _out[1], dbtoamp(-42));
 	}
@@ -242,6 +245,16 @@ void Mono2StereoElement::setKnobPointer_slot(double volume) {
 		_volume->value(volume);
 		emit valueChanged(this, QString("volume"));
 		_volume->update();
+
+}
+void Mono2StereoElement::setUnityMute_slot(bool is_mute) {
+	if (is_mute != this->is_mute_left) {
+		slot_mute_channel_left();
+	}
+	if (is_mute != this->is_mute_right) {
+		slot_mute_channel_right();
+	}
+
 
 }
 //delete me!!!
@@ -282,7 +295,7 @@ Stereo2StereoElement::Stereo2StereoElement( QStringList inchannels, QStringList 
 	MuteButton_left->setStyleSheet("background-color: rgb(175,175,175)");
 	MuteButton_left->setCheckable(true);
 	MuteButton_left->setFont(QFont("", 7));
-	connect(MuteButton_left, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_left(bool)));
+	connect(MuteButton_left, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_left()));
 	_layout->addWidget(MuteButton_left, 2,0,1,1);
 
 
@@ -292,7 +305,7 @@ Stereo2StereoElement::Stereo2StereoElement( QStringList inchannels, QStringList 
 	MuteButton_right->setStyleSheet("background-color: rgb(175,175,175)");
 	MuteButton_right->setCheckable(true);
 	MuteButton_right->setFont(QFont("", 7));
-	connect(MuteButton_right, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_right(bool)));
+	connect(MuteButton_right, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_right()));
 	_layout->addWidget(MuteButton_right, 2, 2, 1, 1);
 
 
@@ -384,32 +397,34 @@ void Stereo2StereoElement::calculateVolumes() {
 }
 
 //delete me!!!
-void Stereo2StereoElement::slot_mute_channel_left(bool input) {
-	qDebug() << " Stereo2StereoElement input   " << input;
+void Stereo2StereoElement::slot_mute_channel_left( ) {
+
 
 	if (is_mute_left) {
-
+		MuteButton_left->setChecked(false);
 		is_mute_left = false;
 		qDebug() << " indicator_value " << indicator_value_left;
 		backend()->setVolume(_in[0], _out[0], indicator_value_left);
 	}
 	else {
+		MuteButton_left->setChecked(true);
 		is_mute_left = true;
 		backend()->setVolume(_in[0], _out[0], dbtoamp(-42));
 	}
 
 }
 
-void Stereo2StereoElement::slot_mute_channel_right(bool input) {
-	qDebug() << " MuteButton input   " << input;
+void Stereo2StereoElement::slot_mute_channel_right( ) {
+
 
 	if (is_mute_right) {
-
+		MuteButton_right->setChecked(false);
 		is_mute_right = false;
 		qDebug() << " indicator_value " << indicator_value_right;
 		backend()->setVolume(_in[1], _out[1], indicator_value_right);
 	}
 	else {
+		MuteButton_right->setChecked(true);
 		is_mute_right = true;
 		backend()->setVolume(_in[1], _out[1], dbtoamp(-42));
 	}
@@ -424,5 +439,16 @@ void Stereo2StereoElement::setKnobPointer_slot(double volume) {
 	calculateVolumes();
 	emit valueChanged(this, QString("volume"));
 	//update();
+
+}
+
+void Stereo2StereoElement::setUnityMute_slot(bool is_mute) {
+	if (is_mute != this->is_mute_left) {
+		slot_mute_channel_left();
+	}
+	if (is_mute != this->is_mute_right) {
+		slot_mute_channel_right();
+	}
+
 
 }
