@@ -274,17 +274,40 @@ Stereo2StereoElement::Stereo2StereoElement( QStringList inchannels, QStringList 
 	Explode_button->setFixedSize(30, 30);
 	_layout->addWidget(Explode_button, 0,0,1,1);
 	connect(Explode_button, SIGNAL(clicked()), this, SLOT(slot_simple_explode()));
+
+
+
+	MuteButton_left = new QPushButton("Mute L");
+	MuteButton_left->setFixedSize(80, 50);
+	MuteButton_left->setStyleSheet("background-color: rgb(175,175,175)");
+	MuteButton_left->setCheckable(true);
+	MuteButton_left->setFont(QFont("", 7));
+	connect(MuteButton_left, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_left(bool)));
+	_layout->addWidget(MuteButton_left, 2,0,1,1);
+
+
+
+	MuteButton_right = new QPushButton("Mute R");
+	MuteButton_right->setFixedSize(80, 50);
+	MuteButton_right->setStyleSheet("background-color: rgb(175,175,175)");
+	MuteButton_right->setCheckable(true);
+	MuteButton_right->setFont(QFont("", 7));
+	connect(MuteButton_right, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_right(bool)));
+	_layout->addWidget(MuteButton_right, 2, 2, 1, 1);
+
+
+
 	//delete me!!
 
 
 	_balance_widget = new JackMix::GUI::Slider( _balance_value, -1, 1, 2, 0.1, this, "%1" );
-	_layout->addWidget( _balance_widget, 1,0,1,2);
+	_layout->addWidget( _balance_widget, 1,0,1,3);
 	//_layout->setRowStretch( 0, 0);
 	connect( _balance_widget, SIGNAL( valueChanged( double ) ), this, SLOT( balance( double ) ) );
 	connect( _balance_widget, SIGNAL( select() ), this, SLOT( slot_simple_select() ) );
 	connect( _balance_widget, SIGNAL( replace() ), this, SLOT( slot_simple_replace() ) );
 	_volume_widget = new JackMix::GUI::Slider( amptodb( _volume_value ), dbmin, dbmax, 1, 3, this );
-	_layout->addWidget( _volume_widget, 2,0,3,2 );
+	_layout->addWidget( _volume_widget, 3,0,1,3);
 	//_layout->setRowStretch( 1, 255 );
 	connect( _volume_widget, SIGNAL( valueChanged( double ) ), this, SLOT( volume( double ) ) );
 	connect( _volume_widget, SIGNAL( select() ), this, SLOT( slot_simple_select() ) );
@@ -351,11 +374,47 @@ void Stereo2StereoElement::calculateVolumes() {
 		left = dbtoamp( _volume_value )*( 1-_balance_value );
 	if ( _balance_value < 0 )
 		right = dbtoamp( _volume_value )*( 1+_balance_value );
-	backend()->setVolume( _in[0], _out[0], left );
-	backend()->setVolume( _in[1], _out[1], right );
+
+	indicator_value_left = left;
+	indicator_value_right = right;
+	if (!is_mute_left)
+		backend()->setVolume( _in[0], _out[0], left );
+	if (!is_mute_right)
+		backend()->setVolume( _in[1], _out[1], right );
 }
 
+//delete me!!!
+void Stereo2StereoElement::slot_mute_channel_left(bool input) {
+	qDebug() << " Stereo2StereoElement input   " << input;
 
+	if (is_mute_left) {
+
+		is_mute_left = false;
+		qDebug() << " indicator_value " << indicator_value_left;
+		backend()->setVolume(_in[0], _out[0], indicator_value_left);
+	}
+	else {
+		is_mute_left = true;
+		backend()->setVolume(_in[0], _out[0], dbtoamp(-42));
+	}
+
+}
+
+void Stereo2StereoElement::slot_mute_channel_right(bool input) {
+	qDebug() << " MuteButton input   " << input;
+
+	if (is_mute_right) {
+
+		is_mute_right = false;
+		qDebug() << " indicator_value " << indicator_value_right;
+		backend()->setVolume(_in[1], _out[1], indicator_value_right);
+	}
+	else {
+		is_mute_right = true;
+		backend()->setVolume(_in[1], _out[1], dbtoamp(-42));
+	}
+
+}
 void Stereo2StereoElement::setKnobPointer_slot(double volume) {
 
 	//qDebug() << "Stereo2StereoElement setKnobPointer_slot";

@@ -107,16 +107,24 @@ public:
 
 	double getVolume() const { return _volume_value; }
 	double getBalance() const { return _balance_value; }
+	double indicator_value_left = -42;
+	double indicator_value_right = -42;
+	bool is_mute_left = false;
+	bool is_mute_right = false;
 private slots:
 	void balance( double );
 	void volume( double );
 	void calculateVolumes();
+	void slot_mute_channel_left(bool);
+	void slot_mute_channel_right(bool);
 	void setKnobPointer_slot(double volume);
 private:
 	QString _inchannel1, _inchannel2, _outchannel1, _outchannel2;
 	double _balance_value, _volume_value;
 	JackMix::GUI::Slider *_volume_widget, *_balance_widget;
 	QPushButton* Explode_button;
+	QPushButton* MuteButton_left;
+	QPushButton* MuteButton_right;
 };
 
 void init_stereo_elements();
