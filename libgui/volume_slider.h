@@ -33,16 +33,11 @@ namespace JackMix {
             volume_slider(double value, double min, double max, int precision, double pagestep, QWidget*,QString name);
             ~volume_slider();
 
-            virtual void value(double n, bool show_numeric = true);
-
         protected:
             void paintEvent(QPaintEvent*);
-
-            void mouseEvent(QMouseEvent*);
             QRect _faderarea;
 
-        private slots:
-            void timeout();
+
 
 
 

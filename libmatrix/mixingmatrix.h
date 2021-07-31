@@ -220,7 +220,10 @@ public slots:
 	 *  a saved control layout.
 	 */
 	void update_midi_parameters(QList< int > pv);
-	virtual void setKnobPointer_slot(double volume) { qDebug() << "father setKnobPointer_slot"; return; };
+	virtual void setKnobPointer_slot(double volume) {
+		// qDebug() << "father setKnobPointer_slot";
+		return; 
+	};
 
 signals:
 

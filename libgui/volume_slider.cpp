@@ -82,12 +82,7 @@ volume_slider::volume_slider(double value, double min, double max, int precision
 volume_slider::~volume_slider() {
 }
 
-void volume_slider::value(double n, bool show_numeric) {
-	return;
-}
-void volume_slider::timeout() {
-	return;
-}
+
 
 #define SLIDER_BORDER 5
 
@@ -206,8 +201,6 @@ void volume_slider::paintEvent(QPaintEvent*) {
 }
 
 
-void volume_slider::mouseEvent(QMouseEvent* ev) {
 
-}
 
 
