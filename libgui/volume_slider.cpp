@@ -13,10 +13,64 @@
 using namespace JackMix;
 using namespace JackMix::GUI;
 
-volume_slider::volume_slider(double value, double min, double max, int precision, double pagestep, QWidget* p, QString valuestring)
+
+
+
+
+volume_bar::volume_bar(): QWidget(), dB2VolCalc(-42, 6)
+{
+	layout = new  QHBoxLayout(this);
+	layout->setMargin(2);
+	layout->setSpacing(2);
+
+	qDebug() << "  THIS IS VOLUME BAR";
+
+}
+volume_bar::~volume_bar() {
+}
+
+void volume_bar::receive_OutputVolume(QString which, float max) {
+
+	if (!_outchannels.contains(which))
+		_outchannels << which;
+	if (_volume_sliders.size() < _outchannels.size()) {
+		volume_slider* one_slider = new volume_slider(0, -20, 3, 2, 1.0, 0,which);
+		_volume_sliders.append(one_slider);
+		layout->addWidget(one_slider, 0);
+	}
+
+	for (int i = 0; i < _volume_sliders.size(); i++) {
+		if (_volume_sliders[i]->_name == which) {
+			_volume_sliders[i]->_value = amptodb(max);
+			_volume_sliders[i]->update();
+		}
+
+	}
+
+	qDebug() << "  _outchannels WHICH "<< which;
+	//_value = amptodb(max);
+	//update();
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+volume_slider::volume_slider(double value, double min, double max, int precision, double pagestep, QWidget* p ,QString name)
 	: QWidget(p)
 	, dB2VolCalc(-42, 6)
 {
+	QString valuestring = "%1 db";
+	_name = name;
 	setAutoFillBackground(false);
 	int m = QFontMetrics(font()).height();
 	int w = QFontMetrics(font()).width(valuestring);
@@ -165,9 +219,12 @@ void volume_slider::mouseEvent(QMouseEvent* ev) {
 		*/
 }
 
+
+/*
 void volume_slider::receive_OutputVolume(QString which, float max) {
 
 	_value = amptodb(max);
 	update();
 
 }
+*/

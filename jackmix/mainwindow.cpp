@@ -79,7 +79,7 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
                         yes = true;  */
 		if ( !yes ) {
 			ins = QStringList() << "in_1" << "in_2" << "in_3" ;
-			outs = QStringList() << "out_1" << "out_2";
+			outs = QStringList() << "out_1" << "out_2"<<"out_3";
 			//ins = QStringList() << "in_1";
 			//outs= QStringList() << "out_1";
 		}
@@ -194,9 +194,9 @@ void MainWindow::init() {
 	_mw->layout->addWidget(_unitywidget, 0, 1);
 	
 
-	QWidget* slider_test = new JackMix::GUI::volume_slider(0, -20, 3, 2, 1.0, 0);
-	_mw->layout->addWidget(slider_test, 0, 2,2,1);
-	_mw->layout->addWidget(slider_test, 0, 3, 2, 1);
+	QWidget* _volume_bar = new JackMix::GUI::volume_bar();
+	_mw->layout->addWidget(_volume_bar, 0, 2,2,1);
+	//_mw->layout->addWidget(_volume_bar, 0, 3, 2, 1);
 
 	// When the widgets have finished laying themselves out, we need to set up
 	// their Midi parameters. This can't happen before layout's complete because
@@ -240,7 +240,7 @@ void MainWindow::init() {
 	
 	//delete me!!
 	connect(_backend, SIGNAL(send_OutputVolume(QString,float)),
-		slider_test, SLOT(receive_OutputVolume(QString, float)));
+		_volume_bar, SLOT(receive_OutputVolume(QString, float)));
 	//delete me!!
 
 
