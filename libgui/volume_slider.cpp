@@ -35,7 +35,7 @@ void volume_slider::timeout() {
 	return;
 }
 
-#define SLIDER_BORDER 2
+#define SLIDER_BORDER 5
 
 void volume_slider::paintEvent(QPaintEvent*) {
 	qDebug() << "    volume_slider::paintEvent	"<< _value;
@@ -54,11 +54,10 @@ void volume_slider::paintEvent(QPaintEvent*) {
 	// Center the coordinates
 	p.translate(width() / 2, height() / 2);
 
-	double w = width() - SLIDER_BORDER;
-	double h = height() - SLIDER_BORDER;
 
-	w = height() - SLIDER_BORDER;
-	h = width() - SLIDER_BORDER;
+
+	double w = height() - SLIDER_BORDER;
+	double h = width() - 4*SLIDER_BORDER;
 	p.rotate(-90);
 
 
@@ -116,23 +115,27 @@ void volume_slider::paintEvent(QPaintEvent*) {
 	// Surrounding rect
 	p.drawRect(bar);
 
+	int barTopColor_RedChannel;
+
+	barTopColor_RedChannel = int((30/(dbmax - dbmin))*_value);
+
 	// Rect for the whole bar
 	{
 		p.save();
 		QLinearGradient grad(QPointF(-w / 2, -h / 4), QPointF(w / 2, -h / 4));
 		// Global ends first
-		grad.setColorAt(0.0, QColor(0, 255, 0));
+		grad.setColorAt(0.0, QColor(0, 215, 0));//bottom
 		if (dbtondb(_value) < 1.0)
-			grad.setColorAt(1.0, QColor(255, 255, 255));
+			grad.setColorAt(1.0, QColor(255, 255, 255));//top
 
 		// Next soft-fades
-		grad.setColorAt(qMax(0.0, dbtondb(_value) - 0.01), QColor(255, 0, 0));
+		grad.setColorAt(qMax(0.0, dbtondb(_value) - 0.01), QColor(barTopColor_RedChannel+200, 215, 0));
 		if (dbtondb(_value) + 0.01 < 1.0)
-			grad.setColorAt(qMin(1.0,dbtondb(_value) + 0.01), QColor(255, 0, 255));
+			grad.setColorAt(qMin(1.0,dbtondb(_value) + 0.01), QColor(230, 230, 230));
 
 
 		// Last the value itself
-		grad.setColorAt(dbtondb(_value), QColor(0, 0, 255));
+		grad.setColorAt(dbtondb(_value), QColor(0, 0, 0));
 		// That way minimum and maximum get the right color
 
 		p.fillRect(bar, grad);
