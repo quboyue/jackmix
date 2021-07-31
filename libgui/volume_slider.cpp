@@ -178,13 +178,13 @@ void volume_slider::paintEvent(QPaintEvent*) {
 			grad.setColorAt(1.0, QColor(255, 255, 255));//top
 
 		// Next soft-fades
-		grad.setColorAt(qMax(0.0, dbtondb(_value) - 0.01), QColor(barTopColor_RedChannel+200, 215, 0));
+		grad.setColorAt(qMax(0.0, dbtondb(_value) - 0.01), QColor(barTopColor_RedChannel+190, 215 - barTopColor_RedChannel, 0));
 		if (dbtondb(_value) + 0.01 < 1.0)
 			grad.setColorAt(qMin(1.0,dbtondb(_value) + 0.01), QColor(230, 230, 230));
 
 
 		// Last the value itself
-		grad.setColorAt(dbtondb(_value), QColor(barTopColor_RedChannel + 194,215- 2*barTopColor_RedChannel, 0));
+		grad.setColorAt(dbtondb(_value), QColor(barTopColor_RedChannel + 190,215, 0));
 		// That way minimum and maximum get the right color
 
 		p.fillRect(bar, grad);
