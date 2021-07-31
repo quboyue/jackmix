@@ -99,7 +99,7 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
 	scheduleAutoFill();
 	//delete me!!
 	
-	QTimer::singleShot(5000, this, SLOT(test_slot()));
+
 		
 	//delete me!!
 
@@ -366,6 +366,7 @@ void MainWindow::updateAutoFilledMidiParams(MixingMatrix::Widget *w) {
 	else if(w==_unitywidget){
 		qDebug("		(_unitywidget widget)");
 		mphash = &_unitymps;
+		QTimer::singleShot(1, this, SLOT(test_slot()));
 	} 
 	//delete me!!
 	else { qDebug("(UNKNOWN widget)");

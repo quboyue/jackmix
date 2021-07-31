@@ -47,7 +47,7 @@ void volume_bar::receive_OutputVolume(QString which, float max) {
 
 	}
 
-	qDebug() << "  _outchannels WHICH "<< which;
+	//qDebug() << "  _outchannels WHICH "<< which;
 	//_value = amptodb(max);
 	//update();
 
@@ -92,7 +92,7 @@ void volume_slider::timeout() {
 #define SLIDER_BORDER 5
 
 void volume_slider::paintEvent(QPaintEvent*) {
-	qDebug() << "    volume_slider::paintEvent	"<< _value;
+	//qDebug() << "    volume_slider::paintEvent	"<< _value;
 
 
 	//qDebug() << " 	float max    newOutputLevel   max:::" << calcu_part->amptodb(max);
@@ -207,24 +207,7 @@ void volume_slider::paintEvent(QPaintEvent*) {
 
 
 void volume_slider::mouseEvent(QMouseEvent* ev) {
-	/*
-	if (width() >= height())
-		value(ndbtodb(
-			(ev->pos().x() - _faderarea.x()) / double(_faderarea.width() - 1)
-		));
-	else
-		value(ndbtodb(
-			(_faderarea.height() - ev->pos().y() + _faderarea.y()) / double(_faderarea.height() - 1)
-		));
-		*/
-}
-
-
-/*
-void volume_slider::receive_OutputVolume(QString which, float max) {
-
-	_value = amptodb(max);
-	update();
 
 }
-*/
+
+
