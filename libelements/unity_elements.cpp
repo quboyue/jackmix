@@ -99,8 +99,9 @@ UnityElement::UnityElement(QStringList inchannel, QStringList outchannel, Mixing
 	_layout->addWidget(MuteButton, 1);
 	MuteButton->setText("Mute");
 	MuteButton->setMouseTracking(true);
-	MuteButton->setMinimumSize(40, 50);
-	MuteButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+
+	_poti->setMinimumSize(150, 90);
+	MuteButton->setMinimumSize(20, 30);
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
 
 	//delete me!!!!
@@ -116,6 +117,8 @@ UnityElement::~UnityElement() {
 
 void UnityElement::emitvalue(double n) {
 	//setKnobPointer(_poti->_value);
+
+	qDebug() << "	emitvalue sendKnobPointer_signal";
 	emit sendKnobPointer_signal(_poti->_value);
 	return;
 }

@@ -705,15 +705,16 @@ void MainWindow::removeOutput( QString n ) {
 
 void MainWindow::allAutoFill() {
 
-	qDebug() << "--------------------------------		!!!!_mixerwidget->autoFill();";
-	_mixerwidget->autoFill();
-	qDebug() << "---------------------------------		!!!!_unitywidget->autoFill();";
-	_unitywidget->autoFill();
-	_outputswidget->autoFill();
-	qDebug() << "----------------------------------		!!!!_inputswidget->autoFill();";
-	_inputswidget->autoFill();
 
-	qDebug() << "----------------------------------		!!!!_inputswidget->autoFill();";
+	_mixerwidget->autoFill();
+
+
+	_outputswidget->autoFill();
+
+
+	_inputswidget->autoFill();
+	_unitywidget->autoFill();
+
 
 	qDebug() << "----------------------------------		!!!!_inputswidget->endfill();";
 	_autofillscheduled = false;
@@ -752,5 +753,5 @@ void MainWindow::test_slot() {
 	connect(_unitywidget->_elements[0], SIGNAL(sendKnobPointer_signal(double)), _outputswidget, SLOT(receiveKnobPointer_signal(double)));
 
 	//emit _mixerwidget->setKnobPointer_signal(6);
-	qDebug() << "	emit _mixerwidget->setKnobPointer_signal(6);";
+	qDebug() << "	emit _mixerwidget->setKnobPointer_signal(6);  count"<< _unitywidget->elements();
 }

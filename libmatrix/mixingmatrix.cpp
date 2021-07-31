@@ -70,7 +70,7 @@ Widget::Widget( QStringList ins, QStringList outs, JackMix::BackendInterface* ba
 	if (_inchannels.size() == 0 && _outchannels.size() == 0) {
 		_direction = Corner;
 	}
-	setSizePolicy( QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding );
+	setSizePolicy( QSizePolicy::Minimum, QSizePolicy::Minimum);
 }
 Widget::~Widget() {
 	// Time to depart this application.
@@ -191,8 +191,10 @@ void Widget::autoFill() {
 	}
 	//delete me!!
 	else if (_direction == Corner) {
-		qDebug() << "		----------!Corner";
-		createControl(QStringList(), QStringList());
+		if (!elements()) {
+			qDebug() << "		----------!Corner";
+			createControl(QStringList(), QStringList());
+		}
 	}
 	//delete me!!
 	resizeEvent( 0 );

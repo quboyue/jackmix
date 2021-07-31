@@ -108,8 +108,8 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	_layout->addWidget(MuteButton, 1);
 	MuteButton->setText("Mute");
 	MuteButton->setMouseTracking(true);
-	MuteButton->setMinimumSize(40,50);
-	MuteButton->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+	_poti->setMinimumSize(150, 90);
+	MuteButton->setMinimumSize(20,30);
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
 	connect(_poti, SIGNAL(replace(QString)), this, SLOT(slot_simple_replace(QString)));
 	//delete me!!!!
