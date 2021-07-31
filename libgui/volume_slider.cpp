@@ -125,7 +125,7 @@ void volume_slider::paintEvent(QPaintEvent*) {
 	p.setFont(small);
 
 	double _pagestep = 1;
-	double dbmax = 15;
+	double dbmax = 6;
 	double dbmin = -42;
 
 
@@ -166,7 +166,7 @@ void volume_slider::paintEvent(QPaintEvent*) {
 
 	int barTopColor_RedChannel;
 
-	barTopColor_RedChannel = int((60/(dbmax - dbmin))*_value);
+	barTopColor_RedChannel = int((60* dbtondb(_value)));
 
 	// Rect for the whole bar
 	{
@@ -178,13 +178,13 @@ void volume_slider::paintEvent(QPaintEvent*) {
 			grad.setColorAt(1.0, QColor(255, 255, 255));//top
 
 		// Next soft-fades
-		grad.setColorAt(qMax(0.0, dbtondb(_value) - 0.01), QColor(barTopColor_RedChannel+190, 215, 0));
+		grad.setColorAt(qMax(0.0, dbtondb(_value) - 0.01), QColor(barTopColor_RedChannel+190, 215- 3*barTopColor_RedChannel, 0));
 		if (dbtondb(_value) + 0.01 < 1.0)
 			grad.setColorAt(qMin(1.0,dbtondb(_value) + 0.01), QColor(230, 230, 230));
 
 
 		// Last the value itself
-		grad.setColorAt(dbtondb(_value), QColor(barTopColor_RedChannel + 190,215, 0));
+		grad.setColorAt(dbtondb(_value), QColor(barTopColor_RedChannel + 190, 215 - 3 * barTopColor_RedChannel, 0));
 		// That way minimum and maximum get the right color
 
 		p.fillRect(bar, grad);
