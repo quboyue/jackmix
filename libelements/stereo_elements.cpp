@@ -235,7 +235,7 @@ void Mono2StereoElement::slot_mute_channel_right(bool input) {
 }
 void Mono2StereoElement::setKnobPointer_slot(double volume) {
 	
-		qDebug() << "Mono2StereoElement setKnobPointer_slot";
+		//qDebug() << "Mono2StereoElement setKnobPointer_slot";
 
 		_volume_value = volume;
 		calculateVolumes();
@@ -353,4 +353,17 @@ void Stereo2StereoElement::calculateVolumes() {
 		right = dbtoamp( _volume_value )*( 1+_balance_value );
 	backend()->setVolume( _in[0], _out[0], left );
 	backend()->setVolume( _in[1], _out[1], right );
+}
+
+
+void Stereo2StereoElement::setKnobPointer_slot(double volume) {
+
+	//qDebug() << "Stereo2StereoElement setKnobPointer_slot";
+
+	_volume_value = volume;
+	_volume_widget->value(volume);
+	calculateVolumes();
+	emit valueChanged(this, QString("volume"));
+	//update();
+
 }

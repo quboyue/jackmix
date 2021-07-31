@@ -111,6 +111,7 @@ private slots:
 	void balance( double );
 	void volume( double );
 	void calculateVolumes();
+	void setKnobPointer_slot(double volume);
 private:
 	QString _inchannel1, _inchannel2, _outchannel1, _outchannel2;
 	double _balance_value, _volume_value;
