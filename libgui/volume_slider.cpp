@@ -166,7 +166,7 @@ void volume_slider::paintEvent(QPaintEvent*) {
 
 	int barTopColor_RedChannel;
 
-	barTopColor_RedChannel = int((40/(dbmax - dbmin))*_value);
+	barTopColor_RedChannel = int((60/(dbmax - dbmin))*_value);
 
 	// Rect for the whole bar
 	{
@@ -184,7 +184,7 @@ void volume_slider::paintEvent(QPaintEvent*) {
 
 
 		// Last the value itself
-		grad.setColorAt(dbtondb(_value), QColor(barTopColor_RedChannel + 200,215- barTopColor_RedChannel, 0));
+		grad.setColorAt(dbtondb(_value), QColor(barTopColor_RedChannel + 194,215- 2*barTopColor_RedChannel, 0));
 		// That way minimum and maximum get the right color
 
 		p.fillRect(bar, grad);
