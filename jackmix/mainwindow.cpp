@@ -202,7 +202,7 @@ void MainWindow::init() {
 	_mw->layout->addWidget(record_button, 2,1);
 	connect(record_button, SIGNAL(toggled(bool)),_backend, SLOT(set_write(bool)));
 
-
+	record_button->setStyleSheet("background-color: rgb(255,150,150)");
 	// When the widgets have finished laying themselves out, we need to set up
 	// their Midi parameters. This can't happen before layout's complete because
 	// elements may change (e.g. several auxes be replaced by a stereo element

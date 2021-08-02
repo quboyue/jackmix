@@ -39,6 +39,15 @@ void volume_bar::receive_OutputVolume(QString which, float max) {
 		layout->addWidget(one_slider, 0);
 	}
 
+	if (_volume_sliders.size() > _outchannels.size()) {
+
+		_volume_sliders.removeLast();
+
+	}
+
+
+
+
 	for (int i = 0; i < _volume_sliders.size(); i++) {
 		if (_volume_sliders[i]->_name == which) {
 			_volume_sliders[i]->_value = amptodb(max);
@@ -47,9 +56,7 @@ void volume_bar::receive_OutputVolume(QString which, float max) {
 
 	}
 
-	//qDebug() << "  _outchannels WHICH "<< which;
-	//_value = amptodb(max);
-	//update();
+
 
 
 }
@@ -89,12 +96,6 @@ volume_slider::~volume_slider() {
 void volume_slider::paintEvent(QPaintEvent*) {
 	//qDebug() << "    volume_slider::paintEvent	"<< _value;
 
-
-	//qDebug() << " 	float max    newOutputLevel   max:::" << calcu_part->amptodb(max);
-
-	//0, 0.00316, 0.12589, 0.50119
-	// Thresholds are at -50dB, -18dB and -6dB
-	//const float BackendInterface::threshold[] = { 0, 0.00316, 0.12589, 0.50119 };
 	QStyleOption opt;
 	QPainter p(this);
 	p.setRenderHints(QPainter::Antialiasing);
