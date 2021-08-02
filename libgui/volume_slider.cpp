@@ -62,11 +62,15 @@ void volume_bar::receive_removeVolumeBar(QString which) {
 	_outchannels.removeOne(which);
 	for (int i = 0; i < _volume_sliders.size(); i++) {
 		if (_volume_sliders[i]->_name == which) {
-
+			layout->removeWidget(_volume_sliders[i]);
 			_volume_sliders.removeOne(_volume_sliders[i]);
 		}
 
 	}
+	update();
+	qDebug() << " \n\n\n";
+	qDebug() << " _volume_sliders.removeOne(_volume_sliders[i]); " << which << "  " << _outchannels;
+	qDebug() << " \n\n\n";
 }
 
 

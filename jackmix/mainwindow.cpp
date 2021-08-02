@@ -250,7 +250,7 @@ void MainWindow::init() {
 	//delete me!!
 	connect(_backend, SIGNAL(send_OutputVolume(QString,float)),
 		_volume_bar, SLOT(receive_OutputVolume(QString, float)));
-	connect(_backend, SIGNAL(removeVolumeBar(QString)),
+	connect(this, SIGNAL(removeVolumeBar(QString)),
 		_volume_bar, SLOT(receive_removeVolumeBar(QString)));
 	//delete me!!
 
