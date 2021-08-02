@@ -79,7 +79,7 @@ public slots:
 	void openFile();
 	void openFile( QString path );
 	void saveFile( QString path="" );
-	void test_slot();
+
 
 private slots:
 	void toggleselectmode();
