@@ -68,7 +68,8 @@ public:
 	void test_Record(float *);
 	bool _write;
 	SF_INFO sfinfo;
-	SNDFILE* sndFile;
+
+	QList <SNDFILE*> _sndFiles;
 	/**
 	 * Rename a jack port
 	 * 

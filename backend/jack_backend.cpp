@@ -20,12 +20,10 @@
 
 */
 
-#include <stdio.h>
-#include <math.h>
-#include <memory.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <pwd.h>
+#include <iostream>
+
+#include<stdio.h>
+#include<stdlib.h>
 #include <jack/jack.h>
 #include <jack/ringbuffer.h>
 #include <sndfile.h>
@@ -295,21 +293,25 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 		outs.insert(it.key(), (jack_default_audio_sample_t*)jack_port_get_buffer(it.value(), nframes));
 
 
-	if (backend->_write) {
-
+	if (backend->_write && backend->out_ports_list.count()== backend->_sndFiles.count()) {
+		/*
 		qDebug() << "  Recording channel " << backend->out_ports_list.count() << " buffer: " << (int)nframes * backend->out_ports_list.count() ;
-		
 		int write_bufferbyte = 0;
 		for (int _byte = 0; _byte < (int)nframes;_byte++) {
-
 			for (it = backend->out_ports.begin(); it != backend->out_ports.end(); ++it) {
-
 				backend->write_buffer[write_bufferbyte] = outs[it.key()][_byte];
 				write_bufferbyte += 1;
 			}
 		}
 		qDebug() << "----------------------" << write_bufferbyte;
 		sf_writef_float(backend->sndFile, backend->write_buffer, write_bufferbyte);
+		*/
+		int snf_number = 0;
+		for (it = backend->out_ports.begin(); it != backend->out_ports.end(); ++it) {
+	
+			sf_writef_float(backend->_sndFiles[snf_number],outs[it.key()], (int)nframes);
+			snf_number += 1;
+		}
 	}
 
 		//if (backend->_write) {
@@ -371,7 +373,7 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 
 
 void JackBackend::test_Record(float *write_buffer) {
-		sf_writef_float(sndFile, write_buffer, 1024);
+	return;
 }
 
 void JackBackend::set_write(bool tog) {
@@ -380,16 +382,31 @@ void JackBackend::set_write(bool tog) {
 		qDebug() << " ----------------------test_Record test_Record test_Record";
 
 		sfinfo.format = SF_FORMAT_WAV | SF_FORMAT_FLOAT;
-		sfinfo.channels = 2;
-		sfinfo.samplerate = 48000;
+		sfinfo.channels = 1;
+		sfinfo.samplerate = jack_get_sample_rate(client);
 		sfinfo.frames = 1024;
-		//float* abc;
-		sndFile = sf_open("test_wav.wav", SFM_WRITE, &sfinfo);
-		write_buffer = new float[2048];
+
+
+	
+
+
+		for (int i = 0; i < out_ports_list.count(); i++) 
+		{
+			QString s2 = QDateTime::currentDateTime().toString("yyyy-MM-ddThh")+"-channel-"+QString::number(i) + ".wav";
+			QByteArray ba2;
+			ba2.append(s2);
+			const char* c2 = ba2.data();
+
+			_sndFiles<<sf_open(c2, SFM_WRITE, &sfinfo);
+		
+		}
+	
+		write_buffer = new float[1024];
 	}
 	else {
-		sf_close(sndFile);
-		sndFile = NULL;
+		for (int i = 0; i < _sndFiles.count();i++)
+			sf_close(_sndFiles[i]);
+
 
 		qDebug() << "End recording";
 	
