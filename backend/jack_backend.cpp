@@ -381,7 +381,7 @@ void JackBackend::set_write(bool tog) {
 
 		sfinfo.format = SF_FORMAT_WAV | SF_FORMAT_FLOAT;
 		sfinfo.channels = 2;
-		sfinfo.samplerate = 48000*2;
+		sfinfo.samplerate = 48000;
 		sfinfo.frames = 1024;
 		//float* abc;
 		sndFile = sf_open("test_wav.wav", SFM_WRITE, &sfinfo);
