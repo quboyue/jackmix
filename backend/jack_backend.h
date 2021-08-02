@@ -93,7 +93,7 @@ private:
 	bool rename(portsmap &map, QStringList &lst, const QString old_name, const char *new_name);
 	
 public:
-
+	float* write_buffer;
 	/// sets the volume of channel,output
 	void setVolume( QString,QString,float );
 	/// returns the volume of channel,output

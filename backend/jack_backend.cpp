@@ -291,14 +291,35 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 	for ( it = backend->in_ports.begin(); it!=backend->in_ports.end(); ++it )
 		ins.insert( it.key(), (jack_default_audio_sample_t*) jack_port_get_buffer( it.value(), nframes ) );
 	QMap<QString,jack_default_audio_sample_t*> outs;
-	for (it = backend->out_ports.begin(); it != backend->out_ports.end(); ++it) {
+	for (it = backend->out_ports.begin(); it != backend->out_ports.end(); ++it) 
 		outs.insert(it.key(), (jack_default_audio_sample_t*)jack_port_get_buffer(it.value(), nframes));
-		if (backend->_write) {
-			backend->test_Record((jack_default_audio_sample_t*)jack_port_get_buffer(it.value(), nframes));
-			qDebug() << "recording...";
+
+
+	if (backend->_write) {
+
+		qDebug() << "  Recording channel " << backend->out_ports_list.count() << " buffer: " << (int)nframes * backend->out_ports_list.count() ;
+		backend->write_buffer = new float[(int)nframes * backend->out_ports_list.count()];
+		int write_bufferbyte = 0;
+		for (int _byte = 0; _byte < (int)nframes;_byte++) {
+
+			for (it = backend->out_ports.begin(); it != backend->out_ports.end(); ++it) {
+
+				backend->write_buffer[write_bufferbyte] = outs[it.key()][_byte];
+				write_bufferbyte += 1;
+
+			}
+
 		}
-		//alternateBuffer = (jack_default_audio_sample_t*)jack_port_get_buffer(it.value(), nframes);
+		qDebug() << "----------------------" << write_bufferbyte;
+		sf_writef_float(backend->sndFile, backend->write_buffer, sizeof(backend->write_buffer));
 	}
+
+		//if (backend->_write) {
+		//	backend->test_Record((jack_default_audio_sample_t*)jack_port_get_buffer(it.value(), nframes));
+		//	qDebug() << "recording...";
+		//}
+
+	
 	ports_it in_it;
 	ports_it out_it;
 	/// Blank outports...
