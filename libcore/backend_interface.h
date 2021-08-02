@@ -46,7 +46,7 @@ Q_OBJECT
 	public:
 		BackendInterface( GuiServer_Interface* );
 		virtual ~BackendInterface();
-
+		bool _write=false;
 		/**
 		 * @brief Return the current list of output channels.
 		 */

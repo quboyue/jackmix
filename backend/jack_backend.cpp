@@ -314,10 +314,7 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 		}
 	}
 
-		//if (backend->_write) {
-		//	backend->test_Record((jack_default_audio_sample_t*)jack_port_get_buffer(it.value(), nframes));
-		//	qDebug() << "recording...";
-		//}
+
 
 	
 	ports_it in_it;
@@ -392,7 +389,7 @@ void JackBackend::set_write(bool tog) {
 
 		for (int i = 0; i < out_ports_list.count(); i++) 
 		{
-			QString s2 = QDateTime::currentDateTime().toString("yyyy-MM-ddThh")+"-channel-"+QString::number(i) + ".wav";
+			QString s2 = QDateTime::currentDateTime().toString("yyyy-MM-dd-hh-mm")+"-channel-"+QString::number(i) + ".wav";
 			QByteArray ba2;
 			ba2.append(s2);
 			const char* c2 = ba2.data();

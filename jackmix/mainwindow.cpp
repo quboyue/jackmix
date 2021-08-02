@@ -197,13 +197,11 @@ void MainWindow::init() {
 	QWidget* _volume_bar = new JackMix::GUI::volume_bar();
 	_mw->layout->addWidget(_volume_bar, 0, 2,2,1);
 
-	QPushButton* pushbutton = new QPushButton();
-	pushbutton->setCheckable(true);
-	_mw->layout->addWidget(pushbutton, 2,1);
-	qDebug() << "==========================================================================================";
-	connect(pushbutton, SIGNAL(toggled(bool)),_backend, SLOT(set_write(bool)));
-	qDebug() << "==========================================================================================";
-	//_mw->layout->addWidget(_volume_bar, 0, 3, 2, 1);
+	QPushButton* record_button = new QPushButton("Record");
+	record_button->setCheckable(true);
+	_mw->layout->addWidget(record_button, 2,1);
+	connect(record_button, SIGNAL(toggled(bool)),_backend, SLOT(set_write(bool)));
+
 
 	// When the widgets have finished laying themselves out, we need to set up
 	// their Midi parameters. This can't happen before layout's complete because
@@ -579,13 +577,22 @@ void MainWindow::addOutput() {
 					     "Channel name",
 					     QLineEdit::Normal,
 					     "(empty)" );
-	if ( tmp != "(empty)" && tmp != "" )
+
+	if ( tmp != "(empty)" && tmp != ""  && _backend->_write != true)
 		addOutput( tmp );
+
+	if (_backend->_write == true) {
+		qDebug() << "_backend->_write " << _backend->_write;
+		QMessageBox::about(NULL, "Warning", "Please don't add output when Recording");
+	}
 }
 void MainWindow::addOutput( QString name ) {
 	if ( !_backend->inchannels().contains(name) &&
 	     !_backend->outchannels().contains(name) &&
-	     _backend->addOutput( name ) ) {
+	     _backend->addOutput( name ) &&
+		_backend->_write != true
+		
+		) {
 		_mixerwidget->addoutchannel( name );
 		_outputswidget->addoutchannel( name );
 		scheduleAutoFill();

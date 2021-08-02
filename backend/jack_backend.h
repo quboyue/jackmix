@@ -66,7 +66,7 @@ public:
 	bool addInput( QString );
 	bool removeOutput( QString );
 	void test_Record(float *);
-	bool _write;
+
 	SF_INFO sfinfo;
 
 	QList <SNDFILE*> _sndFiles;
