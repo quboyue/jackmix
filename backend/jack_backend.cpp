@@ -364,7 +364,7 @@ void JackBackend::set_write(bool tog) {
 		qDebug() << " ----------------------test_Record test_Record test_Record";
 
 		sfinfo.format = SF_FORMAT_WAV | SF_FORMAT_FLOAT;
-		sfinfo.channels = 2;
+		sfinfo.channels = 1;
 		sfinfo.samplerate = 48000;
 		sfinfo.frames = 1024;
 		//float* abc;
