@@ -298,7 +298,7 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 	if (backend->_write) {
 
 		qDebug() << "  Recording channel " << backend->out_ports_list.count() << " buffer: " << (int)nframes * backend->out_ports_list.count() ;
-		backend->write_buffer = new float[(int)nframes * backend->out_ports_list.count()];
+		
 		int write_bufferbyte = 0;
 		for (int _byte = 0; _byte < (int)nframes;_byte++) {
 
@@ -306,12 +306,10 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 
 				backend->write_buffer[write_bufferbyte] = outs[it.key()][_byte];
 				write_bufferbyte += 1;
-
 			}
-
 		}
 		qDebug() << "----------------------" << write_bufferbyte;
-		sf_writef_float(backend->sndFile, backend->write_buffer, write_bufferbyte);
+		sf_writef_float(backend->sndFile, backend->write_buffer, write_bufferbyte-1);
 	}
 
 		//if (backend->_write) {
@@ -386,7 +384,7 @@ void JackBackend::set_write(bool tog) {
 		sfinfo.frames = 1024;
 		//float* abc;
 		sndFile = sf_open("test_wav.wav", SFM_WRITE, &sfinfo);
-
+		write_buffer = new float[2048];
 	}
 	else {
 		sf_close(sndFile);
