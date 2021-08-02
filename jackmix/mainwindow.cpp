@@ -197,6 +197,10 @@ void MainWindow::init() {
 	QWidget* _volume_bar = new JackMix::GUI::volume_bar();
 	_mw->layout->addWidget(_volume_bar, 0, 2,2,1);
 
+
+
+
+
 	QPushButton* record_button = new QPushButton("Record");
 	record_button->setCheckable(true);
 	_mw->layout->addWidget(record_button, 2,1);
@@ -246,6 +250,8 @@ void MainWindow::init() {
 	//delete me!!
 	connect(_backend, SIGNAL(send_OutputVolume(QString,float)),
 		_volume_bar, SLOT(receive_OutputVolume(QString, float)));
+	connect(_backend, SIGNAL(removeVolumeBar(QString)),
+		_volume_bar, SLOT(receive_removeVolumeBar(QString)));
 	//delete me!!
 
 
@@ -719,6 +725,7 @@ void MainWindow::removeOutput() {
 	tmp->show();
 }
 void MainWindow::removeOutput( QString n ) {
+	emit removeVolumeBar(n);
 	//qDebug( "MainWindow::removeOutput( QString %s )", qPrintable( n ) );
 	if ( _backend->removeOutput( n ) ) {
 		_outputswidget->removeoutchannel( n );

@@ -21,6 +21,7 @@ namespace JackMix {
             QStringList _outchannels;
         public slots:
             void receive_OutputVolume(QString which, float max);
+            void receive_removeVolumeBar(QString which);
         };
 
 

@@ -39,11 +39,6 @@ void volume_bar::receive_OutputVolume(QString which, float max) {
 		layout->addWidget(one_slider, 0);
 	}
 
-	if (_volume_sliders.size() > _outchannels.size()) {
-
-		_volume_sliders.removeLast();
-
-	}
 
 
 
@@ -63,7 +58,16 @@ void volume_bar::receive_OutputVolume(QString which, float max) {
 
 
 
+void volume_bar::receive_removeVolumeBar(QString which) {
+	_outchannels.removeOne(which);
+	for (int i = 0; i < _volume_sliders.size(); i++) {
+		if (_volume_sliders[i]->_name == which) {
 
+			_volume_sliders.removeOne(_volume_sliders[i]);
+		}
+
+	}
+}
 
 
 

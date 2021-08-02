@@ -74,7 +74,7 @@ signals:
 	 *  an alternative is chosen and this signal is fired
 	 */
 	void modify_channel_name(int index, QString replacement);
-
+	void removeVolumeBar(QString which);
 public slots:
 	void openFile();
 	void openFile( QString path );
