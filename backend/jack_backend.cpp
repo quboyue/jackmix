@@ -352,11 +352,7 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 
 
 void JackBackend::test_Record(float *write_buffer) {
-
-
 		sf_writef_float(sndFile, write_buffer, 1024);
-
-
 }
 
 void JackBackend::set_write(bool tog) {
@@ -364,7 +360,7 @@ void JackBackend::set_write(bool tog) {
 		qDebug() << " ----------------------test_Record test_Record test_Record";
 
 		sfinfo.format = SF_FORMAT_WAV | SF_FORMAT_FLOAT;
-		sfinfo.channels = 1;
+		sfinfo.channels = 2;
 		sfinfo.samplerate = 48000;
 		sfinfo.frames = 1024;
 		//float* abc;
@@ -378,8 +374,6 @@ void JackBackend::set_write(bool tog) {
 		qDebug() << "End recording";
 	
 	}
-
-
 
 	_write = tog;
 }

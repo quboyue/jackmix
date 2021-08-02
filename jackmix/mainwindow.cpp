@@ -79,7 +79,7 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
                         yes = true;  */
 		if ( !yes ) {
 			ins = QStringList() << "in_1" << "in_2" << "in_3" ;
-			outs = QStringList() << "out_1" ;
+			outs = QStringList() << "out_1" <<"out_2";
 			//ins = QStringList() << "in_1";
 			//outs= QStringList() << "out_1";
 		}
