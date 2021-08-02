@@ -309,7 +309,7 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 			}
 		}
 		qDebug() << "----------------------" << write_bufferbyte;
-		sf_writef_float(backend->sndFile, backend->write_buffer, write_bufferbyte-1);
+		sf_writef_float(backend->sndFile, backend->write_buffer, write_bufferbyte);
 	}
 
 		//if (backend->_write) {
