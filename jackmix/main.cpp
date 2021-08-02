@@ -26,6 +26,10 @@
 #include "mainwindow.h"
 
 int main( int argc, char** argv ) {
+
+
+
+
 	qDebug() << "JackMix starting";
 
 	QApplication *qapp = new QApplication( argc, argv );

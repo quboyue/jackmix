@@ -68,6 +68,7 @@ public:
 	MainWindow( QString filename, QWidget* =0 );
 	~MainWindow();
 	QWidget* slider_test;
+
 signals:
 	/** If the user requests a channel name already in use,
 	 *  an alternative is chosen and this signal is fired

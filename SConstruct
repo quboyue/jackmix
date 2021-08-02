@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 import os
-
+print("-------- Scons for Main----------")
 ###################################################################
 # LOAD THE ENVIRONMENT AND SET UP THE TOOLS
 ###################################################################
@@ -16,7 +16,7 @@ env = Environment(
 env.Replace(LIBS="")
 env.Replace(LIBPATH="")
 
-env.MergeFlags(['-Wall', '-Werror', '-g', '-fpic', '-std=c++11'])
+env.MergeFlags(['-Wall', '-Werror', '-g', '-fpic', '-std=c++11',"-lsndfile"])
 
 tests = {}
 tests.update(env['PKGCONFIG_TESTS'])
@@ -44,7 +44,8 @@ pkgs = {
 	'Qt5Widgets': '5.3',
 	'Qt5Gui': '5.3',
 	'Qt5Xml': '5.3',
-	'alsa': '1.0'
+	'alsa': '1.0',
+    'sndfile':'0'
 }
 for pkg in pkgs:
         name2 = pkg.replace("+", "").replace(".", "").replace("-", "").upper()

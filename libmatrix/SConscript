@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 
 Import( 'env' )
-
+print("-------- Scons for libmatrix----------")
 env = env.Clone()
 
-env.MergeFlags( "-I#/libcore -I#/libgui -I#/libelements -I#/libcontrol -I#/libmatrix -I#/backend" )
+env.MergeFlags( "-I#/libcore -I#/libgui -I#/libelements -I#/libcontrol -I#/libmatrix -I#/backend -lsndfile " )
 env.StaticLibrary( target="jackmix_mixingmatrix", source=["mixingmatrix.cpp"] )
 

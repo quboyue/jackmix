@@ -48,11 +48,10 @@ def GetPKGFlags( context, name, version="" ):
                 context.Result( ret )
                 return ret
 
-        p = Popen("pkg-config --cflags --libs %s" % name,
-                  shell=True, stdin=PIPE, stdout=PIPE, close_fds=True)
+        p = Popen("pkg-config --cflags --libs %s" % name, shell=True, stdin=PIPE, stdout=PIPE, close_fds=True)
         out = p.stdout
         ret = out.read()
-
+        print("--------------",ret)
         context.Result( True )
         return ret
 

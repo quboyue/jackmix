@@ -156,6 +156,8 @@ Q_OBJECT
 		
 	private slots:
 		void testSlot(JackMix::BackendInterface::levels_t);
+	public slots:
+		virtual void set_write(bool) { return; };
 	protected:
 		GuiServer_Interface* gui;
 		

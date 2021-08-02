@@ -1,9 +1,9 @@
 #! /usr/bin/env python
 
 Import( 'env' )
-
+print("-------- Scons for libcore----------")
 env = env.Clone()
 
-env.AppendUnique( CPPPATH=["#/libcore", "#/backend"] )
+env.AppendUnique( CPPPATH=["#/libcore", "#/backend" ] )
 env.StaticLibrary( target="jackmix_core", source= ['backend_interface.cpp'] )
 

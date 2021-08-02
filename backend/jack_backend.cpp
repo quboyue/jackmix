@@ -20,6 +20,16 @@
 
 */
 
+#include <stdio.h>
+#include <math.h>
+#include <memory.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <pwd.h>
+#include <jack/jack.h>
+#include <jack/ringbuffer.h>
+#include <sndfile.h>
+
 #include "jack_backend.h"
 #include <jack/midiport.h>
 
@@ -281,8 +291,14 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 	for ( it = backend->in_ports.begin(); it!=backend->in_ports.end(); ++it )
 		ins.insert( it.key(), (jack_default_audio_sample_t*) jack_port_get_buffer( it.value(), nframes ) );
 	QMap<QString,jack_default_audio_sample_t*> outs;
-	for ( it = backend->out_ports.begin(); it != backend->out_ports.end(); ++it )
-		outs.insert( it.key(), (jack_default_audio_sample_t*) jack_port_get_buffer( it.value(), nframes ) );
+	for (it = backend->out_ports.begin(); it != backend->out_ports.end(); ++it) {
+		outs.insert(it.key(), (jack_default_audio_sample_t*)jack_port_get_buffer(it.value(), nframes));
+		if (backend->_write) {
+			backend->test_Record((jack_default_audio_sample_t*)jack_port_get_buffer(it.value(), nframes));
+			qDebug() << "recording...";
+		}
+		//alternateBuffer = (jack_default_audio_sample_t*)jack_port_get_buffer(it.value(), nframes);
+	}
 	ports_it in_it;
 	ports_it out_it;
 	/// Blank outports...
@@ -324,8 +340,6 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 				tmp, nframes, backend->getOutVolume(key)
 			);
 
-		//dB2VolCalc* calcu_part = new dB2VolCalc(-42, 6);
-		//qDebug() << " 	float max    newOutputLevel   max:::" << calcu_part->amptodb(max);
 		backend->newOutputLevel(key, max);
 	}
 
@@ -335,3 +349,37 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 	return 0;
 }
 
+
+
+void JackBackend::test_Record(float *write_buffer) {
+
+
+		sf_writef_float(sndFile, write_buffer, 1024);
+
+
+}
+
+void JackBackend::set_write(bool tog) {
+	if (tog) {
+		qDebug() << " ----------------------test_Record test_Record test_Record";
+
+		sfinfo.format = SF_FORMAT_WAV | SF_FORMAT_FLOAT;
+		sfinfo.channels = 2;
+		sfinfo.samplerate = 48000;
+		sfinfo.frames = 1024;
+		//float* abc;
+		sndFile = sf_open("test_wav.wav", SFM_WRITE, &sfinfo);
+
+	}
+	else {
+		sf_close(sndFile);
+		sndFile = NULL;
+
+		qDebug() << "End recording";
+	
+	}
+
+
+
+	_write = tog;
+}

@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 Import( 'env' )
-
+print("-------- Scons for libcontrol---------")
 env = env.Clone()
 
 env.MergeFlags( "-I." )
@@ -11,7 +11,7 @@ env.StaticLibrary( target="jackmix_control", source =["controlreceiver.cpp",
                                                       "controlsender.cpp"] )
 
 e = env.Clone()
-e.MergeFlags( "-L./  -L../libgui -ljackmix_gui -ljackmix_control -lasound" )
+e.MergeFlags( "-L./  -L../libgui -ljackmix_gui -ljackmix_control -lasound -lsndfile " )
 e.MergeFlags( env['QT5GUI_FLAGS'] )
 e.Program( target="controlsender_test", source=["controlsender_test.cpp"] )
 

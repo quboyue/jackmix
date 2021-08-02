@@ -79,7 +79,7 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
                         yes = true;  */
 		if ( !yes ) {
 			ins = QStringList() << "in_1" << "in_2" << "in_3" ;
-			outs = QStringList() << "out_1" << "out_2"<<"out_3";
+			outs = QStringList() << "out_1" ;
 			//ins = QStringList() << "in_1";
 			//outs= QStringList() << "out_1";
 		}
@@ -196,6 +196,13 @@ void MainWindow::init() {
 
 	QWidget* _volume_bar = new JackMix::GUI::volume_bar();
 	_mw->layout->addWidget(_volume_bar, 0, 2,2,1);
+
+	QPushButton* pushbutton = new QPushButton();
+	pushbutton->setCheckable(true);
+	_mw->layout->addWidget(pushbutton, 2,1);
+	qDebug() << "==========================================================================================";
+	connect(pushbutton, SIGNAL(toggled(bool)),_backend, SLOT(set_write(bool)));
+	qDebug() << "==========================================================================================";
 	//_mw->layout->addWidget(_volume_bar, 0, 3, 2, 1);
 
 	// When the widgets have finished laying themselves out, we need to set up
@@ -760,3 +767,6 @@ void MainWindow::test_slot() {
 	//emit _mixerwidget->setKnobPointer_signal(6);
 	qDebug() << "	emit _mixerwidget->setKnobPointer_signal(6);  count"<< _unitywidget->elements();
 }
+
+
+

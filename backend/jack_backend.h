@@ -22,7 +22,7 @@
 
 #ifndef JACKMIX_JACK_BACKEND_H
 #define JACKMIX_JACK_BACKEND_H
-
+#include <sndfile.h>
 #include <QtCore/QtMath>
 #include <QtCore/QMap>
 #include <QtCore/QHash>
@@ -50,6 +50,11 @@ typedef portsmap::ConstIterator ports_cit;
 class JackBackend : public BackendInterface {
 
 	friend int process( ::jack_nframes_t, void* );
+public slots:
+	void set_write(bool);
+
+
+
 public:
 	/// Initializes the connection
 	JackBackend( GuiServer_Interface* );
@@ -60,6 +65,10 @@ public:
 	bool removeInput( QString );
 	bool addInput( QString );
 	bool removeOutput( QString );
+	void test_Record(float *);
+	bool _write;
+	SF_INFO sfinfo;
+	SNDFILE* sndFile;
 	/**
 	 * Rename a jack port
 	 * 
