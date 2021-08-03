@@ -18,7 +18,6 @@ using namespace JackMix::GUI;
  record_bar::record_bar(){
 
 
-	 
 	 connect(timer, SIGNAL(timeout()),this, SLOT(updateTime()));
 
 
@@ -76,9 +75,9 @@ using namespace JackMix::GUI;
  void record_bar::updateTime()  {
  
 
-	 qDebug ()<< "updateTime updateTime updateTime updateTime ";
-	 int seconds = QDateTime::currentDateTime().secsTo(start_time);
-	 qDebug() << seconds;
-	 time_lable->setText(" 1");
+
+	 QTime show_time;
+	 show_time.setHMS(0, 0, 0, 0);
+	 time_lable->setText(m_time.addSecs(start_time.secsTo(QDateTime::currentDateTime())).toString("hh:mm:ss"));
  
  }

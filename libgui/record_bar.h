@@ -25,7 +25,6 @@ namespace JackMix {
             QDateTime start_time;
         public slots:
            void is_record(bool toggled);
-        protected:
             void updateTime();
 
         };
