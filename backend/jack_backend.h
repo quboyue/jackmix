@@ -67,7 +67,7 @@ public:
 	bool removeOutput( QString );
 	void test_Record(float *);
 
-	SF_INFO sfinfo;
+
 
 	QList <SNDFILE*> _sndFiles;
 	/**

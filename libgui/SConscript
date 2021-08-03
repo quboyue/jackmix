@@ -13,6 +13,7 @@ env.StaticLibrary( target="jackmix_gui", source =["channelselector.cpp",
 						  "abstractslider.cpp",
 						  "slider.cpp",
 						  "volume_slider.cpp",
+						  "record_bar.cpp",
 						  "knob.cpp",
 						  "midicontrolchannelassigner.cpp"] )
 
