@@ -122,6 +122,22 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 
 	connect( _poti, SIGNAL( valueChanged( double ) ), this, SLOT( emitvalue( double ) ) );
 
+
+
+	midi_params.append(0);        // Initial MIDI paramater number
+	midi_delegates.append(_poti); //   for the potentiometer
+	//qDebug()<<"There are "<<midi_delegates.size()<<" Midi delegates";
+
+	// Now construct the parameter setting menu
+	_cca = new JackMix::GUI::MidiControlChannelAssigner(QString("Set MIDI control parameter"),
+		"<qt>" + _in[0] + " &rarr; " + _out[0] + "</qt>",
+		QStringList() << "Gain",
+		midi_params,
+		this
+	);
+	connect(_cca, SIGNAL(assignParameters(QList<int>)), this, SLOT(update_midi_parameters(QList<int>)));
+
+
 }
 AuxElement::~AuxElement() {
 }
