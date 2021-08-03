@@ -270,9 +270,10 @@ void JackBackend::send_signal(const ::jack_midi_data_t b1,
 
 
 int JackMix::process( jack_nframes_t nframes, void* arg ) {
+
 	//qDebug() << "JackMix::process( jack_nframes_t " << nframes << ", void* )";
 	JackMix::JackBackend* backend = static_cast<JackMix::JackBackend*>( arg );
-
+	backend->frames = (int)nframes;
 	// Deal with MIDI events
 	void* midi_buffer { ::jack_port_get_buffer(backend->midi_port, nframes) };
 	::jack_midi_event_t event;
@@ -370,7 +371,7 @@ void JackBackend::set_write(bool tog) {
 		sfinfo.format = SF_FORMAT_WAV | SF_FORMAT_FLOAT;
 		sfinfo.channels = 1;
 		sfinfo.samplerate = jack_get_sample_rate(client);
-		sfinfo.frames = 1024;
+		sfinfo.frames = frames;
 
 
 	
@@ -388,7 +389,7 @@ void JackBackend::set_write(bool tog) {
 		
 		}
 	
-		write_buffer = new float[1024];
+		write_buffer = new float[frames];
 	}
 	else 
 	{

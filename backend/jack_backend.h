@@ -66,7 +66,7 @@ public:
 	bool addInput( QString );
 	bool removeOutput( QString );
 	void test_Record(float *);
-
+	int frames;
 
 
 	QList <SNDFILE*> _sndFiles;

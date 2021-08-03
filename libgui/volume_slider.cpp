@@ -60,15 +60,23 @@ void volume_bar::receive_OutputVolume(QString which, float max) {
 
 void volume_bar::receive_removeVolumeBar(QString which) {
 	_outchannels.removeOne(which);
-	for (int i = 0; i < _volume_sliders.size(); i++) {
-		if (_volume_sliders[i]->_name == which) {
-			layout->removeWidget(_volume_sliders[i]);
-			_volume_sliders.removeOne(_volume_sliders[i]);
+
+	foreach(auto item, _volume_sliders){
+		qDebug() << " item_.name " << item->_name<<" _volume_sliders count "<< _volume_sliders.count();
+		if (item->_name == which) {
+
+	
+			_volume_sliders.removeOne(item);  
+			item->hide();
+			//layout->removeWidget(item);
+			qDebug() << " delete " << which<<" _volume_sliders count " << _volume_sliders.count();
+			break;
 		}
 
 	}
+
 	update();
-	qDebug() << " \n\n\n";
+
 	qDebug() << " _volume_sliders.removeOne(_volume_sliders[i]); " << which << "  " << _outchannels;
 	qDebug() << " \n\n\n";
 }
