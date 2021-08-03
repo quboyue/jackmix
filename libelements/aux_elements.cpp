@@ -214,12 +214,6 @@ void AuxElement::mousePressEvent(QMouseEvent* event)
 //delete me!!!
 
 
-void  AuxElement::update_pointer(double volume) {
-	_poti->_value = volume;
-	_poti->update();
-
-
-}
 
 void  AuxElement::setKnobPointer_slot(double volume) {
 	//qDebug() << "AuxElement setKnobPointer_slot";
