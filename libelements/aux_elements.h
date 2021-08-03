@@ -48,7 +48,7 @@ Q_OBJECT
 public:
 	AuxElement( QStringList inchannel, QStringList outchannel, MixingMatrix::Widget*, const char* =0 );
 	~AuxElement();
-
+    MixingMatrix::Widget * p;
 	int inchannels () const  { return 1; }
 	int outchannels() const { return 1; }
 	void setIndicator(const QColor& c);
@@ -63,7 +63,7 @@ public:
     QPushButton* MuteButton;
     //delete me!!!
     void update_pointer(double volume);
- 
+
 public slots:
 	void emitvalue( double );
     //delete me!!!
@@ -73,7 +73,7 @@ public slots:
     void mousePressEvent(QMouseEvent* event);
     void setKnobPointer_slot(double volume);
     void setUnityMute_slot(bool is_mute);
-       
+    void removeThis();
 };
 
 void init_aux_elements();

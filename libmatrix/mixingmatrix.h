@@ -113,12 +113,13 @@ public:
         
         /** These are the colours used for different levels defined in peak_tracker.h */
         static const QColor indicatorColors[];
-
+		QString removeItem;
 signals:
 	/** AutoFill pass complete: safe to getResponsible() etc now */
 	void autoFillComplete(MixingMatrix::Widget *);
 	void setKnobPointer_signal(double);
 	void setUnityMute_signal(bool);
+	void check_removeItem_singal();
 public slots:
         // Combine many elements to form a multichannel one
 	void replace( Element* ,QString type="none");
@@ -138,6 +139,7 @@ public slots:
         void update_peak_inidicators(JackMix::BackendInterface::levels_t newLevels);
 		void receiveKnobPointer_signal(double volume) { qDebug()<<"  --receiveKnobPointer_signal"; emit setKnobPointer_signal(volume); };
 		void receiveUnityMute_signal(bool is_mute) { qDebug() << "  --receiveUnityMute_signal"; emit setUnityMute_signal(is_mute); }
+		void check_removeItem() { qDebug() << "  --check_removeItem"; emit check_removeItem_singal(); }
 
 private:
 	enum Mode _mode;

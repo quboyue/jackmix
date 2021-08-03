@@ -79,8 +79,8 @@ public slots:
 	void openFile();
 	void openFile( QString path );
 	void saveFile( QString path="" );
-
-
+	void findRemove();
+	void findRemove_singleshot();
 private slots:
 	void toggleselectmode();
 	void togglein();

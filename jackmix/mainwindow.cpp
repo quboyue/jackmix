@@ -254,14 +254,16 @@ void MainWindow::init() {
 		_volume_bar, SLOT(receive_OutputVolume(QString, float)));
 	connect(this, SIGNAL(removeVolumeBar(QString)),
 		_volume_bar, SLOT(receive_removeVolumeBar(QString)));
+
+	connect(this, SIGNAL(removeVolumeBar(QString)),
+		_volume_bar, SLOT(receive_removeVolumeBar(QString)));
 	//delete me!!
 
 
 
 	// Connect the backend's MIDI control events to the MIDI listener's despatcher.
-	connect (_backend, SIGNAL(cc_message(int, int)),
-		 midiControlSender, SLOT(despatch_message(int, int)));
-
+	connect (_inputswidget, SIGNAL(check_removeItem_singal()),this, SLOT(findRemove()));
+	connect(_outputswidget, SIGNAL(check_removeItem_singal()), this, SLOT(findRemove()));
 }
 
 MainWindow::~MainWindow() {
@@ -779,4 +781,15 @@ MainWindowHelperWidget::MainWindowHelperWidget( QWidget* p ) : QWidget( p ) {
 	layout->setSpacing( 2 );
 }
 
-
+//I really don't konw why.... but only run removeInput(QString) in singleShot works....
+void MainWindow::findRemove() {
+	//It could directly call 	removeInput(_inputswidget->removeItem);
+	//but this wll lead to a big bug due to some memeory error , the program will broken...
+	QTimer::singleShot(1, this, SLOT(findRemove_singleshot()));
+}
+//I really don't konw why.... but only run removeInput(QString) in singleShot works....
+void MainWindow::findRemove_singleshot() {
+	qDebug() << "_inputswidget->removeItem " << _inputswidget->removeItem;
+	removeInput(_inputswidget->removeItem);
+	removeOutput(_outputswidget->removeItem);
+}

@@ -77,24 +77,29 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	: Element( inchannel, outchannel, p, n )
 	, dB2VolCalc( -42, 6 )
 {
+
+	this->p = p;
 	//this->setStyleSheet("border:2px solid red;");
 	this->setMouseTracking(true);
 	//qDebug( "AuxElement( QStringList '%s', QStringList '%s', %s)", qPrintable(inchannel.join( "," ) ), qPrintable(outchannel.join( "," ) ) );
 	qDebug() << "AuxElement inchannel " << inchannel<< " outchannel " << outchannel;
 
-	if (p->mode() == Widget::Select) {
-		menu()->addAction( "Select", this, SLOT( slot_simple_select() ) );
-		menu()->addAction( "Replace", this, SLOT( slot_simple_replace() ) );
-	}
-	menu()->addAction( "Assign MIDI Parameter", this, SLOT( slot_assign_midi_parameters() ) );
+	//if (p->mode() == Widget::Select) {
+	//	menu()->addAction( "Select", this, SLOT( slot_simple_select() ) );
+	//	menu()->addAction( "Replace", this, SLOT( slot_simple_replace() ) );
+	//}
+
+
+
 
 	QVBoxLayout* _layout = new QVBoxLayout( this );
 
 	if ( _in[0] == _out[0] ) {
+		menu()->addAction("Remove", this, SLOT(removeThis()));
 		disp_name = new QLabel( QString( "<qt><center>%1</center></qt>" ).arg( _in[0] ), this );
 		_layout->addWidget(disp_name, 0);
 	}
-	
+	menu()->addAction("Assign MIDI Parameter", this, SLOT(slot_assign_midi_parameters()));
 
 	qDebug() << " _poti = new JackMix::GUI::Knob ";
 	_poti = new JackMix::GUI::Knob(
@@ -225,4 +230,9 @@ void  AuxElement::setUnityMute_slot(bool is_mute) {
 	}
 
 
+}
+
+void AuxElement::removeThis() {
+	p->removeItem = _in[0];
+	emit p->check_removeItem();
 }
