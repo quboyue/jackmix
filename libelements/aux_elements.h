@@ -74,6 +74,7 @@ public slots:
     void setKnobPointer_slot(double volume);
     void setUnityMute_slot(bool is_mute);
     void removeThis();
+
 };
 
 void init_aux_elements();

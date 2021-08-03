@@ -257,13 +257,19 @@ void MainWindow::init() {
 
 	connect(this, SIGNAL(removeVolumeBar(QString)),
 		_volume_bar, SLOT(receive_removeVolumeBar(QString)));
+
 	//delete me!!
 
 
 
 	// Connect the backend's MIDI control events to the MIDI listener's despatcher.
+	connect(_backend, SIGNAL(cc_message(int, int)),
+		midiControlSender, SLOT(despatch_message(int, int)));
+
 	connect (_inputswidget, SIGNAL(check_removeItem_singal()),this, SLOT(findRemove()));
 	connect(_outputswidget, SIGNAL(check_removeItem_singal()), this, SLOT(findRemove()));
+	connect(_inputswidget, SIGNAL(addNew_signal()), this, SLOT(addInput()));
+	connect(_outputswidget, SIGNAL(addNew_signal()), this, SLOT(addOutput()));
 }
 
 MainWindow::~MainWindow() {

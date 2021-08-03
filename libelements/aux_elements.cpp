@@ -96,6 +96,7 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 
 	if ( _in[0] == _out[0] ) {
 		menu()->addAction("Remove", this, SLOT(removeThis()));
+		menu()->addAction("Add new port", p, SLOT(addNew()));
 		disp_name = new QLabel( QString( "<qt><center>%1</center></qt>" ).arg( _in[0] ), this );
 		_layout->addWidget(disp_name, 0);
 	}

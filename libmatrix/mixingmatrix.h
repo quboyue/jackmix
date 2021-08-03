@@ -120,6 +120,7 @@ signals:
 	void setKnobPointer_signal(double);
 	void setUnityMute_signal(bool);
 	void check_removeItem_singal();
+	void addNew_signal();
 public slots:
         // Combine many elements to form a multichannel one
 	void replace( Element* ,QString type="none");
@@ -140,7 +141,7 @@ public slots:
 		void receiveKnobPointer_signal(double volume) { qDebug()<<"  --receiveKnobPointer_signal"; emit setKnobPointer_signal(volume); };
 		void receiveUnityMute_signal(bool is_mute) { qDebug() << "  --receiveUnityMute_signal"; emit setUnityMute_signal(is_mute); }
 		void check_removeItem() { qDebug() << "  --check_removeItem"; emit check_removeItem_singal(); }
-
+		void addNew() { emit  addNew_signal(); }
 private:
 	enum Mode _mode;
 	Direction _direction;
