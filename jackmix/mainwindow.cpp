@@ -249,27 +249,23 @@ void MainWindow::init() {
 	connect (_backend, SIGNAL(outputLevelsChanged(JackMix::BackendInterface::levels_t)),
                  _outputswidget, SLOT(update_peak_inidicators(JackMix::BackendInterface::levels_t)));
 	
-	//delete me!!
-	connect(_backend, SIGNAL(send_OutputVolume(QString,float)),
-		_volume_bar, SLOT(receive_OutputVolume(QString, float)));
-	connect(this, SIGNAL(removeVolumeBar(QString)),
-		_volume_bar, SLOT(receive_removeVolumeBar(QString)));
-
-	connect(this, SIGNAL(removeVolumeBar(QString)),
-		_volume_bar, SLOT(receive_removeVolumeBar(QString)));
-
-	//delete me!!
-
-
 
 	// Connect the backend's MIDI control events to the MIDI listener's despatcher.
 	connect(_backend, SIGNAL(cc_message(int, int)),
 		midiControlSender, SLOT(despatch_message(int, int)));
 
+
+
+	//delete me!!
+	connect(_backend, SIGNAL(send_OutputVolume(QString,float)),_volume_bar, SLOT(receive_OutputVolume(QString, float)));
+	connect(this, SIGNAL(removeVolumeBar(QString)),_volume_bar, SLOT(receive_removeVolumeBar(QString)));
+
+	connect(this, SIGNAL(removeVolumeBar(QString)),_volume_bar, SLOT(receive_removeVolumeBar(QString)));
 	connect (_inputswidget, SIGNAL(check_removeItem_singal()),this, SLOT(findRemove()));
 	connect(_outputswidget, SIGNAL(check_removeItem_singal()), this, SLOT(findRemove()));
 	connect(_inputswidget, SIGNAL(addNew_signal()), this, SLOT(addInput()));
 	connect(_outputswidget, SIGNAL(addNew_signal()), this, SLOT(addOutput()));
+	//delete me!!
 }
 
 MainWindow::~MainWindow() {
