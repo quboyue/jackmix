@@ -33,7 +33,8 @@ using namespace JackMix::GUI;
 
 
 
-		 time_lable = new QLabel("Record Time:0");
+		 time_lable = new QLabel();
+		 time_lable->setText("00:00:00");
 		 layout->addWidget(time_lable, 2);
 
 		 file_name_lable = new QLabel(" ");
@@ -56,6 +57,7 @@ using namespace JackMix::GUI;
 		 record_button->setText("Recording");
 		 QString file_name = QDateTime::currentDateTime().toString("yyyy-MM-dd-hh-mm") + "-channel-*"  + ".wav";
 		 file_name_lable->setText(file_name);
+		 time_lable->setText("00:00:00");
 		 timer->start(1000);
 		 start_time = QDateTime::currentDateTime();
 	 }
@@ -64,7 +66,7 @@ using namespace JackMix::GUI;
 		 timer->stop();
 		 record_button->setText("Record");
 		 file_name_lable->setText(" ");
-		 time_lable->setText("Record Time:0");
+		 time_lable->setText("00:00:00");
 		
 	 }
  
@@ -78,6 +80,6 @@ using namespace JackMix::GUI;
 
 	 QTime show_time;
 	 show_time.setHMS(0, 0, 0, 0);
-	 time_lable->setText(m_time.addSecs(start_time.secsTo(QDateTime::currentDateTime())).toString("hh:mm:ss"));
+	 time_lable->setText(show_time.addSecs(start_time.secsTo(QDateTime::currentDateTime())).toString("hh:mm:ss"));
  
  }
