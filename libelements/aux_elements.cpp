@@ -178,7 +178,8 @@ void AuxElement::slot_mute_channel() {
 
 void AuxElement::mouseMoveEvent(QMouseEvent* event)
 {
-
+	if (_in[0] == _out[0]) 
+		return;
 
 	QPoint p_ab = event->globalPos();
 	int mouse_x = mapFromGlobal(p_ab).x();
