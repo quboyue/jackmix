@@ -34,8 +34,15 @@
 //#include "jack_backend.moc"
 
 #include <QtCore/QDebug>
+#include <complex>
+#include <fstream>
+#include <string>
+
+#include <list>
 
 using namespace JackMix;
+using namespace std;
+#define Pi 3.1415926
 
 JackBackend::JackBackend( GuiServer_Interface* g ) : BackendInterface( g ) {
 	//qDebug() << "JackBackend::JackBackend()";
@@ -413,8 +420,8 @@ void JackBackend::set_write(bool tog) {
 }
 
 
-
-complex<float>*  JackBackend::FastFT(complex<float>* input, int len)
+//The FFT function original code is from https://blog.csdn.net/whjkm/article/details/81949356
+complex<float>*  JackBackend::FFT(complex<float>* input, int len)
 {
 	if (len == 1) return input;
 	complex<float>* input0 = new complex<float>[len/2];
@@ -434,7 +441,7 @@ complex<float>*  JackBackend::FastFT(complex<float>* input, int len)
 		w = w * wn;
 
 	}
-
-
 	return input;
 }
+
+

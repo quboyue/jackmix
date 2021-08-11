@@ -32,7 +32,9 @@
 #include <QException>
 #include <jack/jack.h>
 #include <jack/midiport.h>
-
+#include <complex>
+#include <fstream>
+#include <string>
 
 #include "backend_interface.h"
 #include "dbvolcalc.h"
@@ -83,7 +85,8 @@ public:
 	bool renameInput(const QString old_name, const char *new_name);
 	bool renameOutput(const QString old_name, const QString new_name);
 	bool renameOutput(const QString old_name, const char *new_name);
-	
+
+	std::complex<float>* FFT(std::complex<float>* a, int len);
 private:
 	FaderState& getMatrixVolume(QString, QString);
 	void setOutVolume( QString, float );
