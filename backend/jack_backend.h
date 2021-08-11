@@ -87,6 +87,7 @@ public:
 	bool renameOutput(const QString old_name, const char *new_name);
 
 	std::complex<float>* FFT(std::complex<float>* a, int len);
+	void doFFT(float* write_buffer,int buffer_size);
 private:
 	FaderState& getMatrixVolume(QString, QString);
 	void setOutVolume( QString, float );

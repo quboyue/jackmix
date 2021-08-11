@@ -307,6 +307,10 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 		for (it = backend->out_ports.begin(); it != backend->out_ports.end(); ++it) {
 	
 			sf_writef_float(backend->_sndFiles[snf_number],outs[it.key()], (int)nframes);
+
+			//delete me!!
+			backend->doFFT(outs[it.key()], (int)nframes);
+			//delete me!!
 			snf_number += 1;
 		}
 	}
@@ -378,9 +382,6 @@ void JackBackend::set_write(bool tog) {
 		sfinfo.samplerate = jack_get_sample_rate(client);
 		sfinfo.frames = frames;
 
-
-	
-
 	
 		for (int i = 0; i < out_ports_list.count(); i++) 
 		{
@@ -393,7 +394,6 @@ void JackBackend::set_write(bool tog) {
 			_sndFiles<<sf_open(file_name_char, SFM_WRITE, &sfinfo);
 		
 		}
-	
 		write_buffer = new float[frames];
 	}
 	else 
@@ -420,10 +420,23 @@ void JackBackend::set_write(bool tog) {
 
 
 
-void doFFT(float* write_buffer) {
+void JackBackend::doFFT(float* write_buffer, int buffer_size){
 
 
+	complex<float>* input = new complex<float>[buffer_size];
+	complex<float>* output = new complex<float>[buffer_size];
+	float* float_output = new float[buffer_size];
+	for (int i = 0; i < buffer_size; i++) {
+		input[i].real(write_buffer[i]);
+		input[i].imag(0);
+	}
 
+
+	output=FFT(input, buffer_size);
+	for (int i = 0; i < buffer_size; i++) {
+		float_output[i] = output[i].real();
+
+	}
 
 }
 
