@@ -67,7 +67,7 @@ public:
 	bool removeInput( QString );
 	bool addInput( QString );
 	bool removeOutput( QString );
-	void test_Record(float *);
+
 	int frames;
 
 

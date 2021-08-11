@@ -366,9 +366,7 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 
 
 
-void JackBackend::test_Record(float *write_buffer) {
-	return;
-}
+
 
 void JackBackend::set_write(bool tog) {
 	if (tog) 
@@ -419,6 +417,15 @@ void JackBackend::set_write(bool tog) {
 	_write = tog;
 }
 
+
+
+
+void doFFT(float* write_buffer) {
+
+
+
+
+}
 
 //The FFT function original code is from https://blog.csdn.net/whjkm/article/details/81949356
 complex<float>*  JackBackend::FFT(complex<float>* input, int len)
