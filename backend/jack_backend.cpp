@@ -411,3 +411,30 @@ void JackBackend::set_write(bool tog) {
 
 	_write = tog;
 }
+
+
+
+complex<float>*  JackBackend::FastFT(complex<float>* input, int len)
+{
+	if (len == 1) return input;
+	complex<float>* input0 = new complex<float>[len/2];
+	complex<float>* input1 = new complex<float>[len/2];
+	for (int i = 0; i < len; i += 2) {
+		input0[i / 2] = input[i];
+		input1[i / 2] = input[i + 1];
+	}
+	FFT(input0, len/2); 
+	FFT(input1, len/2);
+	complex<float> wn(cos(2 * Pi / len), sin(2 * Pi / len));
+	complex<float> w(1, 0);
+	for (int i = 0; i < (len / 2); i++)
+	{
+		input[i] = input0[i] + w * input1[i];
+		input[i + len / 2] = input0[i] - w * input[i];
+		w = w * wn;
+
+	}
+
+
+	return input;
+}
