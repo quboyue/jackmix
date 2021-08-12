@@ -550,10 +550,14 @@ void JackBackend::paint_frequence(float* input,int frame_size) {
 		penDegree.setColor(Qt::black);
 		penDegree.setWidth(2);
 		painter.setPen(penDegree);
-
-		for (int i =0; i < (int)(jack_get_sample_rate(client)/ frame_size/2); i++)
+		penPoint.setColor(Qt::black);
+		penPoint.setWidth(5);
+		for (int i =0; i < (int)(jack_get_sample_rate(client)/ frame_size/2+1); i++)
 		{
-			painter.drawText( i*width/(int)(jack_get_sample_rate(client)/frame_size/2),starty + 30, QString::number(i* frame_size));
+			painter.setPen(pen);
+			painter.drawText( i*width/(int)(jack_get_sample_rate(client)/frame_size/2+1),starty + 30, QString::number(i* frame_size));
+			painter.setPen(penPoint);
+			painter.drawPoint(i * width / (int)(jack_get_sample_rate(client) / frame_size / 2+1), starty + 30);
 		}
 		emit refresh_image();
 		qDebug() << " refresh image!!!";
