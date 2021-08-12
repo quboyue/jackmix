@@ -260,9 +260,7 @@ void  AuxElement::setUnityMute_slot(bool is_mute) {
 
 }
 
-void  AuxElement::setUnityZero_slot() {
-	slot_zero_channel();
-}
+
 
 void AuxElement::removeThis() {
 	p->removeItem = _in[0];

@@ -19,6 +19,7 @@ namespace JackMix {
             record_bar();
             ~record_bar();
             QPushButton* record_button;
+            QPushButton* doFFT_button;
             QLabel* time_lable;
             QLabel* file_name_lable;
             QTimer* timer =new QTimer(this);

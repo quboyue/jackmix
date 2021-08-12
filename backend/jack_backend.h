@@ -55,6 +55,7 @@ class JackBackend : public BackendInterface {
 	friend int process( ::jack_nframes_t, void* );
 public slots:
 	void set_write(bool);
+	void set_doFFT(bool);
 
 
 
@@ -69,7 +70,7 @@ public:
 	bool addInput( QString );
 	bool removeOutput( QString );
 	int frames;
-	int file_count;
+
 
 
 	QList <SNDFILE*> _sndFiles;
@@ -89,7 +90,7 @@ public:
 
 	std::complex<float>* FFT(std::complex<float>* a, int len);
 	void doFFT(float* write_buffer,int buffer_size);
-	void paint_frequence(float* a);
+	void paint_frequence(float* input,int frame_size);
 
 private:
 	FaderState& getMatrixVolume(QString, QString);

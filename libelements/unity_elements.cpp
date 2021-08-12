@@ -143,8 +143,6 @@ void UnityElement::slot_mute_channel(bool input) {
 void UnityElement::slot_zero_channel() {
 
 
-	//qDebug() << "emit  sendUnityZero_signal(input);";
-	//emit sendUnityZero_signal();
 
 	emit sendKnobPointer_signal(0);
 	if (MuteButton->isChecked()) {

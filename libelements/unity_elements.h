@@ -43,7 +43,7 @@ namespace JackMix {
         signals:
             void sendKnobPointer_signal(double);
             void sendUnityMute_signal(bool);
-            void sendUnityZero_signal();
+      
 
         public slots:
             void emitvalue(double);

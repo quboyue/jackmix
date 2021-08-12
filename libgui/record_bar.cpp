@@ -29,6 +29,12 @@ using namespace JackMix::GUI;
 	 layout->addWidget(record_button,0);
 	 record_button->setCheckable(true);
 	 record_button->setStyleSheet("background-color: rgb(255,150,150)");
+
+	 doFFT_button=new QPushButton("FFT");
+	 layout->addWidget(doFFT_button, 1);
+	 doFFT_button->setCheckable(true);
+	 doFFT_button->setStyleSheet("background-color: rgb(255,150,150)");
+
 	 connect(record_button, SIGNAL(toggled(bool)), this, SLOT(is_record(bool)));
 
 

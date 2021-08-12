@@ -75,7 +75,7 @@ public slots:
     void mousePressEvent(QMouseEvent* event);
     void setKnobPointer_slot(double volume);
     void setUnityMute_slot(bool is_mute);
-    void setUnityZero_slot();
+
     void removeThis();
 
 };

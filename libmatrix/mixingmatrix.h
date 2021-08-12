@@ -119,7 +119,7 @@ signals:
 	void autoFillComplete(MixingMatrix::Widget *);
 	void setKnobPointer_signal(double);
 	void setUnityMute_signal(bool);
-	void setUnityZero_signal();
+
 	void check_removeItem_singal();
 	void addNew_signal();
 public slots:
@@ -141,7 +141,7 @@ public slots:
         void update_peak_inidicators(JackMix::BackendInterface::levels_t newLevels);
 		void receiveKnobPointer_signal(double volume) { qDebug()<<"  --receiveKnobPointer_signal"; emit setKnobPointer_signal(volume); };
 		void receiveUnityMute_signal(bool is_mute) { qDebug() << "  --receiveUnityMute_signal"; emit setUnityMute_signal(is_mute); }
-		void receiveUnityZero_signal() { qDebug() << "  --receiveUnityZero_signal"; emit setUnityZero_signal(); }
+
 		void check_removeItem() { qDebug() << "  --check_removeItem"; emit check_removeItem_singal(); }
 		void addNew() { emit  addNew_signal(); }
 private:

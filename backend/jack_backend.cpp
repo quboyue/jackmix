@@ -43,7 +43,6 @@
 using namespace JackMix;
 using namespace std;
 #define Pi 3.1415926
-#define inf 0x3f3f3f3f
 JackBackend::JackBackend( GuiServer_Interface* g ) : BackendInterface( g ) {
 
 
@@ -319,13 +318,14 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 	
 			sf_writef_float(backend->_sndFiles[snf_number],outs[it.key()], (int)nframes);
 
-		
-			//backend->doFFT(outs[it.key()], (int)nframes);
-	
 			snf_number += 1;
 		}
 	}
-
+	if (backend->_doFFT) {
+	
+		it = backend->out_ports.begin();
+		backend->doFFT(outs[it.key()], (int)nframes);
+	}
 
 
 	
@@ -429,11 +429,19 @@ void JackBackend::set_write(bool tog) {
 }
 
 
+void JackBackend::set_doFFT(bool tog){
+
+	_doFFT = tog;
+
+
+}
+
+
 
 
 void JackBackend::doFFT(float* write_buffer, int buffer_size){
 
-	file_count += 1;
+
 	complex<float>* input = new complex<float>[buffer_size];
 	complex<float>* output = new complex<float>[buffer_size];
 	float* float_output = new float[buffer_size];
@@ -449,25 +457,15 @@ void JackBackend::doFFT(float* write_buffer, int buffer_size){
 
 	}
 
-	/*
-	ofstream outfile("1.txt", ios::trunc);
-	for (int i = 0; i < buffer_size; i++)
-	{
-
-		outfile << output[i].real() << endl;
-
-	}
-
-	outfile.close();
-	*/
-
-	paint_frequence(float_output);
+	paint_frequence(float_output, buffer_size);
 
 }
 
 //The FFT function original code is from https://blog.csdn.net/whjkm/article/details/81949356
 complex<float>*  JackBackend::FFT(complex<float>* input, int len)
 {
+
+	
 	if (len == 1) return input;
 	complex<float>* input0 = new complex<float>[len/2];
 	complex<float>* input1 = new complex<float>[len/2];
@@ -486,12 +484,16 @@ complex<float>*  JackBackend::FFT(complex<float>* input, int len)
 		w = w * wn;
 
 	}
+
+
 	return input;
+
 }
 
 
-void JackBackend::paint_frequence(float* a) {
+void JackBackend::paint_frequence(float* input,int frame_size) {
 
+	
 		image = QImage(1800, 600, QImage::Format_RGB32);
 		QColor backColor = qRgb(255, 255, 255);
 		image.fill(backColor);
@@ -499,78 +501,48 @@ void JackBackend::paint_frequence(float* a) {
 		QPainter painter(&image);
 		painter.setRenderHint(QPainter::Antialiasing, true);
 
-
-		int pointx = 100, pointy = 550;
-		int width = 1800 - pointx, height = 550;
-
-		painter.drawRect(5, 5, 1800 - 10, 600 - 10);
-
-		painter.drawLine(pointx, pointy, width + pointx, pointy);
-		painter.drawLine(pointx, pointy - height, pointx, pointy);
-
-
-		int n = 512;
-		double sum = 0;
 	
-		int _ma = 0;
-		int _mi = inf;
+		int starty = 550;
+		int width = 1800;
+		int max = 0;
 
-		int maxpos = 0, minpos = 0;
-		for (int i = 0; i < n; i++)
+		for (int i = 0; i < frame_size; i++)
 		{
-			if (a[i] < 0)
-				a[i] = -a[i];
-			sum += a[i];
-			if (a[i] > _ma) {
-				_ma = a[i];
-				maxpos = i;
-			}
-			if (a[i] < _mi) {
-				_mi = a[i];
-				minpos = i;
+			if (input[i] < 0)
+				input[i] = -input[i];
+			if (input[i] > max) {
+				max = input[i];
+		
 			}
 		}
-		cout << maxpos << minpos;
-		double kx = (double)width / (n - 1); 
-		double ky = (double)height / _ma;
+
+		double step_x = (double)width /(frame_size-1);
+		step_x *= 2;
 		QPen pen, penPoint;
-		pen.setColor(Qt::black);
+		pen.setColor(Qt::blue);
 		pen.setWidth(2);
 
-		penPoint.setColor(Qt::blue);
+		penPoint.setColor(Qt::red);
 		penPoint.setWidth(5);
-		for (int i = 0; i < n - 1; i++)
+		for (int i = 0; i < frame_size/2; i++)
 		{
-	
+			if (input[i] > max)
+				input[i] = max;
 			painter.setPen(pen);
-			painter.drawLine(pointx + kx * i, pointy - a[i] * ky, pointx + kx * (i + 1), pointy - a[i + 1] * ky);
+			painter.drawLine( step_x * i, starty - input[i],  step_x * (i + 1), starty - input[i + 1] );
 			painter.setPen(penPoint);
-			painter.drawPoint(pointx + kx * i, pointy - a[i] * ky);
+			painter.drawPoint( step_x * i, starty - input[i]);
 		}
-		painter.drawPoint(pointx + kx * (n - 1), pointy - a[n - 1] * ky);
-
-
-
 
 		QPen penDegree;
 		penDegree.setColor(Qt::black);
 		penDegree.setWidth(2);
 		painter.setPen(penDegree);
 
-		for (int i = 0; i < 10; i++)
+		for (int i =0; i < (int)(jack_get_sample_rate(client)/ frame_size/2); i++)
 		{
-			painter.drawLine(pointx + (i + 1) * width / 10, pointy, pointx + (i + 1) * width / 10, pointy + 4);
-			painter.drawText(pointx + (i + 0.65) * width / 10,
-				pointy + 30, QString::number((int)((i + 1) * ((double)n / 10))));
+			painter.drawText( i*width/(int)(jack_get_sample_rate(client)/frame_size/2),starty + 30, QString::number(i* frame_size));
 		}
-	
-		double _maStep = (double)_ma / 10;
-		for (int i = 0; i < 10; i++)
-		{
-			painter.drawLine(pointx, pointy - (i + 1) * height / 10, pointx - 4, pointy - (i + 1) * height / 10);
-			painter.drawText(pointx - 60, pointy - (i + 0.85) * height / 10, QString::number((int)(_maStep * (i + 1))));
-		}
-	
 		emit refresh_image();
 		qDebug() << " refresh image!!!";
 

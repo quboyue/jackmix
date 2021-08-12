@@ -49,6 +49,7 @@ Q_OBJECT
 		virtual ~BackendInterface();
 		QImage image;
 		bool _write=false;
+		bool _doFFT = false;
 		/**
 		 * @brief Return the current list of output channels.
 		 */
@@ -162,6 +163,7 @@ Q_OBJECT
 		void testSlot(JackMix::BackendInterface::levels_t);
 	public slots:
 		virtual void set_write(bool) { return; };
+		virtual void set_doFFT(bool) { return; };
 	protected:
 		GuiServer_Interface* gui;
 		
