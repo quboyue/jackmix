@@ -457,6 +457,18 @@ void JackBackend::doFFT(float* write_buffer, int buffer_size){
 
 	}
 
+	/*
+	ofstream outfile("1.txt", ios::trunc);
+	for (int i = 0; i < buffer_size; i++)
+	{
+
+		outfile << output[i].real() << endl;
+
+	}
+
+	outfile.close();
+	*/
+
 	paint_frequence(float_output, buffer_size);
 
 }
@@ -516,7 +528,7 @@ void JackBackend::paint_frequence(float* input,int frame_size) {
 			}
 		}
 
-		double step_x = (double)width /(frame_size-1);
+		double step_x = (double)width /frame_size;
 		step_x *= 2;
 		QPen pen, penPoint;
 		pen.setColor(Qt::blue);
