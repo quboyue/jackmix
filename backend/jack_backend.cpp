@@ -443,7 +443,7 @@ void JackBackend::doFFT(float* write_buffer, int buffer_size){
 	for (int i = 0; i < buffer_size; i++)
 	{
 
-		outfile << float_output[i] << endl;
+		outfile << output[i].real() << endl;
 
 	}
 	outfile.close();
@@ -467,7 +467,7 @@ complex<float>*  JackBackend::FFT(complex<float>* input, int len)
 	for (int i = 0; i < (len / 2); i++)
 	{
 		input[i] = input0[i] + w * input1[i];
-		input[i + len / 2] = input0[i] - w * input[i];
+		input[i + len / 2] = input0[i] - w * input1[i];
 		w = w * wn;
 
 	}
