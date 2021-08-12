@@ -47,7 +47,7 @@ using namespace std;
 JackBackend::JackBackend( GuiServer_Interface* g ) : BackendInterface( g ) {
 
 
-	image = QImage(1800, 900, QImage::Format_RGB32);
+	image = QImage(1800, 600, QImage::Format_RGB32);
 	QColor backColor = qRgb(255, 255, 255);
 	image.fill(backColor);
 	QPainter painter(&image);
@@ -492,21 +492,24 @@ complex<float>*  JackBackend::FFT(complex<float>* input, int len)
 
 void JackBackend::paint_frequence(float* a) {
 
+		image = QImage(1800, 600, QImage::Format_RGB32);
+		QColor backColor = qRgb(255, 255, 255);
+		image.fill(backColor);
 
 		QPainter painter(&image);
 		painter.setRenderHint(QPainter::Antialiasing, true);
 
 
-		int pointx = 100, pointy = 800;
-		int width = 1800 - pointx, height = 750;
+		int pointx = 100, pointy = 550;
+		int width = 1800 - pointx, height = 550;
 
-		painter.drawRect(5, 5, 1800 - 10, 900 - 10);
+		painter.drawRect(5, 5, 1800 - 10, 600 - 10);
 
 		painter.drawLine(pointx, pointy, width + pointx, pointy);
 		painter.drawLine(pointx, pointy - height, pointx, pointy);
 
 
-		int n = 1200;
+		int n = 4096;
 		double sum = 0;
 	
 		int _ma = 0;
@@ -566,7 +569,7 @@ void JackBackend::paint_frequence(float* a) {
 			painter.drawText(pointx - 60, pointy - (i + 0.85) * height / 10, QString::number((int)(_maStep * (i + 1))));
 		}
 	
-		emit this->refresh_image();
-
+		emit refresh_image();
+		qDebug() << " refresh image!!!";
 
 }

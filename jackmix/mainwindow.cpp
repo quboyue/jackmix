@@ -212,7 +212,7 @@ void MainWindow::init() {
 
     picLable = new QLabel();
 	picLable->setPixmap(QPixmap::fromImage(_backend->image));
-	_mw->layout->addWidget(picLable, 3, 0, 5, 3);
+	_mw->layout->addWidget(picLable, 3, 0, 3, 3);
 	connect(_backend, SIGNAL(refresh_image()), this, SLOT(update_image()));
 
 

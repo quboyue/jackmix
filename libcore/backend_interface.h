@@ -141,6 +141,8 @@ Q_OBJECT
 		void outputLevelsChanged(JackMix::BackendInterface::levels_t);
 		void cc_message(int ch, int val);
 		void send_OutputVolume(QString, float);
+
+		void refresh_image();
 	private:
 		typedef struct {
 			Level level;
