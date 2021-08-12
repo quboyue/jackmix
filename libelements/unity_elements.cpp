@@ -93,7 +93,7 @@ UnityElement::UnityElement(QStringList inchannel, QStringList outchannel, Mixing
 	_poti->setMinimumSize(150, 90);
 	_layout->addWidget(_poti, 1);
 
-	//delete me!!!!
+
 	QHBoxLayout* _layout_button = new QHBoxLayout(this);
 
 
@@ -117,8 +117,6 @@ UnityElement::UnityElement(QStringList inchannel, QStringList outchannel, Mixing
 	connect(ZeroButton, SIGNAL(clicked()), this, SLOT(slot_zero_channel()));
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
 
-	//delete me!!!!
-
 	connect(_poti, SIGNAL(valueChanged(double)), this, SLOT(emitvalue(double)));
 
 }
@@ -136,7 +134,7 @@ void UnityElement::emitvalue(double n) {
 void UnityElement::setIndicator(const QColor& c) { qDebug() << "	setsetIndicatorColor "; };
 
 
-//delete me!!!
+
 void UnityElement::slot_mute_channel(bool input) {
 	qDebug() <<"emit  sendUnityMute_signal(input);";
 	emit sendUnityMute_signal(input);
@@ -173,4 +171,3 @@ void UnityElement::mousePressEvent(QMouseEvent* event)
 
 
 }
-//delete me!!!

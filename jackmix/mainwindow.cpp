@@ -98,11 +98,6 @@ MainWindow::MainWindow( QWidget* p ) : QMainWindow( p ), _backend( new JackBacke
 
 	_autofillscheduled = false;
 	scheduleAutoFill();
-	//delete me!!
-	
-
-		
-	//delete me!!
 
 }
 MainWindow::MainWindow( QString filename, QWidget* p ) : QMainWindow( p ), _backend( new JackBackend( new GUI::GraphicalGuiServer( this ) ) ), _autofillscheduled( true ) {
@@ -128,9 +123,9 @@ void MainWindow::init() {
 
 	JackMix::MixerElements::init_aux_elements();
 	JackMix::MixerElements::init_stereo_elements();
-	//delete me!!
+
 	JackMix::MixerElements::init_unity_elements();
-	//delete me!!
+
 	_filemenu = menuBar()->addMenu( "&File" );
 	_filemenu->addAction( "Open File...", this, SLOT( openFile() ), Qt::CTRL+Qt::Key_O );
 	_filemenu->addAction( "Save File...", this, SLOT( saveFile() ), Qt::CTRL+Qt::Key_S );
@@ -190,7 +185,7 @@ void MainWindow::init() {
 	_outputswidget->removeoutchannel( "o1" );
 	_mw->layout->addWidget( _outputswidget, 1,1 );
 
-	//delete me!!
+
 	_unitywidget = new MixingMatrix::Widget(QStringList(), QStringList(), _backend, _mw);
 	_mw->layout->addWidget(_unitywidget, 0, 1);
 	
@@ -227,10 +222,10 @@ void MainWindow::init() {
 		 this, SLOT(updateAutoFilledMidiParams(MixingMatrix::Widget *)) );
 	connect (_outputswidget, SIGNAL(autoFillComplete(MixingMatrix::Widget *)),
 		 this, SLOT(updateAutoFilledMidiParams(MixingMatrix::Widget *)) );
-	//delete me!!
+
 	connect(_unitywidget, SIGNAL(autoFillComplete(MixingMatrix::Widget*)),
 		this, SLOT(updateAutoFilledMidiParams(MixingMatrix::Widget*)));
-	//delete me!!
+
 
 	_mw->layout->setRowStretch( 0, 1 );
 	_mw->layout->setRowStretch( 1, int( 1E2 ) );
@@ -264,7 +259,7 @@ void MainWindow::init() {
 
 
 
-	//delete me!!
+
 	connect(_backend, SIGNAL(send_OutputVolume(QString,float)),_volume_bar, SLOT(receive_OutputVolume(QString, float)));
 	connect(this, SIGNAL(removeVolumeBar(QString)),_volume_bar, SLOT(receive_removeVolumeBar(QString)));
 
@@ -273,7 +268,7 @@ void MainWindow::init() {
 	connect(_outputswidget, SIGNAL(check_removeItem_singal()), this, SLOT(findRemove()));
 	connect(_inputswidget, SIGNAL(addNew_signal()), this, SLOT(addInput()));
 	connect(_outputswidget, SIGNAL(addNew_signal()), this, SLOT(addOutput()));
-	//delete me!!
+
 }
 
 MainWindow::~MainWindow() {
@@ -387,7 +382,7 @@ void MainWindow::updateAutoFilledMidiParams(MixingMatrix::Widget *w) {
 		mphash = &_mixermps;
 
 	}
-	//delete me!!
+
 	else if(w==_unitywidget){
 		qDebug("		(_unitywidget widget)");
 		mphash = &_unitymps;
@@ -407,7 +402,7 @@ void MainWindow::updateAutoFilledMidiParams(MixingMatrix::Widget *w) {
 		//emit _mixerwidget->setKnobPointer_signal(6);
 		qDebug() << "	emit _mixerwidget->setKnobPointer_signal(6);  count" << _unitywidget->elements();
 	} 
-	//delete me!!
+
 	else { qDebug("(UNKNOWN widget)");
         }
 

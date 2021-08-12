@@ -104,7 +104,7 @@ void Widget::replace( Element* n,QString type) {
 	out = n->followersList();
 	qDebug( "Selected outs = %s", qPrintable( out.join( "," ) ) );
 	
-	//delete me!!
+	
 	//Qt::SizeAllCursor means stereo to stereo
 	//Qt::SplitVCursor means mono to stereo
 	qDebug() << "	--decribe n  in:" << in << " out: " << out ;
@@ -113,7 +113,7 @@ void Widget::replace( Element* n,QString type) {
 		//only get self
 		in.removeLast();
 	}
-	//delete me!!
+
 
 	for ( QStringList::ConstIterator it=out.begin(); it!=out.end(); ++it ) {
 		for ( QStringList::ConstIterator jt=in.begin(); jt!=in.end(); ++jt ) {
@@ -169,10 +169,6 @@ void Widget::autoFill() {
 					qDebug( "   (%s|%s) is allready occupied. :(", qPrintable( *init ), qPrintable( *outit ) );
 			}
 	
-			//delete me!!
-
-	
-			//delete me!!
 	} else if ( _direction == Vertical ) {
 		qDebug() << "	Available outputs are" << _outchannels.join( "," );
 		for ( QStringList::Iterator outit=_outchannels.begin(); outit!=_outchannels.end(); ++outit ) {
@@ -191,14 +187,14 @@ void Widget::autoFill() {
 			
 		}
 	}
-	//delete me!!
+
 	else if (_direction == Corner) {
 		if (!elements()) {
 			qDebug() << "		----------!Corner";
 			createControl(QStringList(), QStringList());
 		}
 	}
-	//delete me!!
+	
 	resizeEvent( 0 );
 }
 
@@ -269,13 +265,12 @@ void Widget::resizeEvent( QResizeEvent* ) {
 			_elements[i]->setGeometry(0, _outchannels.indexOf(_elements[i]->out()[0]) * h, w, h * _elements[i]->outchannels());
 			_elements[i]->show();
 		}
-	//delete me!!
+
 	else if (_direction == Corner)
 		for (int i = 0; i < _elements.size(); i++) {
 			_elements[i]->setGeometry(0, 0, w, h);//set the positon as min
 			_elements[i]->show();
 		}
-	//delete me!!
 	else
 		for ( int i=0; i<_elements.size(); i++ ) {
 			_elements[ i ]->setGeometry( _inchannels.indexOf( _elements[ i ]->in()[ 0 ] )*w, _outchannels.indexOf( _elements[ i ]->out()[ 0 ] )*h, w*_elements[ i ]->inchannels(), h*_elements[ i ]->outchannels() );
@@ -290,10 +285,10 @@ QSize Widget::minimumSizeHint() const {
 		return QSize(  smallest.width()*_inchannels.size(),smallest.height() );
 	if ( _direction == Vertical )
 		return QSize(  smallest.width(),smallest.height()*_outchannels.size() );
-	//delete me!!
+
 	if (_direction == Corner)
 		return QSize(smallest.width(), smallest.height());
-	//delete me!!
+
 	return QSize( smallest.width()*_inchannels.size(),smallest.height()*_outchannels.size() );
 }
 
@@ -472,7 +467,7 @@ QStringList Element::neighborsList() const {
 	qDebug( "	neighbor = %s", qPrintable( _parent->nextIn( _in[ _in.size()-1 ] ) ) );
 	Element* neighbor = _parent->getResponsible( _parent->nextIn( _in[ _in.size()-1 ] ), _out[ 0 ] );
 	QStringList tmp;
-	//delete me!!
+
 	//if ( neighbor && neighbor->isSelected() )
 	//tmp = neighbor->neighborsList();
 	if (neighbor)
@@ -481,7 +476,7 @@ QStringList Element::neighborsList() const {
 	tmp = _in + tmp;
 	qDebug() << "		--neighbor->neighborsList();    " << tmp;
 	return tmp;
-	//delete me!!
+
 }
 
 int Element::followers( int n ) const {
@@ -497,12 +492,12 @@ QStringList Element::followersList() const {
 	qDebug( "	-follower = %s", qPrintable( _parent->nextOut( _out[ _out.size()-1 ] ) ) );
 	Element* follower = _parent->getResponsible( _in[ 0 ], _parent->nextOut(  _out[  _out.size()-1 ] ) );
 	QStringList tmp;
-	//delete me!! 
+
 	//if (follower && follower->isSelected())
 	if (follower)
 		tmp += _parent->nextOut(_out[_out.size() - 1]);
 
-	//delete me!! 
+
 	tmp = _out + tmp;
 	return tmp;
 }
@@ -601,9 +596,9 @@ bool Global::create( QString type, QStringList ins, QStringList outs, Widget* pa
                 elem = _factories[ i ]->create( type, ins, outs, parent, name );
                 // If the element now exists, make it ready to display peaks
                 // All input mixers are AuxElements
-								//delete me!!
+			
 				qDebug() << " Successful create elem " << type;
-				//delete me!!
+	
 				// only setIndicator for input/output widget
                 if (elem && parent->direction() != Widget::None && type!="UnityElement") {
                         static_cast<JackMix::MixerElements::AuxElement*>(elem)->

@@ -47,19 +47,19 @@ namespace JackMix {
 
         public slots:
             void emitvalue(double);
-            //delete me!!!
+
             void slot_mute_channel(bool);
             void slot_zero_channel();
-            //delete me!!!
+   
             void mouseMoveEvent(QMouseEvent* event);
             void mousePressEvent(QMouseEvent* event);
         private:
      
             JackMix::GUI::Knob* _poti;
-            //delete me!!!
+  
             QPushButton* MuteButton;
             QPushButton* ZeroButton;
-            //delete me!!!
+ 
         };
 
         void init_unity_elements();

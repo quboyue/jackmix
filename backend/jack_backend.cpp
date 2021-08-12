@@ -319,9 +319,9 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 	
 			sf_writef_float(backend->_sndFiles[snf_number],outs[it.key()], (int)nframes);
 
-			//delete me!!
+		
 			//backend->doFFT(outs[it.key()], (int)nframes);
-			//delete me!!
+	
 			snf_number += 1;
 		}
 	}

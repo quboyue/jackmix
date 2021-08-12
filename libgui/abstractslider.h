@@ -69,9 +69,9 @@ signals:
 	 *  slot_simple_explode
 	 */
 
-	//delete me!!
+
 	void replace(QString type);
-	//delete me!!
+
 
 
         void explode(void);

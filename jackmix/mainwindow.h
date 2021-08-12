@@ -120,7 +120,6 @@ private:
 	void init();
 	int config_restore_id;
 	QMenu *_filemenu, *_editmenu, *_viewmenu, *_settingsmenu, *_helpmenu;
-	//delete me!!
 	//add  _unitywidget
 
 	MixingMatrix::Widget *_mixerwidget, *_inputswidget, *_outputswidget,* _unitywidget;
@@ -129,7 +128,7 @@ private:
 	 *  midi parameters are applied to its respective widget after initialisation
 	 *  is complete.
 	 */
-	//delete me!!
+
 	//add _unitymps
 	QHash<QString,QString> _mixermps, _inputmps, _outputmps,_unitymps;
 	MainWindowHelperWidget* _mw;

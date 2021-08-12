@@ -108,7 +108,7 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 		dbmin, dbmax, 2, 3, this );
 	_poti->setMinimumSize(150, 90);
 	_layout->addWidget( _poti, 1 );
-	//delete me!!!!
+
 
 	QHBoxLayout* _layout_button = new QHBoxLayout(this);
 
@@ -130,7 +130,8 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel()));
 	connect(ZeroButton, SIGNAL(clicked()), this, SLOT(slot_zero_channel()));
 	connect(_poti, SIGNAL(replace(QString)), this, SLOT(slot_simple_replace(QString)));
-	//delete me!!!!
+	
+
 
 
 	connect( _poti, SIGNAL( valueChanged( double ) ), this, SLOT( emitvalue( double ) ) );
@@ -165,7 +166,7 @@ void AuxElement::emitvalue( double n ) {
 void AuxElement::setIndicator(const QColor& c) { _poti->setIndicatorColor(c); };
 
 
-//delete me!!!
+
 void AuxElement::slot_mute_channel() {
 
 
@@ -237,7 +238,7 @@ void AuxElement::mousePressEvent(QMouseEvent* event)
 	}
 
 }
-//delete me!!!
+
 
 
 

@@ -58,12 +58,12 @@ public:
 
 	double volume() const { return _volume_value; }
 	double panorama() const { return _balance_value; }
-	//delete me!!
+
 	double indicator_value_left = -42;
 	double indicator_value_right = -42;
 	bool is_mute_left=false;
 	bool is_mute_right = false;
-	//delete me!!
+
 signals:
 	void volume_changed( double );
 	void panorama_changed( double );
@@ -72,12 +72,12 @@ public slots:
 	void set_panorama( double n ) { balance( n ); }
 	void balance( double );
 	void volume( double );
-	//delete me!!!
+
 	void slot_mute_channel_left();
 	void slot_mute_channel_right();
 	void slot_zero_channel();
 
-	//delete me!!!
+
 	void setKnobPointer_slot(double volume);
 	void setUnityMute_slot(bool is_mute);
 private slots:

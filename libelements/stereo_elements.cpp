@@ -100,7 +100,7 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 	
 
 
-	//delete me!!
+
 	Explode_button = new QPushButton("X");
 	Explode_button->setFixedSize(30, 30);
 	_layout->addWidget(Explode_button, 0);
@@ -143,7 +143,7 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 	_layout->addLayout(_layout_button);
 
 
-	//delete me!!
+
 
 
 	connect( _balance, SIGNAL( valueChanged( double ) ), this, SLOT( balance( double ) ) );
@@ -211,7 +211,7 @@ void Mono2StereoElement::calculateVolumes() {
 		backend()->setVolume(_in[0], _out[1], right);
 
 }
-//delete me!!!
+
 void Mono2StereoElement::slot_mute_channel_left() {
 
 
@@ -287,7 +287,7 @@ void Mono2StereoElement::slot_zero_channel (){
 	//backend()->setVolume(_in[0], _out[1], indicator_value_right);
 }
 
-//delete me!!!
+
 
 
 
@@ -312,7 +312,7 @@ Stereo2StereoElement::Stereo2StereoElement( QStringList inchannels, QStringList 
 	_layout->setSpacing( 1 );
 	_layout->setMargin( 2 );
 
-	//delete me!!
+
 	Explode_button = new QPushButton("X");
 	Explode_button->setFixedSize(30, 30);
 	_layout->addWidget(Explode_button, 0,0,1,1);
@@ -347,7 +347,7 @@ Stereo2StereoElement::Stereo2StereoElement( QStringList inchannels, QStringList 
 
 
 
-	//delete me!!
+
 
 
 	_balance_widget = new JackMix::GUI::Slider( _balance_value, -1, 1, 2, 0.1, this, "%1" );
@@ -433,7 +433,7 @@ void Stereo2StereoElement::calculateVolumes() {
 		backend()->setVolume( _in[1], _out[1], right );
 }
 
-//delete me!!!
+
 void Stereo2StereoElement::slot_mute_channel_left( ) {
 
 
