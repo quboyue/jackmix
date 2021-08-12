@@ -572,4 +572,6 @@ void JackBackend::paint_frequence(float* a) {
 		emit refresh_image();
 		qDebug() << " refresh image!!!";
 
+
+
 }
