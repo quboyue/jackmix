@@ -121,6 +121,14 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 	connect(MuteButton_left, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_left()));
 	_layout_button->addWidget(MuteButton_left, 1);
 
+	ZeroButton = new QPushButton("Zero");
+	ZeroButton->setFixedSize(80, 50);
+	ZeroButton->setStyleSheet("background-color: rgb(175,175,175)");
+	ZeroButton->setFont(QFont("", 7));
+
+	connect(ZeroButton, SIGNAL(clicked()), this, SLOT(slot_zero_channel()));
+	_layout_button->addWidget(ZeroButton, 2);
+
 
 
 	MuteButton_right = new QPushButton("Mute R");
@@ -129,10 +137,12 @@ Mono2StereoElement::Mono2StereoElement( QStringList inchannel, QStringList outch
 	MuteButton_right->setCheckable(true);
 	MuteButton_right->setFont(QFont("", 7));
 	connect(MuteButton_right, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_right()));
-	_layout_button->addWidget(MuteButton_right, 2);
+	_layout_button->addWidget(MuteButton_right, 3);
 
 
 	_layout->addLayout(_layout_button);
+
+
 	//delete me!!
 
 
@@ -257,6 +267,26 @@ void Mono2StereoElement::setUnityMute_slot(bool is_mute) {
 
 
 }
+
+
+
+void Mono2StereoElement::slot_zero_channel (){
+
+
+	_volume_value = 0;
+	calculateVolumes();
+	_volume->value(0);
+	emit valueChanged(this, QString("volume"));
+	_volume->update();
+
+	MuteButton_right->setChecked(false);
+	is_mute_right = false;
+	MuteButton_left->setChecked(false);
+	is_mute_left = false;
+	//qDebug() << " indicator_value " << indicator_value_right;
+	//backend()->setVolume(_in[0], _out[1], indicator_value_right);
+}
+
 //delete me!!!
 
 
@@ -298,6 +328,13 @@ Stereo2StereoElement::Stereo2StereoElement( QStringList inchannels, QStringList 
 	connect(MuteButton_left, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel_left()));
 	_layout->addWidget(MuteButton_left, 2,0,1,1);
 
+
+	ZeroButton = new QPushButton("Zero");
+	ZeroButton->setFixedSize(80, 50);
+	ZeroButton->setStyleSheet("background-color: rgb(175,175,175)");
+	ZeroButton->setFont(QFont("", 7));
+	connect(ZeroButton, SIGNAL(clicked()), this, SLOT(slot_zero_channel()));
+	_layout->addWidget(ZeroButton, 2,1,1,1);
 
 
 	MuteButton_right = new QPushButton("Mute R");
@@ -449,6 +486,22 @@ void Stereo2StereoElement::setUnityMute_slot(bool is_mute) {
 	if (is_mute != this->is_mute_right) {
 		slot_mute_channel_right();
 	}
+
+
+}
+
+
+void Stereo2StereoElement::slot_zero_channel() {
+	_volume_value = 0;
+	_volume_widget->value(0);
+	calculateVolumes();
+	emit valueChanged(this, QString("volume"));
+
+
+	MuteButton_right->setChecked(false);
+	is_mute_right = false;
+	MuteButton_left->setChecked(false);
+	is_mute_left = false;
 
 
 }

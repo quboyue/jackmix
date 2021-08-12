@@ -75,6 +75,8 @@ public slots:
 	//delete me!!!
 	void slot_mute_channel_left();
 	void slot_mute_channel_right();
+	void slot_zero_channel();
+
 	//delete me!!!
 	void setKnobPointer_slot(double volume);
 	void setUnityMute_slot(bool is_mute);
@@ -88,6 +90,8 @@ private:
 	QPushButton* Explode_button;
 	QPushButton* MuteButton_left;
 	QPushButton* MuteButton_right;
+
+	QPushButton*	ZeroButton;
 
 };
 
@@ -120,6 +124,7 @@ private slots:
 	void slot_mute_channel_right();
 	void setKnobPointer_slot(double volume);
 	void setUnityMute_slot(bool is_mute);
+	void slot_zero_channel();
 private:
 	QString _inchannel1, _inchannel2, _outchannel1, _outchannel2;
 	double _balance_value, _volume_value;
@@ -127,6 +132,7 @@ private:
 	QPushButton* Explode_button;
 	QPushButton* MuteButton_left;
 	QPushButton* MuteButton_right;
+	QPushButton* ZeroButton;
 };
 
 void init_stereo_elements();

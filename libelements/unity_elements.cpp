@@ -90,26 +90,29 @@ UnityElement::UnityElement(QStringList inchannel, QStringList outchannel, Mixing
 	_poti = new JackMix::GUI::Knob(
 		amptodb(backend()->getVolume(_in[0], _out[0])),
 		dbmin, dbmax, 2, 3, this);
-	_layout->addWidget(_poti, 100);
+	_poti->setMinimumSize(150, 90);
+	_layout->addWidget(_poti, 1);
 
 	//delete me!!!!
-	MuteButton = new QPushButton();
+	QHBoxLayout* _layout_button = new QHBoxLayout(this);
+
+
+
+
+	ZeroButton = new QPushButton("Zero");
+	ZeroButton->setStyleSheet("background-color: rgb(175,175,175)");
+	ZeroButton->setMouseTracking(true);
+	_layout_button->addWidget(ZeroButton, 1);
+
+
+	MuteButton = new QPushButton("Mute");
 	MuteButton->setStyleSheet("background-color: rgb(175,175,175)");
 	MuteButton->setCheckable(true);
-	_layout->addWidget(MuteButton, 1);
-	MuteButton->setText("Mute");
 	MuteButton->setMouseTracking(true);
 
-	_poti->setMinimumSize(150, 90);
-	MuteButton->setMinimumSize(20, 30);
 
-
-	ZeroButton = new QPushButton();
-	ZeroButton->setStyleSheet("background-color: rgb(175,175,175)");
-	_layout->addWidget(ZeroButton, 1);
-	ZeroButton->setText("Zero");
-	ZeroButton->setMouseTracking(true);
-	ZeroButton->setMinimumSize(20, 30);
+	_layout_button->addWidget(MuteButton, 2);
+	_layout->addLayout(_layout_button);
 
 	connect(ZeroButton, SIGNAL(clicked()), this, SLOT(slot_zero_channel()));
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
