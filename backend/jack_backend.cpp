@@ -320,7 +320,7 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 			sf_writef_float(backend->_sndFiles[snf_number],outs[it.key()], (int)nframes);
 
 			//delete me!!
-			backend->doFFT(outs[it.key()], (int)nframes);
+			//backend->doFFT(outs[it.key()], (int)nframes);
 			//delete me!!
 			snf_number += 1;
 		}
@@ -509,7 +509,7 @@ void JackBackend::paint_frequence(float* a) {
 		painter.drawLine(pointx, pointy - height, pointx, pointy);
 
 
-		int n = 4096;
+		int n = 512;
 		double sum = 0;
 	
 		int _ma = 0;
@@ -518,6 +518,8 @@ void JackBackend::paint_frequence(float* a) {
 		int maxpos = 0, minpos = 0;
 		for (int i = 0; i < n; i++)
 		{
+			if (a[i] < 0)
+				a[i] = -a[i];
 			sum += a[i];
 			if (a[i] > _ma) {
 				_ma = a[i];

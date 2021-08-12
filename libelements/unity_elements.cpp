@@ -102,6 +102,16 @@ UnityElement::UnityElement(QStringList inchannel, QStringList outchannel, Mixing
 
 	_poti->setMinimumSize(150, 90);
 	MuteButton->setMinimumSize(20, 30);
+
+
+	ZeroButton = new QPushButton();
+	ZeroButton->setStyleSheet("background-color: rgb(175,175,175)");
+	_layout->addWidget(ZeroButton, 1);
+	ZeroButton->setText("Zero");
+	ZeroButton->setMouseTracking(true);
+	ZeroButton->setMinimumSize(20, 30);
+
+	connect(ZeroButton, SIGNAL(clicked()), this, SLOT(slot_zero_channel()));
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel(bool)));
 
 	//delete me!!!!
@@ -132,7 +142,14 @@ void UnityElement::slot_mute_channel(bool input) {
 	emit sendUnityMute_signal(input);
 	return;
 }
+void UnityElement::slot_zero_channel() {
 
+
+	qDebug() << "emit  sendUnityZero_signal(input);";
+	emit sendUnityZero_signal();
+	return;
+
+}
 
 void UnityElement::mouseMoveEvent(QMouseEvent* event)
 {

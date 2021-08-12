@@ -400,6 +400,10 @@ void MainWindow::updateAutoFilledMidiParams(MixingMatrix::Widget *w) {
 		connect(_unitywidget->_elements[0], SIGNAL(sendUnityMute_signal(bool)), _inputswidget, SLOT(receiveUnityMute_signal(bool)));
 		connect(_unitywidget->_elements[0], SIGNAL(sendUnityMute_signal(bool)), _outputswidget, SLOT(receiveUnityMute_signal(bool)));
 
+		connect(_unitywidget->_elements[0], SIGNAL(sendUnityZero_signal()), _mixerwidget, SLOT(receiveUnityZero_signal()));
+		connect(_unitywidget->_elements[0], SIGNAL(sendUnityZero_signal()), _inputswidget, SLOT(receiveUnityZero_signal()));
+		connect(_unitywidget->_elements[0], SIGNAL(sendUnityZero_signal()), _outputswidget, SLOT(receiveUnityZero_signal()));
+
 		//emit _mixerwidget->setKnobPointer_signal(6);
 		qDebug() << "	emit _mixerwidget->setKnobPointer_signal(6);  count" << _unitywidget->elements();
 	} 

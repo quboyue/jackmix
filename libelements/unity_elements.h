@@ -43,10 +43,13 @@ namespace JackMix {
         signals:
             void sendKnobPointer_signal(double);
             void sendUnityMute_signal(bool);
+            void sendUnityZero_signal();
+
         public slots:
             void emitvalue(double);
             //delete me!!!
             void slot_mute_channel(bool);
+            void slot_zero_channel();
             //delete me!!!
             void mouseMoveEvent(QMouseEvent* event);
             void mousePressEvent(QMouseEvent* event);
@@ -55,6 +58,7 @@ namespace JackMix {
             JackMix::GUI::Knob* _poti;
             //delete me!!!
             QPushButton* MuteButton;
+            QPushButton* ZeroButton;
             //delete me!!!
         };
 

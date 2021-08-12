@@ -83,6 +83,7 @@ void Widget::addElement( Element* n ) {
 	_elements.push_back( n );
 	qDebug() << "		------!!!!!!!!!!!!!! addElement addElementaddElementaddElement";
 	connect(this, SIGNAL(setUnityMute_signal(bool)), n, SLOT(setUnityMute_slot(bool)));
+	connect(this, SIGNAL(setUnityZero_signal()), n, SLOT(setUnityZero_slot()));
 	connect(this, SIGNAL(setKnobPointer_signal(double)), n, SLOT(setKnobPointer_slot(double)));
 	connect( n, SIGNAL( replace( Element*, QString) ), this, SLOT( replace( Element*,QString) ) );
 	connect( n, SIGNAL( explode( Element* ) ), this, SLOT( explode( Element* ) ) );

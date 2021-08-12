@@ -106,17 +106,27 @@ AuxElement::AuxElement( QStringList inchannel, QStringList outchannel, MixingMat
 	_poti = new JackMix::GUI::Knob(
 		amptodb( backend()->getVolume( _in[0], _out[0] ) ),
 		dbmin, dbmax, 2, 3, this );
-	_layout->addWidget( _poti, 100 );
+	_layout->addWidget( _poti, 1 );
 	//delete me!!!!
 	MuteButton = new QPushButton();
 	MuteButton->setStyleSheet("background-color: rgb(175,175,175)");
 	MuteButton->setCheckable(true);
-	_layout->addWidget(MuteButton, 1);
+	_layout->addWidget(MuteButton, 2);
 	MuteButton->setText("Mute");
 	MuteButton->setMouseTracking(true);
 	_poti->setMinimumSize(150, 90);
 	MuteButton->setMinimumSize(20,30);
+
+
+	ZeroButton = new QPushButton();
+	ZeroButton->setStyleSheet("background-color: rgb(175,175,175)");
+	_layout->addWidget(ZeroButton,3);
+	ZeroButton->setText("Zero");
+	ZeroButton->setMouseTracking(true);
+	ZeroButton->setMinimumSize(20, 30);
+
 	connect(MuteButton, SIGNAL(toggled(bool)), this, SLOT(slot_mute_channel()));
+	connect(ZeroButton, SIGNAL(clicked()), this, SLOT(slot_zero_channel()));
 	connect(_poti, SIGNAL(replace(QString)), this, SLOT(slot_simple_replace(QString)));
 	//delete me!!!!
 
@@ -173,7 +183,19 @@ void AuxElement::slot_mute_channel() {
 		backend()->setVolume(_in[0], _out[0], dbtoamp(-42));
 	}
 
+}
 
+
+void AuxElement::slot_zero_channel() {
+	
+	emitvalue(0);
+	_poti->_value = 0;
+	_poti->update();
+	if (is_mute) {
+		MuteButton->setChecked(false);
+		is_mute = false;
+	
+	}
 }
 
 
@@ -219,16 +241,7 @@ void AuxElement::mousePressEvent(QMouseEvent* event)
 
 void  AuxElement::setKnobPointer_slot(double volume) {
 	//qDebug() << "AuxElement setKnobPointer_slot";
-	/*
-	double real_volume;
-	real_volume = volume + _poti->_value;
-	if (real_volume > 6) {
-		real_volume = 6;
-	}
-	if (real_volume < -42) {
-		real_volume = -42;
-	}
-	*/
+
 
 		emitvalue(volume);
 		_poti->_value = volume;
@@ -242,6 +255,10 @@ void  AuxElement::setUnityMute_slot(bool is_mute) {
 	}
 
 
+}
+
+void  AuxElement::setUnityZero_slot() {
+	slot_zero_channel();
 }
 
 void AuxElement::removeThis() {
