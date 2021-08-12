@@ -422,7 +422,7 @@ void JackBackend::set_write(bool tog) {
 
 void JackBackend::doFFT(float* write_buffer, int buffer_size){
 
-
+	file_count += 1;
 	complex<float>* input = new complex<float>[buffer_size];
 	complex<float>* output = new complex<float>[buffer_size];
 	float* float_output = new float[buffer_size];
@@ -437,6 +437,16 @@ void JackBackend::doFFT(float* write_buffer, int buffer_size){
 		float_output[i] = output[i].real();
 
 	}
+
+
+	ofstream outfile("1.txt", ios::trunc);
+	for (int i = 0; i < buffer_size; i++)
+	{
+
+		outfile << float_output[i] << endl;
+
+	}
+	outfile.close();
 
 }
 

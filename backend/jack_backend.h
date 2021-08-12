@@ -69,6 +69,7 @@ public:
 	bool removeOutput( QString );
 
 	int frames;
+	int file_count;
 
 
 	QList <SNDFILE*> _sndFiles;
