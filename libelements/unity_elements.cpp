@@ -116,9 +116,6 @@ UnityElement::UnityElement(QStringList inchannel, QStringList outchannel, Mixing
 
 	//delete me!!!!
 
-
-	connect(_poti, SIGNAL(valueChanged(double)), this, SLOT(emitvalue(double)));
-
 	connect(_poti, SIGNAL(valueChanged(double)), this, SLOT(emitvalue(double)));
 
 }
@@ -145,8 +142,17 @@ void UnityElement::slot_mute_channel(bool input) {
 void UnityElement::slot_zero_channel() {
 
 
-	qDebug() << "emit  sendUnityZero_signal(input);";
-	emit sendUnityZero_signal();
+	//qDebug() << "emit  sendUnityZero_signal(input);";
+	//emit sendUnityZero_signal();
+
+	emit sendKnobPointer_signal(0);
+	if (MuteButton->isChecked()) {
+		MuteButton->setChecked(false);
+	
+	}
+	slot_mute_channel(false);
+	_poti->_value = 0;
+	_poti->update();
 	return;
 
 }
