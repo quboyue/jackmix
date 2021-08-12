@@ -26,7 +26,7 @@
 #include <QObject>
 
 #include <QtCore/QDebug>
-
+#include<QtGui>
 #include "guiserver_interface.h"
 
 #define NUM_INTERPOLATION_STEPS 1024
@@ -44,8 +44,10 @@ namespace JackMix {
 	{
 Q_OBJECT
 	public:
+
 		BackendInterface( GuiServer_Interface* );
 		virtual ~BackendInterface();
+		QImage image;
 		bool _write=false;
 		/**
 		 * @brief Return the current list of output channels.

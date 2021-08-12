@@ -32,6 +32,7 @@
 #include <QtCore/QHash>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QLabel>
 #include "controlsender.h"
 
 class QHBox;
@@ -68,7 +69,7 @@ public:
 	MainWindow( QString filename, QWidget* =0 );
 	~MainWindow();
 	QWidget* slider_test;
-
+	QLabel* picLable;
 signals:
 	/** If the user requests a channel name already in use,
 	 *  an alternative is chosen and this signal is fired
@@ -81,6 +82,7 @@ public slots:
 	void saveFile( QString path="" );
 	void findRemove();
 	void findRemove_singleshot();
+	void update_image();
 private slots:
 	void toggleselectmode();
 	void togglein();

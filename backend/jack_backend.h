@@ -35,7 +35,8 @@
 #include <complex>
 #include <fstream>
 #include <string>
-
+#include<QPaintEvent>
+#include<QtGui>
 #include "backend_interface.h"
 #include "dbvolcalc.h"
 class QDomElement;
@@ -89,6 +90,9 @@ public:
 
 	std::complex<float>* FFT(std::complex<float>* a, int len);
 	void doFFT(float* write_buffer,int buffer_size);
+	void paint_frequence(float* a);
+signals:
+	void refresh_image();
 private:
 	FaderState& getMatrixVolume(QString, QString);
 	void setOutVolume( QString, float );

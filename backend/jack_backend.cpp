@@ -43,8 +43,19 @@
 using namespace JackMix;
 using namespace std;
 #define Pi 3.1415926
-
+#define inf 0x3f3f3f3f
 JackBackend::JackBackend( GuiServer_Interface* g ) : BackendInterface( g ) {
+
+
+	image = QImage(1800, 900, QImage::Format_RGB32);
+	QColor backColor = qRgb(255, 255, 255);
+	image.fill(backColor);
+	QPainter painter(&image);
+
+	painter.drawRect(5, 5, 1800 - 10, 900 - 10);
+
+
+
 	//qDebug() << "JackBackend::JackBackend()";
 	client = ::jack_client_open( "JackMix", JackNoStartServer, NULL );
 	if ( client ) {
@@ -438,7 +449,7 @@ void JackBackend::doFFT(float* write_buffer, int buffer_size){
 
 	}
 
-
+	/*
 	ofstream outfile("1.txt", ios::trunc);
 	for (int i = 0; i < buffer_size; i++)
 	{
@@ -446,7 +457,11 @@ void JackBackend::doFFT(float* write_buffer, int buffer_size){
 		outfile << output[i].real() << endl;
 
 	}
+
 	outfile.close();
+	*/
+
+	paint_frequence(float_output);
 
 }
 
@@ -475,3 +490,83 @@ complex<float>*  JackBackend::FFT(complex<float>* input, int len)
 }
 
 
+void JackBackend::paint_frequence(float* a) {
+
+
+		QPainter painter(&image);
+		painter.setRenderHint(QPainter::Antialiasing, true);
+
+
+		int pointx = 100, pointy = 800;
+		int width = 1800 - pointx, height = 750;
+
+		painter.drawRect(5, 5, 1800 - 10, 900 - 10);
+
+		painter.drawLine(pointx, pointy, width + pointx, pointy);
+		painter.drawLine(pointx, pointy - height, pointx, pointy);
+
+
+		int n = 1200;
+		double sum = 0;
+	
+		int _ma = 0;
+		int _mi = inf;
+
+		int maxpos = 0, minpos = 0;
+		for (int i = 0; i < n; i++)
+		{
+			sum += a[i];
+			if (a[i] > _ma) {
+				_ma = a[i];
+				maxpos = i;
+			}
+			if (a[i] < _mi) {
+				_mi = a[i];
+				minpos = i;
+			}
+		}
+		cout << maxpos << minpos;
+		double kx = (double)width / (n - 1); 
+		double ky = (double)height / _ma;
+		QPen pen, penPoint;
+		pen.setColor(Qt::black);
+		pen.setWidth(2);
+
+		penPoint.setColor(Qt::blue);
+		penPoint.setWidth(5);
+		for (int i = 0; i < n - 1; i++)
+		{
+	
+			painter.setPen(pen);
+			painter.drawLine(pointx + kx * i, pointy - a[i] * ky, pointx + kx * (i + 1), pointy - a[i + 1] * ky);
+			painter.setPen(penPoint);
+			painter.drawPoint(pointx + kx * i, pointy - a[i] * ky);
+		}
+		painter.drawPoint(pointx + kx * (n - 1), pointy - a[n - 1] * ky);
+
+
+
+
+		QPen penDegree;
+		penDegree.setColor(Qt::black);
+		penDegree.setWidth(2);
+		painter.setPen(penDegree);
+
+		for (int i = 0; i < 10; i++)
+		{
+			painter.drawLine(pointx + (i + 1) * width / 10, pointy, pointx + (i + 1) * width / 10, pointy + 4);
+			painter.drawText(pointx + (i + 0.65) * width / 10,
+				pointy + 30, QString::number((int)((i + 1) * ((double)n / 10))));
+		}
+	
+		double _maStep = (double)_ma / 10;
+		for (int i = 0; i < 10; i++)
+		{
+			painter.drawLine(pointx, pointy - (i + 1) * height / 10, pointx - 4, pointy - (i + 1) * height / 10);
+			painter.drawText(pointx - 60, pointy - (i + 0.85) * height / 10, QString::number((int)(_maStep * (i + 1))));
+		}
+	
+		emit this->refresh_image();
+
+
+}

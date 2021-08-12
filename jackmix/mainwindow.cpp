@@ -61,7 +61,7 @@
 #include <QtWidgets/QWidget>
 
 #include "volume_slider.h"
-
+#include <QPixmap>
 using namespace JackMix;
 using namespace JackMix::MixingMatrix;
 
@@ -206,7 +206,15 @@ void MainWindow::init() {
 
 	_mw->layout->addWidget(_record_bar, 2,0,1,3);
 
-	connect(_record_bar->record_button, SIGNAL(toggled(bool)),_backend, SLOT(set_write(bool)));
+	connect(_record_bar->record_button, SIGNAL(toggled(bool)), _backend, SLOT(set_write(bool)));
+
+
+
+    picLable = new QLabel();
+	picLable->setPixmap(QPixmap::fromImage(_backend->image));
+	_mw->layout->addWidget(picLable, 3, 0, 5, 3);
+	connect(_backend, SIGNAL(refresh_image()), this, SLOT(update_image()));
+
 
 
 	// When the widgets have finished laying themselves out, we need to set up
@@ -794,4 +802,11 @@ void MainWindow::findRemove_singleshot() {
 	qDebug() << "_inputswidget->removeItem " << _inputswidget->removeItem;
 	removeInput(_inputswidget->removeItem);
 	removeOutput(_outputswidget->removeItem);
+}
+
+
+void MainWindow::update_image() {
+	picLable->clear();
+	picLable->setPixmap(QPixmap::fromImage(_backend->image));
+
 }
