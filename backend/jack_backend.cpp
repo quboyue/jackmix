@@ -311,21 +311,6 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 		outs.insert(it.key(), (jack_default_audio_sample_t*)jack_port_get_buffer(it.value(), nframes));
 
 	
-	if (backend->_write) {
-		//qDebug() << " recording... " << backend->out_ports_list.count() << "  " << backend->_sndFiles.count();
-		int snf_number = 0;
-		for (it = backend->out_ports.begin(); it != backend->out_ports.end(); ++it) {
-	
-			sf_writef_float(backend->_sndFiles[snf_number],outs[it.key()], (int)nframes);
-
-			snf_number += 1;
-		}
-	}
-	if (backend->_doFFT) {
-	
-		it = backend->out_ports.begin();
-		backend->doFFT(outs[it.key()], (int)nframes);
-	}
 
 
 	
@@ -372,6 +357,26 @@ int JackMix::process( jack_nframes_t nframes, void* arg ) {
 
 		backend->newOutputLevel(key, max);
 	}
+
+
+	if (backend->_write) {
+		//qDebug() << " recording... " << backend->out_ports_list.count() << "  " << backend->_sndFiles.count();
+		int snf_number = 0;
+		for (it = backend->out_ports.begin(); it != backend->out_ports.end(); ++it) {
+
+			sf_writef_float(backend->_sndFiles[snf_number], outs[it.key()], (int)nframes);
+
+			snf_number += 1;
+		}
+	}
+	if (backend->_doFFT) {
+
+		it = backend->out_ports.begin();
+		backend->doFFT(outs[it.key()], (int)nframes);
+	}
+
+
+
 
 	// Send any information about channel levels
 	backend->report();
@@ -474,6 +479,10 @@ void JackBackend::doFFT(float* write_buffer, int buffer_size){
 }
 
 //The FFT function original code is from https://blog.csdn.net/whjkm/article/details/81949356
+//Copyright notice : This article is "HJ_bian" of CSDN blogger. 
+//The original article follows the CC 4.0 BY-SA copyright agreement.
+//Please attach the original source link and this statement for reprint.
+
 complex<float>*  JackBackend::FFT(complex<float>* input, int len)
 {
 
